@@ -25,5 +25,16 @@ export const useUserStore = defineStore('userStore', {
       this.user = data
       this.loading = false
     },
+    async addUser(user) {
+      this.users.push(user)
+      const res = await fetch('https://jsonplaceholder.typicode.com/users', {
+        method: 'POST',
+        body: JSON.stringify(user),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      if (res.error) {
+        console.log(res.error)
+      }
+    },
   }
 })
