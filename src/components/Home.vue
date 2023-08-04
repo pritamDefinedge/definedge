@@ -1,16 +1,27 @@
 <template>
-  <div class="text-red-700">
-      hello world
+  <div>
+    <!---loading-->
+    <div class="loading" v-if="UserStore.loading">Loading users ...</div>
+    <div v-for="user in UserStore.users" :key="user.id">
+      {{ user.name}}
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  setup () {
-    
+import { useUserStore } from "../stores/UserStore";
 
-    return {}
-  }
-}
+export default {
+  setup() {
+    const UserStore = useUserStore();
+
+    //fetch users
+    UserStore.getUsers();
+
+
+
+    return { UserStore };
+  },
+};
 </script>
 
