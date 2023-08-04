@@ -1,9 +1,11 @@
 <template>
   <div>
     <!---loading-->
-    <div class="loading" v-if="UserStore.loading">Loading users ...</div>
+    <div v-if="UserStore.loading">Loading users ...</div>
     <div v-for="user in UserStore.users" :key="user.id">
-      {{ user.name}}
+      <router-link :to="`/user/${user.id}`">
+        <p>{{ user.name }}</p>
+      </router-link>
     </div>
   </div>
 </template>
