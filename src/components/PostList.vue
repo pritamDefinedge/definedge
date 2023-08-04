@@ -3,7 +3,7 @@
     <!---loading-->
     <div v-if="PostStore.loading">Loading users ...</div>
     <div v-for="post in PostStore.posts" :key="post.id">
-      <router-link :to="`/user/${post.id}`">
+      <router-link :to="`/post/${post.id}`">
         <p>{{ post.title }}</p>
       </router-link>
     </div>
