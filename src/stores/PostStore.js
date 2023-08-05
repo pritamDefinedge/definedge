@@ -18,7 +18,7 @@ export const usePostStore = defineStore('postStore', {
       this.loading = false
     },
     async getPost(id) {
-      this.post = null;
+      this.post=null;
       this.loading = true;
       const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
       const data = await response.json()
@@ -38,3 +38,4 @@ export const usePostStore = defineStore('postStore', {
     },
   }
 })
+

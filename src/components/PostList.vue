@@ -1,10 +1,9 @@
 <template>
   <div>
-    <!---loading-->
     <div v-if="PostStore.loading">Loading users ...</div>
-    <div v-for="post in PostStore.posts" :key="post.id">
+    <div v-for="post in PostStore.posts" :key="post.id" class="my-3">
       <router-link :to="`/post/${post.id}`">
-        <p>{{ post.title }}</p>
+        {{ post.title }}
       </router-link>
       <p>{{ post.body }}</p>
     </div>
@@ -17,8 +16,8 @@ export default {
   setup() {
     const PostStore = usePostStore();
 
-    //fetch posts
     PostStore.getPosts();
+
     return { PostStore };
   },
 }
