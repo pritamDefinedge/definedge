@@ -6,6 +6,7 @@
       <router-link :to="`/post/${post.id}`">
         <p>{{ post.title }}</p>
       </router-link>
+      <p>{{ post.body }}</p>
     </div>
   </div>
 </template>
