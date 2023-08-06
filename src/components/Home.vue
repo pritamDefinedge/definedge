@@ -1,4 +1,5 @@
 <template>
+  <SearchPost />
   <PostList />
   <!-- <div>
     <SearchPost/>
@@ -13,7 +14,7 @@ import AddPost from "./AddPost.vue";
 import SearchPost from "./SearchPost.vue";
 
 export default {
-  components: { PostList, AddPost},
+  components: { PostList, AddPost, SearchPost },
 
 };
 </script>

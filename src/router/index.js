@@ -20,12 +20,12 @@ const router = createRouter({
       component: () => import("../components/PostDetail.vue")
     },
     {
-      path: "/post/addpost",
+      path: "/add",
       name: "addPost",
       component: () => import("../components/AddPost.vue")
     },
     {
-      path: "/post/search",
+      path: "/search",
       name: "searchPost",
       component: () => import("../components/SearchPost.vue")
     },

@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-purple-400">
-    <nav class="container p-4 mx-auto md:flex md:justify-between md:items-center">
+  <div class="bg-sky-800 ">
+    <nav class="container p-4 mx-auto md:flex md:justify-between md:items-center ">
       <div class="flex items-center justify-between">
         <router-link to="/" class="
             text-xl
@@ -8,7 +8,7 @@
             text-white
             md:text-2xl
             hover:text-indigo-500
-          ">Logo
+          ">Blog
         </router-link>
         <!-- Mobile menu button -->
         <div @click="toggleNav" class="flex md:hidden">
@@ -39,7 +39,7 @@
         </li>
         <li class="flex items-center text-white hover:text-indigo-500">
           <p class="px-1">
-            <router-link to="/post/addpost">
+            <router-link to="/add">
               Create
             </router-link>
           </p>
@@ -47,7 +47,7 @@
         </li>
         <li class="flex items-center text-white hover:text-indigo-500">
           <p class="px-1">
-            <router-link to="/post/search">
+            <router-link to="/search">
               Search
             </router-link>
           </p>

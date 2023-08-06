@@ -1,25 +1,34 @@
 <template>
-  <div>
-    <div>
-      <h2>{{ post.title }}</h2>
-      <p v-if="author" class="text-red-500">Written by: {{ author.name }}
-        <!-- <span class="text-blue-600">Comments: {{ CommentStore.getPostComments.length }}</span> -->
+    <div class="block p-6 border rounded-lg   my-8 mx-10">
+      <h6 class="mb-2 text-2xl font-bold  text-cyan-800">
+        {{ post.title }}
+      </h6>
+
+      <p v-if="author" class="mb-2 text-gray-400 flex items-center">
+        <i class="material-icons pr-1">
+          draw
+        </i>
+      <p>Written by:  {{ author.name }}</p>
       </p>
-      <p>{{ post.body }}</p>
+
+      <p class="text-gray-800 mb-10">
+        {{ post.body }}
+      </p>
+
+      <p class="text-cyan-900 font-semibold my-3 flex items-center">
+        <i class="material-icons pr-1">
+          comment
+        </i>
+      <p class="text-lg">Comments :</p>
+      </p>
+      <div v-for="comment in CommentStore.getPostComments" :key="comment.id"
+        class="border p-4 m-4 text-gray-700 rounded-lg border-b-4 border-gray-500 ">
+        <p class="font-semibold mb-2">{{ comment.name }}</p>
+        <p>{{ comment.body }}</p>
+      </div>
+
     </div>
-    <hr>
-    <h3>Comments:</h3>
-    <!-- <div v-for="comment in CommentStore.comments" :key="comment.id"> -->
-    <!-- <div v-for="comment in comments" :key="comment.id">
-      <h3>{{ comment.name }}</h3>
-      <p>{{ comment.body }}</p>
-    </div> -->
-    <!-- <div v-for="comment in CommentStore.getPostComments" :key="comment.id"> -->
-    <div v-for="comment in CommentStore.getPostComments" :key="comment.id">
-      <h3>{{ comment.name }}</h3>
-      <p>{{ comment.body }}</p>
-    </div>
-  </div>
+
 </template>
 
 <script>
