@@ -10,10 +10,25 @@ const router = createRouter({
       component: Home
     },
     {
+      path: "/",
+      name: "postList",
+      component: () => import("../components/PostList.vue")
+    },
+    {
       path: "/post/:id",
       name: "postDetail",
       component: () => import("../components/PostDetail.vue")
-    }
+    },
+    {
+      path: "/post/addpost",
+      name: "addPost",
+      component: () => import("../components/AddPost.vue")
+    },
+    {
+      path: "/post/search",
+      name: "searchPost",
+      component: () => import("../components/SearchPost.vue")
+    },
   ]
 })
 

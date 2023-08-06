@@ -29,9 +29,30 @@
           space-y-4
           md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
         ">
-        <li class="text-white hover:text-indigo-500">Home</li>
-        <li class="text-white hover:text-indigo-500">About</li>
-        <li class="text-white hover:text-indigo-500">Blogs</li>
+        <li class="flex items-center text-white hover:text-indigo-500">
+          <p class="px-1">
+            <router-link to="/">
+              PostsList
+            </router-link>
+          </p>
+          <i class="material-icons">rss_feed</i>
+        </li>
+        <li class="flex items-center text-white hover:text-indigo-500">
+          <p class="px-1">
+            <router-link to="/post/addpost">
+              Create
+            </router-link>
+          </p>
+          <i class="material-icons">post_add</i>
+        </li>
+        <li class="flex items-center text-white hover:text-indigo-500">
+          <p class="px-1">
+            <router-link to="/post/search">
+              Search
+            </router-link>
+          </p>
+          <i class="material-icons">  manage_search</i>
+        </li>
       </ul>
     </nav>
   </div>
