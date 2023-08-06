@@ -51,7 +51,7 @@ export default {
     <ul>
       <li v-for="(post, index) in filteredPosts" :key="index">
         <p>{{ post.title }}</p>
-        <p>{{ post.body }}</p>
+  
       </li>
     </ul>
   </div>

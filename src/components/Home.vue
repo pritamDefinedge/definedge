@@ -1,22 +1,20 @@
 <template>
-  <div>
-    <SearchPost />
-
+  <!-- <div>
+    <SearchPost/>
       <AddPost />
       <PostList />
-
-
-  </div>
+  </div> -->
+<Navbar/>
 </template>
 
 <script>
 import PostList from "./PostList.vue";
 import AddPost from "./AddPost.vue";
 import SearchPost from "./SearchPost.vue";
-
+import Navbar from "./Navbar.vue";
 
 export default {
-  components: { PostList, AddPost, SearchPost },
+  components: { PostList, AddPost, Navbar },
 
 };
 </script>
