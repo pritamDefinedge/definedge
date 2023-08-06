@@ -43,12 +43,13 @@ export const usePostStore = defineStore('postStore', {
       this.loading = false
     },
     async addPost(post) {
-      this.posts.push(post)
       const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: JSON.stringify(post),
         headers: { 'Content-Type': 'application/json' }
       })
+      this.posts.push(post)
+      console.log("Adding post:", post);
       if (res.error) {
         console.log(res.error)
       }

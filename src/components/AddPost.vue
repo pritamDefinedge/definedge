@@ -17,8 +17,8 @@
           placeholder="Write your thoughts here..."></textarea>
       </div>
       <button
-        class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        type="button">
+        class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="submit">
         Create
       </button>
     </form>
@@ -42,19 +42,32 @@ export default {
     const title = ref("");
     const body = ref("");
 
+    // const handleSubmit = () => {
+    //   if (title.value.length > 0 && body.value.length > 0) {
+    //     PostStore.addPost({
+    //       title: title.value,
+    //       body: body.value,
+    //       id: Math.floor(Math.random() * 10000),
+    //     });
+    //     title.value = "";
+    //     body.value = "";
+    //   }
+    //   console.log(title, body)
+    //   //  router.push('/')
+    //   router.push({ path: '/postList' })
+    // };
     const handleSubmit = () => {
       if (title.value.length > 0 && body.value.length > 0) {
-        PostStore.addPost({
+        const newPost = {
           title: title.value,
           body: body.value,
           id: Math.floor(Math.random() * 10000),
-        });
-        title.value = "";
+        };
+        PostStore.addPost(newPost);
+        title.value = ""; // Clear the form
         body.value = "";
       }
-      console.log(title, body)
-      // router.push('/')
-      router.push({ path: '/' })
+      router.push('/postlist'); // Go back to the home page
     };
 
 
