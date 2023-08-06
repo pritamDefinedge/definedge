@@ -1,29 +1,41 @@
-# blogPost
+# About this project :herb:
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a simple Blog Post.
+
+You can see list of posts, search posts by title & add a new post.
+
+api: [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts)
+
+
+## Tech :hammer_and_wrench:
+This app uses:
+- Vue3
+- Pinia
+- Tailwind
+
+## Scripts for running this project :pencil:
+To the see the project in your browser you should run these two commands:
+### 1. `npm install`
+
+### 2. `npm run dev`
+
+you should use this command to runs the app in the development mode.\
+Open [http://localhost:5173/](http://localhost:5173/) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
 
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
+## Features that can be fixes in the future:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Add search by author name  (here we have just by title)
+- Edit Error handling to show correct message to the user
+- ...
 
-## Project Setup
+## Learn More :open_book:
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+You can learn more about this project in this link [](...).
