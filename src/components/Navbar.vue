@@ -5,9 +5,9 @@
             text-xl
             font-bold
             text-white
+            italic
             md:text-2xl
-            hover:text-indigo-500
-          ">Blog
+            hover:text-indigo-500">BLOG!
       </router-link>
       <!-- Mobile menu button -->
       <div @click="toggleNav" class="flex md:hidden">
