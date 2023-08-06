@@ -9,13 +9,6 @@ export const usePostStore = defineStore('postStore', {
     searchQuery: '',
   }),
   getters: {
-    // filteredList(state) {
-    //   const filteredPosts = state.posts.filter((post) => {
-    //     // Search for posts based on the search query
-    //     return post.title.toLowerCase().includes(state.searchQuery.toLowerCase())
-    //   })
-    //   return filteredPosts
-    // }
     filteredList(state) {
       // Check if there is a search query
       if (state.searchQuery) {
@@ -28,13 +21,6 @@ export const usePostStore = defineStore('postStore', {
     },
   },
   actions: {
-    // async getPosts() {
-    //   this.loading = true;
-    //   const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-    //   const data = await response.json()
-    //   this.posts = data
-    //   this.loading = false
-    // },
     async getPosts() {
       this.posts = []
       this.loading = true
@@ -51,14 +37,6 @@ export const usePostStore = defineStore('postStore', {
         this.loading = false
       }
     },
-    // async getPost(id) {
-    //   this.post = null;
-    //   this.loading = true;
-    //   const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-    //   const data = await response.json()
-    //   this.post = data
-    //   this.loading = false
-    // },
     async getPost(id) {
       this.post = null
       this.loading = true
@@ -75,18 +53,6 @@ export const usePostStore = defineStore('postStore', {
         this.loading = false
       }
     },
-    // async addPost(post) {
-    //   const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
-    //     method: 'POST',
-    //     body: JSON.stringify(post),
-    //     headers: { 'Content-Type': 'application/json' }
-    //   })
-    //   this.posts.push(post)
-    //   console.log("Adding post:", post);
-    //   if (res.error) {
-    //     console.log(res.error)
-    //   }
-    // },
     async addPost(post) {
       try {
         const res = await fetch('https://jsonplaceholder.typicode.com/posts', {

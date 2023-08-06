@@ -23,17 +23,12 @@
       </button>
     </form>
   </div>
-  <!-- <form @submit.prevent="handleSubmit">
-      <input type="text" required placeholder="title" v-model="title" />
-      <input type="text" required placeholder="body" v-model="body" />
-      <button>add</button>
-    </form> -->
 </template>
 
 <script>
 import { ref } from "vue";
 import { usePostStore } from "../stores/PostStore";
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 export default {
   setup() {
@@ -42,20 +37,6 @@ export default {
     const title = ref("");
     const body = ref("");
 
-    // const handleSubmit = () => {
-    //   if (title.value.length > 0 && body.value.length > 0) {
-    //     PostStore.addPost({
-    //       title: title.value,
-    //       body: body.value,
-    //       id: Math.floor(Math.random() * 10000),
-    //     });
-    //     title.value = "";
-    //     body.value = "";
-    //   }
-    //   console.log(title, body)
-    //   //  router.push('/')
-    //   router.push({ path: '/postList' })
-    // };
     const handleSubmit = () => {
       if (title.value.length > 0 && body.value.length > 0) {
         const newPost = {
@@ -64,12 +45,11 @@ export default {
           id: Math.floor(Math.random() * 10000),
         };
         PostStore.addPost(newPost);
-        title.value = ""; // Clear the form
+        title.value = "";
         body.value = "";
       }
-      router.push('/postlist'); // Go back to the home page
+      router.push('/postlist');
     };
-
 
     return { title, body, PostStore, handleSubmit }
   }

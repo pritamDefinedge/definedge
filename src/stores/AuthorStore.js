@@ -14,13 +14,6 @@ export const useAuthorStore = defineStore('authorStore', {
     }
   },
   actions: {
-    // async getAuthors() {
-    //   this.loading = true;
-    //   const response = await fetch('https://jsonplaceholder.typicode.com/users')
-    //   const data = await response.json()
-    //   this.authors = data
-    //   this.loading = false
-    // }
     async getAuthors() {
       this.loading = true
       try {

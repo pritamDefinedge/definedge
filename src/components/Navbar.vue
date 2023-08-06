@@ -7,7 +7,7 @@
             text-white
             italic
             md:text-2xl
-            hover:text-indigo-500">BLOG!
+            hover:text-slate-200">BLOG!
       </router-link>
       <!-- Mobile menu button -->
       <div @click="toggleNav" class="flex md:hidden">
@@ -28,15 +28,15 @@
           space-y-4
           md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
         ">
-      <li class="flex items-center text-white hover:text-indigo-500">
+      <li class="flex items-center text-white hover:text-slate-200">
         <p class="px-1">
-          <router-link to="/">
+          <router-link to="/postList">
             PostsList
           </router-link>
         </p>
         <i class="material-icons">rss_feed</i>
       </li>
-      <li class="flex items-center text-white hover:text-indigo-500">
+      <li class="flex items-center text-white hover:text-slate-200">
         <p class="px-1">
           <router-link to="/add">
             Create
@@ -44,7 +44,7 @@
         </p>
         <i class="material-icons">post_add</i>
       </li>
-      <li class="flex items-center text-white hover:text-indigo-500">
+      <li class="flex items-center text-white hover:text-slate-200">
         <p class="px-1">
           <router-link to="/search">
             Search

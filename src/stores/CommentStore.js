@@ -14,13 +14,6 @@ export const useCommentStore = defineStore('commentStore', {
     }
   },
   actions: {
-    // async getComments() {
-    //   this.loading = true;
-    //   const response = await fetch('https://jsonplaceholder.typicode.com/comments')
-    //   const data = await response.json()
-    //   this.comments = data
-    //   this.loading = false
-    // },
     async getComments() {
       this.loading = true
       try {
