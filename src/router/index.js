@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../components/Home.vue'
+import Home from '../pages/Home.vue'
+import About from '../pages/About.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,25 +11,11 @@ const router = createRouter({
       component: Home
     },
     {
-      path: "/postList",
-      name: "postList",
-      component: () => import("../components/PostList.vue")
+      path: '/about',
+      name: 'about',
+      component: About
     },
-    {
-      path: "/post/:id",
-      name: "postDetail",
-      component: () => import("../components/PostDetail.vue")
-    },
-    {
-      path: "/add",
-      name: "addPost",
-      component: () => import("../components/AddPost.vue")
-    },
-    {
-      path: "/search",
-      name: "searchPost",
-      component: () => import("../components/SearchPost.vue")
-    },
+    
   ]
 })
 
