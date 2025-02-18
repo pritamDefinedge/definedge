@@ -88,19 +88,21 @@
   <section class="bg-gray-800">
     <div class="max-w-screen-xl mx-auto px-4">
       <!-- Flex container for both sections -->
-      <div class="flex justify-between items-center">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-4 py-3"
+      >
         <!-- Trusted by section -->
         <div class="text-center">
-          <p class="text-lg text-gray-300">
+          <p class="text-base md:text-lg text-gray-300">
             Trusted by
-            <strong class="text-white text-xl">2.3 million</strong> Users &amp;
-            Counting
+            <strong class="text-white text-lg md:text-xl">2.3 million</strong>
+            Users &amp; Counting
           </p>
         </div>
 
         <!-- Coming Soon Announcement Section -->
-        <div class="text-center py-6 px-4 rounded-md">
-          <div class="text-xl font-semibold text-white">
+        <div class="text-center py-4 px-4 rounded-md">
+          <div class="text-lg md:text-xl font-semibold text-white">
             <span>Coming Soon : </span>
             <span class="text-primary-500 blink-text"> Super Algo Trader </span>
           </div>
@@ -109,14 +111,21 @@
     </div>
   </section>
 
+  <!-- Ecosystem That Brings Markets to Your Fingertips -->
   <section
     class="relative bg-gray-900 text-white flex justify-center items-center pt-12"
     style="background-image: linear-gradient(100deg, #26282c 0%, #131416 100%)"
   >
     <div class="max-w-screen-xl mx-auto px-4">
       <!-- Section Title -->
-      <p class="text-blue-500 text-center text-lg font-bold">APPS</p>
-      <h5 class="text-white text-center text-3xl font-extrabold mt-4">
+      <h4
+        class="text-blue-700 text-center text-[25px] md:text-lg lg:text-xl xl:text-2xl font-bold"
+      >
+        APPS
+      </h4>
+      <h5
+        class="text-white text-center text-3xl font-extrabold md:text-lg lg:text-xl xl:text-2xl mt-4"
+      >
         Ecosystem That Brings Markets to Your Fingertips
       </h5>
 
@@ -128,7 +137,7 @@
           :class="{
             'border-b-2 border-blue-500 bg-white text-gray-800':
               activeAppTab === 'ZoneApp',
-            'bg-gray-300 border-blue-500 text-gray-700':
+            'bg-gray-100 border-blue-500 text-gray-700':
               activeAppTab !== 'ZoneApp',
           }"
           class="tab-btn px-6 py-2 text-md rounded-lg font-semibold cursor-pointer hover:bg-gray-200 focus:outline-none transition duration-300 ease-in-out"
@@ -140,7 +149,7 @@
           :class="{
             'border-b-2 border-blue-500 bg-white text-gray-800':
               activeAppTab === 'OPSTRAApp',
-            'bg-gray-300 border-blue-500 text-gray-700':
+            'bg-gray-100 border-blue-500 text-gray-700':
               activeAppTab !== 'OPSTRAApp',
           }"
           class="tab-btn px-6 py-2 text-md rounded-lg font-semibold cursor-pointer hover:bg-gray-200 focus:outline-none transition duration-300 ease-in-out"
@@ -437,9 +446,10 @@
       </div>
     </div>
   </section>
+
   <!-- TRADE & INVEST -->
   <section
-    class="relative text-white flex justify-center items-center pt-12"
+    class="relative text-blace flex justify-center items-center pt-12"
     style="
       background-image: linear-gradient(312deg, #1e50d14d 0%, #31c19d4d 100%);
       background-color: transparent;
@@ -447,8 +457,12 @@
   >
     <div class="max-w-screen-xl mx-auto px-4">
       <!-- Section Title -->
-      <h2 class="text-[#005BDF] text-center text-lg">TRADE & INVEST</h2>
-      <h5 class="text-white text-center text-3xl font-extrabold mt-4">
+      <h2
+        class="text-[#005BDF] text-center text-sm md:text-lg lg:text-xl xl:text-2xl"
+      >
+        TRADE & INVEST
+      </h2>
+      <h5 class="text-gray-700 text-center text-3xl font-extrabold mt-4">
         Ecosystem of Effortless Trading
       </h5>
 
@@ -460,7 +474,7 @@
           :class="{
             'border-b-2 border-blue-500 bg-white text-gray-800':
               activeTradeTab === 'optionsTab',
-            'bg-gray-300 border-blue-500 text-gray-700':
+            'bg-gray-100 border-blue-500 text-gray-700':
               activeTradeTab !== 'optionsTab',
           }"
           class="tab-btn flex-1 min-w-[150px] px-4 py-2 text-[13px] sm:text-sm md:text-sm lg:text-xl rounded-lg font-semibold cursor-pointer hover:bg-gray-200 focus:outline-none transition duration-300 ease-in-out"
@@ -472,7 +486,7 @@
           :class="{
             'border-b-2 border-blue-500 bg-white text-gray-800':
               activeTradeTab === 'webPlatformTab',
-            'bg-gray-300 border-blue-500 text-gray-700':
+            'bg-gray-100 border-blue-500 text-gray-700':
               activeTradeTab !== 'webPlatformTab',
           }"
           class="tab-btn flex-1 min-w-[150px] px-4 py-2 text-[13px] sm:text-sm md:text-sm lg:text-xl rounded-lg font-semibold cursor-pointer hover:bg-gray-200 focus:outline-none transition duration-300 ease-in-out"
@@ -484,7 +498,7 @@
           :class="{
             'border-b-2 border-blue-500 bg-white text-gray-800':
               activeTradeTab === 'DesktopApplication',
-            'bg-gray-300 border-blue-500 text-gray-700':
+            'bg-gray-100 border-blue-500 text-gray-700':
               activeTradeTab !== 'DesktopApplication',
           }"
           class="tab-btn flex-1 min-w-[150px] px-4 py-2 text-[13px] sm:text-sm md:text-sm lg:text-xl rounded-lg font-semibold cursor-pointer hover:bg-gray-200 focus:outline-none transition duration-300 ease-in-out"
@@ -496,7 +510,7 @@
           :class="{
             'border-b-2 border-blue-500 bg-white text-gray-800':
               activeTradeTab === 'UniqueAlertSystem',
-            'bg-gray-300 border-blue-500 text-gray-700':
+            'bg-gray-100 border-blue-500 text-gray-700':
               activeTradeTab !== 'UniqueAlertSystem',
           }"
           class="tab-btn flex-1 min-w-[150px] px-4 py-2 text-[13px] sm:text-sm md:text-sm lg:text-xl rounded-lg font-semibold cursor-pointer hover:bg-gray-200 focus:outline-none transition duration-300 ease-in-out"
@@ -518,7 +532,6 @@
                 <span class="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    id="Layer_1"
                     data-name="Layer 1"
                     viewBox="0 0 58.73 60"
                     width="40px"
@@ -536,21 +549,7 @@
                   OPSTRA
                 </span>
               </h6>
-              <li class="flex items-center text-base">
-                <svg
-                  class="w-6 h-6 text-green-500 mr-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  ></path>
-                </svg>
+              <li class="flex items-center">
                 <span
                   >You deserve India’s most popular options trading terminal.
                   Create, analyze and directly trade your strategies while
@@ -671,7 +670,6 @@
                 <span class="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    id="Layer_1"
                     data-name="Layer 1"
                     viewBox="0 0 50 50"
                     width="40px"
@@ -811,7 +809,6 @@
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                    id="Layer_1"
                     x="0px"
                     y="0px"
                     viewBox="0 0 60 60"
@@ -977,7 +974,6 @@
                 <span class="flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    id="Layer_1"
                     data-name="Layer 1"
                     viewBox="0 0 20 20"
                     width="40px"
@@ -1114,14 +1110,19 @@
       </div>
     </div>
   </section>
+
   <!--ANALYSIS -->
   <section
-    class="relative bg-white text-black flex justify-center items-center pt-12"
+    class="relative bg-white text-black flex justify-center items-center pt-12 sm:py-12 py-12"
   >
     <div class="max-w-screen-xl mx-auto px-4">
       <!-- Section Title -->
-      <h2 class="text-[#005BDF] text-center text-lg">ANALYSIS</h2>
-      <h5 class="text-gray-500 text-center text-3xl font-extrabold mt-4">
+      <h2
+        class="text-[#005BDF] text-center font-liter text-[24px] md:text-lg lg:text-xl xl:text-2xl"
+      >
+        ANALYSIS
+      </h2>
+      <h5 class="text-gray-700 text-center text-3xl font-extrabold mt-4">
         Ecosystem of Actionable Analysis
       </h5>
 
@@ -1131,7 +1132,7 @@
         <button
           @click="activeAnalysisTab = 'technicalAnalysisTab'"
           :class="{
-            'border-b-2 border-blue-500 bg-gray-100 text-gray-800':
+            'border-b-2 border-blue-500 bg-gray-50 text-gray-800':
               activeAnalysisTab === 'technicalAnalysisTab',
             'bg-gray-100 border-blue-500 text-gray-700':
               activeAnalysisTab !== 'technicalAnalysisTab',
@@ -1143,7 +1144,7 @@
         <button
           @click="activeAnalysisTab = 'fundamentalAnalysisTab'"
           :class="{
-            'border-b-2 border-blue-500 bg-gray-100 text-gray-800':
+            'border-b-2 border-blue-500 bg-gray-50 text-gray-800':
               activeAnalysisTab === 'fundamentalAnalysisTab',
             'bg-gray-100 border-blue-500 text-gray-700':
               activeAnalysisTab !== 'fundamentalAnalysisTab',
@@ -1155,7 +1156,7 @@
         <button
           @click="activeAnalysisTab = 'optionsStrategiesAnalysisTab'"
           :class="{
-            'border-b-2 border-blue-500 bg-gray-100 text-gray-800':
+            'border-b-2 border-blue-500 bg-gray-50 text-gray-800':
               activeAnalysisTab === 'optionsStrategiesAnalysisTab',
             'bg-gray-100 border-blue-500 text-gray-700':
               activeAnalysisTab !== 'optionsStrategiesAnalysisTab',
@@ -1167,7 +1168,7 @@
         <button
           @click="activeAnalysisTab = 'mutualFundAnalysisTab'"
           :class="{
-            'border-b-2 border-blue-500 bg-gray-100 text-gray-800':
+            'border-b-2 border-blue-500 bg-gray-50 text-gray-800':
               activeAnalysisTab === 'mutualFundAnalysisTab',
             'bg-gray-100 border-blue-500 text-gray-700':
               activeAnalysisTab !== 'mutualFundAnalysisTab',
@@ -1824,7 +1825,7 @@
 
   <!-- EDUCATION -->
   <section
-    class="relative text-white flex justify-center items-center pt-12"
+    class="relative text-black flex justify-center items-center pt-12"
     style="
       background-color: transparent;
       background-image: linear-gradient(312deg, #1e50d14d 0%, #31c19d4d 100%);
@@ -1832,8 +1833,12 @@
   >
     <div class="max-w-screen-xl mx-auto px-4">
       <!-- EDUCATION Title -->
-      <h2 class="text-[#005BDF] text-center text-lg">EDUCATION</h2>
-      <h5 class="text-white text-center text-3xl font-extrabold mt-4">
+      <h2
+        class="text-[#005BDF] text-center font-liter text-[24px] md:text-lg lg:text-xl xl:text-2xl"
+      >
+        EDUCATION
+      </h2>
+      <h5 class="text-gray-700 text-center text-3xl font-extrabold mt-4">
         Ecosystem of Transformative Education
       </h5>
 
@@ -1845,7 +1850,7 @@
           :class="{
             'border-b-2 border-blue-500 bg-white text-gray-800':
               activeEducationTab === 'currentBooksTab',
-            'bg-gray-300 border-blue-500 text-gray-700':
+            'bg-gray-100 border-blue-500 text-gray-700':
               activeEducationTab !== 'currentBooksTab',
           }"
           class="tab-btn flex-1 min-w-[150px] px-4 py-2 text-[13px] sm:text-sm md:text-sm lg:text-xl rounded-lg font-semibold cursor-pointer hover:bg-gray-200 focus:outline-none transition duration-300 ease-in-out"
@@ -1857,7 +1862,7 @@
           :class="{
             'border-b-2 border-blue-500 bg-white text-gray-800':
               activeEducationTab === 'educationalVideoTab',
-            'bg-gray-300 border-blue-500 text-gray-700':
+            'bg-gray-100 border-blue-500 text-gray-700':
               activeEducationTab !== 'educationalVideoTab',
           }"
           class="tab-btn flex-1 min-w-[150px] px-4 py-2 text-[13px] sm:text-sm md:text-sm lg:text-xl rounded-lg font-semibold cursor-pointer hover:bg-gray-200 focus:outline-none transition duration-300 ease-in-out"
@@ -1869,7 +1874,7 @@
           :class="{
             'border-b-2 border-blue-500 bg-white text-gray-800':
               activeEducationTab === 'LibraryTab',
-            'bg-gray-300 border-blue-500 text-gray-700':
+            'bg-gray-100 border-blue-500 text-gray-700':
               activeEducationTab !== 'LibraryTab',
           }"
           class="tab-btn flex-1 min-w-[150px] px-4 py-2 text-[13px] sm:text-sm md:text-sm lg:text-xl rounded-lg font-semibold cursor-pointer hover:bg-gray-200 focus:outline-none transition duration-300 ease-in-out"
@@ -1881,7 +1886,7 @@
           :class="{
             'border-b-2 border-blue-500 bg-white text-gray-800':
               activeEducationTab === 'GurukulTab',
-            'bg-gray-300 border-blue-500 text-gray-700':
+            'bg-gray-100 border-blue-500 text-gray-700':
               activeEducationTab !== 'GurukulTab',
           }"
           class="tab-btn flex-1 min-w-[150px] px-4 py-2 text-[13px] sm:text-sm md:text-sm lg:text-xl rounded-lg font-semibold cursor-pointer hover:bg-gray-200 focus:outline-none transition duration-300 ease-in-out"
@@ -2231,7 +2236,6 @@
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                    id="Layer_1"
                     viewBox="0 0 50 50"
                     width="45"
                     height="45"
@@ -2527,7 +2531,7 @@
 
   <!-- Invest & Trade with Ease -->
   <section class="container mx-auto px-4 py-24">
-    <div class="flex flex-col md:flex-row">
+    <div class="flex lg:px-28 flex-col md:flex-row">
       <!-- Left Side Content -->
       <div class="flex-1 mb-8 md:mb-0">
         <h2 class="text-3xl font-bold mb-4">Invest & Trade with Ease</h2>
@@ -2538,9 +2542,9 @@
         </p>
 
         <div class="flex flex-wrap gap-4">
-          <!-- Button 1 -->
+          <!-- Equity -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full md:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
@@ -2604,9 +2608,9 @@
             <h5 class="text-lg font-semibold">Equity</h5>
           </div>
 
-          <!-- Button 2 -->
+          <!-- Commodities -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full md:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
@@ -2636,7 +2640,6 @@
                             d="M28.63,48.28c-10.83,0-19.65-8.81-19.65-19.65S17.8,8.98,28.63,8.98c8.51,0,16.02,5.43,18.67,13.51.29.88-.19,1.84-1.07,2.12-.88.29-1.84-.19-2.12-1.07-2.2-6.69-8.42-11.19-15.47-11.19-8.98,0-16.28,7.3-16.28,16.28s7.3,16.28,16.28,16.28c2.3,0,4.5-.46,6.56-1.38.85-.38,1.84,0,2.22.85.38.85,0,1.84-.85,2.22-2.49,1.11-5.15,1.67-7.93,1.67Z"
                           ></path>
                           <path
-                          
                             fill="currentColor"
                             class="cls-2"
                             d="M47.69,11.26h-6.35c-.93,0-1.68-.75-1.68-1.68s.75-1.68,1.68-1.68h4.2l-1.06-4.26c-.23-.9.32-1.82,1.22-2.04.9-.23,1.82.32,2.04,1.22l1.59,6.35c.13.5.01,1.04-.31,1.45-.32.41-.81.65-1.33.65Z"
@@ -2661,9 +2664,9 @@
             <h5 class="text-lg font-semibold">Commodities</h5>
           </div>
 
-          <!-- Button 3 -->
+          <!-- ETFs -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full md:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
@@ -2732,9 +2735,9 @@
             <h5 class="text-lg font-semibold">ETFs</h5>
           </div>
 
-          <!-- Button 4 -->
+          <!--Mutual Funds -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full md:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
@@ -2807,9 +2810,9 @@
             </span>
             <h5 class="text-lg font-semibold">Mutual Funds</h5>
           </div>
-          <!-- Button 5 -->
+          <!-- F&O -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full md:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
@@ -2904,9 +2907,9 @@
             </span>
             <h5 class="text-lg font-semibold">F&O</h5>
           </div>
-          <!-- Button 6 -->
+          <!-- IPO -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full md:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
@@ -2992,9 +2995,9 @@
             <h5 class="text-lg font-semibold">IPO</h5>
           </div>
 
-          <!-- Button 7 -->
+          <!-- Debts/Bonds -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full md:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
@@ -3071,9 +3074,9 @@
             <h5 class="text-lg font-semibold">Debts/Bonds</h5>
           </div>
 
-          <!-- Button 8 -->
+          <!--SIP -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full md:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
@@ -3147,8 +3150,6 @@
         <img
           loading="lazy"
           decoding="async"
-          width="1024"
-          height="1024"
           src="https://www.definedgesecurities.com/wp-content/uploads/2025/02/01-IPOS-IMAGE-02-1024x1024.webp"
           class="w-full h-auto"
           alt="Investment Image"
@@ -3157,332 +3158,463 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="container bg-white mx-auto p-6">
-    <h4 class="text-center text-3xl font-semibold mb-6">FAQs</h4>
-    <div class="border divide-y rounded-lg">
-      <div>
-        <button
-          type="button"
-          class="w-full text-base text-left font-semibold p-5"
-          :class="{
-            'text-blue-600 bg-blue-50': openIndex === 1,
-            'text-gray-800 hover:text-blue-600': openIndex !== 1,
-          }"
-          @click="toggle(1)"
+  <!-- FEATURES-->
+  <section
+    class="bg-[#E9F8FF] relative text-black flex justify-center items-center"
+  >
+    <div class="container mx-auto px-4 py-24">
+      <div class="mb-8 md:mb-0 text-center">
+        <h2
+          class="text-[#005BDF] text-center font-liter text-[24px] md:text-lg lg:text-xl xl:text-2xl"
         >
-          <span class="mr-4"> Why should I open a Super Demat? </span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-4 fill-current ml-auto transition-transform"
-            :class="{ 'rotate-180': openIndex === 1 }"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-
-        <div :class="{ hidden: openIndex !== 1 }" class="py-12 p-5">
-          <p class="text-sm text-gray-600 leading-relaxed">
-            With your Definedge Super Demat, you get access to a range of 15+
-            tools that offer transformative education, actionable analysis and
-            effortless execution. To know about all the products you get with
-            your super demat,
-            <a
-              class="text-blue-500"
-              href="https://signup.definedgesecurities.com/"
-              >Click here</a
-            >
-          </p>
-          <br />
-          <p class="text-sm text-gray-600 leading-relaxed">
-            If you want to go PRO, you can try our PRO products for a month,
-            before you decide to commit. You get all subscriptions effectively
-            free, as your purchase amount is converted to wallet points to be
-            used against your brokerage.
-          </p>
-          <br />
-          <p class="text-sm text-gray-600 leading-relaxed">
-            You also get access to two of our expert-guided courses on Gurukul
-            by Definedge.
-          </p>
-        </div>
+          FEATURES
+        </h2>
+        <h5 class="text-gray-700 text-center text-3xl font-bold mt-4 mb-8">
+          Innovative Features of Our Ecosystem
+        </h5>
       </div>
-
-      <div>
-        <button
-          type="button"
-          class="w-full text-base text-left font-semibold p-5"
-          :class="{
-            'text-blue-600 bg-blue-50': openIndex === 2,
-            'text-gray-800 hover:text-blue-600': openIndex !== 2,
-          }"
-          @click="toggle(2)"
+      <div class="flex flex-wrap gap-4 justify-center">
+        <!-- Innovative Strategies -->
+        <div
+          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
         >
-          <span class="mr-4">
-            Are all tools available for free with Definedge super demat?
+          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
+            <div class="mr-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-blue-600"
+                width="35"
+                viewBox="0 0 20 20"
+              >
+                <defs></defs>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M3.32,9.2c-.09,0-.19-.03-.28-.08-.23-.15-.29-.46-.14-.69.09-.13.18-.29.29-.46.96-1.54,2.94-4.74,6.12-3.95.63.16,1.12.55,1.6.94.85.69,1.41,1.14,2.54.3.67-.49,2.98-2.94,3.4-3.59.15-.23.46-.3.69-.15.23.15.3.46.15.69-.51.79-2.95,3.34-3.64,3.85-1.75,1.29-2.91.36-3.76-.33-.41-.33-.79-.64-1.21-.74-2.46-.62-4.13,2.07-5.03,3.51-.11.18-.22.35-.31.48-.1.15-.25.22-.42.22Z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M18.79,19.22H1.25c-.28,0-.5-.22-.5-.5V1.18c0-.28.22-.5.5-.5s.5.22.5.5v17.04h17.04c.28,0,.5.22.5.5s-.22.5-.5.5Z"
+                ></path>
+                <g>
+                  <path
+                    fill="currentColor"
+                    class="st0"
+                    d="M4.08,16.23c-.28,0-.5-.22-.5-.5v-4.12c0-.28.22-.5.5-.5s.5.22.5.5v4.12c0,.28-.22.5-.5.5Z"
+                  ></path>
+                  <path
+                    fill="currentColor"
+                    class="st0"
+                    d="M8.03,16.23c-.28,0-.5-.22-.5-.5v-7.25c0-.28.22-.5.5-.5s.5.22.5.5v7.25c0,.28-.22.5-.5.5Z"
+                  ></path>
+                  <path
+                    fill="currentColor"
+                    class="st0"
+                    d="M11.99,16.23c-.28,0-.5-.22-.5-.5v-5.16c0-.28.22-.5.5-.5s.5.22.5.5v5.16c0,.28-.22.5-.5.5Z"
+                  ></path>
+                  <path
+                    fill="currentColor"
+                    class="st0"
+                    d="M15.94,16.23c-.28,0-.5-.22-.5-.5v-7.02c0-.28.22-.5.5-.5s.5.22.5.5v7.02c0,.28-.22.5-.5.5Z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
           </span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-4 fill-current ml-auto transition-transform"
-            :class="{ 'rotate-180': openIndex === 2 }"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-
-        <div :class="{ hidden: openIndex !== 2 }" class="py-12 p-5">
-          <p class="text-sm text-gray-600 leading-relaxed">
-            With your super demat, you get access to our Definedge universe of
-            15+ tools for education, analysis, and trading. All the basic
-            versions of the software are available for free. You also get access
-            to our PRO tools for a month at no cost, before you decide to
-            commit.
-          </p>
-          <br />
-          <p class="text-sm text-gray-600 leading-relaxed">
-            All our subscriptions are effectively free as your purchase amount
-            is converted to wallet points to be used against your brokerage.
-          </p>
+          <div class="flex flex-col py-4 p-2">
+            <h5 class="text-lg font-semibold">Innovative Strategies</h5>
+            <p>
+              Unique & Innovative strategies on candlestick & noiseless charts
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div>
-        <button
-          type="button"
-          class="w-full text-base text-left font-semibold p-5"
-          :class="{
-            'text-blue-600 bg-blue-50': openIndex === 3,
-            'text-gray-800 hover:text-blue-600': openIndex !== 3,
-          }"
-          @click="toggle(3)"
+        <!-- Smart Scanners -->
+        <div
+          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
         >
-          <span class="mr-4">
-            How can I open a Super demat with Definedge?
+          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
+            <div class="mr-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-blue-600"
+                width="35"
+                viewBox="0 0 20 20"
+              >
+                <defs></defs>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M1.38,7.08c.29,0,.52-.23.52-.52V1.9h4.66c.29,0,.52-.23.52-.52s-.23-.52-.52-.52H1.38c-.29,0-.52.23-.52.52v5.18c0,.29.23.52.52.52Z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M18.62.86h-5.18c-.29,0-.52.23-.52.52s.23.52.52.52h4.66v4.66c0,.29.23.52.52.52s.52-.23.52-.52V1.38c0-.29-.23-.52-.52-.52Z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M18.62,12.92c-.29,0-.52.23-.52.52v4.66h-4.66c-.29,0-.52.23-.52.52s.23.52.52.52h5.18c.29,0,.52-.23.52-.52v-5.18c0-.29-.23-.52-.52-.52Z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M6.56,18.1H1.9v-4.66c0-.29-.23-.52-.52-.52s-.52.23-.52.52v5.18c0,.29.23.52.52.52h5.18c.29,0,.52-.23.52-.52s-.23-.52-.52-.52Z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M14.11,8.6l.69.64c.1.09.22.14.35.14.05,0,.11,0,.16-.03.18-.06.31-.21.35-.39l.57-2.74c.04-.18-.02-.37-.16-.49-.14-.12-.33-.16-.51-.11l-2.63.85c-.16.05-.28.18-.33.34s-.02.33.08.47l.66.66s-.02.01-.03.02l-3.05,3.35-1.75-1.23c-.49-.22-1.04-.11-1.44.28l-3.16,3.15c-.2.2-.2.53,0,.73.1.1.23.15.37.15s.26-.05.37-.15l3.15-3.15c.13-.13.24-.09.21-.11l2.01,1.41c.09.06.23.09.34.1.14.03.29-.06.39-.17l3.33-3.67s.02-.03.03-.05Z"
+                ></path>
+              </svg>
+            </div>
           </span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-4 fill-current ml-auto transition-transform"
-            :class="{ 'rotate-180': openIndex === 3 }"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-
-        <div :class="{ hidden: openIndex !== 3 }" class="py-12 p-5">
-          <p class="text-sm text-gray-600 leading-relaxed">
-            You can get your Definedge Super Demat in minutes with a simple
-            3-step process explained above. To get your Super Demat,
-            <a
-              class="text-blue-500"
-              href="https://signup.definedgesecurities.com/"
-              >Click here</a
-            >
-          </p>
+          <div class="flex flex-col py-4 p-2">
+            <h5 class="text-lg font-semibold">Smart Scanners</h5>
+            <p>Unique Scanners for Technical Analysis</p>
+          </div>
         </div>
-      </div>
 
-      <div>
-        <button
-          type="button"
-          class="w-full text-base text-left font-semibold p-5"
-          :class="{
-            'text-blue-600 bg-blue-50': openIndex === 4,
-            'text-gray-800 hover:text-blue-600': openIndex !== 4,
-          }"
-          @click="toggle(4)"
+        <!-- All Types of Orders-->
+        <div
+          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
         >
-          <span class="mr-4"> Is the Definedge Super Demat free? </span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-4 fill-current ml-auto transition-transform"
-            :class="{ 'rotate-180': openIndex === 4 }"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-
-        <div :class="{ hidden: openIndex !== 4 }" class="py-12 p-5">
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Yes, the Definedge Super Demat is effectively free with our Wallet
-            feature. Your account opening charges are converted into wallet
-            points, which you can use against your brokerage.
-          </p>
-        </div>
-      </div>
-
-      <div>
-        <button
-          type="button"
-          class="w-full text-base text-left font-semibold p-5"
-          :class="{
-            'text-blue-600 bg-blue-50': openIndex === 5,
-            'text-gray-800 hover:text-blue-600': openIndex !== 5,
-          }"
-          @click="toggle(5)"
-        >
-          <span class="mr-4">
-            What kind of demat account can I open with Definedge?
+          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
+            <div class="mr-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-blue-600"
+                width="35"
+                viewBox="0 0 20 20"
+              >
+                <defs></defs>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M17.77,8.15c-.17-.26-.52-.25-.85-.23-.12,0-.33.01-.42-.01l-1.23-1.92-2.04-.86-.89-2.52-2.36-2.09c-.17-.15-.39-.21-.62-.14h0c-.26.07-.48.44-1.25,1.84-.38.69-.94,1.72-1.18,1.96l-1.38.25-2.03,3.45c-.06.05-.32.04-.47.03-.32-.01-.65-.02-.82.23-.11.16-.1.36,0,.6l.08.18h1.63c-.07.05-.14.12-.18.21-.1.19-.1.42-.01.6l1.71,4.13,1.47.44,1.99,4.83c.09.27.23.43.43.5.05.02.11.03.16.03.14,0,.29-.06.45-.17l2.38-2.99.89-3.61,2.25-1.31.02-.14c.02-.14.19-.51.33-.81.35-.75.5-1.11.43-1.37-.04-.14-.14-.24-.24-.33h1.64l.08-.17c.11-.24.11-.44.01-.6ZM9.42,2.33c.15.42.37,1.07.41,1.21-.15.22-.6.69-1.01,1.12-1.12,1.18-1.45,1.57-1.45,1.86,0,.11.04.2.1.32l.08.23,2.26-.23c.13.22.28.43.43.62.12.16.24.31.34.47h-5.73l1.4-2.38,1.48-.34,1.7-2.87ZM14.49,6.93c.09.09.45.64.64.95h-3.15c-.19-.15-.55-.73-.77-1.08-.41-.65-.65-1.03-.91-1.15-.23-.11-.49-.09-.73-.05l1.54-1.8-.32-1,.58.5.87,2.55.05.09c.19.24.62.4,1.3.63.36.13.78.27.91.36ZM15.22,9.06c-.15.22-.25.54-.36.87-.11.33-.22.7-.37.87l-2.21,1.33-.04.09c-.25.55-.37,1.25-.48,1.93-.11.64-.22,1.3-.43,1.75-.15.33-.51.72-.86,1.1-.28.31-.57.62-.79.94l-1.79-4.45c-.21-.31-.63-.37-1.03-.43-.18-.03-.39-.06-.51-.11-.11-.22-.31-.73-.52-1.27-.73-1.86-1.03-2.52-1.26-2.76h10.79c-.06.04-.11.09-.14.14Z"
+                ></path>
+              </svg>
+            </div>
           </span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-4 fill-current ml-auto transition-transform"
-            :class="{ 'rotate-180': openIndex === 5 }"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-
-        <div :class="{ hidden: openIndex !== 5 }" class="py-12 p-5">
-          <ul>
-            <li class="mb-2">
-              <i class="fas fa-check-circle"></i> Individual Demat account
-            </li>
-            <li class="mb-2">
-              <i class="fas fa-check-circle"></i> Corporate Demat account
-            </li>
-            <li class="mb-2">
-              <i class="fas fa-check-circle"></i> HUF (Hindu Undivided Family)
-              Demat account
-            </li>
-            <li class="mb-2">
-              <i class="fas fa-check-circle"></i> NRI Demat account
-            </li>
-            <li class="mb-2">
-              <i class="fas fa-check-circle"></i> Demat account for minors
-            </li>
-          </ul>
-          <p>
-            If you need help opening any of these demat accounts with Definedge,
-            reach out to us at
-            <a class="text-blue-500" href="mailto:care@definedgesecurities.com"
-              >care@definedgesecurities.com</a
-            >
-          </p>
+          <div class="flex flex-col py-4 p-2">
+            <h5 class="text-lg font-semibold">All Types of Orders</h5>
+            <p>From Iceberg to Bracket orders, all in one-click</p>
+          </div>
         </div>
-      </div>
 
-      <div>
-        <button
-          type="button"
-          class="w-full text-base text-left font-semibold p-5"
-          :class="{
-            'text-blue-600 bg-blue-50': openIndex === 6,
-            'text-gray-800 hover:text-blue-600': openIndex !== 6,
-          }"
-          @click="toggle(6)"
+        <!-- Alert-based Orders-->
+        <div
+          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
         >
-          <span class="mr-4">
-            What is the minimum balance for Demat Account?
+          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
+            <div class="mr-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-blue-600"
+                width="35"
+                viewBox="0 0 20 20"
+              >
+                <defs></defs>
+                <g>
+                  <g>
+                    <path
+                      fill="currentColor"
+                      class="st0"
+                      d="M4.73,14.87c-.12,0-.24-.04-.34-.12-1.54-1.3-1.8-3.65-.58-5.35.17-.23.49-.29.73-.12.23.17.29.49.12.73-.89,1.24-.71,3.02.4,3.95.22.19.25.51.06.73-.1.12-.25.19-.4.19Z"
+                    ></path>
+                    <path
+                      fill="currentColor"
+                      class="st0"
+                      d="M2.84,16.77c-.1,0-.21-.03-.3-.1-.44-.31-1.12-1.39-1.25-1.63C-.02,12.6.33,9.48,2.14,7.45c.19-.22.52-.23.74-.04.21.19.23.52.04.74-1.5,1.68-1.8,4.37-.71,6.41.21.38.75,1.15.93,1.28.24.17.29.49.13.73-.1.14-.26.22-.43.22Z"
+                    ></path>
+                  </g>
+                  <g>
+                    <path
+                      fill="currentColor"
+                      class="st0"
+                      d="M15.27,14.87c-.15,0-.3-.06-.4-.19-.19-.22-.16-.55.06-.73,1.11-.94,1.29-2.71.4-3.95-.17-.23-.11-.56.12-.73.24-.17.56-.11.73.12,1.22,1.7.96,4.05-.58,5.35-.1.08-.22.12-.34.12Z"
+                    ></path>
+                    <path
+                      fill="currentColor"
+                      class="st0"
+                      d="M17.16,16.77c-.16,0-.32-.08-.43-.22-.16-.24-.11-.56.13-.73.18-.13.72-.89.93-1.27,1.09-2.03.79-4.73-.71-6.41-.19-.21-.17-.54.04-.74.21-.19.54-.17.74.04,1.81,2.03,2.16,5.15.85,7.59-.14.26-.8,1.32-1.25,1.63-.09.06-.2.1-.3.1Z"
+                    ></path>
+                  </g>
+                </g>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M13.46,10.52v-3.31c-.13-1.31-1.01-2.44-2.25-2.92,0-.01-.01-.02-.02-.04.01-.05.04-.1.04-.16,0-.48-.55-.87-1.23-.87s-1.23.39-1.23.87c0,.06.03.1.04.16,0,.01-.01.02-.02.04-1.25.48-2.13,1.62-2.25,2.94v3.29c-.62.21-.94.83-.92,1.36.02.63.43,1.1,1.09,1.2h1.88s0,.03,0,.05c0,.5.63.91,1.41.91,0,0,0,0,0,0h0s.21,0,.21,0h0c.68-.08,1.2-.45,1.2-.91,0-.02,0-.03,0-.05h1.91c.63-.1,1.04-.58,1.06-1.2.01-.54-.3-1.15-.92-1.36ZM7.54,7.2c0-.43.45-1.19.82-1.52.44-.39,1-.59,1.63-.59.02,0,.04,0,.05,0,.62,0,1.19.2,1.62.59.37.32.82,1.09.82,1.52v3.24h-4.94v-3.24ZM13.35,12.04s-.03.02-.05.03c-.01,0-.02.01-.03.02h-3.26s-3.26,0-3.26,0c-.01,0-.02-.01-.03-.02-.02,0-.04-.02-.04-.02-.08-.08-.07-.24-.02-.36.05-.12.16-.26.3-.26h6.11c.15,0,.26.14.31.26.05.12.06.27-.02.36Z"
+                ></path>
+              </svg>
+            </div>
           </span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-4 fill-current ml-auto transition-transform"
-            :class="{ 'rotate-180': openIndex === 6 }"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-
-        <div :class="{ hidden: openIndex !== 6 }" class="py-12 p-5">
-          <p class="text-sm text-gray-600 leading-relaxed">
-            There is no minimum balance required to open or maintain your Demat
-            account.
-          </p>
+          <div class="flex flex-col py-4 p-2">
+            <h5 class="text-lg font-semibold">Alert-based Orders</h5>
+            <p>Alerts for price, volume or strategy with auto-execution</p>
+          </div>
         </div>
-      </div>
 
-      <div>
-        <button
-          type="button"
-          class="w-full text-base text-left font-semibold p-5"
-          :class="{
-            'text-blue-600 bg-blue-50': openIndex === 7,
-            'text-gray-800 hover:text-blue-600': openIndex !== 7,
-          }"
-          @click="toggle(7)"
+        <!-- Options Orders-->
+        <div
+          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
         >
-          <span class="mr-4">
-            What documents are required for Demat Account opening?
+          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
+            <div class="mr-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-blue-600"
+                width="35"
+                viewBox="0 0 20 20"
+              >
+                <defs></defs>
+                <g>
+                  <path
+                    fill="currentColor"
+                    class="st0"
+                    d="M3.78,11.43v2.56h.79l-1.72,2.4-1.72-2.4h.79v-2.56h1.85M3.78,10.43h-1.85c-.55,0-1,.45-1,1v1.58c-.29.06-.54.25-.68.52-.17.33-.14.73.08,1.04l1.72,2.4c.19.26.49.42.81.42s.62-.16.81-.42l1.72-2.4c.22-.3.25-.71.08-1.04-.14-.27-.39-.46-.68-.52v-1.58c0-.55-.45-1-1-1h0Z"
+                  ></path>
+                  <g>
+                    <path
+                      fill="currentColor"
+                      class="st0"
+                      d="M9.65,14.83c.06-.02.11,0,.16.03.05.04.07.08.07.15v.24c0,.08-.02.14-.07.2-.05.06-.11.09-.18.11-.2.04-.41.05-.64.05-.5,0-.89-.14-1.17-.43-.28-.28-.42-.7-.42-1.24s.14-.94.41-1.23c.27-.29.65-.43,1.14-.43.22,0,.44.02.64.05.07.01.13.05.18.11s.07.13.07.2v.25c0,.06-.02.11-.07.15-.05.04-.1.05-.16.03-.18-.05-.36-.08-.54-.08-.24,0-.42.08-.55.24-.13.16-.2.4-.2.71s.07.54.22.71c.15.17.34.25.58.25.19,0,.37-.02.54-.08Z"
+                    ></path>
+                    <path
+                      fill="currentColor"
+                      class="st0"
+                      d="M12.25,12.57l.87,2.76c.02.06,0,.11-.03.16-.04.05-.09.08-.15.08h-.43c-.07,0-.14-.02-.2-.07-.06-.05-.09-.1-.11-.17l-.08-.34s-.02-.04-.04-.04h-.76s-.05.01-.05.04l-.08.34c-.01.07-.05.13-.11.17-.06.05-.12.07-.2.07h-.42c-.06,0-.11-.02-.15-.08s-.05-.1-.03-.16l.87-2.76c.02-.07.06-.13.12-.17s.13-.07.21-.07h.43c.07,0,.14.02.2.07s.1.1.13.17ZM11.47,14.28h.46s.02,0,.02-.01,0-.02,0-.02l-.26-1.16s0,0,0,0,0,0,0,0l-.26,1.16s0,.02,0,.02c0,0,.02.01.02.01Z"
+                    ></path>
+                    <path
+                      fill="currentColor"
+                      class="st0"
+                      d="M15.47,14.83c.07,0,.13.02.18.08.05.05.08.11.08.18v.23c0,.07-.03.13-.08.18-.05.05-.11.08-.18.08h-1.71c-.07,0-.13-.02-.18-.08-.05-.05-.08-.11-.08-.18v-2.73c0-.07.03-.13.08-.18.05-.05.11-.08.18-.08h.4c.07,0,.13.02.18.08.05.05.08.11.08.18v2.21s.01.04.04.04h1.01Z"
+                    ></path>
+                    <path
+                      fill="currentColor"
+                      class="st0"
+                      d="M18.22,14.83c.07,0,.13.02.18.08.05.05.08.11.08.18v.23c0,.07-.03.13-.08.18-.05.05-.11.08-.18.08h-1.71c-.07,0-.13-.02-.18-.08-.05-.05-.08-.11-.08-.18v-2.73c0-.07.03-.13.08-.18.05-.05.11-.08.18-.08h.4c.07,0,.13.02.18.08.05.05.08.11.08.18v2.21s.01.04.04.04h1.01Z"
+                    ></path>
+                  </g>
+                  <path
+                    fill="currentColor"
+                    class="st0"
+                    d="M18.87,11.43v4.94H6.96v-4.94h11.91M18.87,10.43H6.96c-.55,0-1,.45-1,1v4.94c0,.55.45,1,1,1h11.91c.55,0,1-.45,1-1v-4.94c0-.55-.45-1-1-1h0Z"
+                  ></path>
+                </g>
+                <g>
+                  <path
+                    fill="currentColor"
+                    class="st0"
+                    d="M17.15,2.89l1.72,2.39h-.79v2.55h-1.85v-2.55h-.79l1.72-2.39M17.15,1.89c-.32,0-.62.15-.81.42l-1.72,2.39c-.22.3-.25.71-.08,1.04.14.27.39.46.68.52v1.57c0,.55.45,1,1,1h1.85c.55,0,1-.45,1-1v-1.57c.29-.06.54-.25.68-.52.17-.33.14-.74-.08-1.04l-1.72-2.39c-.19-.26-.49-.42-.81-.42h0Z"
+                  ></path>
+                  <g>
+                    <g>
+                      <path
+                        fill="currentColor"
+                        class="st0"
+                        d="M3.94,3.74c1,0,1.51.36,1.51,1.09,0,.39-.11.69-.34.89-.23.2-.56.3-.99.3-.07,0-.15,0-.25,0-.03,0-.04.01-.04.04v.72c0,.07-.03.13-.08.18-.05.05-.11.08-.18.08h-.36c-.07,0-.13-.02-.18-.08-.05-.05-.08-.11-.08-.18v-2.71c0-.07.02-.13.07-.19.05-.06.11-.09.18-.09.25-.02.49-.04.73-.04ZM4.03,5.38c.19,0,.34-.04.44-.13.1-.09.16-.21.16-.38,0-.31-.2-.47-.6-.47-.06,0-.11,0-.16.01-.02,0-.04.02-.04.05v.86s.01.04.04.04c.07,0,.13,0,.16,0Z"
+                      ></path>
+                      <path
+                        fill="currentColor"
+                        class="st0"
+                        d="M8.14,3.78c.07,0,.13.02.18.08.05.05.08.11.08.18v1.79c0,.41-.11.72-.33.93-.22.21-.54.31-.96.31s-.74-.1-.96-.31c-.22-.21-.33-.52-.33-.93v-1.79c0-.07.03-.13.08-.18s.11-.08.18-.08h.39c.07,0,.13.02.18.08.05.05.08.11.08.18v1.85c0,.17.03.29.09.36.06.07.16.1.31.1s.24-.03.31-.1c.06-.07.09-.19.09-.36v-1.85c0-.07.03-.13.08-.18.05-.05.11-.08.18-.08h.37Z"
+                      ></path>
+                      <path
+                        fill="currentColor"
+                        class="st0"
+                        d="M11.21,3.78c.07,0,.13.02.18.08.05.05.08.11.08.18v.23c0,.07-.02.13-.08.18-.05.05-.11.08-.18.08h-.54s-.04.01-.04.04v2.21c0,.07-.02.13-.07.18-.05.05-.11.08-.17.08h-.41c-.07,0-.13-.02-.17-.08s-.07-.11-.07-.18v-2.21s-.01-.04-.04-.04h-.54c-.07,0-.13-.02-.18-.08-.05-.05-.08-.11-.08-.18v-.23c0-.07.02-.13.08-.18.05-.05.11-.08.18-.08h2.07Z"
+                      ></path>
+                    </g>
+                    <path
+                      fill="currentColor"
+                      class="st0"
+                      d="M13.04,2.89v4.94H1.13V2.89h11.91M13.04,1.89H1.13C.58,1.89.13,2.33.13,2.89v4.94c0,.55.45,1,1,1h11.91c.55,0,1-.45,1-1V2.89c0-.55-.45-1-1-1h0Z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
           </span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-4 fill-current ml-auto transition-transform"
-            :class="{ 'rotate-180': openIndex === 7 }"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
+          <div class="flex flex-col py-4 p-2">
+            <h5 class="text-lg font-semibold">Options Orders</h5>
+            <p>Place multiple options orders in one-click</p>
+          </div>
+        </div>
 
-        <div :class="{ hidden: openIndex !== 7 }" class="py-12 p-5">
-          <ul>
-            <li class="mb-2"><i class="fas fa-check-circle"></i> PAN card</li>
-            <li class="mb-2">
-              <i class="fas fa-check-circle"></i> Identity proof (preferably
-              Aadhar Card)
-            </li>
-            <li class="mb-2">
-              <i class="fas fa-check-circle"></i> Address proof
-            </li>
-            <li class="mb-2">
-              <i class="fas fa-check-circle"></i> Account Holder details (like a
-              canceled cheque or bank statement)
-            </li>
-            <li class="mb-2">
-              <i class="fas fa-check-circle"></i> Nominee details
-            </li>
-            <li class="mb-2">
-              <i class="fas fa-check-circle"></i> If you wish to trade in
-              derivatives, you may need additional documents like ITR
-              acknowledgment or your account statement.
-            </li>
-          </ul>
-          <p>
-            To know the basic requirements of opening a Demat account or to open
-            your own Definedge Securities Demat account,
-            <a
-              class="text-blue-500"
-              href="https://signup.definedgesecurities.com/"
-              >Click here</a
-            >
-          </p>
+        <!-- Holding Insights-->
+        <div
+          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
+        >
+          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
+            <div class="mr-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-blue-600"
+                width="35"
+                viewBox="0 0 20 20"
+              >
+                <defs></defs>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M18.68,13.05c-.44-.73-1.54-.94-2.45-.45-.47.26-.93.57-1.37.87-.44.3-.89.61-1.34.85-.24.13-.33.43-.2.68s.43.33.68.2c.5-.27.97-.59,1.43-.9.44-.3.86-.59,1.29-.82.44-.24.95-.19,1.12.09.09.15.08.36-.02.59-1.08.79-2.27,1.5-3.42,2.19-.73.44-1.46.88-2.17,1.34l-.31.09c-.84-.16-1.66-.42-2.52-.68-.77-.24-1.56-.49-2.37-.66-.07-.01-.14-.01-.21,0-.06.01-.13.03-.19.05l-1.31-2.53,2.12-1.23c.06-.01.16-.02.34,0,.56.11,1.18.35,1.79.6.55.22,1.12.44,1.63.56.15.07.23.2.21.36-.02.16-.13.27-.29.31-.28.05-.74-.12-1.16-.27-.26-.09-.54.04-.64.3-.09.26.04.55.3.64.46.16.94.33,1.38.33.11,0,.21,0,.31-.03.59-.12,1.02-.58,1.09-1.17.07-.59-.24-1.13-.78-1.38-.03-.01-.15-.06-.19-.06-.45-.1-.98-.31-1.51-.52-.64-.26-1.31-.52-1.96-.64-.28-.05-.52-.05-.74,0-.09.02-.18.06-.26.1l-2.1,1.22-.16-.3c-.12-.24-.41-.33-.65-.22l-2.52,1.15c-.1.04-.18.12-.23.21l-.1.18c-.08.15-.08.32,0,.47l2.33,4.62c.06.11.15.2.27.24l.26.1c.06.02.12.03.18.03.08,0,.15-.02.22-.05l2.48-1.22c.08-.04.15-.1.2-.18.13-.21.15-.41.12-.58.62.15,1.25.35,1.86.54.89.28,1.81.56,2.75.73.07.01.15,0,.22-.01l.49-.14s.1-.03.14-.06c.72-.47,1.47-.92,2.21-1.36,1.21-.72,2.45-1.47,3.6-2.32.06-.04.11-.1.14-.17.31-.59.32-1.2.04-1.67ZM4.26,18.46l-2.02-4,1.77-.81,2.04,3.93-1.79.88Z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M10.64,5.33c0,.22.18.4.4.4h1.77c-.11.2-.29.36-.45.38-.15.02-.31,0-.48,0-.27-.02-.54-.04-.79.02-.17.04-.3.16-.38.33-.1.24-.08.59.08.86.29.36.56.77.82,1.18.27.41.55.84.85,1.22.08.1.2.15.31.15.09,0,.18-.03.25-.09.17-.14.2-.39.06-.56-.28-.35-.54-.74-.81-1.16-.27-.42-.55-.85-.82-1.17.12,0,.24,0,.36.01.22.01.44.02.63,0,.57-.07,1.04-.57,1.18-1.17h.6c.22,0,.4-.18.4-.4s-.18-.4-.4-.4h-.58c-.02-.14-.06-.24-.08-.31-.01-.1-.06-.18-.1-.26h.75c.22,0,.4-.18.4-.4s-.18-.4-.4-.4h-3.2c-.22,0-.4.18-.4.4s.18.4.4.4h.15s0,0,.01,0c.19.02.38.01.58,0,.44-.02.71-.02.9.2.06.06.1.14.1.15,0,.05.01.1.03.15,0,0,0,.03.02.06h-1.8c-.22,0-.4.18-.4.4Z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  class="st0"
+                  d="M12.64,11.82c2.9,0,5.26-2.36,5.26-5.26S15.55,1.29,12.64,1.29s-5.26,2.36-5.26,5.26,2.36,5.26,5.26,5.26ZM12.64,2.29c2.35,0,4.26,1.91,4.26,4.26s-1.91,4.26-4.26,4.26-4.26-1.91-4.26-4.26,1.91-4.26,4.26-4.26Z"
+                ></path>
+              </svg>
+            </div>
+          </span>
+          <div class="flex flex-col py-4 p-2">
+            <h5 class="text-lg font-semibold">Holding Insights</h5>
+            <p>Get fundamental & technical insights for holdings</p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Get Your Super Demat in in 3 Simple steps -->
+  <section class="container mx-auto px-4 py-24">
+    <div class="flex flex-col md:flex-row items-center justify-center">
+      <!-- Left Side Content (Image) -->
+      <div class="flex-1 md:w-1/2 mb-8 md:mb-0">
+        <div class="w-full flex justify-center md:justify-end">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="https://www.definedgesecurities.com/wp-content/uploads/2025/02/Super-Demat-in-3-steps.webp"
+            class="w-[95] h-auto lg:mr-12"
+            alt="Investment Image"
+          />
+        </div>
+      </div>
+
+      <!-- Right Side Content -->
+      <div class="flex-1 md:w-1/2 text-center md:text-left">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-12"
+        >
+          Get Your Super Demat in
+          <span class="text-[#efa909]">3 Simple Steps</span>
+        </h2>
+        <h3
+          class="flex font-bold text-md sm:text-lg md:text-xl lg:text-2xl mb-3 text-gray-700"
+        >
+          <span
+            class="inline-flex items-center sm:items-start gap-x-1.5 py-2.5 px-8 rounded-full text-sm mr-4 font-bold bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white"
+          >
+            STEP 1
+          </span>
+          Fill Your Details
+        </h3>
+        <h3
+          class="flex font-bold text-md sm:text-lg md:text-xl lg:text-2xl mb-3 text-gray-700"
+        >
+          <span
+            class="inline-flex items-center gap-x-1.5 py-2.5 px-8 rounded-full text-sm mr-4 font-bold bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white"
+          >
+            STEP 2
+          </span>
+          Complete KYC Verification
+        </h3>
+        <h3
+          class="flex font-bold text-md sm:text-lg md:text-xl lg:text-2xl mb-3 text-gray-700"
+        >
+          <span
+            class="inline-flex items-center gap-x-1.5 py-2.5 px-8 rounded-full text-sm mr-4 font-bold bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white"
+          >
+            STEP 3
+          </span>
+          Your Super Demat is Ready!
+        </h3>
+        <h3
+          class="flex font-bold text-md sm:text-lg md:text-xl lg:text-2xl mb-6 mt-6 text-gray-700"
+        >
+          Take the First Step
+        </h3>
+
+        <form method="post" class="flex items-center">
+          <input
+            maxlength="400"
+            class="w-16 py-3 px-3 border rounded-l-md text-gray-700"
+            readonly
+            value="+91"
+            type="text"
+          />
+          <input
+            maxlength="10"
+            minlength="10"
+            class="w-1/3 py-3 px-3 border rounded-r-md text-gray-700"
+            required
+            placeholder="Enter Mobile Number"
+            type="tel"
+          />
+          <button
+            type="submit"
+            class="py-3 px-4 ml-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none transition-all ease-in-out duration-300 transform hover:scale-105"
+          >
+            Get Started
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Our Thriving Community of Traders & Investors -->
+  <section class="container px-4 sm:px-8 md:px-16 lg:px-28 mx-auto py-12">
+    <div
+      class="flex flex-col md:flex-row items-center justify-between w-full rounded-3xl overflow-hidden"
+      style="
+        background: linear-gradient(
+            260deg,
+            rgba(3, 166, 222, 0.7) 0%,
+            rgba(3, 166, 222, 0.7) 100%
+          ),
+          url('https://www.definedgesecurities.com/wp-content/uploads/2025/01/neww-scaled.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      "
+    >
+      <!-- Left Side Content -->
+      <div class="flex-1 mb-8 md:mb-0 p-6 sm:p-8 lg:p-12">
+        <h2 class="text-gray-900 sm:text-3xl text-2xl font-bold mb-6">
+          Join Our Thriving Community of Traders & Investors
+        </h2>
+        <p class="text-base text-left text-gray-900 mb-8">
+          Be a part of striking conversations, share your strategies, or ask
+          queries from our team of mentors.
+        </p>
+        <a
+          href="https://forum.definedgesecurities.com/"
+          class="px-6 py-3 mt-12 rounded-lg text-white text-base tracking-wider font-semibold outline-none bg-blue-500 overflow-hidden hover:bg-blue-700 border-2 border-white transition-all duration-300"
+        >
+          Join Now
+        </a>
+      </div>
+
+      <!-- Right Side (Background Image) -->
+      <div class="flex-1"></div>
+    </div>
+  </section>
+
+  <!-- The Love We Get -->
+  <section class="container mx-auto px-4">
+    <Testimonial />
+  </section>
+
+  <section class="container bg-white mx-auto p-6">
+    <Faq />
   </section>
 
   <section class="bg-gray-100">
@@ -3568,56 +3700,23 @@
   </section>
 
   <section class="bg-blue-500">
-    <div class="container mx-auto">
-      <div
-        class="w-full rounded-lg font-[sans-serif] overflow-hidden max-w-5xl mx-auto"
-      >
-        <div class="flex flex-col md:flex-row h-64 justify-between">
-          <!-- Image on the Left (30% width) on medium and larger screens -->
-          <div class="relative w-full md:w-[30%]">
-            <div class="w-full relative">
-              <!-- Loop through images, but ensure only one image is displayed at a time -->
-              <img
-                v-for="(image, index) in images"
-                :key="index"
-                :src="image"
-                :alt="'Image ' + (index + 1)"
-                class="object-cover w-full transition-opacity duration-1000"
-                :class="{
-                  'opacity-100': currentImageIndex === index,
-                  'opacity-0': currentImageIndex !== index,
-                }"
-              />
-            </div>
-          </div>
-
-          <!-- Content on the Right (70% width) on medium and larger screens -->
-          <div class="md:w-[70%] p-10">
-            <h1 class="text-3xl font-bold text-white">
-              Begin Your Trading Journey in 5 Minutes
-            </h1>
-            <p class="mt-4 text-sm text-white leading-relaxed">
-              With E-KYC done, you can open your demat account in minutes and
-              explore our trading universe.
-            </p>
-
-            <button
-              type="button"
-              class="px-6 py-3 mt-8 rounded-lg text-white text-sm tracking-wider border-none outline-none bg-green-600 hover:bg-green-700"
-            >
-              Signup Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <TreadingJourney />
   </section>
+  
 </template>
 
 <script>
 import { reactive, toRefs, onMounted } from "vue"; // Import from Vue 3 if needed
+import Testimonial from "../components/Testimonial.vue";
+import Faq from "../components/Faq.vue";
+import TreadingJourney from "../components/TreadingJourney.vue";
 
 export default {
+  components: {
+    Testimonial,
+    Faq,
+    TreadingJourney,
+  },
   data() {
     return {
       openIndex: null, // Stores the currently open FAQ index
@@ -3637,6 +3736,7 @@ export default {
       activeTradeTab: "optionsTab",
       activeAnalysisTab: "technicalAnalysisTab",
       activeEducationTab: "currentBooksTab",
+      activeIndex: 0,
     };
   },
   mounted() {
@@ -3656,14 +3756,6 @@ export default {
     };
   },
   methods: {
-    toggle(index) {
-      // Toggle the state of the FAQ (open/close)
-      if (this.openIndex === index) {
-        this.openIndex = null; // Close if it's already open
-      } else {
-        this.openIndex = index; // Open the clicked FAQ
-      }
-    },
     handleSubmit() {
       this.submitted = true; // Mark the form as submitted
       if (this.validateForm()) {
@@ -3683,6 +3775,7 @@ export default {
       this.currentImageIndex =
         (this.currentImageIndex + 1) % this.images.length;
     },
+  
   },
 };
 </script>
