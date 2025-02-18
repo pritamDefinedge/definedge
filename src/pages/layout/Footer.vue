@@ -276,7 +276,7 @@
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200  hover:text-white"
+                class="text-gray-200 hover:text-white"
                 ><p class="xmsonormal">
                   <i class="fa fa-map-marker"></i> Office no. 523, 5<sup
                     >th</sup
@@ -287,7 +287,28 @@
               >
             </li>
             <li>
-                <a class="text-gray-200 hover:text-white" href="mailto:compliance@definedge.com"><i class="fa fa-envelope"></i> compliance@definedge.com</a>
+              <a
+                class="text-gray-200 hover:text-white"
+                href="mailto:compliance@definedge.com"
+                ><i class="fa fa-envelope"></i> compliance@definedge.com</a
+              >
+            </li>
+            <li>
+              <a class="text-gray-200 hover:text-white" href="tel:02022953395"
+                ><i class="fa fa-phone-alt"></i> 020-22953395</a
+              >
+            </li>
+            <hr class="my-12 border-gray-400" />
+            <li class="flex gap-8">
+              <span class="text-gray-200 hover:text-white" >
+                Customer Support</span>
+              <span class="text-gray-200 hover:text-white" >
+                Call and trade</span>
+                
+            </li>
+            <li class="flex gap-8">
+                <a class="text-gray-200 hover:text-white" href="tel:02061923200"><i class="fa fa-phone-alt"></i> 020-61923200</a>
+                <a class="text-gray-200 hover:text-white" href="tel:02061923220"><i class="fa fa-phone-alt"></i> 020-61923220</a>
             </li>
           </ul>
         </div>
