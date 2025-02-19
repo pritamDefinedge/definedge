@@ -14,7 +14,7 @@
       >
         <!-- Title with responsive text sizes -->
         <h1
-          class="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-4xl lg:text-5xl xl:text-6xl"
+          class="max-w-2xl mb-4 text-3xl font-semibold tracking-tight leading-none md:text-4xl lg:text-5xl xl:text-6xl"
         >
           All-in-One Investing & Trading Ecosystem
         </h1>
@@ -3702,7 +3702,6 @@
   <section class="bg-blue-500">
     <TreadingJourney />
   </section>
-  
 </template>
 
 <script>
@@ -3741,7 +3740,7 @@ export default {
   },
   mounted() {
     // Automatically change images every 3 seconds
-    setInterval(this.changeImage, 3000);
+    // setInterval(this.changeImage, 3000);
   },
   setup() {
     const state = reactive({
@@ -3775,7 +3774,6 @@ export default {
       this.currentImageIndex =
         (this.currentImageIndex + 1) % this.images.length;
     },
-  
   },
 };
 </script>

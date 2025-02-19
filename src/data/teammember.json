@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "name": "Prashant Shah",
+    "position": "Co-Founder and CEO",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2022/06/MicrosoftTeams-image-62.png"
+  },
+  {
+    "id": 2,
+    "name": "Rajesh Badiye",
+    "position": "Co-Founder and CIO",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2022/06/Rajesh-Badiye.png"
+  },
+  {
+    "id": 3,
+    "name": "Abhijit Phatak",
+    "position": "Chief Research & Communication Officer",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2022/06/Abhijit-Phatak.png"
+  },
+  {
+    "id": 4,
+    "name": "Raju Ranjan",
+    "position": "Chief Research & Product Officer",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2022/06/Raju-Ranjan-1.png"
+  },
+  {
+    "id": 5,
+    "name": "B Krishnakumar",
+    "position": "Senior Technical Analyst",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2024/10/B-Krishnakumar-Sir.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Rajesh Jangid",
+    "position": "Chief of Technology & Infra",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2022/06/Rajesh-Jangid.png"
+  },
+  {
+    "id": 7,
+    "name": "Raghunath Reddy",
+    "position": "Chief of Opstra Options Analytics",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2022/06/Raghunath-Reddy.png"
+  },
+  {
+    "id": 8,
+    "name": "Sanjay Nayak",
+    "position": "Chief Operating Officer",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2022/06/Sanjay-Naik.png"
+  },
+  {
+    "id": 9,
+    "name": "Sankalp Singh",
+    "position": "Chief Marketing Officer",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2024/10/Sankalp-Sir.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Prashant Gupta",
+    "position": "Head-Digital Marketing",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2024/10/gupta-sir.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Suresh Vivekanandan",
+    "position": "Programme Manager",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2024/10/SURESH-SIR.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Krishna Khanna",
+    "position": "Senior Product Manager",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2024/10/Krushnna-Khanna.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Brijesh Bhatia",
+    "position": "Sr. Research analyst",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2024/10/BB.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Vinay Shah",
+    "position": "Chief Business Officer",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2022/06/Vinay-Shah.png"
+  },
+  {
+    "id": 15,
+    "name": "Krunal Shah",
+    "position": "Chief Finance Officer",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2022/06/Krunal-Shah.png"
+  },
+  {
+    "id": 16,
+    "name": "Prasiddh Shroff",
+    "position": "Research Analyst",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2024/10/Prasiddh.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Sourabh Shah",
+    "position": "Sr. Full Stack Engineer",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2024/10/Saurabh.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Rachana Kokate",
+    "position": "HR Manager",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2024/10/Rachana.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Nitin Gajbhiye",
+    "position": "Sr. Software Engineer",
+    "image": "https://www.definedgesecurities.com/wp-content/uploads/2024/10/NITIN-GAJBHIYE.jpg"
+  }
+]
