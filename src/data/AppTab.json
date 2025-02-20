@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Zone App",
+    "content": {
+      "header": "Learn, Analyze & Trade Effortlessly Anytime, Anywhere",
+      "features": [
+        {
+          "text": "Powerful Technical & Fundamental Scanners for smarter stock selection"
+        },
+        {
+          "text": "Comprehensive Stock Reports with in-depth technical and fundamental insights"
+        },
+        {
+          "text": "Instant Analysis & Lightning-Fast Order Execution across all order types"
+        },
+        {
+          "text": "Education, Mutual Fund Analysis, IPO Insights, Smart Alerts & More"
+        },
+        {
+          "text": "Strategy-Based Orders, Holding Insights & Tools for Disciplined Investing"
+        }
+      ],
+      "downloadText": "Download the App Now",
+      "stores": [
+        {
+          "link": "https://play.google.com/store/apps/details?id=com.definedge.zone",
+          "imgSrc": "https://www.definedgesecurities.com/wp-content/uploads/2022/12/Google-Play-Store.png",
+          "altText": "Google Play Store"
+        },
+        {
+          "link": "https://apps.apple.com/in/app/zone-definedge-trading-app/id1659365110",
+          "imgSrc": "https://www.definedgesecurities.com/wp-content/uploads/2022/12/App-Store-Apple.png",
+          "altText": "Apple App Store"
+        }
+      ],
+      "imageSrc": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/Zone.webp"
+    }
+  },
+  {
+    "name": "OPSTRA App",
+    "content": {
+      "header": "India’s Most Loved Options Platform, Now in An App",
+      "features": [
+        { "text": "Trade Directly from Strategy Builder" },
+        { "text": "Get PayOff Charts for all your Live positions" },
+        { "text": "Ease of adjustments directly from Positions" },
+        { "text": "Find more opportunities. Trade in MCX & BFO too" },
+        { "text": "Analyze unlimited Open positions" }
+      ],
+      "downloadText": "Download the App Now",
+      "stores": [
+        {
+          "link": "https://play.google.com/store/apps/details?id=com.definedge.zone",
+          "imgSrc": "https://www.definedgesecurities.com/wp-content/uploads/2022/12/Google-Play-Store.png",
+          "altText": "Google Play Store"
+        },
+        {
+          "link": "https://apps.apple.com/in/app/zone-definedge-trading-app/id1659365110",
+          "imgSrc": "https://www.definedgesecurities.com/wp-content/uploads/2022/12/App-Store-Apple.png",
+          "altText": "Apple App Store"
+        }
+      ],
+      "imageSrc": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/Opstra-1024x1024.webp"
+    }
+  }
+]

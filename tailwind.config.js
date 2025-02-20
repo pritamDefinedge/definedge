@@ -11,7 +11,7 @@ module.exports = {
           400: "#60a5fa",
           500: "#3b82f6",
           600: "#2563eb",
-          700: "#1d4ed8",
+          700: "#0369e0",
           800: "#1e40af",
           900: "#002D67",
           950: "#172554",
@@ -19,23 +19,10 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["Poppins", "sans-serif"],
       body: [
         "Inter",
-        "ui-sans-serif",
-        "system-ui",
-        "-apple-system",
-        "system-ui",
-        "Segoe UI",
-        "Roboto",
-        "Helvetica Neue",
-        "Arial",
-        "Noto Sans",
+      
         "sans-serif",
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        "Noto Color Emoji",
       ],
       sans: [
         "Inter",
@@ -59,5 +46,5 @@ module.exports = {
       "70/30": "70% 28%",
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-motion")],
 };
