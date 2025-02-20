@@ -10,7 +10,7 @@
       "id": "optionsTab",
       "title": "OPSTRA",
       "icon": "<svg xmlns='http://www.w3.org/2000/svg' data-name='Layer 1' viewBox='0 0 58.73 60' width='40px' class='mr-4'><path d='M58.73,20.43C58.73,9.16,49.57,0,38.3,0s-19.79,8.57-20.37,19.32c-.02.37-.05.74-.05,1.11v20.43h19.09c.03-.42.06-.84.06-1.28v-2.55h-15.32v-16.6c0-.43.03-.85.06-1.28.65-8.56,7.81-15.32,16.53-15.32,9.15,0,16.59,7.45,16.59,16.59,0,7.6-5.14,14-12.13,15.96v3.96c9.12-2.04,15.96-10.19,15.96-19.91Z' style='fill: #0195aa'></path><path d='M21.77,19.15c-.03.42-.06.84-.06,1.28v2.55h15.32v16.6c0,.43-.03.85-.06,1.28-.65,8.56-7.81,15.32-16.53,15.32-9.15,0-16.59-7.45-16.59-16.59,0-7.6,5.14-14,12.13-15.96v-3.97C6.84,21.7,0,29.85,0,39.57c0,11.26,9.16,20.43,20.43,20.43s19.79-8.57,20.37-19.32c.02-.37.05-.74.05-1.11v-20.42h-19.09Z' style='fill: #606060'></path></svg>",
-      "description": "You deserve India’s most popular options trading terminal...",
+      "description": "You deserve India’s most popular options trading terminal. Create, analyze and directly trade your strategies while seamlessly managing your positions and tracking your PNL. Talk about doing everything at once!",
       "features": [
         { "text": "35+ Pre-defined Strategies" },
         { "text": "Payoff Charts for Risk-Reward Assessment" },
@@ -24,7 +24,7 @@
       "id": "webPlatformTab",
       "title": "Zone Web",
       "icon": "<svg xmlns='http://www.w3.org/2000/svg' data-name='Layer 1' viewBox='0 0 50 50' width='40px' class='mr-4'><polygon points='0 0 0 8.69 24.75 8.62 0 50 7.49 50 37.4 0 0 0' style='fill: #2070d8'></polygon><polygon points='50 0 42.76 0 12.85 50 50 50 50 41.31 25.25 41.38 50 0' style='fill: #2070d8'></polygon></svg>",
-      "description": "One web trading terminal that does it all...",
+      "description": "One web trading terminal that does it all from analysis with chart-specific patterns and indicators to effortless trading across segments. Explore tools designed to make your journey easier so you focus on your process-based approach.",
       "features": [
         { "text": "All Charting Types, Conventional & Noiseless" },
         { "text": "Unique and innovative patterns and indicators" },
@@ -38,7 +38,7 @@
       "id": "DesktopApplication",
       "title": "Desktop Application",
       "icon": "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 60 60' style='enable-background: new 0 0 60 60' xml:space='preserve' width='40px' class='mr-4'><g><path class='st19' d='M46.28,10H28.41c-2.05,0-3.72,1.67-3.72,3.72c0,2.05,1.67,3.72,3.72,3.72h11.17h2.99v2.99v11.41c0,2.05,1.67,3.72,3.72,3.72c2.05,0,3.72-1.67,3.72-3.72V13.72C50,11.67,48.33,10,46.28,10z' fill='#0000FF'></path><path class='st19' d='M31.59,42.57H20.42h-2.99v-2.99V28.17c0-2.05-1.67-3.72-3.72-3.72c-2.05,0-3.72,1.67-3.72,3.72v18.11c0,2.05,1.67,3.72,3.72,3.72h17.87c2.05,0,3.72-1.67,3.72-3.72C35.3,44.24,33.64,42.57,31.59,42.57z' fill='#0000FF'></path><circle class='st20' cx='30' cy='30' r='3.72' fill='#0000FF'></circle></g></svg>",
-      "description": "A Unique Desktop Trading & Analysis Platform...",
+      "description": "A Unique Desktop Trading & Analysis Platform. Experience seamless analysis like never before! With a comprehensive set of patterns, indicators, and noiseless charts, we make trading objective and efficient for you.",
       "features": [
         {
           "text": "Create & test your own strategies with real-time stock scanning"
@@ -56,7 +56,7 @@
       "id": "UniqueAlertSystem",
       "title": "Buzzar",
       "icon": "<svg xmlns='http://www.w3.org/2000/svg' data-name='Layer 1' viewBox='0 0 20 20' width='40px' class='mr-4'><polygon class='cls-1' points='9.53 8.86 11.16 4.43 11.19 4.35 11.19 4.34 11.56 3.34 11.19 3.34 9.11 3.34 4.13 3.34 4.13 5 8.72 5 5.24 14.47 5.24 14.47 3.21 20 3.82 20 5.89 20 11.19 20 11.19 18.33 6.03 18.33 9.52 8.86 9.53 8.86' fill='#0000FF'></polygon><polygon class='cls-1' points='14.76 5.53 16.39 1.09 16.42 1.01 16.42 1.01 16.79 0 16.42 0 14.33 0 9.36 0 9.36 1.67 13.95 1.67 10.47 11.14 10.47 11.14 8.44 16.66 9.05 16.66 11.12 16.66 16.42 16.66 16.42 15 11.26 15 14.75 5.53 14.76 5.53' fill='#0000FF'></polygon></svg>",
-      "description": "Get every opportunity with updates for price, volume or strategy...",
+      "description": "Get every opportunity with updates for price, volume or strategy for individual or a group of stocks. Set updates on the go with the Zone Mobile App and choose the notification most convenient for you, to make sure you never miss out.",
       "features": [
         { "text": "300 Simultaneous Alerts to keep you informed in real time" },
         { "text": "Price, Volume, and Strategy Alerts for precise tracking" },

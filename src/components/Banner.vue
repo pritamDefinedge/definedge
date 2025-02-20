@@ -8,9 +8,9 @@
     >
       <!-- Title with responsive text sizes -->
       <h1
-        class="max-w-2xl text-3xl mb-8 leading-[45px] font-bold tracking-tight  md:text-4xl lg:text-5xl xl:text-5xl"
+        class="max-w-2xl text-3xl mb-8 leading-[45px] font-bold tracking-tight  md:text-4xl lg:text-5xl xl:text-5xl rombo-dock-logo"
       >
-        All-in-One  <span class="motion-preset-blink motion-duration-1500">Investing  & <br> Trading </span> Ecosystem
+        All-in-One  <span class="motion-preset-blink motion-duration-1500 ">Investing  & <br> Trading </span> Ecosystem
       </h1>
 
       <!-- Paragraph with responsive text sizes -->

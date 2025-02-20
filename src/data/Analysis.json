@@ -1,0 +1,66 @@
+{
+  "tabs": [
+    { "id": "technicalAnalysisTab", "label": "Technical Analysis" },
+    { "id": "fundamentalAnalysisTab", "label": "Fundamental Analysis" },
+    { "id": "optionsStrategiesAnalysisTab", "label": "Options Strategies" },
+    { "id": "mutualFundAnalysisTab", "label": "Mutual Fund Analysis" }
+  ],
+  "tabContent": [
+    {
+      "id": "technicalAnalysisTab",
+      "title": "RZone",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='45' height='45' viewBox='0 0 20 21' fill='none' class='mr-4'><g clip-path='url(#clip0_817_5321)'><path d='M17.6506 2.64713C17.507 2.5155 17.3554 2.39185 17.1998 2.27218C15.72 1.09548 13.8373 0.493164 11.5796 0.493164C8.19705 0.493164 5.42481 1.63796 3.24292 3.9076C1.09294 6.17326 0 9.02528 0 12.4078C0 14.8968 0.781811 16.8554 2.3215 18.2834C3.33466 19.2048 4.55126 19.831 5.95533 20.1621C6.72118 20.3416 7.54288 20.4373 8.42042 20.4373C9.38173 20.4373 10.2952 20.3456 11.1568 20.1621C11.5955 20.0703 12.0223 19.9507 12.4332 19.8151C12.4132 19.7871 12.3973 19.7632 12.3773 19.7353L12.3694 19.7393L12.3494 19.6914C12.3095 19.6196 12.2816 19.5438 12.2577 19.464L11.8987 18.5466H11.8907L10.9693 16.0735C10.375 16.261 9.73674 16.3607 9.05864 16.3607C6.26247 16.3607 4.52732 14.4301 4.52732 11.606C4.52732 9.67545 5.11368 7.99616 6.31831 6.57214C7.52294 5.11622 9.08656 4.39025 10.9613 4.39025C13.7575 4.39025 15.5205 6.32085 15.5205 9.14494C15.5205 11.0755 14.9063 12.7548 13.7016 14.2068C13.4304 14.5299 13.1392 14.8131 12.8321 15.0644H12.856L14.3438 18.4868C14.4475 18.6623 14.4595 18.7899 14.4595 18.8099C14.4675 18.8298 14.4715 18.8498 14.4755 18.8737C15.2852 18.3831 16.0311 17.7808 16.7172 17.0628C16.8807 16.8913 17.0403 16.7157 17.1919 16.5402C19.0586 14.3623 19.992 11.6898 19.992 8.56257C20 6.06157 19.2182 4.07513 17.6506 2.64713Z' fill='#002D67'></path><path d='M10.6217 6.56836C9.433 6.56836 8.43579 7.03106 7.67393 7.95248C6.91206 8.85795 6.53711 9.92297 6.53711 11.1475C6.53711 12.9425 7.63803 14.1671 9.41306 14.1671C10.6017 14.1671 11.5989 13.7044 12.3608 12.7989C13.1227 11.8735 13.5136 10.8085 13.5136 9.58392C13.5176 7.79293 12.3967 6.56836 10.6217 6.56836Z' fill='#1BCEC1'></path></g><defs><clipPath id='clip0_817_5321'><rect width='20' height='19.9442' fill='white' transform='translate(0 0.493164)'></rect></clipPath></defs></svg>",
+      "description": "Unlock a one-of-a-kind trading platform that covers every aspect of technical analysis—from candlestick patterns to noiseless charts, relative strength, breadth reports, sector analysis, and beyond. Designed with cutting-edge innovation, this all-in-one platform empowers traders with deep insights and advanced tools.",
+      "features": [
+        { "text": "Pre-defined, Custom, Public & Popular Strategy Scanners" },
+        { "text": "Payoff Charts for Risk-Reward Assessment" },
+        { "text": "Options Algorithm to Streamline Strategy Selection" },
+        { "text": "TOI & Historical TOI to Gauge Market Sentiment" }
+      ],
+      "exploreLink": "https://www.definedgesecurities.com/products/rzone/",
+      "image": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/Rzone-1-1-1024x1024.webp"
+    },
+    {
+      "id": "fundamentalAnalysisTab",
+      "title": "Opstra",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' data-name='Layer 1' viewBox='0 0 58.73 60' width='40px' class='mr-4'><path d='M58.73,20.43C58.73,9.16,49.57,0,38.3,0s-19.79,8.57-20.37,19.32c-.02.37-.05.74-.05,1.11v20.43h19.09c.03-.42.06-.84.06-1.28v-2.55h-15.32v-16.6c0-.43.03-.85.06-1.28.65-8.56,7.81-15.32,16.53-15.32,9.15,0,16.59,7.45,16.59,16.59,0,7.6-5.14,14-12.13,15.96v3.96c9.12-2.04,15.96-10.19,15.96-19.91Z' style='fill: #0195aa'></path><path d='M21.77,19.15c-.03.42-.06.84-.06,1.28v2.55h15.32v16.6c0,.43-.03.85-.06,1.28-.65,8.56-7.81,15.32-16.53,15.32-9.15,0-16.59-7.45-16.59-16.59,0-7.6,5.14-14,12.13-15.96v-3.97C6.84,21.7,0,29.85,0,39.57c0,11.26,9.16,20.43,20.43,20.43s19.79-8.57,20.37-19.32c.02-.37.05-.74.05-1.11v-20.42h-19.09Z' style='fill: #606060'></path></svg>",
+      "description": "Explore Opstra's innovative features that provide traders with advanced tools for evaluating options strategies. Enhance your trading experience with risk-reward analysis, algorithmic strategy selection, and insightful reports.",
+      "features": [
+        { "text": "Pre-defined, Custom, Public & Popular Strategy Scanners" },
+        { "text": "Payoff Charts for Risk-Reward Assessment" },
+        { "text": "Options Algorithm to Streamline Strategy Selection" },
+        { "text": "TOI & Historical TOI to Gauge Market Sentiment" }
+      ],
+      "exploreLink": "https://www.definedgesecurities.com/products/opstra/",
+      "image": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/OPSTRA-2-1-1024x1024.webp"
+    },
+    {
+      "id": "optionsStrategiesAnalysisTab",
+      "title": "Options Strategies",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='45' height='45' viewBox='0 0 24 24' fill='none' class='mr-4'><path d='M11.98,2c.93,0,1.64.66,1.64,1.61v6.86h1.88c.84,0,1.49.67,1.49,1.49v5.15c0,.83-.65,1.5-1.49,1.5h-1.88v6.87c0,.94-.74,1.61-1.64,1.61-.92,0-1.64-.66-1.64-1.61v-6.87h-1.87c-.84,0-1.49-.67-1.49-1.5v-5.15c0-.82.65-1.49,1.49-1.49h1.87V3.61c0-.94.74-1.61,1.64-1.61Z' style='fill:#0195aa'></path></svg>",
+      "description": "Master the art of options trading with strategies that maximize your potential. Leverage the power of algorithmic analysis and strategy scanners to optimize your risk-reward balance and execute with confidence.",
+      "features": [
+        { "text": "Pre-defined, Custom, Public & Popular Strategy Scanners" },
+        { "text": "Payoff Charts for Risk-Reward Assessment" },
+        { "text": "Options Algorithm to Streamline Strategy Selection" },
+        { "text": "TOI & Historical TOI to Gauge Market Sentiment" }
+      ],
+      "exploreLink": "https://www.definedgesecurities.com/products/options-strategies/",
+      "image": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/Options-Strategies-Analysis-1-1-1024x1024.webp"
+    },
+    {
+      "id": "mutualFundAnalysisTab",
+      "title": "Mutual Fund Analysis",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='45' height='45' fill='none' class='mr-4'><path d='M21 14v-4c0-1.104-.896-2-2-2h-2v-2c0-1.104-.896-2-2-2h-2V4c0-1.104-.896-2-2-2h-4c-1.104 0-2 .896-2 2v2H5c-1.104 0-2 .896-2 2v2H1c-1.104 0-2 .896-2 2v4c0 1.104.896 2 2 2h2v2c0 1.104.896 2 2 2h2v2c0 1.104.896 2 2 2h4c1.104 0 2-.896 2-2v-2h2c1.104 0 2-.896 2-2v-2h2c1.104 0 2-.896 2-2zm-10 6c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-6c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v6zm5-8H8V6h10v6z' fill='#606060'></path></svg>",
+      "description": "Take your investment strategy to the next level with advanced mutual fund analysis tools. Evaluate and select the best funds based on performance metrics, risk assessment, and overall potential.",
+      "features": [
+        { "text": "Pre-defined, Custom, Public & Popular Strategy Scanners" },
+        { "text": "Payoff Charts for Risk-Reward Assessment" },
+        { "text": "Options Algorithm to Streamline Strategy Selection" },
+        { "text": "TOI & Historical TOI to Gauge Market Sentiment" }
+      ],
+      "exploreLink": "https://www.definedgesecurities.com/products/mutual-fund-analysis/",
+      "image": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/mutual-fund-analysis-1-1-1024x1024.webp"
+    }
+  ]
+}

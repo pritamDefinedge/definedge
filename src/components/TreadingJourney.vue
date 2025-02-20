@@ -71,7 +71,6 @@ export default {
   setup() {
 
     return {
-      ...toRefs(),
     };
   },
   methods: {
