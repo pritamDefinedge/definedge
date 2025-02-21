@@ -66,7 +66,7 @@
   <section
     class="relative bg-white text-black flex justify-center items-center pt-12 sm:py-12 py-12"
   >
-    <Analysis/>
+    <Analysis :tabs="analysisTabs" :tabContent="analysisContent" />
   </section>
 
   <!-- EDUCATION -->
@@ -1964,6 +1964,7 @@ import TradeInvest from "../components/TradeInvest.vue";
 import TradeInvestData from "../data/TradeInvest.json";
 
 import Analysis from "../components/Analysis.vue";
+import AnalysisData from "../data/Analysis.json";
 
 export default {
   components: {
@@ -1980,6 +1981,8 @@ export default {
       appTabs: AppTabData,
       tradeInvestTabs: TradeInvestData.tabs,
       tradeInvestContent: TradeInvestData.tabContent,
+      analysisTabs: AnalysisData.tabs,
+      analysisContent: AnalysisData.tabContent,
 
       openIndex: null,
       form: {
