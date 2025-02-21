@@ -9,8 +9,7 @@ api: [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typico
 
 ## Tech :hammer_and_wrench:
 This app uses:
-- Vue3
-- Pinia
+- Vue3 
 - Tailwind
 
 ## Scripts for running this project :pencil:
