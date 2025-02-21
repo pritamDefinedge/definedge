@@ -85,8 +85,10 @@
     <div class="flex lg:px-28 flex-col md:flex-row">
       <!-- Left Side Content -->
       <div class="flex-1 mb-8 md:mb-0">
-        <h2 class="text-3xl font-bold mb-4">Invest & Trade with Ease</h2>
-        <p class="text-base mb-6">
+        <h2 class="text-3xl font-bold text-[#2A394E] mb-4 tracking-[0.5px]">
+          Invest & Trade with Ease
+        </h2>
+        <p class="text-base mb-6 font-sans">
           A Definedge Securities demat and trading account opens endless
           possibilities for you. Make smarter decisions and invest or trade in
           any segment of your choice with our trading tools & education.
@@ -95,13 +97,13 @@
         <div class="flex flex-wrap gap-4">
           <!-- Equity -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%] motion-preset-fade motion-delay-0"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600"
+                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   viewBox="0 0 64 64"
                 >
@@ -156,18 +158,18 @@
                 </svg>
               </div>
             </span>
-            <h5 class="text-lg font-semibold">Equity</h5>
+            <h5 class="text-sm font-semibold text-black">Equity</h5>
           </div>
 
           <!-- Commodities -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%] motion-preset-fade motion-delay-0"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600"
+                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   viewBox="0 0 64 64"
                 >
@@ -212,18 +214,18 @@
                 </svg>
               </div>
             </span>
-            <h5 class="text-lg font-semibold">Commodities</h5>
+            <h5 class="text-sm font-semibold text-black">Commodities</h5>
           </div>
 
           <!-- ETFs -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%] motion-preset-fade motion-delay-[200ms]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600"
+                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   viewBox="0 0 64 64"
                 >
@@ -283,18 +285,18 @@
                 </svg>
               </div>
             </span>
-            <h5 class="text-lg font-semibold">ETFs</h5>
+            <h5 class="text-sm font-semibold text-black">ETFs</h5>
           </div>
 
           <!--Mutual Funds -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%] motion-preset-fade motion-delay-[200ms]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600"
+                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   viewBox="0 0 64 64"
                 >
@@ -359,17 +361,17 @@
                 </svg>
               </div>
             </span>
-            <h5 class="text-lg font-semibold">Mutual Funds</h5>
+            <h5 class="text-sm font-semibold text-black">Mutual Funds</h5>
           </div>
           <!-- F&O -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%] motion-preset-fade motion-delay-[400ms]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600"
+                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   viewBox="0 0 64 64"
                 >
@@ -456,17 +458,17 @@
                 </svg>
               </div>
             </span>
-            <h5 class="text-lg font-semibold">F&O</h5>
+            <h5 class="text-sm font-semibold text-black">F&O</h5>
           </div>
           <!-- IPO -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%] motion-preset-fade motion-delay-[400ms]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600"
+                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   id="Layer_2"
                   data-name="Layer 2"
@@ -543,18 +545,18 @@
                 </svg>
               </div>
             </span>
-            <h5 class="text-lg font-semibold">IPO</h5>
+            <h5 class="text-sm font-semibold text-black">IPO</h5>
           </div>
 
           <!-- Debts/Bonds -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%] motion-preset-fade motion-delay-[600ms]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600"
+                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   id="Layer_2"
                   data-name="Layer 2"
@@ -622,18 +624,18 @@
                 </svg>
               </div>
             </span>
-            <h5 class="text-lg font-semibold">Debts/Bonds</h5>
+            <h5 class="text-sm font-semibold text-black">Debts/Bonds</h5>
           </div>
 
           <!--SIP -->
           <div
-            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%]"
+            class="flex items-center border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[44%] motion-preset-fade motion-delay-[600ms]"
           >
             <span class="p-4 bg-[#075fe40d] mr-4">
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600"
+                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   id="Layer_2"
                   data-name="Layer 2"
@@ -691,7 +693,7 @@
                 </svg>
               </div>
             </span>
-            <h5 class="text-lg font-semibold">SIP</h5>
+            <h5 class="text-sm font-semibold text-black">SIP</h5>
           </div>
         </div>
       </div>
@@ -702,7 +704,7 @@
           loading="lazy"
           decoding="async"
           src="https://www.definedgesecurities.com/wp-content/uploads/2025/02/01-IPOS-IMAGE-02-1024x1024.webp"
-          class="w-full h-auto"
+          class="w-full h-auto motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur"
           alt="Investment Image"
         />
       </div>
@@ -713,325 +715,7 @@
   <section
     class="bg-[#E9F8FF] relative text-black flex justify-center items-center"
   >
-    <div class="container mx-auto px-4 py-24">
-      <div class="mb-8 md:mb-0 text-center">
-        <h2
-          class="text-[#005BDF] text-center font-liter text-[24px] md:text-lg lg:text-xl xl:text-2xl"
-        >
-          FEATURES
-        </h2>
-        <h5 class="text-gray-700 text-center text-3xl font-bold mt-4 mb-8">
-          Innovative Features of Our Ecosystem
-        </h5>
-      </div>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <!-- Innovative Strategies -->
-        <div
-          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
-        >
-          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
-            <div class="mr-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="text-blue-600"
-                width="35"
-                viewBox="0 0 20 20"
-              >
-                <defs></defs>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M3.32,9.2c-.09,0-.19-.03-.28-.08-.23-.15-.29-.46-.14-.69.09-.13.18-.29.29-.46.96-1.54,2.94-4.74,6.12-3.95.63.16,1.12.55,1.6.94.85.69,1.41,1.14,2.54.3.67-.49,2.98-2.94,3.4-3.59.15-.23.46-.3.69-.15.23.15.3.46.15.69-.51.79-2.95,3.34-3.64,3.85-1.75,1.29-2.91.36-3.76-.33-.41-.33-.79-.64-1.21-.74-2.46-.62-4.13,2.07-5.03,3.51-.11.18-.22.35-.31.48-.1.15-.25.22-.42.22Z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M18.79,19.22H1.25c-.28,0-.5-.22-.5-.5V1.18c0-.28.22-.5.5-.5s.5.22.5.5v17.04h17.04c.28,0,.5.22.5.5s-.22.5-.5.5Z"
-                ></path>
-                <g>
-                  <path
-                    fill="currentColor"
-                    class="st0"
-                    d="M4.08,16.23c-.28,0-.5-.22-.5-.5v-4.12c0-.28.22-.5.5-.5s.5.22.5.5v4.12c0,.28-.22.5-.5.5Z"
-                  ></path>
-                  <path
-                    fill="currentColor"
-                    class="st0"
-                    d="M8.03,16.23c-.28,0-.5-.22-.5-.5v-7.25c0-.28.22-.5.5-.5s.5.22.5.5v7.25c0,.28-.22.5-.5.5Z"
-                  ></path>
-                  <path
-                    fill="currentColor"
-                    class="st0"
-                    d="M11.99,16.23c-.28,0-.5-.22-.5-.5v-5.16c0-.28.22-.5.5-.5s.5.22.5.5v5.16c0,.28-.22.5-.5.5Z"
-                  ></path>
-                  <path
-                    fill="currentColor"
-                    class="st0"
-                    d="M15.94,16.23c-.28,0-.5-.22-.5-.5v-7.02c0-.28.22-.5.5-.5s.5.22.5.5v7.02c0,.28-.22.5-.5.5Z"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-          </span>
-          <div class="flex flex-col py-4 p-2">
-            <h5 class="text-lg font-semibold">Innovative Strategies</h5>
-            <p>
-              Unique & Innovative strategies on candlestick & noiseless charts
-            </p>
-          </div>
-        </div>
-        <!-- Smart Scanners -->
-        <div
-          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
-        >
-          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
-            <div class="mr-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="text-blue-600"
-                width="35"
-                viewBox="0 0 20 20"
-              >
-                <defs></defs>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M1.38,7.08c.29,0,.52-.23.52-.52V1.9h4.66c.29,0,.52-.23.52-.52s-.23-.52-.52-.52H1.38c-.29,0-.52.23-.52.52v5.18c0,.29.23.52.52.52Z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M18.62.86h-5.18c-.29,0-.52.23-.52.52s.23.52.52.52h4.66v4.66c0,.29.23.52.52.52s.52-.23.52-.52V1.38c0-.29-.23-.52-.52-.52Z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M18.62,12.92c-.29,0-.52.23-.52.52v4.66h-4.66c-.29,0-.52.23-.52.52s.23.52.52.52h5.18c.29,0,.52-.23.52-.52v-5.18c0-.29-.23-.52-.52-.52Z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M6.56,18.1H1.9v-4.66c0-.29-.23-.52-.52-.52s-.52.23-.52.52v5.18c0,.29.23.52.52.52h5.18c.29,0,.52-.23.52-.52s-.23-.52-.52-.52Z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M14.11,8.6l.69.64c.1.09.22.14.35.14.05,0,.11,0,.16-.03.18-.06.31-.21.35-.39l.57-2.74c.04-.18-.02-.37-.16-.49-.14-.12-.33-.16-.51-.11l-2.63.85c-.16.05-.28.18-.33.34s-.02.33.08.47l.66.66s-.02.01-.03.02l-3.05,3.35-1.75-1.23c-.49-.22-1.04-.11-1.44.28l-3.16,3.15c-.2.2-.2.53,0,.73.1.1.23.15.37.15s.26-.05.37-.15l3.15-3.15c.13-.13.24-.09.21-.11l2.01,1.41c.09.06.23.09.34.1.14.03.29-.06.39-.17l3.33-3.67s.02-.03.03-.05Z"
-                ></path>
-              </svg>
-            </div>
-          </span>
-          <div class="flex flex-col py-4 p-2">
-            <h5 class="text-lg font-semibold">Smart Scanners</h5>
-            <p>Unique Scanners for Technical Analysis</p>
-          </div>
-        </div>
-
-        <!-- All Types of Orders-->
-        <div
-          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
-        >
-          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
-            <div class="mr-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="text-blue-600"
-                width="35"
-                viewBox="0 0 20 20"
-              >
-                <defs></defs>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M17.77,8.15c-.17-.26-.52-.25-.85-.23-.12,0-.33.01-.42-.01l-1.23-1.92-2.04-.86-.89-2.52-2.36-2.09c-.17-.15-.39-.21-.62-.14h0c-.26.07-.48.44-1.25,1.84-.38.69-.94,1.72-1.18,1.96l-1.38.25-2.03,3.45c-.06.05-.32.04-.47.03-.32-.01-.65-.02-.82.23-.11.16-.1.36,0,.6l.08.18h1.63c-.07.05-.14.12-.18.21-.1.19-.1.42-.01.6l1.71,4.13,1.47.44,1.99,4.83c.09.27.23.43.43.5.05.02.11.03.16.03.14,0,.29-.06.45-.17l2.38-2.99.89-3.61,2.25-1.31.02-.14c.02-.14.19-.51.33-.81.35-.75.5-1.11.43-1.37-.04-.14-.14-.24-.24-.33h1.64l.08-.17c.11-.24.11-.44.01-.6ZM9.42,2.33c.15.42.37,1.07.41,1.21-.15.22-.6.69-1.01,1.12-1.12,1.18-1.45,1.57-1.45,1.86,0,.11.04.2.1.32l.08.23,2.26-.23c.13.22.28.43.43.62.12.16.24.31.34.47h-5.73l1.4-2.38,1.48-.34,1.7-2.87ZM14.49,6.93c.09.09.45.64.64.95h-3.15c-.19-.15-.55-.73-.77-1.08-.41-.65-.65-1.03-.91-1.15-.23-.11-.49-.09-.73-.05l1.54-1.8-.32-1,.58.5.87,2.55.05.09c.19.24.62.4,1.3.63.36.13.78.27.91.36ZM15.22,9.06c-.15.22-.25.54-.36.87-.11.33-.22.7-.37.87l-2.21,1.33-.04.09c-.25.55-.37,1.25-.48,1.93-.11.64-.22,1.3-.43,1.75-.15.33-.51.72-.86,1.1-.28.31-.57.62-.79.94l-1.79-4.45c-.21-.31-.63-.37-1.03-.43-.18-.03-.39-.06-.51-.11-.11-.22-.31-.73-.52-1.27-.73-1.86-1.03-2.52-1.26-2.76h10.79c-.06.04-.11.09-.14.14Z"
-                ></path>
-              </svg>
-            </div>
-          </span>
-          <div class="flex flex-col py-4 p-2">
-            <h5 class="text-lg font-semibold">All Types of Orders</h5>
-            <p>From Iceberg to Bracket orders, all in one-click</p>
-          </div>
-        </div>
-
-        <!-- Alert-based Orders-->
-        <div
-          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
-        >
-          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
-            <div class="mr-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="text-blue-600"
-                width="35"
-                viewBox="0 0 20 20"
-              >
-                <defs></defs>
-                <g>
-                  <g>
-                    <path
-                      fill="currentColor"
-                      class="st0"
-                      d="M4.73,14.87c-.12,0-.24-.04-.34-.12-1.54-1.3-1.8-3.65-.58-5.35.17-.23.49-.29.73-.12.23.17.29.49.12.73-.89,1.24-.71,3.02.4,3.95.22.19.25.51.06.73-.1.12-.25.19-.4.19Z"
-                    ></path>
-                    <path
-                      fill="currentColor"
-                      class="st0"
-                      d="M2.84,16.77c-.1,0-.21-.03-.3-.1-.44-.31-1.12-1.39-1.25-1.63C-.02,12.6.33,9.48,2.14,7.45c.19-.22.52-.23.74-.04.21.19.23.52.04.74-1.5,1.68-1.8,4.37-.71,6.41.21.38.75,1.15.93,1.28.24.17.29.49.13.73-.1.14-.26.22-.43.22Z"
-                    ></path>
-                  </g>
-                  <g>
-                    <path
-                      fill="currentColor"
-                      class="st0"
-                      d="M15.27,14.87c-.15,0-.3-.06-.4-.19-.19-.22-.16-.55.06-.73,1.11-.94,1.29-2.71.4-3.95-.17-.23-.11-.56.12-.73.24-.17.56-.11.73.12,1.22,1.7.96,4.05-.58,5.35-.1.08-.22.12-.34.12Z"
-                    ></path>
-                    <path
-                      fill="currentColor"
-                      class="st0"
-                      d="M17.16,16.77c-.16,0-.32-.08-.43-.22-.16-.24-.11-.56.13-.73.18-.13.72-.89.93-1.27,1.09-2.03.79-4.73-.71-6.41-.19-.21-.17-.54.04-.74.21-.19.54-.17.74.04,1.81,2.03,2.16,5.15.85,7.59-.14.26-.8,1.32-1.25,1.63-.09.06-.2.1-.3.1Z"
-                    ></path>
-                  </g>
-                </g>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M13.46,10.52v-3.31c-.13-1.31-1.01-2.44-2.25-2.92,0-.01-.01-.02-.02-.04.01-.05.04-.1.04-.16,0-.48-.55-.87-1.23-.87s-1.23.39-1.23.87c0,.06.03.1.04.16,0,.01-.01.02-.02.04-1.25.48-2.13,1.62-2.25,2.94v3.29c-.62.21-.94.83-.92,1.36.02.63.43,1.1,1.09,1.2h1.88s0,.03,0,.05c0,.5.63.91,1.41.91,0,0,0,0,0,0h0s.21,0,.21,0h0c.68-.08,1.2-.45,1.2-.91,0-.02,0-.03,0-.05h1.91c.63-.1,1.04-.58,1.06-1.2.01-.54-.3-1.15-.92-1.36ZM7.54,7.2c0-.43.45-1.19.82-1.52.44-.39,1-.59,1.63-.59.02,0,.04,0,.05,0,.62,0,1.19.2,1.62.59.37.32.82,1.09.82,1.52v3.24h-4.94v-3.24ZM13.35,12.04s-.03.02-.05.03c-.01,0-.02.01-.03.02h-3.26s-3.26,0-3.26,0c-.01,0-.02-.01-.03-.02-.02,0-.04-.02-.04-.02-.08-.08-.07-.24-.02-.36.05-.12.16-.26.3-.26h6.11c.15,0,.26.14.31.26.05.12.06.27-.02.36Z"
-                ></path>
-              </svg>
-            </div>
-          </span>
-          <div class="flex flex-col py-4 p-2">
-            <h5 class="text-lg font-semibold">Alert-based Orders</h5>
-            <p>Alerts for price, volume or strategy with auto-execution</p>
-          </div>
-        </div>
-
-        <!-- Options Orders-->
-        <div
-          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
-        >
-          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
-            <div class="mr-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="text-blue-600"
-                width="35"
-                viewBox="0 0 20 20"
-              >
-                <defs></defs>
-                <g>
-                  <path
-                    fill="currentColor"
-                    class="st0"
-                    d="M3.78,11.43v2.56h.79l-1.72,2.4-1.72-2.4h.79v-2.56h1.85M3.78,10.43h-1.85c-.55,0-1,.45-1,1v1.58c-.29.06-.54.25-.68.52-.17.33-.14.73.08,1.04l1.72,2.4c.19.26.49.42.81.42s.62-.16.81-.42l1.72-2.4c.22-.3.25-.71.08-1.04-.14-.27-.39-.46-.68-.52v-1.58c0-.55-.45-1-1-1h0Z"
-                  ></path>
-                  <g>
-                    <path
-                      fill="currentColor"
-                      class="st0"
-                      d="M9.65,14.83c.06-.02.11,0,.16.03.05.04.07.08.07.15v.24c0,.08-.02.14-.07.2-.05.06-.11.09-.18.11-.2.04-.41.05-.64.05-.5,0-.89-.14-1.17-.43-.28-.28-.42-.7-.42-1.24s.14-.94.41-1.23c.27-.29.65-.43,1.14-.43.22,0,.44.02.64.05.07.01.13.05.18.11s.07.13.07.2v.25c0,.06-.02.11-.07.15-.05.04-.1.05-.16.03-.18-.05-.36-.08-.54-.08-.24,0-.42.08-.55.24-.13.16-.2.4-.2.71s.07.54.22.71c.15.17.34.25.58.25.19,0,.37-.02.54-.08Z"
-                    ></path>
-                    <path
-                      fill="currentColor"
-                      class="st0"
-                      d="M12.25,12.57l.87,2.76c.02.06,0,.11-.03.16-.04.05-.09.08-.15.08h-.43c-.07,0-.14-.02-.2-.07-.06-.05-.09-.1-.11-.17l-.08-.34s-.02-.04-.04-.04h-.76s-.05.01-.05.04l-.08.34c-.01.07-.05.13-.11.17-.06.05-.12.07-.2.07h-.42c-.06,0-.11-.02-.15-.08s-.05-.1-.03-.16l.87-2.76c.02-.07.06-.13.12-.17s.13-.07.21-.07h.43c.07,0,.14.02.2.07s.1.1.13.17ZM11.47,14.28h.46s.02,0,.02-.01,0-.02,0-.02l-.26-1.16s0,0,0,0,0,0,0,0l-.26,1.16s0,.02,0,.02c0,0,.02.01.02.01Z"
-                    ></path>
-                    <path
-                      fill="currentColor"
-                      class="st0"
-                      d="M15.47,14.83c.07,0,.13.02.18.08.05.05.08.11.08.18v.23c0,.07-.03.13-.08.18-.05.05-.11.08-.18.08h-1.71c-.07,0-.13-.02-.18-.08-.05-.05-.08-.11-.08-.18v-2.73c0-.07.03-.13.08-.18.05-.05.11-.08.18-.08h.4c.07,0,.13.02.18.08.05.05.08.11.08.18v2.21s.01.04.04.04h1.01Z"
-                    ></path>
-                    <path
-                      fill="currentColor"
-                      class="st0"
-                      d="M18.22,14.83c.07,0,.13.02.18.08.05.05.08.11.08.18v.23c0,.07-.03.13-.08.18-.05.05-.11.08-.18.08h-1.71c-.07,0-.13-.02-.18-.08-.05-.05-.08-.11-.08-.18v-2.73c0-.07.03-.13.08-.18.05-.05.11-.08.18-.08h.4c.07,0,.13.02.18.08.05.05.08.11.08.18v2.21s.01.04.04.04h1.01Z"
-                    ></path>
-                  </g>
-                  <path
-                    fill="currentColor"
-                    class="st0"
-                    d="M18.87,11.43v4.94H6.96v-4.94h11.91M18.87,10.43H6.96c-.55,0-1,.45-1,1v4.94c0,.55.45,1,1,1h11.91c.55,0,1-.45,1-1v-4.94c0-.55-.45-1-1-1h0Z"
-                  ></path>
-                </g>
-                <g>
-                  <path
-                    fill="currentColor"
-                    class="st0"
-                    d="M17.15,2.89l1.72,2.39h-.79v2.55h-1.85v-2.55h-.79l1.72-2.39M17.15,1.89c-.32,0-.62.15-.81.42l-1.72,2.39c-.22.3-.25.71-.08,1.04.14.27.39.46.68.52v1.57c0,.55.45,1,1,1h1.85c.55,0,1-.45,1-1v-1.57c.29-.06.54-.25.68-.52.17-.33.14-.74-.08-1.04l-1.72-2.39c-.19-.26-.49-.42-.81-.42h0Z"
-                  ></path>
-                  <g>
-                    <g>
-                      <path
-                        fill="currentColor"
-                        class="st0"
-                        d="M3.94,3.74c1,0,1.51.36,1.51,1.09,0,.39-.11.69-.34.89-.23.2-.56.3-.99.3-.07,0-.15,0-.25,0-.03,0-.04.01-.04.04v.72c0,.07-.03.13-.08.18-.05.05-.11.08-.18.08h-.36c-.07,0-.13-.02-.18-.08-.05-.05-.08-.11-.08-.18v-2.71c0-.07.02-.13.07-.19.05-.06.11-.09.18-.09.25-.02.49-.04.73-.04ZM4.03,5.38c.19,0,.34-.04.44-.13.1-.09.16-.21.16-.38,0-.31-.2-.47-.6-.47-.06,0-.11,0-.16.01-.02,0-.04.02-.04.05v.86s.01.04.04.04c.07,0,.13,0,.16,0Z"
-                      ></path>
-                      <path
-                        fill="currentColor"
-                        class="st0"
-                        d="M8.14,3.78c.07,0,.13.02.18.08.05.05.08.11.08.18v1.79c0,.41-.11.72-.33.93-.22.21-.54.31-.96.31s-.74-.1-.96-.31c-.22-.21-.33-.52-.33-.93v-1.79c0-.07.03-.13.08-.18s.11-.08.18-.08h.39c.07,0,.13.02.18.08.05.05.08.11.08.18v1.85c0,.17.03.29.09.36.06.07.16.1.31.1s.24-.03.31-.1c.06-.07.09-.19.09-.36v-1.85c0-.07.03-.13.08-.18.05-.05.11-.08.18-.08h.37Z"
-                      ></path>
-                      <path
-                        fill="currentColor"
-                        class="st0"
-                        d="M11.21,3.78c.07,0,.13.02.18.08.05.05.08.11.08.18v.23c0,.07-.02.13-.08.18-.05.05-.11.08-.18.08h-.54s-.04.01-.04.04v2.21c0,.07-.02.13-.07.18-.05.05-.11.08-.17.08h-.41c-.07,0-.13-.02-.17-.08s-.07-.11-.07-.18v-2.21s-.01-.04-.04-.04h-.54c-.07,0-.13-.02-.18-.08-.05-.05-.08-.11-.08-.18v-.23c0-.07.02-.13.08-.18.05-.05.11-.08.18-.08h2.07Z"
-                      ></path>
-                    </g>
-                    <path
-                      fill="currentColor"
-                      class="st0"
-                      d="M13.04,2.89v4.94H1.13V2.89h11.91M13.04,1.89H1.13C.58,1.89.13,2.33.13,2.89v4.94c0,.55.45,1,1,1h11.91c.55,0,1-.45,1-1V2.89c0-.55-.45-1-1-1h0Z"
-                    ></path>
-                  </g>
-                </g>
-              </svg>
-            </div>
-          </span>
-          <div class="flex flex-col py-4 p-2">
-            <h5 class="text-lg font-semibold">Options Orders</h5>
-            <p>Place multiple options orders in one-click</p>
-          </div>
-        </div>
-
-        <!-- Holding Insights-->
-        <div
-          class="flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
-        >
-          <span class="p-4 bg-[#075fe40d] m-4 rounded-lg">
-            <div class="mr-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="text-blue-600"
-                width="35"
-                viewBox="0 0 20 20"
-              >
-                <defs></defs>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M18.68,13.05c-.44-.73-1.54-.94-2.45-.45-.47.26-.93.57-1.37.87-.44.3-.89.61-1.34.85-.24.13-.33.43-.2.68s.43.33.68.2c.5-.27.97-.59,1.43-.9.44-.3.86-.59,1.29-.82.44-.24.95-.19,1.12.09.09.15.08.36-.02.59-1.08.79-2.27,1.5-3.42,2.19-.73.44-1.46.88-2.17,1.34l-.31.09c-.84-.16-1.66-.42-2.52-.68-.77-.24-1.56-.49-2.37-.66-.07-.01-.14-.01-.21,0-.06.01-.13.03-.19.05l-1.31-2.53,2.12-1.23c.06-.01.16-.02.34,0,.56.11,1.18.35,1.79.6.55.22,1.12.44,1.63.56.15.07.23.2.21.36-.02.16-.13.27-.29.31-.28.05-.74-.12-1.16-.27-.26-.09-.54.04-.64.3-.09.26.04.55.3.64.46.16.94.33,1.38.33.11,0,.21,0,.31-.03.59-.12,1.02-.58,1.09-1.17.07-.59-.24-1.13-.78-1.38-.03-.01-.15-.06-.19-.06-.45-.1-.98-.31-1.51-.52-.64-.26-1.31-.52-1.96-.64-.28-.05-.52-.05-.74,0-.09.02-.18.06-.26.1l-2.1,1.22-.16-.3c-.12-.24-.41-.33-.65-.22l-2.52,1.15c-.1.04-.18.12-.23.21l-.1.18c-.08.15-.08.32,0,.47l2.33,4.62c.06.11.15.2.27.24l.26.1c.06.02.12.03.18.03.08,0,.15-.02.22-.05l2.48-1.22c.08-.04.15-.1.2-.18.13-.21.15-.41.12-.58.62.15,1.25.35,1.86.54.89.28,1.81.56,2.75.73.07.01.15,0,.22-.01l.49-.14s.1-.03.14-.06c.72-.47,1.47-.92,2.21-1.36,1.21-.72,2.45-1.47,3.6-2.32.06-.04.11-.1.14-.17.31-.59.32-1.2.04-1.67ZM4.26,18.46l-2.02-4,1.77-.81,2.04,3.93-1.79.88Z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M10.64,5.33c0,.22.18.4.4.4h1.77c-.11.2-.29.36-.45.38-.15.02-.31,0-.48,0-.27-.02-.54-.04-.79.02-.17.04-.3.16-.38.33-.1.24-.08.59.08.86.29.36.56.77.82,1.18.27.41.55.84.85,1.22.08.1.2.15.31.15.09,0,.18-.03.25-.09.17-.14.2-.39.06-.56-.28-.35-.54-.74-.81-1.16-.27-.42-.55-.85-.82-1.17.12,0,.24,0,.36.01.22.01.44.02.63,0,.57-.07,1.04-.57,1.18-1.17h.6c.22,0,.4-.18.4-.4s-.18-.4-.4-.4h-.58c-.02-.14-.06-.24-.08-.31-.01-.1-.06-.18-.1-.26h.75c.22,0,.4-.18.4-.4s-.18-.4-.4-.4h-3.2c-.22,0-.4.18-.4.4s.18.4.4.4h.15s0,0,.01,0c.19.02.38.01.58,0,.44-.02.71-.02.9.2.06.06.1.14.1.15,0,.05.01.1.03.15,0,0,0,.03.02.06h-1.8c-.22,0-.4.18-.4.4Z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  class="st0"
-                  d="M12.64,11.82c2.9,0,5.26-2.36,5.26-5.26S15.55,1.29,12.64,1.29s-5.26,2.36-5.26,5.26,2.36,5.26,5.26,5.26ZM12.64,2.29c2.35,0,4.26,1.91,4.26,4.26s-1.91,4.26-4.26,4.26-4.26-1.91-4.26-4.26,1.91-4.26,4.26-4.26Z"
-                ></path>
-              </svg>
-            </div>
-          </span>
-          <div class="flex flex-col py-4 p-2">
-            <h5 class="text-lg font-semibold">Holding Insights</h5>
-            <p>Get fundamental & technical insights for holdings</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Features :features="featuresData" />
   </section>
 
   <!-- Get Your Super Demat in in 3 Simple steps -->
@@ -1039,7 +723,9 @@
     <div class="flex flex-col md:flex-row items-center justify-center">
       <!-- Left Side Content (Image) -->
       <div class="flex-1 md:w-1/2 mb-8 md:mb-0">
-        <div class="w-full flex justify-center md:justify-end">
+        <div
+          class="w-full flex justify-center md:justify-end motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur"
+        >
           <img
             loading="lazy"
             decoding="async"
@@ -1053,43 +739,41 @@
       <!-- Right Side Content -->
       <div class="flex-1 md:w-1/2 text-center md:text-left">
         <h2
-          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-12"
+          class="text-xl text-[#2A394E] sm:text-3xl md:text-4xl lg:text-3xl font-bold mb-12 leading-[40px] tracking-[0.5px]"
         >
-          Get Your Super Demat in
-          <span class="text-[#efa909]">3 Simple Steps</span>
+          Get Your Super Demat in <br /><span class="inline-flex gap-4"
+            >in
+            <p class="text-[#efa909] motion-preset-typewriter-[15]">
+              3 Simple Steps
+            </p></span
+          >
         </h2>
-        <h3
-          class="flex font-bold text-md sm:text-lg md:text-xl lg:text-2xl mb-3 text-gray-700"
-        >
+        <h3 class="flex font-semibold text-md text-base mb-3 text-[#3d3e40]">
           <span
-            class="inline-flex items-center sm:items-start gap-x-1.5 py-2.5 px-8 rounded-full text-sm mr-4 font-bold bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white"
+            class="inline-flex items-center sm:items-start gap-x-1.5 py-1.5 px-6 rounded-full text-sm mr-4 font-bold bg-[#0065d81a] text-[#9aa7b5]"
           >
             STEP 1
           </span>
           Fill Your Details
         </h3>
-        <h3
-          class="flex font-bold text-md sm:text-lg md:text-xl lg:text-2xl mb-3 text-gray-700"
-        >
+        <h3 class="flex font-semibold text-md text-base mb-3 text-[#3d3e40]">
           <span
-            class="inline-flex items-center gap-x-1.5 py-2.5 px-8 rounded-full text-sm mr-4 font-bold bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white"
+            class="inline-flex items-center sm:items-start gap-x-1.5 py-1.5 px-6 rounded-full text-sm mr-4 font-bold bg-[#0065d81a] text-[#9aa7b5]"
           >
             STEP 2
           </span>
           Complete KYC Verification
         </h3>
-        <h3
-          class="flex font-bold text-md sm:text-lg md:text-xl lg:text-2xl mb-3 text-gray-700"
-        >
+        <h3 class="flex font-semibold text-md text-base mb-3 text-[#3d3e40]">
           <span
-            class="inline-flex items-center gap-x-1.5 py-2.5 px-8 rounded-full text-sm mr-4 font-bold bg-gray-100 text-gray-800 dark:bg-white/10 dark:text-white"
+            class="inline-flex items-center sm:items-start gap-x-1.5 py-1.5 px-6 rounded-full text-sm mr-4 font-bold bg-[#0065d81a] text-[#9aa7b5]"
           >
             STEP 3
           </span>
           Your Super Demat is Ready!
         </h3>
         <h3
-          class="flex font-bold text-md sm:text-lg md:text-xl lg:text-2xl mb-6 mt-6 text-gray-700"
+          class="flex font-bold text-md sm:text-lg md:text-lg lg:text-lg mb-4 mt-12 text-[#000000]"
         >
           Take the First Step
         </h3>
@@ -1097,7 +781,7 @@
         <form method="post" class="flex items-center">
           <input
             maxlength="400"
-            class="w-16 py-3 px-3 border rounded-l-md text-gray-700"
+            class="w-16 py-3 px-3 border border-[#b7afaf85] rounded-l-md text-gray-700"
             readonly
             value="+91"
             type="text"
@@ -1105,14 +789,14 @@
           <input
             maxlength="10"
             minlength="10"
-            class="w-1/3 py-3 px-3 border rounded-r-md text-gray-700"
+            class="w-1/3 py-3 px-3 border border-[#b7afaf85] rounded-r-md text-gray-700"
             required
             placeholder="Enter Mobile Number"
             type="tel"
           />
           <button
             type="submit"
-            class="py-3 px-4 ml-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none transition-all ease-in-out duration-300 transform hover:scale-105"
+            class="py-3 px-4 ml-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none transition-all ease-in-out duration-300 transform hover:scale-105 motion-preset-seesaw"
           >
             Get Started
           </button>
@@ -1274,6 +958,9 @@ import AnalysisData from "../data/Analysis.json";
 import Education from "../components/Education.vue";
 import EducationData from "../data/Education.json";
 
+import Features from "../components/Features.vue";
+import FeaturesData from "../data/Features.json";
+
 export default {
   components: {
     Testimonial,
@@ -1284,6 +971,7 @@ export default {
     TradeInvest,
     Analysis,
     Education,
+    Features,
   },
   data() {
     return {
@@ -1294,7 +982,7 @@ export default {
       analysisContent: AnalysisData.tabContent,
       educationTabs: EducationData.tabs,
       educationContent: EducationData.tabContent,
-
+      featuresData: FeaturesData,
       openIndex: null,
       form: {
         name: "",

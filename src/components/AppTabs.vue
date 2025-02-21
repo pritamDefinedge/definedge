@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-xl mx-auto px-4">
+  <div class="max-w-screen-xl mx-auto ">
     <!-- Section Title -->
     <h4
       class="text-blue-700 text-center text-[25px] md:text-lg lg:text-xl xl:text-2xl font-semibold tracking-wide motion-scale-in-[0.5] motion-translate-x-in-[-25%] motion-translate-y-in-[25%] motion-opacity-in-[0%] motion-rotate-in-[-10deg] motion-blur-in-[5px] motion-duration-[0.35s] motion-duration-[0.53s]/scale motion-duration-[0.53s]/translate motion-duration-[0.63s]/rotate"
@@ -23,7 +23,7 @@
           'bg-[#FFFFFF10] border-2 border-white hover:bg-gray-300 hover:text-black text-gray-400':
             activeAppTab !== tabs[0].name,
         }"
-        class="motion-scale-in-[0.5]  px-8 py-3 text-base lg:text-lg motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
+        class="motion-scale-in-[0.5]  px-8 py-3 text-base lg:text-lg motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur tab-btn text-md rounded-lg lg:font-semibold md:font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
         <span class="flex gap-3">
           <svg
@@ -127,7 +127,7 @@
               <span>{{ feature.text }}</span>
             </li>
             <li class="flex items-start">
-              <h6 class="text-xl font-extrabold mb-4 text-start">
+              <h6 class="text-xl font-semibold mb-4 text-start">
                 {{ tabs[0].content.downloadText }}
               </h6>
             </li>
@@ -191,7 +191,7 @@
               <span>{{ feature.text }}</span>
             </li>
             <li class="flex items-start">
-              <h6 class="text-xl font-extrabold mb-4 text-start">
+              <h6 class="text-xl font-semibold mb-4 text-start">
                 {{ tabs[1].content.downloadText }}
               </h6>
             </li>

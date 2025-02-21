@@ -2,12 +2,12 @@
   <div class="max-w-screen-xl mx-auto px-4">
     <!-- Section Title -->
     <h2
-      class="text-blue-700 text-center text-[25px] md:text-lg lg:text-xl xl:text-2xl font-normal tracking-wide motion-scale-in-[0.5] motion-translate-x-in-[-25%] motion-translate-y-in-[25%] motion-opacity-in-[0%] motion-rotate-in-[-10deg] motion-blur-in-[5px] motion-duration-[0.35s] motion-duration-[0.53s]/scale motion-duration-[0.53s]/translate motion-duration-[0.63s]/rotate"
+      class="text-blue-700 text-center text-[15px] tracking-[5px] font-normal  motion-scale-in-[0.5] motion-translate-x-in-[-25%] motion-translate-y-in-[25%] motion-opacity-in-[0%] motion-rotate-in-[-10deg] motion-blur-in-[5px] motion-duration-[0.35s] motion-duration-[0.53s]/scale motion-duration-[0.53s]/translate motion-duration-[0.63s]/rotate"
     >
       TRADE & INVEST
     </h2>
     <h5
-      class="text-[#2A394E] text-center text-xl font-bold tracking-wider md:text-lg lg:text-2xl xl:text-3xl mt-4 hover:motion-preset-bounce hover:motion-duration-1000 motion-preset-bounce motion-duration-1000"
+      class="text-[#2A394E] text-center text-3xl tracking-[0.5px] font-bold  md:text-lg lg:text-3xl xl:text-3xl mt-4 hover:motion-preset-bounce hover:motion-duration-1000 motion-preset-bounce motion-duration-1000"
     >
       Ecosystem of Effortless Trading
     </h5>
@@ -49,7 +49,7 @@
             <h6
               class="text-2xl font-bold mb-6 text-left font-sans text-[#2A394E] "
             >
-              <span class="flex items-center">
+              <span class="flex items-center font-bold tracking-[0.5px]">
                 <div v-html="content.icon" class="-motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"></div>
                 {{ content.title }}
               </span>
@@ -80,10 +80,10 @@
               <!-- Fix to access feature.text -->
             </li>
             <!-- Explore More Link -->
-            <li class="flex items-center text-base">
+            <li class="flex items-center text-sm">
               <a
                 :href="content.exploreLink"
-                class="text-blue-500 font-bold  flex items-center motion-preset-seesaw"
+                class="text-[#0065DA] font-semibold  flex items-center motion-preset-seesaw"
               >
                 <span class="flex items-center text-sm text-[#0065DA] hover:text-blue-800 hover:underline tracking-wide">
                   Explore More
@@ -91,11 +91,11 @@
                     class="ml-2"
                     viewBox="0 0 512 512"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="20px"
+                    width="19px"
                   >
                     <path
                       d="M504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256zm72 20v-40c0-6.6 5.4-12 12-12h116v-67c0-10.7 12.9-16 20.5-8.5l99 99c4.7 4.7 4.7 12.3 0 17l-99 99c-7.6 7.6-20.5 2.2-20.5-8.5v-67H140c-6.6 0-12-5.4-12-12z"
-                      style="fill: #3498db"
+                      style="fill: #0065DA"
                     ></path>
                   </svg>
                 </span>
