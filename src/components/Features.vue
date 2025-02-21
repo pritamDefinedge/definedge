@@ -24,7 +24,7 @@
         class="group relative overflow-hidden font-medium flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%] -motion-translate-y-in-50 motion-ease-bounce"
       >
         <span
-          class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#e3f8ff] opacity-90 transition-all duration-300 ease-out group-hover:w-full"
+          class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#0d4d7d] opacity-30 transition-all duration-300 ease-out group-hover:w-full"
         ></span>
         <span
           class="p-4 bg-[#075fe40d] m-4 rounded-lg -motion-translate-y-in-50 motion-ease-bounce"
