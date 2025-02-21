@@ -103,7 +103,7 @@
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
+                  class="text-[#0083ff] motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   viewBox="0 0 64 64"
                 >
@@ -143,7 +143,7 @@
                           ></path>
                         </g>
                         <path
-                          fill="currentColor"
+                          fill="#63b3ff"
                           class="cls-1"
                           d="M58.95,0h-20.21c-2.79,0-5.05,2.27-5.05,5.05v13.09l7.3-6.49c.67-.59,1.68-.56,2.31.07l5.55,5.55,3.79-3.79h-1.55c-.93,0-1.68-.75-1.68-1.68s.75-1.68,1.68-1.68h5.61c.93,0,1.68.75,1.68,1.68v5.61c0,.93-.75,1.68-1.68,1.68s-1.68-.75-1.68-1.68v-1.55l-4.98,4.98c-.66.66-1.72.66-2.38,0l-5.61-5.61-8.35,7.43v2.61c0,2.79,2.27,5.05,5.05,5.05h20.21c2.79,0,5.05-2.27,5.05-5.05V5.05c0-2.79-2.27-5.05-5.05-5.05Z"
                         ></path>
@@ -169,7 +169,7 @@
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
+                  class="text-[#0083ff] motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   viewBox="0 0 64 64"
                 >
@@ -199,7 +199,7 @@
                           ></path>
                         </g>
                         <path
-                          fill="currentColor"
+                          fill="#63b3ff"
                           class="cls-1"
                           d="M49.78,27.23c-.57-.38-1.3-.38-1.87,0-.58.39-14.22,9.62-14.22,21.61,0,8.36,6.8,15.16,15.16,15.16s15.16-6.8,15.16-15.16c0-11.99-13.64-21.23-14.22-21.61ZM55.9,44.72c-.25.13-.52.19-.78.19-.61,0-1.19-.33-1.49-.9-.88-1.67-2.15-3.43-3.79-5.22-.63-.69-.58-1.75.11-2.38.69-.62,1.75-.58,2.38.11,1.83,2.01,3.27,4,4.28,5.92.43.82.12,1.84-.71,2.27Z"
                         ></path>
@@ -225,7 +225,7 @@
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
+                  class="text-[#0083ff] motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   viewBox="0 0 64 64"
                 >
@@ -270,7 +270,7 @@
                           ></path>
                         </g>
                         <path
-                          fill="currentColor"
+                          fill="#63b3ff"
                           class="cls-1"
                           d="M45.47,0H5.05C2.27,0,0,2.27,0,5.05v14.6c0,.93.75,1.68,1.68,1.68h47.16c.45,0,.88-.18,1.19-.49s.49-.74.49-1.19V5.05c0-2.79-2.27-5.05-5.05-5.05ZM18.53,6.18h13.47c.93,0,1.68.75,1.68,1.68s-.75,1.68-1.68,1.68h-13.47c-.93,0-1.68-.75-1.68-1.68s.75-1.68,1.68-1.68ZM39.86,15.16H10.67c-.93,0-1.68-.75-1.68-1.68s.75-1.68,1.68-1.68h29.19c.93,0,1.68.75,1.68,1.68s-.75,1.68-1.68,1.68Z"
                         ></path>
@@ -296,7 +296,7 @@
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
+                  class="text-[#0083ff] motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   viewBox="0 0 64 64"
                 >
@@ -346,7 +346,7 @@
                           ></path>
                         </g>
                         <path
-                          fill="currentColor"
+                          fill="#63b3ff"
                           class="cls-1"
                           d="M58.95,33.68h-20.21c-2.79,0-5.05,2.27-5.05,5.05v13.09l7.3-6.49c.66-.59,1.68-.56,2.31.07l5.55,5.55,3.79-3.79h-1.55c-.93,0-1.68-.75-1.68-1.68s.75-1.68,1.68-1.68h5.61c.93,0,1.68.75,1.68,1.68v5.61c0,.93-.75,1.68-1.68,1.68s-1.68-.75-1.68-1.68v-1.55l-4.98,4.98c-.66.66-1.72.66-2.38,0l-5.61-5.61-8.35,7.43v2.61c0,2.79,2.27,5.05,5.05,5.05h20.21c2.79,0,5.05-2.27,5.05-5.05v-20.21c0-2.79-2.27-5.05-5.05-5.05Z"
                         ></path>
@@ -371,7 +371,7 @@
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
+                  class="text-[#0083ff] motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   viewBox="0 0 64 64"
                 >
@@ -443,13 +443,13 @@
                           </g>
                         </g>
                         <path
-                          fill="currentColor"
+                          fill="#63b3ff"
                           class="cls-1"
                           d="M62.32,30.32h-30.32c-.93,0-1.68.75-1.68,1.68v30.32c0,.93.75,1.68,1.68,1.68,17.64,0,32-14.36,32-32,0-.93-.75-1.68-1.68-1.68Z"
                         ></path>
                       </g>
                       <path
-                        fill="currentColor"
+                        fill="#fff"
                         class="cls-3"
                         d="M50.68,40.67l-.69,2.51h-2.02c-.2,1.25-.75,2.29-1.64,3.1-.89.81-2.2,1.32-3.94,1.53l-.12.03,6.01,7.38v.17h-3.92l-6.66-8-.03-2.1h3.32c.93,0,1.69-.19,2.27-.56.58-.37.97-.89,1.18-1.54h-7.04l.69-2.51h6.25c-.22-.57-.6-1.01-1.16-1.33-.55-.32-1.28-.48-2.2-.48h-3.59l.74-2.92h12.53l-.69,2.53h-2.89c.44.62.74,1.36.87,2.21h2.7Z"
                       ></path>
@@ -468,7 +468,7 @@
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
+                  class="text-[#0083ff] motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   id="Layer_2"
                   data-name="Layer 2"
@@ -534,9 +534,10 @@
                         cx="45.82"
                         cy="49.92"
                         r="12.83"
+                        fill="#63b3ff"
                       ></circle>
                       <path
-                        fill="currentColor"
+                        fill="#fff"
                         class="cls-3"
                         d="M51.59,46.56l-.6,2.18h-1.76c-.17,1.09-.65,1.98-1.42,2.69-.78.71-1.91,1.15-3.42,1.33l-.1.02,5.21,6.4v.15h-3.4l-5.78-6.95-.02-1.82h2.88c.81,0,1.47-.16,1.97-.49.51-.32.85-.77,1.02-1.34h-6.11l.6-2.18h5.43c-.19-.49-.52-.88-1-1.16-.48-.28-1.12-.42-1.91-.42h-3.12l.65-2.54h10.88l-.6,2.2h-2.51c.39.54.64,1.18.76,1.91h2.35Z"
                       ></path>
@@ -556,7 +557,7 @@
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
+                  class="text-[#0083ff] motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   id="Layer_2"
                   data-name="Layer 2"
@@ -609,7 +610,7 @@
                           ></path>
                         </g>
                         <path
-                          fill="currentColor"
+                          fill="#63b3ff"
                           class="cls-1"
                           d="M31.64,27.76c-7.04,0-12.77,5.73-12.77,12.77,0,4.36,2.2,8.22,5.55,10.52v10.57c0,.58.3,1.11.79,1.42.49.3,1.1.33,1.62.07l4.81-2.4,4.81,2.4c.24.12.49.18.74.18.3,0,.61-.08.88-.25.49-.3.79-.84.79-1.42v-10.57c3.35-2.3,5.55-6.16,5.55-10.52,0-7.04-5.73-12.77-12.77-12.77ZM35.53,58.92l-3.14-1.57c-.47-.23-1.02-.23-1.49,0l-3.14,1.57v-6.24c1.23.39,2.53.61,3.89.61s2.66-.22,3.89-.61v6.24ZM37.1,39.09l-2.2,2.5.31,3.32c.03.28-.25.48-.51.37l-3.06-1.32-3.06,1.32c-.25.11-.53-.09-.51-.37l.31-3.32-2.2-2.5c-.18-.21-.08-.54.19-.6l3.25-.73,1.7-2.87c.14-.24.49-.24.63,0l1.7,2.87,3.25.73c.27.06.38.39.19.6Z"
                         ></path>
@@ -635,7 +636,7 @@
               <div class="mr-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-600 motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
+                  class="text-[#0083ff] motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur -motion-translate-x-in-100 motion-translate-y-in-75 motion-preset-seesaw"
                   width="35"
                   id="Layer_2"
                   data-name="Layer 2"
@@ -678,7 +679,7 @@
                           ></path>
                         </g>
                         <path
-                          fill="currentColor"
+                          fill="#63b3ff"
                           class="cls-1"
                           d="M58.15,33.23h-19.94c-2.75,0-4.98,2.24-4.98,4.98v12.92l7.2-6.4c.66-.58,1.66-.55,2.28.07l5.47,5.47,3.74-3.74h-1.53c-.92,0-1.66-.74-1.66-1.66s.74-1.66,1.66-1.66h5.54c.92,0,1.66.74,1.66,1.66v5.54c0,.92-.74,1.66-1.66,1.66s-1.66-.74-1.66-1.66v-1.53l-4.92,4.92c-.65.65-1.7.65-2.35,0l-5.54-5.54-8.24,7.33v2.58c0,2.75,2.24,4.98,4.98,4.98h19.94c2.75,0,4.98-2.24,4.98-4.98v-19.94c0-2.75-2.24-4.98-4.98-4.98Z"
                         ></path>

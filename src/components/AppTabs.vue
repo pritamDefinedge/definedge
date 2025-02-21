@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-xl mx-auto ">
+  <div class="max-w-screen-xl mx-auto sm:px-4 lg:px-0 px-4">
     <!-- Section Title -->
     <h4
       class="text-blue-700 text-center text-[25px] md:text-lg lg:text-xl xl:text-2xl font-semibold tracking-wide motion-scale-in-[0.5] motion-translate-x-in-[-25%] motion-translate-y-in-[25%] motion-opacity-in-[0%] motion-rotate-in-[-10deg] motion-blur-in-[5px] motion-duration-[0.35s] motion-duration-[0.53s]/scale motion-duration-[0.53s]/translate motion-duration-[0.63s]/rotate"
@@ -13,18 +13,23 @@
     </h5>
 
     <!-- Tabs Container -->
-    <div class="flex justify-center  mb-6 sm:gap-3 sm:my-12 my-12 gap-3 xs:gap-2 md:gap-4 lg:gap-x-6">
+    <div
+      class="flex justify-center mb-6 sm:gap-3 sm:my-12 my-12 gap-3 xs:gap-2 md:gap-4 lg:gap-x-6"
+    >
       <!-- Tab Buttons -->
       <button
         @click="activeAppTab = tabs[0].name"
         :class="{
           'border-b-2 border-blue-500 bg-white text-gray-800':
             activeAppTab === tabs[0].name,
-          'bg-[#FFFFFF10] border-2 border-white hover:bg-gray-300 hover:text-black text-gray-400':
+          'bg-[#FFFFFF10] border-2 border-white hover:bg-[fcf7f7] hover:text-[#fff] text-gray-400':
             activeAppTab !== tabs[0].name,
         }"
-        class="motion-scale-in-[0.5]  px-8 py-3 text-base lg:text-lg motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur tab-btn text-md rounded-lg lg:font-semibold md:font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
+        class="group relative inline-block overflow-hidden   border-double  motion-scale-in-[0.9] px-8 py-4 text-base lg:text-lg motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
+      <span
+          class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#fcf7f7] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
+        ></span>
         <span class="flex gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -68,11 +73,14 @@
         :class="{
           'border-b-2 border-blue-500 bg-white text-gray-800':
             activeAppTab === tabs[1].name,
-          'bg-[#FFFFFF10] border-2 border-white hover:bg-gray-300 hover:text-black text-gray-400':
+          'bg-[#FFFFFF10] border-2 border-white hover:bg-[fcf7f7] hover:text-[#fff] text-gray-400':
             activeAppTab !== tabs[1].name,
         }"
-        class="motion-scale-in-[0.5]  px-8 py-4 text-base lg:text-lg motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
+        class="group relative inline-block overflow-hidden   border-double  motion-scale-in-[0.9] px-8 py-4 text-base lg:text-lg motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
+      <span
+          class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#fcf7f7] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
+        ></span>
         <span class="flex gap-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -92,13 +100,14 @@
           {{ tabs[1].name }}
         </span>
       </button>
+    
     </div>
 
     <!-- Tab Content -->
     <div class="flex items-center justify-center space-x-12 -mt-8">
       <!-- Zone App Content -->
-      <div v-if="activeAppTab === tabs[0].name" class="w-full md:w-full ">
-        <div class="flex sm:flex-wrap lg:flex-nowrap flex-wrap justify-between ">
+      <div v-if="activeAppTab === tabs[0].name" class="w-full md:w-full">
+        <div class="flex sm:flex-wrap lg:flex-nowrap flex-wrap justify-between">
           <ul
             class="space-y-4 pt-12 md:pt-24 p-4 lg:pt-24 text-lg w-full md:w-1/2 motion-preset-slide-right motion-duration-1500"
           >
@@ -149,7 +158,7 @@
             </li>
           </ul>
           <div
-            class="w-full md:w-1/2   motion-preset-slide-left motion-duration-1500"
+            class="w-full md:w-1/2 motion-preset-slide-left motion-duration-1500"
           >
             <img
               :src="tabs[0].content.imageSrc"
@@ -166,7 +175,7 @@
           <ul
             class="space-y-4 pt-12 md:pt-24 lg:pt-24 text-lg w-full md:w-1/2 motion-preset-slide-right motion-duration-1500"
           >
-            <h6 class="text-xl font-semibold mb-4 text-left font-sans ">
+            <h6 class="text-xl font-semibold mb-4 text-left font-sans">
               {{ tabs[1].content.header }}
             </h6>
             <li
@@ -219,7 +228,7 @@
             <img
               :src="tabs[1].content.imageSrc"
               alt="App Image"
-              class=" rounded-lg shadow-lg"
+              class="rounded-lg shadow-lg"
             />
           </div>
         </div>
