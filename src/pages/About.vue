@@ -9,23 +9,25 @@
     />
 
     <div
-      class="min-h-[580px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center p-6"
+      class="min-h-[580px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-end items-center text-center p-6"
     >
-      <h2 class="text-white sm:text-4xl text-2xl font-bold mb-6">About</h2>
+      <h2 class="text-white sm:text-4xl text-2xl font-normal leading-6">
+        About
+      </h2>
       <ul
         class="hidden lg:flex items-center justify-center font-[sans-serif] space-x-4 mt-4"
       >
-        <li class="text-gray-300 cursor-pointer text-xl lg:text-base">
+        <li class="text-[#ffffffab] cursor-pointer text-xl lg:text-base">
           <a
             class="hover:cursor-pointer"
             href="https://www.definedgesecurities.com"
             >Home</a
           >
         </li>
-        <li>
+        <li class="px-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="fill-gray-400 w-3.5 -rotate-90"
+            class="fill-gray-400 w-2.5 -rotate-90"
             viewBox="0 0 24 24"
             aria-label="Arrow Icon"
           >
@@ -36,30 +38,28 @@
             ></path>
           </svg>
         </li>
-        <li class="text-gray-300 text-xl lg:text-base cursor-pointer">About</li>
+        <li class="text-[#ffffffab] text-xl lg:text-base cursor-pointer">
+          About
+        </li>
       </ul>
     </div>
   </section>
+
   <section
     class="relative font-sans before:absolute before:w-full before:h-full before:inset-0 before:z-10"
-    style="
-      background-color: transparent;
-      background-image: linear-gradient(45deg, #005366 0%, #003f80 100%);
-      opacity: 0.95;
-    "
+    style="background-color: transparent; background-image: linear-gradient(45deg, #005366 0%, #003f80 100%); opacity: 0.95;"
   >
     <div
       class="min-h-[380px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center p-6"
     >
-      <div class="container lg:px-24">
-        <h2 class="text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+      <div class="container lg:px-24 py-18">
+        <h5
+          class="text-white uppercase tracking-wide leading-15 text-base sm:text-[2.265rem] md:text-[2.265rem] font-extrabold mb-8"
+        >
           Definedge Journey
-        </h2>
-        <p class="text-gray-200 text-md sm:text-xl md:text-xl">
-          A young, self-funded organization hungry to contribute and make a
-          difference. On a mission to empower the community by providing
-          education and developing innovative products & features that help them
-          make smarter & more informed decisions.
+        </h5>
+        <p class="text-gray-200 text-md sm:text-base md:text-xl font-semibold">
+          A young, self-funded organization hungry to contribute and make a difference. On a mission to empower the community by providing education and developing innovative products & features that help them make smarter & more informed decisions.
         </p>
         <Journey />
         <Video />
@@ -67,16 +67,21 @@
     </div>
   </section>
 
-  <section class="py-12 bg-gray-50">
+  <section class="py-12">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="lg:text-6xl font-bold text-center text-[#0A3C82] mb-12">
         Meet the Team
       </h2>
-      <div class="flex flex-wrap justify-center">
+
+      <div
+        class="relative flex flex-wrap min-h-screen justify-center overflow-hidden py-6 sm:py-12"
+        ref="teamSection"
+      >
         <TeamMemberCard
-          v-for="member in teamMembers"
+          v-for="(member, index) in teamMembers"
           :key="member.id"
           :member="member"
+          :class="{ 'animate-slide-up': inView }"
         />
       </div>
     </div>
@@ -98,7 +103,35 @@ export default {
   data() {
     return {
       teamMembers: teamMembersData,
+      inView: false,
     };
+  },
+  mounted() {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        this.inView = entry.isIntersecting;
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(this.$refs.teamSection);
   },
 };
 </script>
+
+<style scoped>
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+</style>

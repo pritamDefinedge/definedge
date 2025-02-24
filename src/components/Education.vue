@@ -1,13 +1,20 @@
 <template>
-  <div class="max-w-screen-xl mx-auto ">
+  <div class="max-w-screen-xl mx-auto">
     <!-- EDUCATION Title -->
     <h2
-      class="text-[#005BDF] text-center text-[15px] md:text-lg lg:text-base xl:text-base font-normal tracking-[5px] motion-scale-in-[0.5] motion-translate-x-in-[-25%] motion-translate-y-in-[25%] motion-opacity-in-[0%] motion-rotate-in-[-10deg] motion-blur-in-[5px] motion-duration-[0.35s] motion-duration-[0.53s]/scale motion-duration-[0.53s]/translate motion-duration-[0.63s]/rotate"
+      class="text-[#005BDF] text-center text-[15px] md:text-lg lg:text-base xl:text-base font-normal tracking-[5px]"
+      :class="{
+        'motion-scale-in-[0.5] motion-translate-x-in-[-25%] motion-translate-y-in-[25%] motion-opacity-in-[0%] motion-rotate-in-[-10deg] motion-blur-in-[5px] motion-duration-[0.35s] motion-duration-[0.53s]/scale motion-duration-[0.53s]/translate motion-duration-[0.63s]/rotate':
+          hasScrolled,
+      }"
     >
       EDUCATION
     </h2>
     <h5
-      class="text-[#2A394E] text-center text-xl font-bold tracking-wider md:text-lg lg:text-2xl xl:text-3xl mt-4 hover:motion-preset-bounce hover:motion-duration-1000 motion-preset-bounce motion-duration-1000"
+      class="text-[#2A394E] text-center text-xl font-bold tracking-wider md:text-lg lg:text-2xl xl:text-3xl mt-4"
+      :class="{
+        'motion-preset-bounce motion-duration-1000': hasScrolled,
+      }"
     >
       Ecosystem of Transformative Education
     </h5>
@@ -18,14 +25,16 @@
       <button
         v-for="(tab, index) in tabs"
         :key="index"
-        @click="activeEducationTab = tab.id"
+        @click="setActiveTab(tab.id)"
         :class="{
           'border-2 border-[#0E9CE5] bg-[#FFFFFF] text-black ':
             activeEducationTab === tab.id,
           'bg-[#FFFFFF47] border-2 border-[#EBEBEB] text-[#817E7E] hover:text-black':
             activeEducationTab !== tab.id,
+          'motion-scale-in-[0.9] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
+            hasScrolled,
         }"
-        class="flex min-w-[150px]  text-center rounded-[10px] justify-center px-6 py-3 text-base sm:text-sm md:text-sm  lg:text-lg motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur tab-btn text-md  cursor-pointer focus:outline-none transition duration-300 motion-scale-in-[0.5] ease-in-out"
+        class="flex min-w-[150px] text-center rounded-[10px] justify-center px-6 py-3 text-base sm:text-sm md:text-sm lg:text-lg tab-btn text-md cursor-pointer focus:outline-none transition duration-300 motion-scale-in-[0.5] ease-in-out"
       >
         {{ tab.label }}
       </button>
@@ -40,10 +49,14 @@
         )"
         :key="content.id"
         class="w-full md:w-full px-6"
+        ref="contentSection"
       >
         <div class="flex flex-wrap justify-between">
           <ul
-            class="space-y-4 text-lg w-full md:w-1/2 py-16 motion-preset-slide-right motion-duration-2000"
+            class="space-y-4 text-lg w-full md:w-1/2 py-16"
+            :class="{
+              'motion-preset-slide-right motion-duration-1500': hasScrolled,
+            }"
           >
             <h6
               class="text-2xl font-bold mb-6 text-left font-sans text-[#2A394E]"
@@ -111,12 +124,15 @@
           </ul>
 
           <div
-            class="w-full md:w-1/2 motion-preset-slide-left motion-duration-2000 "
+            class="w-full md:w-1/2"
+            :class="{
+              'motion-preset-slide-left motion-duration-1500': hasScrolled,
+            }"
           >
             <img
               :src="content.image"
               :alt="content.title"
-              class="w-full rounded-lg mb-6 object-cover object-top "
+              class="w-full rounded-lg mb-6 object-cover object-top"
             />
           </div>
         </div>
@@ -134,7 +150,23 @@ export default {
   data() {
     return {
       activeEducationTab: this.tabs[0].id,
+      hasScrolled: false,
     };
+  },
+  methods: {
+    setActiveTab(tabId) {
+      this.activeEducationTab = tabId;
+    },
+    onScroll() {
+      const scrollPosition = window.scrollY;
+      this.hasScrolled = scrollPosition > 3000;
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
   },
 };
 </script>

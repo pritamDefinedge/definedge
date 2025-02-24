@@ -10,8 +10,8 @@
         :class="[
           'tab',
           activeTab === year
-            ? 'text-white font-bold border-b-2 border-white'
-            : 'text-white font-semibold hover:text-gray-300 hover:border-b-2 hover:border-gray-300',
+            ? 'text-white font-bold border-b-4 border-white'
+            : 'text-white font-semibold hover:text-gray-300 hover:border-b-4 hover:border-gray-300',
           'text-xl sm:text-2xl text-center py-3 px-6 cursor-pointer transition-all whitespace-nowrap',
         ]"
       >
@@ -25,7 +25,7 @@
     >
       <transition name="fade" mode="out-in">
         <div v-if="activeTab" class="tab-content">
-          <h4 class="text-xl sm:text-2xl font-bold text-white">
+          <h4 class="text-2xl sm:text-2xl font-bold text-white">
             {{ currentContent.title }}
           </h4>
           <p class="text-base sm:text-lg text-gray-200 mt-4 leading-relaxed">
@@ -119,17 +119,15 @@ export default {
 </script>
 
 <style scoped>
-/* Add any additional styles here */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
 }
 .fade-enter,
-  .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+.fade-leave-to {
   opacity: 0;
 }
 
-/* Add custom styles for tabs */
 .tab:hover {
   cursor: pointer;
   transition: all 0.3s ease;
@@ -137,6 +135,6 @@ export default {
 
 .tab:hover,
 .tab-active {
-  border-bottom: 2px solid #ffffff; /* Active tab effect */
+  border-bottom: 4px solid #ffffff;
 }
 </style>

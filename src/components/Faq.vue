@@ -5,7 +5,7 @@
     <div>
       <button
         type="button"
-        class="w-full text-base text-left font-semibold p-5"
+        class="flex w-full text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 1,
           'text-gray-800 hover:text-blue-600': openIndex !== 1,
@@ -27,8 +27,8 @@
         </svg>
       </button>
 
-      <div :class="{ hidden: openIndex !== 1 }" class="py-12 p-5">
-        <p class="text-sm text-gray-600 leading-relaxed">
+      <div :class="{ hidden: openIndex !== 1 }" class="py-12 p-5 text-base">
+        <p class="text-base text-gray-600 leading-relaxed">
           With your Definedge Super Demat, you get access to a range of 15+
           tools that offer transformative education, actionable analysis and
           effortless execution. To know about all the products you get with your
@@ -40,14 +40,14 @@
           >
         </p>
         <br />
-        <p class="text-sm text-gray-600 leading-relaxed">
+        <p class=" text-gray-600 leading-relaxed">
           If you want to go PRO, you can try our PRO products for a month,
           before you decide to commit. You get all subscriptions effectively
           free, as your purchase amount is converted to wallet points to be used
           against your brokerage.
         </p>
         <br />
-        <p class="text-sm text-gray-600 leading-relaxed">
+        <p class=" text-gray-600 leading-relaxed">
           You also get access to two of our expert-guided courses on Gurukul by
           Definedge.
         </p>
@@ -57,7 +57,7 @@
     <div>
       <button
         type="button"
-        class="w-full text-base text-left font-semibold p-5"
+        class="flex w-full text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 2,
           'text-gray-800 hover:text-blue-600': openIndex !== 2,
@@ -81,15 +81,15 @@
         </svg>
       </button>
 
-      <div :class="{ hidden: openIndex !== 2 }" class="py-12 p-5">
-        <p class="text-sm text-gray-600 leading-relaxed">
+      <div :class="{ hidden: openIndex !== 2 }" class="py-12 p-5 text-base">
+        <p class=" text-gray-600 leading-relaxed">
           With your super demat, you get access to our Definedge universe of 15+
           tools for education, analysis, and trading. All the basic versions of
           the software are available for free. You also get access to our PRO
           tools for a month at no cost, before you decide to commit.
         </p>
         <br />
-        <p class="text-sm text-gray-600 leading-relaxed">
+        <p class=" text-gray-600 leading-relaxed">
           All our subscriptions are effectively free as your purchase amount is
           converted to wallet points to be used against your brokerage.
         </p>
@@ -99,7 +99,7 @@
     <div>
       <button
         type="button"
-        class="w-full text-base text-left font-semibold p-5"
+        class="flex w-full text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 3,
           'text-gray-800 hover:text-blue-600': openIndex !== 3,
@@ -121,8 +121,8 @@
         </svg>
       </button>
 
-      <div :class="{ hidden: openIndex !== 3 }" class="py-12 p-5">
-        <p class="text-sm text-gray-600 leading-relaxed">
+      <div :class="{ hidden: openIndex !== 3 }" class="py-12 p-5 text-base">
+        <p class=" text-gray-600 leading-relaxed">
           You can get your Definedge Super Demat in minutes with a simple 3-step
           process explained above. To get your Super Demat,
           <a
@@ -137,7 +137,7 @@
     <div>
       <button
         type="button"
-        class="w-full text-base text-left font-semibold p-5"
+        class="flex w-full text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 4,
           'text-gray-800 hover:text-blue-600': openIndex !== 4,
@@ -159,8 +159,8 @@
         </svg>
       </button>
 
-      <div :class="{ hidden: openIndex !== 4 }" class="py-12 p-5">
-        <p class="text-sm text-gray-600 leading-relaxed">
+      <div :class="{ hidden: openIndex !== 4 }" class="py-12 p-5 text-base">
+        <p class=" text-gray-600 leading-relaxed">
           Yes, the Definedge Super Demat is effectively free with our Wallet
           feature. Your account opening charges are converted into wallet
           points, which you can use against your brokerage.
@@ -171,7 +171,7 @@
     <div>
       <button
         type="button"
-        class="w-full text-base text-left font-semibold p-5"
+        class="flex w-full text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 5,
           'text-gray-800 hover:text-blue-600': openIndex !== 5,
@@ -195,7 +195,7 @@
         </svg>
       </button>
 
-      <div :class="{ hidden: openIndex !== 5 }" class="py-12 p-5">
+      <div :class="{ hidden: openIndex !== 5 }" class="py-12 p-5 text-base text-gray-600">
         <ul>
           <li class="mb-2">
             <i class="fas fa-check-circle"></i> Individual Demat account
@@ -227,7 +227,7 @@
     <div>
       <button
         type="button"
-        class="w-full text-base text-left font-semibold p-5"
+        class="flex w-full text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 6,
           'text-gray-800 hover:text-blue-600': openIndex !== 6,
@@ -251,8 +251,8 @@
         </svg>
       </button>
 
-      <div :class="{ hidden: openIndex !== 6 }" class="py-12 p-5">
-        <p class="text-sm text-gray-600 leading-relaxed">
+      <div :class="{ hidden: openIndex !== 6 }" class="py-12 p-5 text-base text-gray-600">
+        <p >
           There is no minimum balance required to open or maintain your Demat
           account.
         </p>
@@ -262,7 +262,7 @@
     <div>
       <button
         type="button"
-        class="w-full text-base text-left font-semibold p-5"
+        class="flex w-full text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 7,
           'text-gray-800 hover:text-blue-600': openIndex !== 7,
@@ -286,7 +286,7 @@
         </svg>
       </button>
 
-      <div :class="{ hidden: openIndex !== 7 }" class="py-12 p-5">
+      <div :class="{ hidden: openIndex !== 7 }" class="py-12 p-5 text-base text-gray-600">
         <ul>
           <li class="mb-2"><i class="fas fa-check-circle"></i> PAN card</li>
           <li class="mb-2">
@@ -323,12 +323,10 @@
   </div>
 </template>
 
-
 <script>
 import { reactive, toRefs, onMounted } from "vue"; // Import from Vue 3 if needed
 
 export default {
- 
   data() {
     return {
       openIndex: null,
@@ -336,8 +334,6 @@ export default {
   },
 
   setup() {
-  
-
     return {
       ...toRefs(),
     };
@@ -350,9 +346,6 @@ export default {
         this.openIndex = index; // Open the clicked FAQ
       }
     },
-  
-
-  
   },
 };
 </script>

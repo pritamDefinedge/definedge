@@ -48,66 +48,61 @@
           <a
             href="https://www.facebook.com/DefinedgeSecurities/"
             target="_blank"
-            class="w-9 h-9"
+            class=""
           >
             <img
               src="https://www.definedgesecurities.com/wp-content/uploads/2023/07/Facebook.svg"
-              width="30"
+              width="28"
               alt="Facebook"
             />
           </a>
           <a
             href="https://www.instagram.com/Definedge_/"
             target="_blank"
-            class="w-9 h-9"
           >
             <img
               src="https://www.definedgesecurities.com/wp-content/uploads/2023/07/Instagram.svg"
-              width="30"
+              width="28"
               alt="Instagram"
             />
           </a>
           <a
             href="https://in.linkedin.com/company/definedge"
             target="_blank"
-            class="w-9 h-9"
           >
             <img
               src="https://www.definedgesecurities.com/wp-content/uploads/2023/07/LinkedIn.svg"
-              width="30"
+              width="28"
               alt="LinkedIn"
             />
           </a>
           <a
             href="https://www.threads.net/@definedge_"
             target="_blank"
-            class="w-9 h-9"
           >
             <img
               src="https://www.definedgesecurities.com/wp-content/uploads/2023/07/Threads.svg"
-              width="30"
+              width="28"
               alt="Threads"
             />
           </a>
           <a
             href="https://twitter.com/Definedge"
             target="_blank"
-            class="w-9 h-9"
           >
             <img
               src="https://www.definedgesecurities.com/wp-content/uploads/2023/07/X.svg"
-              width="30"
+              width="28"
               alt="Twitter"
             />
           </a>
           <a
             href="https://www.youtube.com/c/DefinedgeSolutions"
             target="_blank"
-            class="w-9 h-9"
           >
             <img
               src="https://www.definedgesecurities.com/wp-content/uploads/2023/07/YouTube.svg"
-              width="30"
+              width="28"
               alt="YouTube"
             />
           </a>
@@ -119,119 +114,139 @@
       <div class="flex flex-wrap">
         <!-- Definedge Securities Broking Pvt. Ltd Section -->
         <div class="w-full sm:w-1/2 lg:w-1/4 mt-8">
-          <h4 class="text-gray-400 font-semibold text-xl mb-6">
+          <h4 class="text-gray-400 font-semibold text-base mb-6">
             Definedge Securities Broking Pvt. Ltd.
           </h4>
-          <ul class="space-y-3">
+          <ul class="space-y-3 text-sm text-gray-300">
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 >Member of NSE, BSE & MCX :-</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 >SEBI Registration No. INZ000301132</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 >Membership No.: NSE-90237 | BSE-6766 | MCX-56960</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 >SEBI Registration No.: CDSL-IN-DP-662-2021</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 >Membership No.: CDSL-12094700</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 >NSE CM Code: M70017</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 >AMFI Registration no. ARN: 206385</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 >Research Analyst: INH000010344</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 >CIN : U65990PN2021PTC198378</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 >Compliance Officer: Ms. Bhagyashree Zad,</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-blue-500"
+                class=" hover:text-blue-500"
                 >Email: compliance@definedge.com,</a
               >
             </li>
             <li>
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-blue-500"
+                class=" hover:text-blue-500"
                 >Tel no.: 020-22953395</a
               >
             </li>
             <li>
-             
-              <a  class="text-gray-200 hover:text-blue-500" href="#" style="cursor: pointer;">Investor Grievance Redressal Mechanism</a>
+              <a
+                class=" hover:text-blue-500"
+                href="#"
+                style="cursor: pointer"
+                >Investor Grievance Redressal Mechanism</a
+              >
             </li>
             <li>
-              <a class="text-gray-200 hover:text-blue-500"  href="https://www.definedgesecurities.com/investor-awareness/">Investor’s Attention</a>
+              <a
+                class=" hover:text-blue-500"
+                href="https://www.definedgesecurities.com/investor-awareness/"
+                >Investor’s Attention</a
+              >
             </li>
             <li>
-              <a class="text-gray-200 hover:text-blue-500" href="https://www.definedgesecurities.com/pdf/NSE-Risk-disclosure.pdf" target="_blank" rel="noopener">Risk Disclosures on Derivatives</a>
+              <a
+                class=" hover:text-blue-500"
+                href="https://www.definedgesecurities.com/pdf/NSE-Risk-disclosure.pdf"
+                target="_blank"
+                rel="noopener"
+                >Risk Disclosures on Derivatives</a
+              >
             </li>
             <li>
-              <a class="text-gray-200 hover:text-blue-500" href="https://www.definedgesecurities.com/pdf/NSE-LIST-OF-AP.pdf" target="_blank" rel="noopener">AP Details</a>
+              <a
+                class=" hover:text-blue-500"
+                href="https://www.definedgesecurities.com/pdf/NSE-LIST-OF-AP.pdf"
+                target="_blank"
+                rel="noopener"
+                >AP Details</a
+              >
             </li>
           </ul>
         </div>
 
         <!-- Registered Address -->
         <div class="w-full sm:w-1/2 lg:w-1/3 lg:px-8 mt-8">
-          <h4 class="text-gray-400 font-semibold text-xl mb-6">
+          <h4 class="text-gray-400 font-semibold text-base mb-6">
             Registered Address
           </h4>
-          <ul class="space-y-3">
+          <ul class="space-y-3 text-sm text-gray-300">
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://maps.google.com/maps?ll=18.520911,73.778207&amp;z=13&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=embed&amp;cid=12577676570181016861"
                 target="_blank"
                 rel="noopener"
@@ -242,28 +257,26 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="mailto:care@definedge.com"
                 ><i class="fa fa-envelope"></i> care@definedge.com</a
               >
             </li>
             <li>
-              <a class="text-gray-200 hover:text-white" href="tel:02061923200"
+              <a class=" hover:text-white" href="tel:02061923200"
                 ><i class="fa fa-phone-alt"></i> 020-61923200</a
               >
             </li>
             <hr class="my-12 border-gray-400" />
-            <li>
-              <a
-                href="javascript:void(0)"
-                class="text-gray-400 text-xl font-extrabold hover:text-white"
+            <li class="text-base font-semibold">
+              <a href="javascript:void(0)" class="text-gray-400"
                 >Corporate office</a
               >
             </li>
-            <li>
+            <li class="leading-8">
               <a
                 href="javascript:void(0)"
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 ><p class="xmsonormal">
                   <i class="fa fa-map-marker"></i> Office no. 523, 5<sup
                     >th</sup
@@ -275,33 +288,35 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-blue-400"
                 href="mailto:compliance@definedge.com"
                 ><i class="fa fa-envelope"></i> compliance@definedge.com</a
               >
             </li>
             <li>
-              <a class="text-gray-200 hover:text-white" href="tel:02022953395"
+              <a
+                class=" hover:text-blue-400"
+                href="tel:02022953395"
                 ><i class="fa fa-phone-alt"></i> 020-22953395</a
               >
             </li>
             <hr class="my-12 border-gray-400" />
-            <li class="flex flex-wrap">
-              <span
-                class="flex lg:gap-8 gap-4 flex-wrap text-gray-400 hover:text-white"
-              >
+            <li class="flex flex-wrap font-semibold">
+              <span class="flex lg:gap-8 gap-4 flex-wrap text-gray-400">
                 Customer Support
-                <a class="text-gray-200 hover:text-white" href="tel:02061923200"
+                <a
+                  class="text-gray-400 hover:text-blue-400"
+                  href="tel:02061923200"
                   ><i class="fa fa-phone-alt"></i> 020-61923200</a
                 >
               </span>
             </li>
-            <li class="flex flex-wrap">
-              <span
-                class="flex lg:gap-8 gap-4 flex-wrap text-gray-400 hover:text-white"
-              >
+            <li class="flex flex-wrap font-semibold">
+              <span class="flex lg:gap-8 gap-4 flex-wrap text-gray-400">
                 Call and trade
-                <a class="text-gray-200 hover:text-white" href="tel:02061923220"
+                <a
+                  class="text-gray-400 hover:text-blue-400"
+                  href="tel:02061923220"
                   ><i class="fa fa-phone-alt"></i> 020-61923220</a
                 >
               </span>
@@ -311,53 +326,53 @@
 
         <!-- Company -->
         <div class="w-full sm:w-1/2 lg:w-1/5 mt-8">
-          <h4 class="text-gray-400 font-semibold text-xl mb-6">Company</h4>
-          <ul class="space-y-3">
+          <h4 class="text-gray-400 font-semibold text-base mb-6">Company</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/about/"
                 >About Us</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/products-plans-packages/"
                 >Products Plans Packages</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/career/"
                 >Career</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/contact/"
                 >Contact Us</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/about/#meet-d-team"
                 >Our Team</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/need-help/"
                 >FAQs</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 rel="privacy-policy"
                 href="https://www.definedgesecurities.com/privacy-policy/"
                 >Privacy Policy</a
@@ -365,28 +380,28 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/terms-and-conditions/"
                 >Terms of Use</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/policies-procedures/"
                 >Policies & Procedures</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/disclaimer/"
                 >Disclaimer</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://www.definedgesecurities.com/pdf/Rights-and-Obligations-Definedge-Securities.pdf"
@@ -395,7 +410,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://www.definedgesecurities.com/pdf/Investor-Charter.pdf"
@@ -404,14 +419,14 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/research-analyst/"
                 >Research Analyst</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://www.definedgesecurities.com/pdf/Voluntary-Account-FreezeBlock-Policy.pdf"
@@ -420,7 +435,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://www.definedgesecurities.com/pdf/Procedure-for-filing-complaints.pdf"
@@ -429,7 +444,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://www.definedgesecurities.com/pdf/Client-Bank-Account.pdf"
@@ -438,7 +453,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://evoting.cdslindia.com/Evoting/EvotingLogin"
@@ -447,7 +462,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://www.definedgescurities.com/pdf/KMP_details.pdf"
@@ -456,7 +471,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/trading-holidays-year-2025/"
                 >Trading Holidays</a
               >
@@ -466,11 +481,11 @@
 
         <!-- Services Section -->
         <div class="w-full sm:w-1/2 lg:w-1/5 sm:mt-8 mt-8">
-          <h4 class="text-gray-400 font-semibold text-xl mb-6">Services</h4>
-          <ul class="space-y-3">
+          <h4 class="text-gray-400 font-semibold text-base mb-6">Services</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://mfzone.definedgesecurities.com/"
@@ -479,7 +494,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://zone.definedgesecurities.com/"
@@ -488,7 +503,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://opstra.definedgesecurities.com/"
@@ -497,7 +512,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://opstra.definedgesecurities.com/"
@@ -506,7 +521,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://opstra.definedgesecurities.com/"
@@ -515,14 +530,14 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/pricing-page/"
                 >Brokerage Charges</a
               >
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 target="_blank"
                 rel="noopener"
                 href="https://ipo.definedgesecurities.com/"
@@ -531,7 +546,7 @@
             </li>
             <li>
               <a
-                class="text-gray-200 hover:text-white"
+                class=" hover:text-white"
                 href="https://www.definedgesecurities.com/download-form/"
                 >Download Forms</a
               >
