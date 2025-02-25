@@ -76,9 +76,8 @@
             </div>
             <!-- Submit Button -->
             <div>
-          
               <button
-                class="group relative p-3 w-28 cursor-pointer overflow-hidden rounded-md border-2 bg-[#0369e0] border-white  focus:outline-none font-semibold transition-all ease-in-out duration-300 transform hover:scale-105 motion-preset-seesaw"
+                class="group relative p-3 w-28 cursor-pointer overflow-hidden rounded-md border-2 bg-[#0369e0] border-white focus:outline-none font-semibold transition-all ease-in-out duration-300 transform hover:scale-105 motion-preset-seesaw"
               >
                 <span
                   class="ease absolute top-1/2 h-0 w-60 origin-center -translate-x-20 rotate-45 bg-blue-900 transition-all duration-300 group-hover:h-48 group-hover:-translate-y-32"

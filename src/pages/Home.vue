@@ -100,7 +100,7 @@
   <!-- Join Our Thriving Community of Traders & Investors -->
   <section class="container px-4 sm:px-8 md:px-16 lg:px-28 mx-auto py-12">
     <div
-      class="flex flex-col lg:flex-row items-center justify-between w-full rounded-3xl overflow-hidden"
+      class="flex flex-col lg:flex-row items-center justify-between w-full rounded-3xl overflow-hidden shine shine-anim"
       style="
         background: linear-gradient(
             260deg,
@@ -115,7 +115,7 @@
     >
       <!-- Left Side Content -->
       <div class="flex-1 mb-8 md:mb-0 p-6 sm:p-8 lg:p-12">
-        <h2 class="text-gray-900 sm:text-3xl text-2xl font-bold mb-6">
+        <h2 class="text-gray-900 sm:text-2xl text-2xl font-bold mb-6">
           Join Our Thriving Community of Traders & Investors
         </h2>
         <p class="text-base text-left text-gray-900 mb-8">

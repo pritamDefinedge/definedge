@@ -138,7 +138,7 @@
             <!-- Open Demat Account button (Only shown on mobile if collapse menu is open) -->
             <li
               v-show="collapseMenuVisible && isMobileView"
-              class="max-lg:border-b max-lg:py-3 max-lg:mt-2 "
+              class="max-lg:border-b max-lg:py-3 max-lg:mt-2"
             >
               <button
                 class="px-4 py-2 text-sm rounded font-semibold text-white border-2 border-[#1d294f] bg-[#1d294f] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#1d294f]"
@@ -188,11 +188,17 @@
         </div>
 
         <button
-          class="px-4 py-2 text-sm rounded font-semibold text-white border-2 border-[#1d294f] bg-[#1d294f] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[#1d294f] max-sm:hidden"
+          class="group relative shine shine-anim  px-4 py-2 text-sm font-semibold cursor-pointer overflow-hidden text-white rounded-md border-2 bg-[#1d294f] border-[#1d294f] hover:text-[#1d294f] focus:outline-none transition-all ease-in-out duration-300 transform hover:scale-105"
         >
-          Open Demat Account
+          <span
+            class="ease absolute top-1/2 h-0 w-80 origin-center -translate-x-20 rotate-45 bg-[#fff] transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"
+          ></span>
+          <span
+            class="ease relative text-white transition duration-300 group-hover:text-[#1d294f]"
+          >
+            Open Demat Account</span
+          >
         </button>
-
         <button id="toggleOpen" class="lg:hidden" @click="toggleCollapseMenu">
           <svg
             class="w-7 h-7"
