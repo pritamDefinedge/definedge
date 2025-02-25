@@ -19,13 +19,13 @@
         Innovative Features of Our Ecosystem
       </h5>
     </div>
-    <div class="flex flex-wrap gap-4 py-6 justify-center">
+    <div class="flex flex-wrap gap-4 py-6 justify-center px-4">
       <!-- Feature Card Template -->
 
       <div
         v-for="feature in features"
         :key="feature.id"
-        class="group relative overflow-hidden font-medium flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%] "
+        class="group relative overflow-hidden font-medium flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
         :class="{
           '-motion-translate-y-in-50 motion-ease-bounce': hasScrolled,
         }"
@@ -69,15 +69,24 @@ export default {
   data() {
     return {
       hasScrolled: false,
+      scrollThreshold: 4500,
     };
   },
   methods: {
     setActiveTab(tabId) {
       this.activeEducationTab = tabId;
     },
+
     onScroll() {
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 768) {
+        this.scrollThreshold = 7500;
+      } else {
+        this.scrollThreshold = 4500;
+      }
+
       const scrollPosition = window.scrollY;
-      this.hasScrolled = scrollPosition > 4500;
+      this.hasScrolled = scrollPosition > this.scrollThreshold;
     },
   },
   mounted() {

@@ -47,7 +47,11 @@
 
   <section
     class="relative font-sans before:absolute before:w-full before:h-full before:inset-0 before:z-10"
-    style="background-color: transparent; background-image: linear-gradient(45deg, #005366 0%, #003f80 100%); opacity: 0.95;"
+    style="
+      background-color: transparent;
+      background-image: linear-gradient(45deg, #005366 0%, #003f80 100%);
+      opacity: 0.95;
+    "
   >
     <div
       class="min-h-[380px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center p-6"
@@ -59,7 +63,10 @@
           Definedge Journey
         </h5>
         <p class="text-gray-200 text-md sm:text-base md:text-xl font-semibold">
-          A young, self-funded organization hungry to contribute and make a difference. On a mission to empower the community by providing education and developing innovative products & features that help them make smarter & more informed decisions.
+          A young, self-funded organization hungry to contribute and make a
+          difference. On a mission to empower the community by providing
+          education and developing innovative products & features that help them
+          make smarter & more informed decisions.
         </p>
         <Journey />
         <Video />
@@ -81,7 +88,10 @@
           v-for="(member, index) in teamMembers"
           :key="member.id"
           :member="member"
-          :class="{ 'animate-slide-up': inView }"
+          :class="{
+            'motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
+              inView,
+          }"
         />
       </div>
     </div>
@@ -119,19 +129,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.animate-slide-up {
-  animation: slide-up 0.8s ease-out forwards;
-}
-
-@keyframes slide-up {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-</style>
+<style scoped></style>

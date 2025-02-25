@@ -1,6 +1,6 @@
 <template>
   <section
-    class="bg-white dark:bg-gray-900 bg-cover bg-center h-[60vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] xl:h-[80vh]"
+    class="bg-white dark:bg-gray-900 bg-cover bg-center h-[80vh] sm:h-[80vh] md:h-[70vh] lg:h-[77vh] xl:h-[75vh]"
     style="
       background-image: url('https://www.definedgesecurities.com/wp-content/uploads/2025/02/definedge-banner-scaled.webp');
     "
@@ -18,11 +18,11 @@
         <div class="text-center">
           <p class="text-base md:text-lg font-medium text-gray-300">
             Trusted by
-            <strong
+            <span
               class="text-white text-lg md:text-xl motion-preset-blink motion-duration-1500"
-              >2.3 million</strong
+              >2.3 million</span
             >
-            Users &amp; Counting
+            Users & Counting
           </p>
         </div>
 
@@ -100,7 +100,7 @@
   <!-- Join Our Thriving Community of Traders & Investors -->
   <section class="container px-4 sm:px-8 md:px-16 lg:px-28 mx-auto py-12">
     <div
-      class="flex flex-col md:flex-row items-center justify-between w-full rounded-3xl overflow-hidden"
+      class="flex flex-col lg:flex-row items-center justify-between w-full rounded-3xl overflow-hidden"
       style="
         background: linear-gradient(
             260deg,

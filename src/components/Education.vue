@@ -34,8 +34,11 @@
           'motion-scale-in-[0.9] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
             hasScrolled,
         }"
-        class="flex min-w-[150px] text-center rounded-[10px] justify-center px-6 py-3 text-base sm:text-sm md:text-sm lg:text-lg tab-btn text-md cursor-pointer focus:outline-none transition duration-300 motion-scale-in-[0.5] ease-in-out"
+        class="group relative overflow-hidden flex min-w-[150px] text-center rounded-[10px] justify-center px-6 py-3 text-base sm:text-sm md:text-sm lg:text-lg tab-btn text-md cursor-pointer focus:outline-none transition duration-300 motion-scale-in-[0.5] ease-in-out"
       >
+      <span
+          class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#fcf7f7] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
+        ></span>
         {{ tab.label }}
       </button>
     </div>
@@ -151,6 +154,7 @@ export default {
     return {
       activeEducationTab: this.tabs[0].id,
       hasScrolled: false,
+      scrollThreshold: 3000,
     };
   },
   methods: {
@@ -161,6 +165,18 @@ export default {
       const scrollPosition = window.scrollY;
       this.hasScrolled = scrollPosition > 3000;
     },
+    onScroll() {
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 768) {
+        this.scrollThreshold = 4500;
+      } else {
+        this.scrollThreshold = 3000;
+      }
+
+      const scrollPosition = window.scrollY;
+      this.hasScrolled = scrollPosition > this.scrollThreshold;
+    },
+    
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);

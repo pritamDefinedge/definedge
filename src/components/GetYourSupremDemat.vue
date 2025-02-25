@@ -66,25 +66,26 @@
         Take the First Step
       </h3>
 
-      <form method="post" class="flex items-center">
-        <input
-          maxlength="400"
-          class="w-16 py-3 px-3 border border-[#b7afaf85] rounded-l-md text-gray-700"
-          readonly
-          value="+91"
-          type="text"
-        />
-        <input
-          maxlength="10"
-          minlength="10"
-          class="w-1/3 py-3 px-3 border border-[#b7afaf85] rounded-r-md text-gray-700"
-          required
-          placeholder="Enter Mobile Number"
-          type="tel"
-        />
-
+      <form method="post" class="flex flex-wrap sm:flex-1 gap-2 ">
+        <span class="flex w-full sm:w-full lg:w-1/2 md:w-full">
+          <input
+            maxlength="400"
+            class="w-16 py-3 px-3 border border-[#b7afaf85] rounded-l-md text-gray-700"
+            readonly
+            value="+91"
+            type="text"
+          />
+          <input
+            maxlength="10"
+            minlength="10"
+            class="w-full  py-3 px-3 border border-[#b7afaf85] rounded-r-md text-gray-700"
+            required
+            placeholder="Enter Mobile Number"
+            type="tel"
+          />
+        </span>
         <button
-          class="group relative m-1 cursor-pointer overflow-hidden rounded-md border-2 bg-blue-500 border-white py-3 px-4 ml-3 focus:outline-none font-semibold transition-all ease-in-out duration-300 transform hover:scale-105 motion-preset-seesaw"
+          class="group relative cursor-pointer overflow-hidden rounded-md border-2 bg-blue-500 border-white py-3 px-4 focus:outline-none font-semibold transition-all ease-in-out duration-300 transform hover:scale-105 motion-preset-seesaw"
         >
           <span
             class="ease absolute top-1/2 h-0 w-60 origin-center -translate-x-20 rotate-45 bg-blue-900 transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"
@@ -105,17 +106,21 @@ export default {
   data() {
     return {
       hasScrolled: false,
+      scrollThreshold: 5000,
     };
   },
   methods: {
     onScroll() {
-      const scrollPosition = window.scrollY;
-      console.log(scrollPosition);
-      if (scrollPosition > 5000) {
-        this.hasScrolled = true;
+      const windowWidth = window.innerWidth;
+      console.log(windowWidth);
+      if (windowWidth <= 768) {
+        this.scrollThreshold = 8500;
       } else {
-        this.hasScrolled = false;
+        this.scrollThreshold = 5000;
       }
+
+      const scrollPosition = window.scrollY;
+      this.hasScrolled = scrollPosition > this.scrollThreshold;
     },
   },
   mounted() {

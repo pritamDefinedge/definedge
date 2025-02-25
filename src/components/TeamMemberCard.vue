@@ -4,7 +4,7 @@
   >
     <!-- Background Circle on Hover -->
     <span
-      class="absolute top-10 z-0 w-60 h-60 rounded-full bg-[#000] transition-all duration-500 group-hover:scale-[10] "
+      class="absolute top-10 z-0 w-60 h-60 rounded-full bg-[#000] transition-all duration-500 group-hover:scale-[10]"
     ></span>
 
     <!-- Profile Image with background color change on hover -->

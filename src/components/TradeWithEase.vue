@@ -668,12 +668,21 @@ export default {
   data() {
     return {
       hasScrolled: false,
+      scrollThreshold: 4000,
     };
   },
   methods: {
+ 
     onScroll() {
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 768) {
+        this.scrollThreshold = 6000; 
+      } else {
+        this.scrollThreshold = 4000; 
+      }
+
       const scrollPosition = window.scrollY;
-      this.hasScrolled = scrollPosition > 4000;
+      this.hasScrolled = scrollPosition > this.scrollThreshold;
     },
   },
   mounted() {

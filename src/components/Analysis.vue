@@ -35,8 +35,11 @@
           'motion-scale-in-[0.9] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
             hasScrolled,
         }"
-        class="flex min-w-[150px] px-6 py-3 text-[13px] sm:text-sm md:text-sm text-sm font-medium lg:text-lg tab-btn text-md rounded-lg cursor-pointer focus:outline-none transition duration-300 ease-in-out"
+        class="group relative overflow-hidden flex min-w-[150px] px-8 py-3 text-[13px] sm:text-sm md:text-base text-base font-medium lg:text-base tab-btn text-md rounded-lg cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
+        <span
+          class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#cfcdcd] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
+        ></span>
         {{ tab.label }}
       </button>
     </div>
@@ -149,19 +152,25 @@ export default {
     return {
       activeAnalysisTab: this.tabs[0].id,
       hasScrolled: false,
+      scrollThreshold: 2000,
     };
   },
   methods: {
     setActiveTab(tabId) {
       this.activeAnalysisTab = tabId;
     },
+
     onScroll() {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 2000) {
-        this.hasScrolled = true;
+      // Update scroll threshold based on window width
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 768) {
+        this.scrollThreshold = 3000;
       } else {
-        this.hasScrolled = false;
+        this.scrollThreshold = 2000;
       }
+
+      const scrollPosition = window.scrollY;
+      this.hasScrolled = scrollPosition > this.scrollThreshold;
     },
   },
   mounted() {

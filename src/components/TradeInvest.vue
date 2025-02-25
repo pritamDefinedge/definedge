@@ -151,6 +151,7 @@ export default {
     return {
       activeTradeTab: this.tabs[0].id,
       hasScrolled: false,
+      scrollThreshold: 1200,
     };
   },
   methods: {
@@ -158,8 +159,16 @@ export default {
       this.activeTradeTab = tabId;
     },
     onScroll() {
+      // Update scroll threshold based on window width
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 768) {
+        this.scrollThreshold = 1400; // Small devices (scroll position for small screens)
+      } else {
+        this.scrollThreshold = 1200; // Medium and large devices (scroll position for these screens)
+      }
+
       const scrollPosition = window.scrollY;
-      this.hasScrolled = scrollPosition > 1200;
+      this.hasScrolled = scrollPosition > this.scrollThreshold;
     },
   },
   mounted() {
@@ -171,5 +180,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

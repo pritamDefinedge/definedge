@@ -44,17 +44,24 @@
     <div class="container mx-auto px-4">
       <!-- Section Title -->
       <div class="text-center mb-8">
-        <h2 class="lg:text-5xl text-3xl font-bold mb-4">Competitive Pricing</h2>
-        <p class="lg:text-2xl text-base text-gray-600 mb-4">
+        <h2 class="lg:text-4xl text-3xl font-bold mb-4">Competitive Pricing</h2>
+        <p class="lg:text-2xl text-base text-[#0E101A] mb-4">
           We are upfront and transparent about our brokerage and pricing.
         </p>
       </div>
 
       <!-- Flex Container for Cards -->
-      <div class="flex flex-wrap justify-center gap-6 py-4">
+      <div
+        class="flex flex-wrap justify-center gap-6 py-4"
+        ref="contentSection"
+      >
         <!-- Card Component -->
         <div
           class="bg-gray-50 shadow-md hover:shadow-xl border-2 border-transparent hover:border-gray-500 transition-all duration-300 ease-in-out w-full sm:w-1/2 md:w-1/3 lg:w-1/6 xl:w-1/6 rounded-lg font-[sans-serif] overflow-hidden"
+          :class="{
+            'motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
+              hasScrolled,
+          }"
         >
           <!-- Card Content -->
           <div class="p-6 text-center">
@@ -73,6 +80,10 @@
         <!-- Repeat Card for other Pricing options -->
         <div
           class="bg-gray-50 shadow-lg hover:shadow-xl border-2 border-transparent hover:border-gray-500 transition-all duration-300 ease-in-out w-full sm:w-1/2 md:w-1/3 lg:w-1/6 xl:w-1/6 rounded-lg font-[sans-serif] overflow-hidden"
+          :class="{
+            'motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
+              hasScrolled,
+          }"
         >
           <!-- Card Content -->
           <div class="p-6 text-center">
@@ -90,6 +101,10 @@
         <!-- Repeat Card for other Pricing options -->
         <div
           class="bg-gray-50 shadow-lg hover:shadow-xl border-2 border-transparent hover:border-gray-500 transition-all duration-300 ease-in-out w-full sm:w-1/2 md:w-1/3 lg:w-1/6 xl:w-1/6 rounded-lg font-[sans-serif] overflow-hidden"
+          :class="{
+            'motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
+              hasScrolled,
+          }"
         >
           <!-- Card Content -->
           <div class="p-6 text-center">
@@ -668,18 +683,30 @@
   </section>
 </template>
 
-
 <script>
 export default {
   data() {
     return {
       isOpen: false,
+      hasScrolled: false,
     };
   },
   methods: {
     toggleAccordion() {
       this.isOpen = !this.isOpen;
     },
+
+    onScroll() {
+      const scrollPosition = window.scrollY;
+      console.log(scrollPosition);
+      this.hasScrolled = scrollPosition > 100;
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
   },
 };
 </script>

@@ -1,17 +1,20 @@
 <template>
-  <div class="p-4 font-[sans-serif] max-w-6xl max-lg:max-w-3xl max-md:max-w-lg mx-auto">
+  <div
+    class="p-4 font-[sans-serif] max-w-6xl max-lg:max-w-3xl max-md:max-w-lg mx-auto"
+  >
     <div class="max-w-2xl text-center mx-auto">
-      <h2 class="text-gray-800  text-3xl font-extrabold">The <span class="text-[#efa909]">Love</span> We Get</h2>
- 
+      <h2 class="text-gray-800 text-3xl font-extrabold">
+        The <span class="text-[#efa909]">Love</span> We Get
+      </h2>
     </div>
 
     <!-- Testimonial Container -->
     <div class="flex justify-between items-center mt-12">
       <!-- Left Arrow -->
-      <div class="relative mr-3">
+      <div class="relative lg:mr-3 md:mr-3">
         <div
           @click="prevTestimonial"
-          class="bg-gray-300 w-10 h-10 grid items-center justify-center rounded-full rotate-90 shrink-0 cursor-pointer absolute left-[-20px] top-0 bottom-0 my-auto"
+          class="bg-gray-300 w-10 h-10 grid items-center justify-center rounded-full rotate-90 shrink-0 cursor-pointer absolute left-[-30px] top-0 bottom-0 my-auto"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,10 +81,10 @@
       </transition>
 
       <!-- Right Arrow -->
-      <div class="relative ml-8">
+      <div class="relative ml-0 lg:ml-8 md:ml-8">
         <div
           @click="nextTestimonial"
-          class="bg-gray-300 w-10 h-10 grid items-center justify-center rounded-full -rotate-90 shrink-0 cursor-pointer absolute right-0 top-0 bottom-0 my-auto"
+          class="bg-gray-300 w-10 h-10 grid items-center justify-center rounded-full -rotate-90 shrink-0 cursor-pointer absolute lg:right-0 md:right-0 sm:right-0 -right-8 top-0 bottom-0 my-auto"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -106,9 +109,9 @@ import testimonialsData from "../data/testimonials.json";
 export default {
   data() {
     return {
-      testimonials:testimonialsData,
+      testimonials: testimonialsData,
       currentTestimonialIndex: 0,
-      testimonialsPerSlide: 1, 
+      testimonialsPerSlide: 1,
       windowWidth: window.innerWidth,
     };
   },
@@ -141,7 +144,8 @@ export default {
     },
     updateTestimonialsPerSlide() {
       this.windowWidth = window.innerWidth;
-      this.testimonialsPerSlide = this.windowWidth < 768 ? 1 : this.windowWidth < 1024 ? 2 : 3; 
+      this.testimonialsPerSlide =
+        this.windowWidth < 768 ? 1 : this.windowWidth < 1024 ? 2 : 3;
     },
   },
   mounted() {

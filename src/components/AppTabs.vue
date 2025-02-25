@@ -37,10 +37,10 @@
           'motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
             hasScrolled,
         }"
-        class="group relative inline-block overflow-hidden border-double px-8 py-4 text-base lg:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
+        class="group relative inline-block overflow-hidden border-double  px-4 py-4 sm:px-4 md:px-8 lg:px-8 text-base lg:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
         <span
-          class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#fcf7f7] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
+          class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#000] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
         ></span>
         <span class="flex gap-3">
           <div v-html="tab.icon" class="mt-1"></div>
@@ -149,6 +149,7 @@ export default {
     },
     onScroll() {
       const scrollPosition = window.scrollY;
+      console.log(scrollPosition);
       console.log(scrollPosition);
       if (scrollPosition > 200) {
         this.hasScrolled = true;
