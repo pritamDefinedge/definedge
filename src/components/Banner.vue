@@ -56,15 +56,18 @@
                 "
               />
               <input
-                type="text"
-                name="million-number"
-                id="million-number"
-                class="w-full p-2 border rounded-r-lg border-l-0 min-w-[250px] text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                type="tel"
+                name="mobile-number"
+                class="w-full p-2 border rounded-r-lg border-l-0 min-w-[250px] text-white focus:outline-none focus:border-[#fff] focus:ring-0 outline-none"
                 placeholder="Enter Mobile Number"
                 value=""
                 required
                 aria-required="true"
                 aria-invalid="false"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                inputmode="numeric"
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');"
                 style="
                   background: linear-gradient(
                     180deg,

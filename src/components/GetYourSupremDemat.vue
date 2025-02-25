@@ -66,7 +66,7 @@
         Take the First Step
       </h3>
 
-      <form method="post" class="flex flex-wrap sm:flex-1 gap-2 ">
+      <form method="post" class="flex flex-wrap sm:flex-1 gap-2">
         <span class="flex w-full sm:w-full lg:w-1/2 md:w-full">
           <input
             maxlength="400"
@@ -75,11 +75,15 @@
             value="+91"
             type="text"
           />
+
           <input
             maxlength="10"
             minlength="10"
-            class="w-full  py-3 px-3 border border-[#b7afaf85] rounded-r-md text-gray-700"
+            class="w-full py-3 px-3 border border-[#b7afaf85] rounded-r-md text-gray-700 focus:border-[#b7afaf85] focus:ring-0 outline-none"
             required
+            pattern="[0-9]{10}"
+            inputmode="numeric"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'');"
             placeholder="Enter Mobile Number"
             type="tel"
           />
@@ -112,7 +116,6 @@ export default {
   methods: {
     onScroll() {
       const windowWidth = window.innerWidth;
-      console.log(windowWidth);
       if (windowWidth <= 768) {
         this.scrollThreshold = 8500;
       } else {

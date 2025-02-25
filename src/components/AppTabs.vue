@@ -149,8 +149,6 @@ export default {
     },
     onScroll() {
       const scrollPosition = window.scrollY;
-      console.log(scrollPosition);
-      console.log(scrollPosition);
       if (scrollPosition > 200) {
         this.hasScrolled = true;
       } else {

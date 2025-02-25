@@ -698,7 +698,6 @@ export default {
 
     onScroll() {
       const scrollPosition = window.scrollY;
-      console.log(scrollPosition);
       this.hasScrolled = scrollPosition > 100;
     },
   },
