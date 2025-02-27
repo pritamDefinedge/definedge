@@ -63,3 +63,11 @@
   width: 6px;
   height: 2px;
 }
+
+
+/* button side light animation  */
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}   

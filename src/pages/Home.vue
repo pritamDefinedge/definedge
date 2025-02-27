@@ -124,7 +124,7 @@
         </p>
 
         <button
-          class="group relative m-1 cursor-pointer overflow-hidden rounded-md bg-[#0268DF] border-2 border-white px-5 py-3 font-mono font-semibold motion-preset-seesaw"
+          class="group relative m-1 cursor-pointer overflow-hidden rounded-md bg-[#0268DF] border-2 border-white px-5 py-3 font-mono font-semibold"
         >
           <a href="https://forum.definedgesecurities.com/">
             <span
@@ -220,7 +220,7 @@
               <button
                 type="button"
                 @click="handleSubmit"
-                class="group relative cursor-pointer px-6 py-3 overflow-hidden rounded-md text-sm tracking-wider outline-none border-transparent bg-[#0089F7] hover:bg-white border-2 border-white hover:text-white text-white transition-colors duration-300 w-full sm:w-full lg:w-[15rem] motion-preset-seesaw"
+                class="group relative cursor-pointer px-6 py-3 overflow-hidden rounded-md text-sm tracking-wider outline-none border-transparent bg-[#0089F7] hover:bg-white border-2 border-white hover:text-white text-white transition-colors duration-300 w-full sm:w-full lg:w-[15rem]"
               >
                 <span
                   class="ease absolute top-1/2 h-0 w-48 origin-center -translate-x-20 rotate-45 text-white bg-blue-600 transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"

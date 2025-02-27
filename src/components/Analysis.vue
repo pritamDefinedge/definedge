@@ -31,9 +31,7 @@
           'border-2 active-shadow border-[#0E9CE5] bg-[#FFFFFF] text-[#000000]':
             activeAnalysisTab === tab.id,
           'bg-[#FFFFFF6E] border-2 custom-shadow border-[#EBEBEB] text-[#817E7E]':
-            activeAnalysisTab !== tab.id,
-          'motion-scale-in-[0.9] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
-            hasScrolled,
+            activeAnalysisTab !== tab.id
         }"
         class="group relative overflow-hidden flex min-w-[150px] px-2 md:px-4 lg:px-8 py-3 text-[13px] sm:text-sm md:text-base text-base font-medium lg:text-base tab-btn text-md rounded-lg cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
@@ -92,7 +90,7 @@
             <li
               v-for="(feature, featureIndex) in content.features"
               :key="featureIndex"
-              class="flex items-center text-[#111111] text-sm font-sans font-semibold"
+              class="flex items-center text-[#111111] text-sm  font-semibold"
             >
               <svg
                 class="w-6 h-6 text-[#111111] mr-3"

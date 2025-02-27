@@ -89,7 +89,7 @@
           />
         </span>
         <button
-          class="group relative cursor-pointer overflow-hidden rounded-md border-2 bg-blue-500 border-white py-3 px-4 focus:outline-none font-semibold transition-all ease-in-out duration-300 transform hover:scale-105 motion-preset-seesaw"
+          class="group relative cursor-pointer overflow-hidden rounded-md border-2 bg-blue-500 border-white py-3 px-4 focus:outline-none font-semibold transition-all ease-in-out duration-300 transform "
         >
           <span
             class="ease absolute top-1/2 h-0 w-60 origin-center -translate-x-20 rotate-45 bg-blue-900 transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"

@@ -38,7 +38,7 @@
           </button> -->
           <button
             type="button"
-            class="group relative cursor-pointer px-6 py-3 mt-8 overflow-hidden rounded-md text-sm tracking-wider outline-none border-transparent bg-green-600 hover:bg-white border-2 border-white  text-white transition-colors duration-300 motion-preset-seesaw"
+            class="group relative cursor-pointer px-6 py-3 mt-8 overflow-hidden rounded-md text-sm tracking-wider outline-none border-transparent bg-green-600 hover:bg-white border-2 border-white  text-white transition-colors duration-300"
           >
             <span
               class="ease absolute top-1/2 h-0 w-64 origin-center -translate-x-20 rotate-45 text-white bg-green-900 transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"

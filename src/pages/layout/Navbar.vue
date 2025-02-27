@@ -34,20 +34,20 @@
     class="flex border-b py-4 px-4 sm:px-10 bg-white font-sans min-h-[70px] tracking-wide relative z-50"
   >
     <div class="flex flex-wrap items-center gap-4 w-full max-w-6xl mx-auto">
-      <a href="/" class="max-sm:hidden">
+      <router-link to="/" class="max-sm:hidden">
         <img
           src="https://www.definedgesecurities.com/wp-content/uploads/2022/05/Definedge-Logo-03.png"
           alt="logo"
           class="w-36"
         />
-      </a>
-      <a href="/" class="hidden max-sm:block">
+      </router-link>
+      <router-link to="/" class="hidden max-sm:block">
         <img
           src="https://www.definedgesecurities.com/wp-content/uploads/2022/05/Definedge-Logo-03.png"
           alt="logo"
           class="w-28"
         />
-      </a>
+      </router-link>
 
       <!-- Collapse Menu -->
       <div
@@ -81,58 +81,58 @@
         >
           <ul class="lg:flex lg:gap-x-8 max-lg:space-y-2">
             <li class="mb-6 hidden max-lg:block">
-              <a href="/"
+              <router-link to="/"
                 ><img
                   src="https://www.definedgesecurities.com/wp-content/uploads/2022/05/Definedge-Logo-03.png"
                   alt="logo"
                   class="w-36"
                 />
-              </a>
+              </router-link>
             </li>
             <li class="max-lg:border-b max-lg:py-3">
-              <a
-                href="/"
+              <router-link
+                to="/"
                 class="hover:text-[#002D67] text-[#002D67] block font-bold text-[15px]"
-                >Home</a
-              >
+                >Home
+              </router-link>
             </li>
             <li class="max-lg:border-b max-lg:py-3">
-              <a
-                href="/about"
+              <router-link
+                to="/about"
                 class="hover:text-[#002D67] text-gray-500 block font-bold text-[15px]"
-                >About</a
-              >
+                >About
+              </router-link>
             </li>
             <li class="max-lg:border-b max-lg:py-3">
-              <a
-                href="/product"
+              <router-link
+                to="/product"
                 class="hover:text-[#002D67] text-gray-500 block font-bold text-[15px]"
-                >Products</a
-              >
+                >Products
+              </router-link>
             </li>
             <li class="max-lg:border-b max-lg:py-3">
-              <a
-                href="/api"
+              <router-link
+                to="/api"
                 class="hover:text-[#002D67] text-gray-500 block font-bold text-[15px]"
-                >API</a
-              >
+                >API
+              </router-link>
             </li>
             <li class="max-lg:border-b max-lg:py-3">
-              <a
-                href="/associate"
+              <router-link
+                to="/associate"
                 class="hover:text-[#002D67] text-gray-500 block font-bold text-[15px]"
-                >Associate</a
-              >
+                >Associate
+              </router-link>
             </li>
           </ul>
 
           <ul class="lg:flex lg:items-center ml-auto max-lg:block lg:space-x-8">
             <li class="max-lg:border-b max-lg:py-3 max-lg:mt-2">
-              <a
-                href="/pricing"
+              <router-link
+                to="/pricing"
                 class="hover:text-[#002D67] text-gray-500 block font-bold text-[15px]"
-                >Pricing</a
-              >
+                >Pricing
+              </router-link>
             </li>
 
             <!-- Open Demat Account button (Only shown on mobile if collapse menu is open) -->
@@ -153,11 +153,11 @@
       <div class="border-l border-[#333] h-6 max-lg:hidden"></div>
 
       <div class="flex items-center ml-auto space-x-4">
-        <a
-          href="/login"
+        <router-link
+          to="/login"
           class="hover:text-[#002D67] text-gray-500 block font-bold text-[15px]"
-          >Log in</a
-        >
+          >Log in
+        </router-link>
 
         <div class="relative max-sm:hidden">
           <button
@@ -188,7 +188,7 @@
         </div>
 
         <button
-          class="group relative shine shine-anim  px-4 py-2 text-sm font-semibold cursor-pointer overflow-hidden text-white rounded-md border-2 bg-[#1d294f] border-[#1d294f] hover:text-[#1d294f] focus:outline-none transition-all ease-in-out duration-300 transform hover:scale-105"
+          class="group relative shine shine-anim px-4 py-2 text-sm font-semibold cursor-pointer overflow-hidden text-white rounded-md border-2 bg-[#1d294f] border-[#1d294f] hover:text-[#1d294f] focus:outline-none transition-all ease-in-out duration-300 "
         >
           <span
             class="ease absolute top-1/2 h-0 w-80 origin-center -translate-x-20 rotate-45 bg-[#fff] transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"

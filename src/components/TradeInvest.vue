@@ -31,10 +31,7 @@
           'border-b-2 border-blue-500 bg-white text-gray-800':
             activeTradeTab === tab.id,
           'bg-[#FFFFFF47] border-2 border-white text-gray-700':
-            activeTradeTab !== tab.id,
-          // Applying the motion classes conditionally
-          'motion-scale-in-[0.9] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
-            hasScrolled,
+            activeTradeTab !== tab.id
         }"
         class="group relative inline-block overflow-hidden border-double px-2 sm:px-2 md:px-4 lg:px-8 py-4 text-sm md:text-base  lg:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
@@ -78,7 +75,7 @@
             <li
               v-for="(feature, featureIndex) in content.features"
               :key="featureIndex"
-              class="flex items-center text-[#111111] text-base font-semibold"
+              class="flex items-center text-[#111111] text-sm font-semibold"
             >
               <svg
                 class="w-6 h-6 text-[#111111] mr-3"

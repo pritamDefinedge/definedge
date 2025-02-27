@@ -43,7 +43,7 @@ import { reactive, toRefs, computed } from "vue";
 export default {
   setup() {
     const state = reactive({
-      activeTab: "2015", // Set the default active tab
+      activeTab: "2015", 
       years: ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"], // List of years
       timelineContent: [
         {

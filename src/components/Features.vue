@@ -30,6 +30,16 @@
           '-motion-translate-y-in-50 motion-ease-bounce': hasScrolled,
         }"
       >
+      
+      <!-- <div
+        v-for="(feature, index) in features"
+        :key="feature.id"
+        class="group relative overflow-hidden font-medium flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition-all duration-500 ease-in-out w-full sm:w-full md:w-[45%] lg:w-[30%]"
+        :class="{
+          'motion-preset-fade': hasScrolled,
+          [`motion-delay-[${(index + 1) * 100}ms]`]: hasScrolled,
+        }"
+      > -->
         <span
           class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#4cbfe6] opacity-30 transition-all duration-300 ease-out group-hover:w-full"
         ></span>

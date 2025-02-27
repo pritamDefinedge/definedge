@@ -33,11 +33,9 @@
           'border-b-2 border-blue-500 bg-white text-gray-800':
             activeTradeTab === tab.id,
           'bg-[#FFFFFF10] border-2 border-white hover:bg-[fcf7f7] hover:text-[#fff] text-gray-400':
-            activeTradeTab !== tab.id,
-          'motion-scale-in-[0.5] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
-            hasScrolled,
+            activeTradeTab !== tab.id
         }"
-        class="group relative inline-block overflow-hidden border-double  px-4 py-4 sm:px-4 md:px-8 lg:px-8 text-base lg:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
+        class="group relative inline-block overflow-hidden border-double px-4 py-4 sm:px-4 md:px-8 lg:px-8 text-base lg:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
         <span
           class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#000] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
@@ -92,7 +90,7 @@
               {{ feature.text }}
             </li>
             <li class="flex items-start">
-              <h6 class="text-xl font-semibold mb-4 text-start">
+              <h6 class="text-base font-semibold mb-4 text-start">
                 {{ content.downloadText }}
               </h6>
             </li>
@@ -104,11 +102,8 @@
                   :href="store.link"
                   target="_blank"
                 >
-                  <img
-                    :src="store.imgSrc"
-                    :alt="store.altText"
-                    class="motion-preset-seesaw"
-                  />
+                  <img :src="store.imgSrc" :alt="store.altText" class="motion-preset-seesaw" />
+                  <!--  -->
                 </a>
               </div>
             </li>

@@ -2,7 +2,7 @@
   <div class="max-w-screen-xl mx-auto">
     <!-- EDUCATION Title -->
     <h2
-      class="text-[#005BDF] text-center text-[15px] md:text-lg lg:text-base xl:text-base font-normal tracking-[5px]"
+      class="text-[#005BDF] text-center text-base md:text-base lg:text-base xl:text-base font-normal tracking-[5px]"
       :class="{
         'motion-scale-in-[0.5] motion-translate-x-in-[-25%] motion-translate-y-in-[25%] motion-opacity-in-[0%] motion-rotate-in-[-10deg] motion-blur-in-[5px] motion-duration-[0.35s] motion-duration-[0.53s]/scale motion-duration-[0.53s]/translate motion-duration-[0.63s]/rotate':
           hasScrolled,
@@ -30,9 +30,7 @@
           'border-2 border-[#0E9CE5] bg-[#FFFFFF] text-black ':
             activeEducationTab === tab.id,
           'bg-[#FFFFFF47] border-2 border-[#EBEBEB] text-[#817E7E] hover:text-black':
-            activeEducationTab !== tab.id,
-          'motion-scale-in-[0.9] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
-            hasScrolled,
+            activeEducationTab !== tab.id
         }"
         class="group relative overflow-hidden flex min-w-[150px] text-center rounded-[10px] justify-center px-6 py-3 text-base sm:text-sm md:text-sm lg:text-lg tab-btn text-md cursor-pointer focus:outline-none transition duration-300 motion-scale-in-[0.5] ease-in-out"
       >
