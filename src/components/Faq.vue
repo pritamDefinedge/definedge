@@ -5,7 +5,7 @@
     <div>
       <button
         type="button"
-        class="flex w-full text-lg text-left font-medium p-5 font-sans"
+        class="flex w-full text-base md:text-md lg:text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 1,
           'text-gray-800 hover:text-blue-600': openIndex !== 1,
@@ -57,7 +57,7 @@
     <div>
       <button
         type="button"
-        class="flex w-full text-lg text-left font-medium p-5 font-sans"
+        class="flex w-full text-base md:text-md lg:text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 2,
           'text-gray-800 hover:text-blue-600': openIndex !== 2,
@@ -99,7 +99,7 @@
     <div>
       <button
         type="button"
-        class="flex w-full text-lg text-left font-medium p-5 font-sans"
+        class="flex w-full text-base md:text-md lg:text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 3,
           'text-gray-800 hover:text-blue-600': openIndex !== 3,
@@ -137,7 +137,7 @@
     <div>
       <button
         type="button"
-        class="flex w-full text-lg text-left font-medium p-5 font-sans"
+        class="flex w-full text-base md:text-md lg:text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 4,
           'text-gray-800 hover:text-blue-600': openIndex !== 4,
@@ -171,7 +171,7 @@
     <div>
       <button
         type="button"
-        class="flex w-full text-lg text-left font-medium p-5 font-sans"
+        class="flex w-full text-base md:text-md lg:text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 5,
           'text-gray-800 hover:text-blue-600': openIndex !== 5,
@@ -227,7 +227,7 @@
     <div>
       <button
         type="button"
-        class="flex w-full text-lg text-left font-medium p-5 font-sans"
+        class="flex w-full text-base md:text-md lg:text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 6,
           'text-gray-800 hover:text-blue-600': openIndex !== 6,
@@ -262,7 +262,7 @@
     <div>
       <button
         type="button"
-        class="flex w-full text-lg text-left font-medium p-5 font-sans"
+        class="flex w-full text-base md:text-md lg:text-lg text-left font-medium p-5 font-sans"
         :class="{
           'text-blue-600 bg-blue-50': openIndex === 7,
           'text-gray-800 hover:text-blue-600': openIndex !== 7,

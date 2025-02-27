@@ -11,7 +11,7 @@
         FEATURES
       </h2>
       <h5
-        class="text-[#2A394E] text-center text-xl py-4 font-bold tracking-wider md:text-lg lg:text-2xl xl:text-3xl"
+        class="text-[#2A394E] text-center sm:px-4 px-2 lg:px-0 md:px-0 text-xl py-4 font-bold tracking-wider md:text-lg lg:text-2xl xl:text-3xl"
         :class="{
           'motion-preset-bounce motion-duration-1000': hasScrolled,
         }"
@@ -25,7 +25,7 @@
       <div
         v-for="feature in features"
         :key="feature.id"
-        class="group relative overflow-hidden font-medium flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-full lg:w-[30%]"
+        class="group relative overflow-hidden font-medium flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition w-full sm:w-full md:w-[45%] lg:w-[30%]"
         :class="{
           '-motion-translate-y-in-50 motion-ease-bounce': hasScrolled,
         }"

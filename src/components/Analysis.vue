@@ -35,7 +35,7 @@
           'motion-scale-in-[0.9] motion-rotate-in-[-10deg] motion-blur-in-[10px] motion-delay-[0.75s]/rotate motion-delay-[0.75s]/blur':
             hasScrolled,
         }"
-        class="group relative overflow-hidden flex min-w-[150px] px-8 py-3 text-[13px] sm:text-sm md:text-base text-base font-medium lg:text-base tab-btn text-md rounded-lg cursor-pointer focus:outline-none transition duration-300 ease-in-out"
+        class="group relative overflow-hidden flex min-w-[150px] px-2 md:px-4 lg:px-8 py-3 text-[13px] sm:text-sm md:text-base text-base font-medium lg:text-base tab-btn text-md rounded-lg cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
         <span
           class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#cfcdcd] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
