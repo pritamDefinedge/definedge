@@ -188,7 +188,7 @@
         </div>
 
         <button
-          class="group relative shine shine-anim px-4 py-2 text-sm font-semibold cursor-pointer overflow-hidden text-white rounded-md border-2 bg-[#1d294f] border-[#1d294f] hover:text-[#1d294f] focus:outline-none transition-all ease-in-out duration-300 "
+          class="group relative shine shine-anim px-4 py-2 text-sm font-semibold cursor-pointer overflow-hidden text-white rounded-md border-2 bg-[#1d294f] border-[#1d294f] hover:text-[#1d294f] focus:outline-none transition-all ease-in-out duration-300"
         >
           <span
             class="ease absolute top-1/2 h-0 w-80 origin-center -translate-x-20 rotate-45 bg-[#fff] transition-all duration-300 group-hover:h-64 group-hover:-translate-y-32"
@@ -196,8 +196,10 @@
           <span
             class="ease relative text-white transition duration-300 group-hover:text-[#1d294f]"
           >
-            Open Demat Account</span
-          >
+            <router-link to="/mobile-verification">
+              Open Demat Account
+            </router-link>
+          </span>
         </button>
         <button id="toggleOpen" class="lg:hidden" @click="toggleCollapseMenu">
           <svg

@@ -8,7 +8,7 @@
       class="mr-auto place-self-center py-16 font-sans lg:col-span-7 text-white px-4 flex flex-col motion-preset-slide-right motion-duration-1500"
     >
       <!-- Title with responsive text sizes -->
-      <h1
+      <!-- <h1
         class="max-w-2xl text-3xl mb-8 leading-[45px] font-bold tracking-tight md:text-3xl lg:text-4xl xl:text-4xl rombo-dock-logo"
       >
         All-in-One
@@ -17,14 +17,25 @@
           Trading
         </span>
         Ecosystem
-      </h1>
+      </h1> -->
+
+      <h1
+  class="max-w-2xl text-3xl mb-8 leading-[45px] font-bold tracking-tight md:text-3xl lg:text-4xl xl:text-4xl rombo-dock-logo"
+>
+  All-in-One
+  <span class="animated-gradient-text">
+    Investing & <br />
+    Trading
+  </span>
+  Ecosystem
+</h1>
 
       <!-- Paragraph with responsive text sizes -->
       <p
-        class="max-w-xl mb-3 font-light my-2 text-gray-200 lg:mb-3 md:text-md text-base lg:text-md xl:text-base "
+        class="max-w-xl mb-3 font-light my-2 text-gray-200 lg:mb-3 md:text-md text-base lg:text-md xl:text-base"
       >
         Open
-        <span class="text-yellow-500 animate-slide-in-left-to-right ">
+        <span class="text-yellow-500 animate-slide-in-left-to-right font-bold">
           Free
         </span>
         Super Demat account

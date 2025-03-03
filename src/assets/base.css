@@ -39,6 +39,29 @@
     transition-property: left;
   }
 }
+/* --------------------------------- */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Apply the gradient and animation to the text */
+
+.animated-gradient-text {
+  background: linear-gradient(90deg, #f3cc88, #f97316, #f3cc88);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-flow 4s linear infinite;
+}
 
 /* side bar scroll  */
 ::-webkit-scrollbar {
@@ -64,10 +87,13 @@
   height: 2px;
 }
 
-
 /* button side light animation  */
 @property --border-angle {
   inherits: false;
   initial-value: 0deg;
-  syntax: '<angle>';
-}   
+  syntax: "<angle>";
+}
+
+
+
+

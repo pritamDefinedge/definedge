@@ -1,13 +1,13 @@
 <template>
   <div>
-    <!-- Navbar always visible -->
-    <Navbar />
+    <!-- Navbar always visible except for login and open_demat_account routes -->
+    <Navbar v-if="!isExcludedPage" />
 
     <!-- Router view for dynamic content -->
     <RouterView />
 
-    <!-- Footer will only show when the current route is not 'login' -->
-    <Footer v-if="!isLoginPage" />
+    <!-- Footer will only show when the current route is not 'login' or 'open_demat_account' -->
+    <Footer v-if="!isExcludedPage" />
   </div>
 </template>
 
@@ -23,11 +23,11 @@ export default {
   setup() {
     const route = useRoute();
 
-    // Use computed property to check if the current route is 'login'
-    const isLoginPage = computed(() => route.name === 'login');
+    // Use computed property to check if the current route is 'login' or 'open_demat_account'
+    const isExcludedPage = computed(() => route.name === 'login' || route.name === 'open_demat_account');
 
     return {
-      isLoginPage,
+      isExcludedPage,
     };
   },
 };

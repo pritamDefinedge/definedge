@@ -12,7 +12,7 @@
     <div class="max-w-screen-xl mx-auto px-4">
       <!-- Flex container for both sections -->
       <div
-        class="flex flex-col md:flex-row justify-between items-center gap-1 lg:gap-4 md:gap-4 py-3"
+        class="flex flex-col md:flex-row justify-between items-center gap-1 lg:gap-4 md:gap-4 py-2"
       >
         <!-- Trusted by section -->
         <div class="text-center">
@@ -28,12 +28,15 @@
 
         <!-- Coming Soon Announcement Section -->
         <div class="text-center py-4 px-4 rounded-md">
-          <div class="text-lg md:text-xl font-semibold text-white">
-            <span class="font-light text-sm font-sans text-gray-400"
-              >Coming Soon :
+          <div
+            class="text-lg md:text-xl font-semibold text-white flex items-center justify-center"
+          >
+            <span class="font-light text-sm font-sans text-gray-400">
+              Coming Soon :
             </span>
+            <img src="../assets/svgviewer-output.svg" class="ml-2" width="20" />
             <span
-              class="text-primary-500 font-medium text-sm motion-preset-blink motion-duration-1500"
+              class="text-primary-500 font-medium text-sm flex items-center ml-2 motion-preset-blink motion-duration-1500"
             >
               Super Algo Trader
             </span>

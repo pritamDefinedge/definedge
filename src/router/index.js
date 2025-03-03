@@ -7,6 +7,11 @@ const Login = () => import("../pages/Login.vue");
 const Pricing = () => import("../pages/Pricing.vue");
 const Product = () => import("../pages/Product.vue");
 const Api = () => import("../pages/Api.vue");
+import VerifyMobile from "../pages/VerifyMobile.vue";
+import VerifyEmail from "../pages/VerifyEmail.vue";
+import CapturePan from "../pages/CapturePan.vue";
+import VerifyAadhar from "../pages/VerifyAadhar.vue";
+import VerifyPan from "../pages/VerifyPan.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +50,31 @@ const router = createRouter({
       path: "/login",
       name: "login",
       component: Login,
+    },
+    {
+      path: "/mobile-verification",
+      name: "mobile-verification",
+      component: VerifyMobile,
+    },
+    {
+      path: "/email-verification",
+      name: "email-verification",
+      component: VerifyEmail,
+    },
+    {
+      path: "/capture-pan",
+      name: "capture-pan",
+      component: CapturePan,
+    },
+    {
+      path: "/aadhar-verification",
+      name: "aadhar-verification",
+      component: VerifyAadhar,
+    },
+    {
+      path: "/pan-verification",
+      name: "pan-verification",
+      component: VerifyPan,
     },
   ],
 });
