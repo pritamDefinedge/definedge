@@ -48,7 +48,7 @@ import { reactive, toRefs } from "vue";
 import Signature from "../components/kyc/stepOne/Signature.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import imageSrc from "@/assets/steps/Frame13.png"; // Corrected image import
+import imageSrc from "@/assets/steps/side8.svg"; // Corrected image import
 
 export default {
   components: {

@@ -4,7 +4,7 @@
       <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5">
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
-          <CommonLeftSection :src="imageSrc" :steps="[1]"/>
+          <CommonLeftSection :src="imageSrc" :steps="[1]" />
 
           <!-- Right Section (PAN Capture Form) -->
           <section
@@ -46,7 +46,7 @@ import { reactive, toRefs } from "vue";
 import ProfileDetails from "../components/kyc/stepOne/ProfileDetails.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import imageSrc from "../assets/steps/Frame9.png";
+import imageSrc from "../assets/steps/side5.svg";
 
 export default {
   components: {
@@ -54,14 +54,14 @@ export default {
     CommonLeftSection,
   },
   setup() {
-    const state = reactive({});  // You can remove this if not used
+    const state = reactive({}); // You can remove this if not used
 
     const router = useRouter();
 
     const submit = (data) => {
       // Implement the logic to submit PAN details
       alert("Data submitted successfully!");
-      console.log(data,"------------data"); // Log the data for debugging
+      console.log(data, "------------data"); // Log the data for debugging
       // You can navigate to another route if needed
       router.push("/segement-details");
     };

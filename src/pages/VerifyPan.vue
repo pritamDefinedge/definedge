@@ -46,7 +46,7 @@
   import PanVerification from "../components/kyc/stepOne/PanVerification.vue";
   import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
   import { useRouter } from "vue-router";
-  import imageSrc from "../assets/steps/Frame8.png";
+  import imageSrc from "../assets/steps/side5.svg";
 
   export default {
     components: {

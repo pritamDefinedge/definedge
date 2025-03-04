@@ -53,8 +53,7 @@
           class="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400"
         >
           <li class="mb-10 ms-6">
-            <span
-              v-if="steps.length > 1"
+            <span v-if="steps.length > 1"
               class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900"
             >
               <svg
@@ -74,8 +73,7 @@
               </svg>
             </span>
 
-            <span
-              v-else
+            <span v-else
               class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
             >
               <svg
@@ -102,10 +100,8 @@
               Mobile, Email, PAN, Aadhaar, Your Profile
             </p>
           </li>
-
           <li class="mb-10 ms-6">
-            <span
-              v-if="steps.length > 2"
+            <span v-if="steps.length > 2"
               class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900"
             >
               <svg
@@ -124,8 +120,7 @@
                 />
               </svg>
             </span>
-            <span
-              v-else
+            <span v-else
               class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
             >
               <svg
@@ -148,8 +143,7 @@
             </p>
           </li>
           <li class="mb-10 ms-6">
-            <span
-              v-if="steps.length > 3"
+            <span v-if="steps.length > 3"
               class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900"
             >
               <svg
@@ -168,8 +162,7 @@
                 />
               </svg>
             </span>
-            <span
-              v-else
+            <span v-else
               class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
             >
               <svg
@@ -192,8 +185,7 @@
             </p>
           </li>
           <li class="ms-6">
-            <span
-              v-if="steps.length > 4"
+            <span v-if="steps.length > 4"
               class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900"
             >
               <svg
@@ -212,8 +204,7 @@
                 />
               </svg>
             </span>
-            <span
-              v-else
+            <span v-else
               class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
             >
               <svg
@@ -244,15 +235,6 @@
         </h2>
       </div>
     </div>
-
-    <!-- Mobile Footer with Sticky -->
-    <div
-      class="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-gray-900 text-white rounded-t-3xl shadow-lg z-50"
-    >
-      <div class="flex justify-center items-center">
-        <img :src="src" alt="steps" class="w-full h-12" />
-      </div>
-    </div>
   </section>
 </template>
 
@@ -272,11 +254,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@media (max-width: 1024px) {
-  /* Additional styles for mobile to ensure sticky footer stays at bottom */
-  .lg\:hidden {
-    display: block !important;
-  }
-}
-</style>
+<style scoped></style>

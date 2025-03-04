@@ -55,7 +55,7 @@ import { reactive, toRefs } from "vue";
 import EmailVerification from "../components/kyc/stepOne/EmailVerification.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import imageSrc from "../assets/steps/Frame6.png";
+import imageSrc from "../assets/steps/side2.svg";
 
 export default {
   components: {

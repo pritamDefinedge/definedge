@@ -46,7 +46,7 @@ import { reactive, toRefs } from "vue";
 import Bank from "../components/kyc/stepOne/Bank.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import imageSrc from "../assets/steps/Frame15.png";
+import imageSrc from "../assets/steps/side11.svg";
 
 export default {
   components: {

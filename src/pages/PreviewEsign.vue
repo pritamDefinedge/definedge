@@ -100,7 +100,7 @@
 <script>
 import { useRouter } from "vue-router";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
-import imageSrc from "../assets/steps/Frame18.png";
+import imageSrc from "../assets/steps/side13.svg";
 
 export default {
   components: {

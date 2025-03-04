@@ -48,7 +48,7 @@ import { reactive, toRefs } from "vue";
 import Photos from "../components/kyc/stepOne/Photos.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import imageSrc from "@/assets/steps/Frame12.png"; // Corrected image import
+import imageSrc from "@/assets/steps/side7.svg"; // Corrected image import
 
 export default {
   components: {

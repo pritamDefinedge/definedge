@@ -52,7 +52,7 @@ import { reactive, toRefs } from "vue";
 import PanCapture from "../components/kyc/stepOne/PanCapture.vue"; // Ensure this component is correctly imported
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import imageSrc from "../assets/steps/Frame7.png";
+import imageSrc from "../assets/steps/side3.svg";
 
 export default {
   components: {

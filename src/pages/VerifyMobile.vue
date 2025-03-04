@@ -54,7 +54,7 @@ import { reactive, toRefs } from "vue";
 import SendMobileOtp from "../components/kyc/stepOne/SendMobileOtp.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import imageSrc from "../assets/steps/1.svg";
+import imageSrc from "../assets/steps/side1.svg";
 
 export default {
   components: {

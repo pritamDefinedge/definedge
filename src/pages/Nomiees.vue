@@ -109,7 +109,7 @@
 import { reactive, toRefs } from "vue";
 import { useRouter } from "vue-router";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
-import imageSrc from "../assets/steps/Frame14.png";
+import imageSrc from "../assets/steps/side9.svg";
 
 export default {
   components: {

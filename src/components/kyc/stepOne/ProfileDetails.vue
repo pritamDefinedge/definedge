@@ -72,7 +72,7 @@
             Trading & Investment Experience
           </label>
 
-          <div class="flex items-center gap-2">
+          <div class="flex flex-wrap items-center gap-2">
             <!-- New radio button styled like a badge -->
             <div class="relative flex items-center">
               <input
@@ -154,6 +154,7 @@
             </div>
           </div>
         </div>
+
         <div class="items-center gap-4 mb-2 w-full relative">
           <label
             for="income"
@@ -162,7 +163,7 @@
             Annual Income
           </label>
 
-          <div class="flex items-center gap-2">
+          <div class="flex flex-wrap items-center gap-2">
             <!-- Below 1 Lakh radio button styled like a badge -->
             <div class="relative flex items-center">
               <input
@@ -252,7 +253,7 @@
             Education
           </label>
 
-          <div class="flex items-center gap-2">
+          <div class="flex flex-wrap items-center gap-2">
             <!-- Post Graduate radio button styled like a badge -->
             <div class="relative flex items-center">
               <input
