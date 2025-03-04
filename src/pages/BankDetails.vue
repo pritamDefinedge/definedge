@@ -4,11 +4,11 @@
       <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5">
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
-          <CommonLeftSection :src="imageSrc" :steps="[1]"/>
+          <CommonLeftSection :src="imageSrc" :steps="[1,2,3]"/>
 
           <!-- Right Section (PAN Capture Form) -->
           <section
-            class="lg:col-span-8 h-screen md:h-full lg:h-full sm:h-screen overflow-auto relative"
+            class="lg:col-span-8 max-h-lvh h-lvh sm:h-screen overflow-auto relative"
           >
             <!-- Doc Guidelines Button (Desktop) -->
             <div
@@ -33,12 +33,7 @@
             </div>
 
             <div class="stepOne">
-              <PanCapture
-                :pan="pan"
-                @update:pan="pan = $event"
-                @submit-pan="submitPan"
-                @reset-form="resetPanForm"
-              />
+              <Bank :submit="submit" />
             </div>
           </section>
         </div>
@@ -46,50 +41,36 @@
     </div>
   </section>
 </template>
-
 <script>
 import { reactive, toRefs } from "vue";
-import PanCapture from "../components/kyc/stepOne/PanCapture.vue"; // Ensure this component is correctly imported
+import Bank from "../components/kyc/stepOne/Bank.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import imageSrc from "../assets/steps/Frame7.png";
+import imageSrc from "../assets/steps/Frame15.png";
 
 export default {
   components: {
-    PanCapture,
+    Bank,
     CommonLeftSection,
   },
   setup() {
-    const state = reactive({
-      pan: "", // Store the PAN number
-    });
+    const state = reactive({});
+
     const router = useRouter();
 
-    const submitPan = () => {
-      // Handle the submission of the PAN number
-      console.log(state);
-      if (state.pan.length === 10) {
-        alert(`PAN submitted successfully: ${state.pan}`);
-        router.push("/aadhar-verification");
-
-        // You can add further logic here, such as sending the PAN to an API
-      } else {
-        alert("Please enter a valid PAN number.");
-      }
-    };
-
-    const resetPanForm = () => {
-      state.pan = "";
+    const submit = (data) => {
+      // Implement the logic to submit PAN details
+      alert("Data submitted successfully!");
+      console.log(data, "------------data"); // Log the data for debugging
+      // You can navigate to another route if needed
+      router.push("/doc-upload");
     };
 
     return {
       ...toRefs(state),
-      submitPan,
-      resetPanForm,
+      submit,
       imageSrc,
     };
   },
 };
 </script>
-
-<style scoped></style>

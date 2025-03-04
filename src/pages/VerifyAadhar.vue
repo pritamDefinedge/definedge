@@ -4,7 +4,7 @@
       <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5">
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
-          <CommonLeftSection />
+          <CommonLeftSection :src="imageSrc" :steps="[1]"/>
 
           <!-- Right Section (Aadhaar Verification Form) -->
           <section
@@ -157,6 +157,7 @@
 import { reactive, toRefs } from "vue";
 import { useRouter } from "vue-router";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
+import imageSrc from "../assets/steps/Frame8.png";
 
 export default {
   components: {
@@ -182,6 +183,7 @@ export default {
     return {
       ...toRefs(state),
       connectToDigiLocker,
+      imageSrc,
     };
   },
 };

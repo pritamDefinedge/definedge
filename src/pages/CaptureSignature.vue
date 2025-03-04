@@ -4,11 +4,11 @@
       <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5">
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
-          <CommonLeftSection :src="imageSrc" :steps="[1]"/>
+          <CommonLeftSection :src="imageSrc" :steps="[1,2]"/>
 
           <!-- Right Section (PAN Capture Form) -->
           <section
-            class="lg:col-span-8 h-screen md:h-full lg:h-full sm:h-screen overflow-auto relative"
+            class="lg:col-span-8 max-h-lvh h-lvh sm:h-screen overflow-auto relative"
           >
             <!-- Doc Guidelines Button (Desktop) -->
             <div
@@ -21,7 +21,7 @@
                   <div class="w-4 h-4 flex-none">
                     <img
                       class="w-4 h-4"
-                      src="../assets/file-text-icon.svg"
+                      src="@/assets/file-text-icon.svg"
                       alt="definedge"
                     />
                   </div>
@@ -32,13 +32,9 @@
               </div>
             </div>
 
+            <!-- Capture Photos Form -->
             <div class="stepOne">
-              <PanCapture
-                :pan="pan"
-                @update:pan="pan = $event"
-                @submit-pan="submitPan"
-                @reset-form="resetPanForm"
-              />
+              <Signature :submit="submit" />
             </div>
           </section>
         </div>
@@ -49,47 +45,37 @@
 
 <script>
 import { reactive, toRefs } from "vue";
-import PanCapture from "../components/kyc/stepOne/PanCapture.vue"; // Ensure this component is correctly imported
+import Signature from "../components/kyc/stepOne/Signature.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import imageSrc from "../assets/steps/Frame7.png";
+import imageSrc from "@/assets/steps/Frame13.png"; // Corrected image import
 
 export default {
   components: {
-    PanCapture,
+    Signature,
     CommonLeftSection,
   },
   setup() {
-    const state = reactive({
-      pan: "", // Store the PAN number
-    });
+    const state = reactive({});
     const router = useRouter();
 
-    const submitPan = () => {
-      // Handle the submission of the PAN number
-      console.log(state);
-      if (state.pan.length === 10) {
-        alert(`PAN submitted successfully: ${state.pan}`);
-        router.push("/aadhar-verification");
-
-        // You can add further logic here, such as sending the PAN to an API
-      } else {
-        alert("Please enter a valid PAN number.");
-      }
-    };
-
-    const resetPanForm = () => {
-      state.pan = "";
+    // Submit function to handle captured data
+    const submit = (data) => {
+    //   if (data && data.photo) {
+    //     // Handle the captured photo data here
+        console.log("Captured Photo Data:");
+        // Proceed to the next page if data is valid
+        router.push("/nomiees-details");
+    //   } else {
+    //     alert("Please ensure you captured the necessary photo.");
+    //   }
     };
 
     return {
       ...toRefs(state),
-      submitPan,
-      resetPanForm,
+      submit,
       imageSrc,
     };
   },
 };
 </script>
-
-<style scoped></style>

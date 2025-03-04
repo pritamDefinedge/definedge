@@ -54,6 +54,7 @@
         >
           <li class="mb-10 ms-6">
             <span
+              v-if="steps.length > 1"
               class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900"
             >
               <svg
@@ -72,6 +73,28 @@
                 />
               </svg>
             </span>
+
+            <span
+              v-else
+              class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
+            >
+              <svg
+                class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM6 20c0-2.21 4-4 6-4s6 1.79 6 4"
+                />
+              </svg>
+            </span>
+
             <h3 class="font-medium leading-tight text-sm text-white">
               Personal Information
             </h3>
@@ -81,6 +104,27 @@
           </li>
           <li class="mb-10 ms-6">
             <span
+              v-if="steps.length > 2"
+              class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900"
+            >
+              <svg
+                class="w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 16 12"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5.917 5.724 10.5 15 1.5"
+                />
+              </svg>
+            </span>
+            <span
+              v-else
               class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
             >
               <svg
@@ -104,6 +148,27 @@
           </li>
           <li class="mb-10 ms-6">
             <span
+              v-if="steps.length > 3"
+              class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900"
+            >
+              <svg
+                class="w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 16 12"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5.917 5.724 10.5 15 1.5"
+                />
+              </svg>
+            </span>
+            <span
+              v-else
               class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
             >
               <svg
@@ -127,6 +192,27 @@
           </li>
           <li class="ms-6">
             <span
+              v-if="steps.length > 4"
+              class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900"
+            >
+              <svg
+                class="w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 16 12"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5.917 5.724 10.5 15 1.5"
+                />
+              </svg>
+            </span>
+            <span
+              v-else
               class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
             >
               <svg
@@ -149,10 +235,10 @@
         </ol>
       </nav>
       <div class="mt-12">
-        <img src="../../assets/steps/Frame 19.png" alt="steps" />
+        <img :src="src" alt="steps" />
       </div>
       <div class="mt-12">
-        <h2 class="text-xl xl:text-2xl 2xl:text-2xl text-white font-medium">
+        <h2 class="text-xl xl:text-xl 2xl:text-xl text-white font-medium">
           Super Demat with a GrowthMap
         </h2>
       </div>
@@ -163,6 +249,16 @@
 <script>
 export default {
   name: "CommonLeftSection",
+  props: {
+    src: {
+      type: String,
+      required: true,
+    },
+    steps: {
+      type: Array,
+      required: true,
+    },
+  },
 };
 </script>
 

@@ -4,7 +4,7 @@
         <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5">
           <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
             <!-- Left Section (Common for both steps) -->
-            <CommonLeftSection />
+            <CommonLeftSection :src="imageSrc" :steps="[1]"/>
   
             <!-- Right Section (PAN Capture Form) -->
             <section class="lg:col-span-8 h-screen md:h-full lg:h-full sm:h-screen overflow-auto relative">
@@ -46,7 +46,8 @@
   import PanVerification from "../components/kyc/stepOne/PanVerification.vue";
   import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
   import { useRouter } from "vue-router";
-  
+  import imageSrc from "../assets/steps/Frame8.png";
+
   export default {
     components: {
       PanVerification,
@@ -65,7 +66,7 @@
         alert("PAN submitted successfully!");
         console.log(data); // Log the data for debugging
         // You can navigate to another route if needed
-        // router.push("/next-step");
+        router.push("/regulatorydetails");
       };
   
       const resetPanForm = () => {
@@ -78,6 +79,7 @@
         ...toRefs(state),
         submitPan,
         resetPanForm,
+        imageSrc
       };
     },
   };

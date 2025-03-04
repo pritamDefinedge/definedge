@@ -4,7 +4,7 @@
       <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5">
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
-          <CommonLeftSection />
+          <CommonLeftSection :src="imageSrc" :steps="[1]"/>
 
           <!-- Right Section (Email Verification Form) -->
           <section
@@ -55,6 +55,7 @@ import { reactive, toRefs } from "vue";
 import EmailVerification from "../components/kyc/stepOne/EmailVerification.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
+import imageSrc from "../assets/steps/Frame6.png";
 
 export default {
   components: {
@@ -104,6 +105,7 @@ export default {
       sendEmailOtp,
       verifyEmailOtp,
       resetEmailForm,
+      imageSrc
     };
   },
 };

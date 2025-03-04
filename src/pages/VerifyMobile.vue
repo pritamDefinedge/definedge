@@ -4,18 +4,30 @@
       <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5">
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Personal Information Step) -->
-          <CommonLeftSection />
+          <CommonLeftSection :src="imageSrc" :steps="[1]"/>
 
           <!-- Right Section (Sign Up Form) -->
-          <section class="lg:col-span-8 h-screen md:h-full lg:h-full sm:h-screen overflow-auto relative">
+          <section
+            class="lg:col-span-8 h-screen md:h-full lg:h-full sm:h-screen overflow-auto relative"
+          >
             <!-- Doc Guidelines Button (Desktop) -->
-            <div class="m-1 flex justify-end items-center absolute right-1 z-50">
+            <div
+              class="m-1 flex justify-end items-center absolute right-1 z-50"
+            >
               <div class="hidden lg:block">
-                <div class="flex items-center border border-slate-200 px-4 py-2 text-xs rounded-full cursor-pointer">
+                <div
+                  class="flex items-center border border-slate-200 px-4 py-2 text-xs rounded-full cursor-pointer"
+                >
                   <div class="w-4 h-4 flex-none">
-                    <img class="w-4 h-4" src="../assets/file-text-icon.svg" alt="definedge" />
+                    <img
+                      class="w-4 h-4"
+                      src="../assets/file-text-icon.svg"
+                      alt="definedge"
+                    />
                   </div>
-                  <div class="ml-1 pt-0.5 whitespace-nowrap">Doc Guidelines</div>
+                  <div class="ml-1 pt-0.5 whitespace-nowrap">
+                    Doc Guidelines
+                  </div>
                 </div>
               </div>
             </div>
@@ -42,6 +54,7 @@ import { reactive, toRefs } from "vue";
 import SendMobileOtp from "../components/kyc/stepOne/SendMobileOtp.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
+import imageSrc from "../assets/steps/1.svg";
 
 export default {
   components: {
@@ -71,8 +84,8 @@ export default {
     const verifyOtp = (enteredOtp) => {
       console.log(enteredOtp);
       // if (enteredOtp === state.otp) { // Compare with the stored OTP
-        state.otpVerified = true;
-        router.push("/email-verification");
+      state.otpVerified = true;
+      router.push("/email-verification");
       // } else {
       //   alert("Invalid OTP, please try again.");
       // }
@@ -82,7 +95,7 @@ export default {
       state.mobileNumber = "";
       state.otpSent = false;
       state.otpVerified = false;
-      state.otp = ""; 
+      state.otp = "";
     };
 
     return {
@@ -90,6 +103,7 @@ export default {
       sendOtp,
       verifyOtp,
       resetForm,
+      imageSrc,
     };
   },
 };
