@@ -20,15 +20,15 @@
       </h1> -->
 
       <h1
-  class="max-w-2xl text-3xl mb-8 leading-[45px] font-bold tracking-tight md:text-3xl lg:text-4xl xl:text-4xl rombo-dock-logo"
->
-  All-in-One
-  <span class="animated-gradient-text">
-    Investing & <br />
-    Trading
-  </span>
-  Ecosystem
-</h1>
+        class="max-w-2xl text-3xl mb-8 leading-[45px] font-bold tracking-tight md:text-3xl lg:text-4xl xl:text-4xl rombo-dock-logo"
+      >
+        All-in-One
+        <span class="animated-gradient-text">
+          Investing & <br />
+          Trading
+        </span>
+        Ecosystem
+      </h1>
 
       <!-- Paragraph with responsive text sizes -->
       <p
@@ -179,5 +179,17 @@ export default {
 
 .animate-slide-in-left-to-right {
   animation: slide-in-left-to-right 3s ease-in-out infinite;
+}
+
+
+/* Apply the gradient and animation to the text */
+
+.animated-gradient-text {
+  background: linear-gradient(90deg, #f3cc88, #f97316, #f3cc88);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-flow 4s linear infinite;
 }
 </style>

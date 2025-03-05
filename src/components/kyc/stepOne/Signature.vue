@@ -103,11 +103,11 @@
           <span class="text-xs"> File size limit 2MB</span>
         </div>
 
-        <div class="mt-6 flex justify-center">
+        <div class="mt-6 flex ">
           <button
             @click="handleSubmit"
             type="button"
-            class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
+            class="bg-blue-600 mb-20 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
           >
             Continue
           </button>

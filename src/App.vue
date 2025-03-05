@@ -7,13 +7,13 @@
     <RouterView />
 
     <!-- Footer will only show when the current route is not 'login' or 'open_demat_account' -->
-    <Footer v-if="!isExcludedPage" />
+    <!-- <Footer v-if="!isExcludedPage" /> -->
   </div>
 </template>
 
 <script>
-import { computed } from 'vue'; // Import computed from Vue
-import { useRoute } from 'vue-router'; // to check the current route
+import { computed } from "vue"; // Import computed from Vue
+import { useRoute } from "vue-router"; // to check the current route
 import Navbar from "./pages/layout/Navbar.vue";
 import Footer from "./pages/layout/Footer.vue";
 
@@ -24,7 +24,9 @@ export default {
     const route = useRoute();
 
     // Use computed property to check if the current route is 'login' or 'open_demat_account'
-    const isExcludedPage = computed(() => route.name === 'login' || route.name === 'open_demat_account');
+    const isExcludedPage = computed(
+      () => route.name === "login" || route.name === "open_demat_account"
+    );
 
     return {
       isExcludedPage,

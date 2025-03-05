@@ -1,12 +1,16 @@
 <template>
-  <section class="flex flex-col w-full md:w-9/12 mx-auto my-8">
+  <section class="flex flex-col w-full md:w-9/12 mx-auto lg:my-8 md:my-8 my-0">
     <div
-      class="bg-slate-200 bg-opacity-40 p-4 my-0 lg:my-8 rounded-2xl shadow-lg"
+      class="bg-white md:bg-slate-200 lg:bg-slate-200 bg-opacity-40 p-4 my-0 lg:my-8 rounded-2xl shadow-lg"
     >
       <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-4">
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
-          <CommonLeftSection :src="imageSrc" :steps="[1, 2, 3, 4]" />
+          <CommonLeftSection
+            :src="imageSrc"
+            :steps="[1, 2, 3, 4]"
+            :toggleModal="toggleModal"
+          />
 
           <!-- Right Section (Review & Sign Form) -->
           <section
@@ -95,20 +99,36 @@
       </div>
     </div>
   </section>
+  <DocGuideLince
+    :isVisible="isModalVisible"
+    @update:isVisible="isModalVisible = $event"
+  />
 </template>
 
 <script>
+import { reactive, toRefs, onMounted } from "vue";
+
 import { useRouter } from "vue-router";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
-import imageSrc from "../assets/steps/side13.svg";
+
+
+import DocGuideLince from "../components/DocGuideLince.vue";
+import desktopImage from "../assets/steps/side13.svg";
+import mobileImage from "../assets/steps/blue/13.svg";
 
 export default {
   components: {
     CommonLeftSection,
+    DocGuideLince,
   },
   setup() {
     const router = useRouter();
 
+    const state = reactive({
+      imageSrc: "",
+      isModalVisible: false,
+    });
+    
     // Directly store user data as static values
     const userName = "John Doe";
     const userDob = "1990-01-01";
@@ -134,7 +154,31 @@ export default {
       router.push("/application-submitted");
     };
 
+    const updateImageSrc = () => {
+      if (window.innerWidth < 768) {
+        // Mobile devices (screen width less than 768px)
+        state.imageSrc = mobileImage; // Mobile image
+      } else {
+        // Medium and large devices (screen width 768px and greater)
+        state.imageSrc = desktopImage; // Desktop image
+      }
+    };
+
+    onMounted(() => {
+      // Set image when component is mounted
+      updateImageSrc();
+
+      // Listen for window resize to update image
+      window.addEventListener("resize", updateImageSrc);
+    });
+
+    const toggleModal = () => {
+      state.isModalVisible = !state.isModalVisible;
+    };
+
     return {
+      ...toRefs(state),
+      toggleModal,
       userName,
       userDob,
       userEmail,
@@ -145,7 +189,6 @@ export default {
       userAccountNo,
       userBankName,
       userProfileImage,
-      imageSrc,
       handleReview,
       handleEsign,
     };

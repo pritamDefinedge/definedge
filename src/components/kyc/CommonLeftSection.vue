@@ -1,7 +1,26 @@
 <template>
   <section class="lg:col-span-4">
     <!-- Mobile Header -->
-    <div
+    <div class="p-2 border-b block lg:hidden h-full xl:h-100 relative">
+      <div class="flex justify-between items-center">
+        <div class="lg:hidden block ml-auto">
+          <button
+            @click="toggleModal"
+            class="flex items-center border border-slate-200 px-3 py-2 text-xs rounded-full cursor-pointer"
+          >
+            <div class="w-4 h-4 flex-none">
+              <img
+                class="w-4 h-4"
+                src="../../assets/file-text-icon.svg"
+                alt="definedge"
+              />
+            </div>
+            <div class="ml-1 text-center whitespace-nowrap">Doc Guidelines</div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- <div
       class="p-2 border-b bg-blue-600 block rounded-lg lg:hidden h-full xl:h-100 text-indigo-300 relative"
     >
       <div class="flex justify-between items-center">
@@ -24,14 +43,9 @@
             <div class="ml-1 pt-0.5 whitespace-nowrap">Doc Guidelines</div>
           </div>
         </div>
-        <img
-          class="h-7 lg:h-9 w-auto cursor-pointer"
-          src="../../assets/slidemenu-white-icon.svg"
-          alt="definedge"
-        />
+ 
       </div>
-    </div>
-
+    </div> -->
     <!-- Desktop Sidebar -->
     <div
       class="p-8 bg-blue-600 rounded-xl hidden lg:block h-full xl:h-100 text-indigo-300 relative"
@@ -245,12 +259,14 @@
       </div>
     </div>
 
-    <!-- Mobile Footer with Sticky -->
+    <!-- Mobile Footer with Sticky border-t-2 border-t-blue-500 -->
     <div
-      class="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-gray-900 text-white rounded-t-3xl shadow-lg z-50"
+      v-if="!isKeywordSectionOpen"
+      class="lg:hidden md:hidden hidden fixed bottom-0 left-0 bg-white right-0 p-4 rounded-t-3xl z-50"
+      style="box-shadow: 0 -4px 15px rgba(55, 127, 242, 0.4)"
     >
-      <div class="flex justify-center items-center">
-        <img :src="src" alt="steps" class="w-full h-12" />
+      <div class="lg:hidden md:hidden flex justify-center items-center">
+        <img :src="src" alt="steps" class="w-full" />
       </div>
     </div>
   </section>
@@ -268,14 +284,24 @@ export default {
       type: Array,
       required: true,
     },
+    isKeywordSectionOpen: {
+      type: Boolean,
+      required: true,
+    },
+    toggleModal: {
+      type: Boolean,
+      required: true,
+    },
   },
 };
 </script>
 
 <style scoped>
-@media (max-width: 1024px) {
-  /* Additional styles for mobile to ensure sticky footer stays at bottom */
+@media (max-width: 768px) {
   .lg\:hidden {
+    display: block !important;
+  }
+  .md\:hidden {
     display: block !important;
   }
 }

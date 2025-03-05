@@ -1,13 +1,11 @@
 <template>
   <div class="w-full lg:w-10/12 mx-auto mb-8">
     <div class="lg:mt-8 w-full">
-      <h1
-        class="text-3xl font-extrabold text-gray-900 dark:text-white "
-      >
+      <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">
         Capture Photo
       </h1>
       <div class="mt-6">
-        <div class="items-center gap-4 mb-4 w-full relative ">
+        <div class="items-center gap-4 mb-4 w-full relative">
           <p class="text-sm text-gray-700 dark:text-gray-300">
             Please enable Camera permissions to proceed.
           </p>
@@ -34,7 +32,7 @@
         <!-- Camera error message with camera icon -->
         <p
           v-if="cameraError"
-          class="text-red-500 mt-4 flex justify-center items-center flex-col p-8 border-2 rounded-lg "
+          class="text-red-500 mt-4 flex justify-center items-center flex-col p-8 border-2 rounded-lg"
         >
           <img
             src="../../../assets/camera-disabled-svgrepo-com.svg"
@@ -63,11 +61,11 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="mt-6 flex justify-center">
+        <div class="mt-6 flex ">
           <button
             @click="handleSubmit"
             type="button"
-            class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
+            class="bg-blue-600 mb-20 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
           >
             Continue
           </button>

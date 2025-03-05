@@ -52,16 +52,6 @@
   }
 }
 
-/* Apply the gradient and animation to the text */
-
-.animated-gradient-text {
-  background: linear-gradient(90deg, #f3cc88, #f97316, #f3cc88);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-flow 4s linear infinite;
-}
 
 /* side bar scroll  */
 ::-webkit-scrollbar {

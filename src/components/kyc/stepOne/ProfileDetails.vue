@@ -51,12 +51,16 @@
           >
           <div class="flex flex-col lg:flex-row gap-4">
             <input
+              @focus="handleFocus"
+              @blur="handleBlur"
               type="text"
               class="w-full lg:w-5/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
               placeholder="Father / Husband Name"
               required
             />
             <input
+              @focus="handleFocus"
+              @blur="handleBlur"
               type="text"
               class="w-full lg:w-5/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
               placeholder="Father / Husband Name"
@@ -641,9 +645,9 @@
         </div>
 
         <button
-        @click="handleSubmit"
+          @click="handleSubmit"
           type="button"
-          class="mt-3 bg-blue-600 text-white px-4 py-2 rounded"
+          class="mt-3 mb-20 bg-blue-600 text-white px-4 py-2 rounded"
         >
           Continue
         </button>
@@ -662,7 +666,7 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {
+  setup(props, { emit }) {
     // You can store data here to pass to the parent component
     const formData = ref({});
 
@@ -671,9 +675,19 @@ export default defineComponent({
       props.submit(formData.value);
     };
 
+    const handleFocus = () => {
+      emit("toggle-keyword-section", true);
+    };
+
+    const handleBlur = () => {
+      emit("toggle-keyword-section", false);
+    };
+
     return {
       handleSubmit,
-      formData,  // You can add form fields to this ref
+      formData,
+      handleFocus,
+      handleBlur,
     };
   },
 });

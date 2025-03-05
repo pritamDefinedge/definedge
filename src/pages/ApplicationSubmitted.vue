@@ -1,10 +1,16 @@
 <template>
-  <section class="flex flex-col w-full md:w-9/12 mx-auto my-8">
-    <div class="bg-slate-200 bg-opacity-40 p-2.5 my-0 lg:my-8 rounded-2xl">
+  <section class="flex flex-col w-full md:w-9/12 mx-auto lg:my-8 md:my-8 my-0">
+    <div
+      class="bg-white md:bg-slate-200 lg:bg-slate-200 bg-opacity-40 p-2.5 my-0 lg:my-8 rounded-2xl"
+    >
       <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5">
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Personal Information Step) -->
-          <CommonLeftSection :src="imageSrc" :steps="[1, 2, 3, 4, 5]" />
+          <CommonLeftSection
+            :src="imageSrc"
+            :steps="[1, 2, 3, 4, 5]"
+            :toggleModal="toggleModal"
+          />
 
           <!-- Right Section (Sign Up Form) -->
           <section
@@ -181,63 +187,62 @@
       </div>
     </div>
   </section>
+  <DocGuideLince
+    :isVisible="isModalVisible"
+    @update:isVisible="isModalVisible = $event"
+  />
 </template>
 
 <script>
-import { reactive, toRefs } from "vue";
+import { reactive, toRefs, onMounted } from "vue";
 import SendMobileOtp from "../components/kyc/stepOne/SendMobileOtp.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import imageSrc from "../assets/steps/side14.svg";
+import DocGuideLince from "../components/DocGuideLince.vue";
+
+// import imageSrc from "../assets/steps/side14.svg";
+
+import desktopImage from "../assets/steps/side14.svg";
+import mobileImage from "../assets/steps/blue/14.svg";
 
 export default {
   components: {
     SendMobileOtp,
     CommonLeftSection,
+    DocGuideLince,
   },
   setup() {
     const state = reactive({
-      mobileNumber: "",
-      otpSent: false,
-      otpVerified: false,
-      otp: "", // Store the OTP here
+      imageSrc: "",
+      isModalVisible: false,
     });
     const router = useRouter();
 
-    const sendOtp = () => {
-      if (state.mobileNumber.length === 10) {
-        state.otpSent = true;
-        state.otpVerified = false;
-        state.otp = "123456"; // Simulate sending an OTP
-        alert("OTP sent successfully!");
+    const updateImageSrc = () => {
+      if (window.innerWidth < 768) {
+        // Mobile devices (screen width less than 768px)
+        state.imageSrc = mobileImage; // Mobile image
       } else {
-        alert("Please enter a valid mobile number.");
+        // Medium and large devices (screen width 768px and greater)
+        state.imageSrc = desktopImage; // Desktop image
       }
     };
 
-    const verifyOtp = (enteredOtp) => {
-      console.log(enteredOtp);
-      // if (enteredOtp === state.otp) { // Compare with the stored OTP
-      state.otpVerified = true;
-      router.push("/email-verification");
-      // } else {
-      //   alert("Invalid OTP, please try again.");
-      // }
-    };
+    onMounted(() => {
+      // Set image when component is mounted
+      updateImageSrc();
 
-    const resetForm = () => {
-      state.mobileNumber = "";
-      state.otpSent = false;
-      state.otpVerified = false;
-      state.otp = "";
+      // Listen for window resize to update image
+      window.addEventListener("resize", updateImageSrc);
+    });
+
+    const toggleModal = () => {
+      state.isModalVisible = !state.isModalVisible;
     };
 
     return {
       ...toRefs(state),
-      sendOtp,
-      verifyOtp,
-      resetForm,
-      imageSrc,
+      toggleModal,
     };
   },
 };

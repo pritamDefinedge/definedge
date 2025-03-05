@@ -73,7 +73,7 @@
         </div>
 
         <!-- Risk Disclosure -->
-        <div class="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
+        <div class="mt-6 mb-24 space-y-3 text-gray-700 dark:text-gray-300">
           <p class="text-sm font-medium">Risk Disclosures on Derivatives</p>
           <ul class="space-y-2">
             <li

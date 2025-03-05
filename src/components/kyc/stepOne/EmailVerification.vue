@@ -31,6 +31,8 @@
           <input
             v-model="localEmail"
             @input="updateEmail"
+            @focus="handleFocus"
+            @blur="handleBlur"
             type="email"
             class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
             placeholder="Enter your email"
@@ -56,6 +58,8 @@
 
         <input
           v-model="localOtp"
+          @focus="handleFocus"
+          @blur="handleBlur"
           type="text"
           class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-4 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
           maxlength="6"
@@ -101,7 +105,7 @@
         </p>
       </div>
       <!-- Footer -->
-      <div class="absolute bottom-0">
+      <div class="lg:absolute md:relative relative lg:bottom-0 -bottom-10">
         <h4 class="text-xs text-slate-500 font-bold">
           Definedge Securities Broking Private Limited
         </h4>
@@ -154,6 +158,12 @@ export default {
       this.localEmail = "";
       this.localOtp = "";
       this.$emit("reset-form");
+    },
+    handleFocus() {
+      this.$emit("toggle-keyword-section", true);
+    },
+    handleBlur() {
+      this.$emit("toggle-keyword-section", false);
     },
   },
   watch: {

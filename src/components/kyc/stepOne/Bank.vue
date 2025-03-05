@@ -40,6 +40,8 @@
             <input
               id="ifsc-code"
               type="text"
+              @focus="handleFocus"
+              @blur="handleBlur"
               v-model="formData.ifscCode"
               class="w-full text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
               placeholder="ENTER IFSC CODE"
@@ -75,6 +77,8 @@
             >
             <input
               id="bank-account"
+              @focus="handleFocus"
+              @blur="handleBlur"
               type="text"
               v-model="formData.accountNumber"
               class="w-full text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
@@ -93,6 +97,8 @@
             <input
               id="bank-name"
               type="text"
+              @focus="handleFocus"
+              @blur="handleBlur"
               v-model="formData.bankName"
               class="w-full text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
               placeholder="BANK NAME"
@@ -110,6 +116,8 @@
             <input
               id="bank-address"
               type="text"
+              @focus="handleFocus"
+              @blur="handleBlur"
               v-model="formData.bankAddress"
               class="w-full text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
               placeholder="BANK ADDRESS"
@@ -122,7 +130,7 @@
         <button
           @click="handleSubmit"
           type="button"
-          class="mt-3 bg-blue-600 text-white px-4 py-2 rounded"
+          class="mt-3 bg-blue-600 mb-20 text-white px-4 py-2 rounded"
         >
           Continue
         </button>
@@ -141,7 +149,7 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {
+  setup(props, { emit }) {
     // Define form data to store input values
     const formData = ref({
       ifscCode: "",
@@ -166,10 +174,19 @@ export default defineComponent({
       //     alert("Please fill in all fields.");
       //   }
     };
+    const handleFocus = () => {
+      emit("toggle-keyword-section", true);
+    };
+
+    const handleBlur = () => {
+      emit("toggle-keyword-section", false);
+    };
 
     return {
       handleSubmit,
       formData,
+      handleFocus,
+      handleBlur,
     };
   },
 });

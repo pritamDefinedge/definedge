@@ -1,10 +1,16 @@
 <template>
-  <section class="flex flex-col w-full md:w-9/12 mx-auto my-8">
-    <div class="bg-slate-200 bg-opacity-40 p-2.5 my-0 lg:my-8 rounded-2xl">
+  <section class="flex flex-col w-full md:w-9/12 mx-auto lg:my-8 md:my-8 my-0">
+    <div
+      class="bg-white md:bg-slate-200 lg:bg-slate-200 bg-opacity-40 p-2.5 my-0 lg:my-8 rounded-2xl"
+    >
       <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5">
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
-          <CommonLeftSection :src="imageSrc" :steps="[1,2]"/>
+          <CommonLeftSection
+            :src="imageSrc"
+            :steps="[1, 2]"
+            :toggleModal="toggleModal"
+          />
 
           <!-- Right Section (Aadhaar Verification Form) -->
           <section
@@ -12,6 +18,7 @@
           >
             <!-- Doc Guidelines Button (Desktop) -->
             <div
+              @click="toggleModal"
               class="m-1 flex justify-end items-center absolute right-1 z-50"
             >
               <div class="hidden lg:block">
@@ -25,9 +32,12 @@
                       alt="Document Guidelines Icon"
                     />
                   </div>
-                  <div class="ml-1 pt-0.5 whitespace-nowrap">
+                  <button
+                    @click="toggleModal"
+                    class="ml-1 pt-0.5 whitespace-nowrap text-xs rounded-md transition-all ease-in-out duration-200"
+                  >
                     Doc Guidelines
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -89,7 +99,7 @@
                     class="flex flex-wrap justify-start items-center gap-4 mt-12"
                   >
                     <button
-                      class="w-full md:w-48 flex justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
+                      class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
                       @click="handleSubmit"
                     >
                       Submit
@@ -103,34 +113,67 @@
       </div>
     </div>
   </section>
+  <DocGuideLince
+    :isVisible="isModalVisible"
+    @update:isVisible="isModalVisible = $event"
+  />
 </template>
 
 <script>
-import { reactive, toRefs } from "vue";
+import { reactive, toRefs, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
-import imageSrc from "../assets/steps/side9.svg";
+import DocGuideLince from "../components/DocGuideLince.vue";
+
+// import imageSrc from "../assets/steps/side10.svg";
+
+import desktopImage from "../assets/steps/side10.svg";
+import mobileImage from "../assets/steps/blue/10.svg";
 
 export default {
   components: {
     CommonLeftSection,
+    DocGuideLince,
   },
   setup() {
     const router = useRouter();
 
     const state = reactive({
       consentGiven: false,
+      imageSrc: "",
+      isModalVisible: false,
     });
 
     const handleSubmit = () => {
       alert("Submitting...");
       router.push("/bank-details");
     };
+    const updateImageSrc = () => {
+      if (window.innerWidth < 768) {
+        // Mobile devices (screen width less than 768px)
+        state.imageSrc = mobileImage; // Mobile image
+      } else {
+        // Medium and large devices (screen width 768px and greater)
+        state.imageSrc = desktopImage; // Desktop image
+      }
+    };
+
+    onMounted(() => {
+      // Set image when component is mounted
+      updateImageSrc();
+
+      // Listen for window resize to update image
+      window.addEventListener("resize", updateImageSrc);
+    });
+
+    const toggleModal = () => {
+      state.isModalVisible = !state.isModalVisible;
+    };
 
     return {
       ...toRefs(state),
       handleSubmit,
-      imageSrc,
+      toggleModal,
     };
   },
 };
