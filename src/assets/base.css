@@ -85,5 +85,13 @@
 }
 
 
+@media (max-width: 768px) {
+  .lg\:hidden {
+    display: block !important;
+  }
+  .md\:hidden {
+    display: block !important;
+  }
+}
 
 

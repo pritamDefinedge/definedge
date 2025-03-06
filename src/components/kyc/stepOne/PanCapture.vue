@@ -17,6 +17,11 @@
         Pioneers of Noiseless Charts, Options platform, RS, Breadth & more!
       </div>
     </div>
+    <div class="mb-6 lg:hidden block">
+      <div class="flex justify-center items-center">
+        <img :src="src" alt="steps" class="w-full" />
+      </div>
+    </div>
     <div class="lg:mt-8 w-full">
       <h1 class="text-2xl font-bold">PAN Capture</h1>
       <div class="mt-6">
@@ -26,8 +31,6 @@
         <div class="flex flex-wrap items-center gap-4 mb-2 w-full relative">
           <input
             v-model="localPan"
-             @focus="handleFocus"
-            @blur="handleBlur"
             type="text"
             class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
             placeholder="Enter your PAN number"
@@ -74,6 +77,10 @@
 export default {
   props: {
     pan: String,
+    src: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -88,12 +95,7 @@ export default {
     resetForm() {
       this.localPan = "";
     },
-    handleFocus() {
-      this.$emit("toggle-keyword-section", true);
-    },
-    handleBlur() {
-      this.$emit("toggle-keyword-section", false);
-    },
+  
   },
   watch: {
     pan(newVal) {

@@ -2,7 +2,7 @@
   <div class="w-full lg:w-10/12 mx-auto mb-8">
     <div class="w-full">
       <div
-        class="text-sm text-black font-serif relative lg:flex items-center mb-6 lg:mb-0 mt-6"
+        class="text-sm text-black font-serif relative lg:flex items-center mb-6 lg:mb-0 mt-0 md:mt-6 lg:mt-6"
       >
         <div
           class="text-blue-600 text-lg font-medium flex whitespace-nowrap"
@@ -18,7 +18,11 @@
           Unlock Exclusive Education & Products—Free! 🎁
         </div>
       </div>
-
+      <div class="mb-6 lg:hidden block">
+        <div class="flex justify-center items-center">
+          <img :src="src" alt="steps" class="w-full" />
+        </div>
+      </div>
       <div class="lg:mt-8 w-full">
         <h1
           class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-slate-700 font-bold"
@@ -43,8 +47,6 @@
             <input
               v-model="localMobileNumber"
               @input="updateMobileNumber"
-              @focus="handleFocus"
-              @blur="handleBlur"
               type="tel"
               class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md pl-12 px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
               placeholder="Your 10 digit Mobile Number"
@@ -75,8 +77,6 @@
 
           <input
             v-model="localOtp"
-            @focus="handleFocus"
-            @blur="handleBlur"
             type="tel"
             class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-4 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
             maxlength="6"
@@ -121,7 +121,7 @@
           </p>
         </div>
         <!-- Footer -->
-        <div class="lg:absolute md:relative relative lg:bottom-0 -bottom-10">
+        <div class="lg:absolute md:relative relative lg:bottom-0 -bottom-16">
           <h4 class="text-xs text-slate-500 font-bold">
             Definedge Securities Broking Private Limited
           </h4>
@@ -156,6 +156,10 @@ export default {
     mobileNumber: String,
     otpSent: Boolean,
     otpVerified: Boolean,
+    src: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -175,12 +179,6 @@ export default {
     },
     resetForm() {
       this.$emit("reset-form");
-    },
-    handleFocus() {
-      this.$emit("toggle-keyword-section", true);
-    },
-    handleBlur() {
-      this.$emit("toggle-keyword-section", false);
     },
   },
   watch: {

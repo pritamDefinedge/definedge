@@ -7,7 +7,7 @@
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
           <CommonLeftSection
-            :src="imageSrc"
+            :src="desktopImage"
             :steps="[1, 2, 3]"
             :toggleModal="toggleModal"
           />
@@ -44,14 +44,13 @@
 
             <div class="w-full lg:w-10/12 mx-auto mb-8">
               <div class="w-full">
-                <div class="lg:mt-8 w-full">
-                  <h1
-                    id="contact-info-heading"
-                    class="text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl text-slate-700 font-bold"
-                  >
-                    Upload Documents
-                  </h1>
+                <div class="mb-6 lg:hidden block">
+                  <div class="flex justify-center items-center">
+                    <img :src="mobileImage" alt="steps" class="w-full" />
+                  </div>
                 </div>
+
+                <h1 class="text-2xl font-bold">Upload Documents</h1>
 
                 <div class="mx-auto max-w-2xl mt-10">
                   <div class="flex items-center w-full">
@@ -163,7 +162,6 @@ export default {
     const state = reactive({
       file: null,
       consentGiven: false,
-      imageSrc: "",
       isModalVisible: false,
     });
 
@@ -182,28 +180,11 @@ export default {
       //     alert("Please upload a document before submitting.");
       //     return;
       //   }
+
       alert("Submitting...");
       // Optionally handle the uploaded file here, e.g., upload it to a server.
       router.push("/previewpdf-esign");
     };
-
-    const updateImageSrc = () => {
-      if (window.innerWidth < 768) {
-        // Mobile devices (screen width less than 768px)
-        state.imageSrc = mobileImage; // Mobile image
-      } else {
-        // Medium and large devices (screen width 768px and greater)
-        state.imageSrc = desktopImage; // Desktop image
-      }
-    };
-
-    onMounted(() => {
-      // Set image when component is mounted
-      updateImageSrc();
-
-      // Listen for window resize to update image
-      window.addEventListener("resize", updateImageSrc);
-    });
 
     const toggleModal = () => {
       state.isModalVisible = !state.isModalVisible;
@@ -214,6 +195,8 @@ export default {
       handleFileChange,
       handleSubmit,
       toggleModal,
+      desktopImage,
+      mobileImage,
     };
   },
 };

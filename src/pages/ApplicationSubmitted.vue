@@ -7,7 +7,7 @@
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Personal Information Step) -->
           <CommonLeftSection
-            :src="imageSrc"
+            :src="desktopImage"
             :steps="[1, 2, 3, 4, 5]"
             :toggleModal="toggleModal"
           />
@@ -39,6 +39,11 @@
             </div>
             <div class="stepOne">
               <div class="w-full lg:w-10/12 mx-auto mb-8">
+                <div class="mb-6 lg:hidden block">
+                  <div class="flex justify-center items-center">
+                    <img :src="mobileImage" alt="steps" class="w-full" />
+                  </div>
+                </div>
                 <div class="w-full">
                   <div
                     class="text-sm text-black font-serif relative lg:flex items-center mb-6 lg:mb-0 mt-3"
@@ -67,11 +72,11 @@
                           alt="definedge"
                         />
                       </div>
-                      <h3
-                        class="text-lg md:text-lg lg:text-xl xl:text-xl font-bold mb-3"
-                      >
+
+                      <h1 class="text-2xl font-bold">
                         Application Submitted !
-                      </h3>
+                      </h1>
+
                       <p
                         class="text-xs font-normal text-slate-600 flex justify-between items-center my-2 gap-4"
                       >
@@ -218,24 +223,6 @@ export default {
     });
     const router = useRouter();
 
-    const updateImageSrc = () => {
-      if (window.innerWidth < 768) {
-        // Mobile devices (screen width less than 768px)
-        state.imageSrc = mobileImage; // Mobile image
-      } else {
-        // Medium and large devices (screen width 768px and greater)
-        state.imageSrc = desktopImage; // Desktop image
-      }
-    };
-
-    onMounted(() => {
-      // Set image when component is mounted
-      updateImageSrc();
-
-      // Listen for window resize to update image
-      window.addEventListener("resize", updateImageSrc);
-    });
-
     const toggleModal = () => {
       state.isModalVisible = !state.isModalVisible;
     };
@@ -243,6 +230,8 @@ export default {
     return {
       ...toRefs(state),
       toggleModal,
+      desktopImage,
+      mobileImage,
     };
   },
 };

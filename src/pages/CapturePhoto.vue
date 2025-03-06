@@ -7,7 +7,7 @@
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
           <CommonLeftSection
-            :src="imageSrc"
+            :src="desktopImage"
             :steps="[1, 2]"
             :toggleModal="toggleModal"
           />
@@ -44,7 +44,7 @@
 
             <!-- Capture Photos Form -->
             <div class="stepOne">
-              <Photos :submit="submit" />
+              <Photos :submit="submit" :src="mobileImage" />
             </div>
           </section>
         </div>
@@ -72,11 +72,10 @@ export default {
   components: {
     Photos,
     CommonLeftSection,
-    DocGuideLince
+    DocGuideLince,
   },
   setup() {
     const state = reactive({
-      imageSrc: "",
       isModalVisible: false,
     });
     const router = useRouter();
@@ -93,24 +92,6 @@ export default {
       //   }
     };
 
-    const updateImageSrc = () => {
-      if (window.innerWidth < 768) {
-        // Mobile devices (screen width less than 768px)
-        state.imageSrc = mobileImage; // Mobile image
-      } else {
-        // Medium and large devices (screen width 768px and greater)
-        state.imageSrc = desktopImage; // Desktop image
-      }
-    };
-
-    onMounted(() => {
-      // Set image when component is mounted
-      updateImageSrc();
-
-      // Listen for window resize to update image
-      window.addEventListener("resize", updateImageSrc);
-    });
-
     const toggleModal = () => {
       state.isModalVisible = !state.isModalVisible;
     };
@@ -118,6 +99,8 @@ export default {
       ...toRefs(state),
       submit,
       toggleModal,
+      desktopImage,
+      mobileImage,
     };
   },
 };

@@ -7,8 +7,7 @@
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
           <CommonLeftSection
-          :isKeywordSectionOpen="isKeywordSectionOpen"
-          :src="imageSrc"
+            :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
           />
@@ -44,6 +43,7 @@
 
             <div class="stepOne">
               <EmailVerification
+                :src="mobileImage"
                 :email="email"
                 :otp-sent="emailOtpSent"
                 :otp-verified="emailOtpVerified"
@@ -51,7 +51,6 @@
                 @send-otp="sendEmailOtp"
                 @verify-otp="verifyEmailOtp"
                 @reset-form="resetEmailForm"
-                @toggle-keyword-section="handleToggleKeywordSection"
               />
             </div>
           </section>
@@ -90,8 +89,6 @@ export default {
       emailOtpVerified: false,
       emailOtp: "",
       isModalVisible: false,
-      imageSrc: "",
-      isKeywordSectionOpen: false,
     });
     const router = useRouter();
 
@@ -124,29 +121,8 @@ export default {
       state.emailOtp = "";
     };
 
-    const updateImageSrc = () => {
-      if (window.innerWidth < 768) {
-        // Mobile devices (screen width less than 768px)
-        state.imageSrc = mobileImage; // Mobile image
-      } else {
-        // Medium and large devices (screen width 768px and greater)
-        state.imageSrc = desktopImage; // Desktop image
-      }
-    };
-
-    onMounted(() => {
-      // Set image when component is mounted
-      updateImageSrc();
-
-      // Listen for window resize to update image
-      window.addEventListener("resize", updateImageSrc);
-    });
-
     const toggleModal = () => {
       state.isModalVisible = !state.isModalVisible;
-    };
-    const handleToggleKeywordSection = (isOpen) => {
-      state.isKeywordSectionOpen = isOpen;
     };
 
     return {
@@ -155,7 +131,8 @@ export default {
       verifyEmailOtp,
       resetEmailForm,
       toggleModal,
-      handleToggleKeywordSection,
+      desktopImage,
+      mobileImage,
     };
   },
 };

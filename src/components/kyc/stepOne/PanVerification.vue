@@ -1,5 +1,10 @@
 <template>
   <div class="w-full lg:w-10/12 mx-auto mb-8">
+    <div class="mb-6 lg:hidden block">
+      <div class="flex justify-center items-center">
+        <img :src="src" alt="steps" class="w-full" />
+      </div>
+    </div>
     <div class="lg:mt-8 w-full">
       <h1 class="text-2xl font-bold">Verify PAN</h1>
       <p>PAN Details will be verified with ITD (Income Tax Department)</p>
@@ -13,8 +18,6 @@
           </label>
           <input
             v-model="localFullName"
-            @focus="handleFocus"
-            @blur="handleBlur"
             type="text"
             id="full-name"
             class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
@@ -28,8 +31,6 @@
           >
           <input
             v-model="localPan"
-            @focus="handleFocus"
-            @blur="handleBlur"
             type="text"
             id="pan"
             class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
@@ -45,8 +46,6 @@
           >
           <input
             v-model="localDob"
-            @focus="handleFocus"
-            @blur="handleBlur"
             type="date"
             id="dob"
             class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
@@ -111,6 +110,10 @@ export default defineComponent({
       type: Function,
       required: true,
     },
+    src: {
+      type: String,
+      required: true,
+    },
   },
   setup(props, { emit }) {
     // Create reactive local state for inputs
@@ -159,14 +162,6 @@ export default defineComponent({
       });
     };
 
-    const handleFocus = () => {
-      emit("toggle-keyword-section", true);
-    };
-
-    const handleBlur = () => {
-      emit("toggle-keyword-section", false);
-    };
-
     return {
       localPan,
       localFullName,
@@ -175,8 +170,6 @@ export default defineComponent({
       handleFullNameUpdate,
       handleDobUpdate,
       submitPan,
-      handleFocus,
-      handleBlur,
     };
   },
 });

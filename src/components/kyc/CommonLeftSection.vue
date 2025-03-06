@@ -1,7 +1,7 @@
 <template>
   <section class="lg:col-span-4">
     <!-- Mobile Header -->
-    <div class="p-2 border-b block lg:hidden h-full xl:h-100 relative">
+    <!-- <div class="p-2 border-b block lg:hidden h-full  relative">
       <div class="flex justify-between items-center">
         <div class="lg:hidden block ml-auto">
           <button
@@ -19,9 +19,10 @@
           </button>
         </div>
       </div>
-    </div>
-    <!-- <div
-      class="p-2 border-b bg-blue-600 block rounded-lg lg:hidden h-full xl:h-100 text-indigo-300 relative"
+    </div> -->
+
+    <div
+      class="border-b bg-blue-600 block rounded-lg lg:hidden p-4 h-full xl:h-100 text-indigo-300 relative"
     >
       <div class="flex justify-between items-center">
         <img
@@ -30,10 +31,14 @@
           alt="definedge"
         />
         <div class="lg:hidden block">
-          <div
-            class="flex items-center border border-slate-200 px-3 py-1 text-white text-xs rounded-full cursor-pointer"
+          <!-- class="w-full max-w-full justify-center rounded-md border-2 border-transparent overflow-hidden [background:linear-gradient(45deg,#0369e0,#0369e0_50%,#0369e0)_padding-box,conic-gradient(from_var(--border-angle),rgb(37_99_235_/_0.48)_80%,#6366f1_86%,#fff_90%,#fff_94%,rgb(30_58_138_/_0.48))_border-box] animate-border" -->
+
+          <!-- class="shine shine-anim flex items-center border border-slate-200 px-3 py-2 text-xs rounded-full cursor-pointer" -->
+          <button
+            @click="toggleModal"
+            class="shine shine-anim flex items-center border border-slate-200 px-3 py-2 text-xs rounded-full cursor-pointer"
           >
-            <div class="w-4 h-4 flex-none">
+            <div class="w-4 h-4 flex-none border border-slate-500">
               <img
                 class="w-4 h-4"
                 src="../../assets/file-text-white.svg"
@@ -41,12 +46,12 @@
               />
             </div>
             <div class="ml-1 pt-0.5 whitespace-nowrap">Doc Guidelines</div>
-          </div>
+          </button>
         </div>
- 
       </div>
-    </div> -->
+    </div>
     <!-- Desktop Sidebar -->
+
     <div
       class="p-8 bg-blue-600 rounded-xl hidden lg:block h-full xl:h-100 text-indigo-300 relative"
     >
@@ -90,10 +95,18 @@
 
             <span
               v-else
-              class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
+              :class="{
+                'absolute flex items-center justify-center w-8 h-8  rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700': true,
+                'bg-blue-700 ': steps.length === 1,
+                'bg-gray-100': steps.length !== 1,
+              }"
             >
               <svg
-                class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
+                class="w-3.5 h-3.5"
+                :class="{
+                  'text-white dark:text-gray-400': steps.length === 1,
+                  'text-gray-500 dark:text-gray-400': steps.length !== 1,
+                }"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -140,10 +153,18 @@
             </span>
             <span
               v-else
-              class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
+              :class="{
+                'absolute flex items-center justify-center w-8 h-8  rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700': true,
+                'bg-blue-700 ': steps.length === 2,
+                'bg-gray-100': steps.length !== 2,
+              }"
             >
               <svg
-                class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
+                class="w-3.5 h-3.5"
+                :class="{
+                  'text-white dark:text-gray-400': steps.length === 2,
+                  'text-gray-500 dark:text-gray-400': steps.length !== 2,
+                }"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -154,6 +175,7 @@
                 />
               </svg>
             </span>
+
             <h3 class="font-medium leading-tight text-sm text-gray-300">
               Trading Information
             </h3>
@@ -184,10 +206,18 @@
             </span>
             <span
               v-else
-              class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
+              :class="{
+                'absolute flex items-center justify-center w-8 h-8  rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700': true,
+                'bg-blue-700 ': steps.length === 3,
+                'bg-gray-100': steps.length !== 3,
+              }"
             >
               <svg
-                class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
+                class="w-3.5 h-3.5"
+                :class="{
+                  'text-white dark:text-gray-400': steps.length === 3,
+                  'text-gray-500 dark:text-gray-400': steps.length !== 3,
+                }"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -198,6 +228,7 @@
                 />
               </svg>
             </span>
+
             <h3 class="font-medium leading-tight text-sm text-gray-300">
               Bank Details
             </h3>
@@ -228,10 +259,18 @@
             </span>
             <span
               v-else
-              class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700"
+              :class="{
+                'absolute flex items-center justify-center w-8 h-8  rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700': true,
+                'bg-blue-700 ': steps.length === 4,
+                'bg-gray-100': steps.length !== 4,
+              }"
             >
               <svg
-                class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400"
+                class="w-3.5 h-3.5"
+                :class="{
+                  'text-white dark:text-gray-400': steps.length === 4,
+                  'text-gray-500 dark:text-gray-400': steps.length !== 4,
+                }"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -242,6 +281,7 @@
                 />
               </svg>
             </span>
+
             <h3 class="font-medium leading-tight text-sm text-gray-300">
               Final Steps
             </h3>
@@ -256,17 +296,6 @@
         <h2 class="text-xl xl:text-xl 2xl:text-xl text-white font-medium">
           Super Demat with a GrowthMap
         </h2>
-      </div>
-    </div>
-
-    <!-- Mobile Footer with Sticky border-t-2 border-t-blue-500 -->
-    <div
-      v-if="!isKeywordSectionOpen"
-      class="lg:hidden md:hidden hidden fixed bottom-0 left-0 bg-white right-0 p-4 rounded-t-3xl z-50"
-      style="box-shadow: 0 -4px 15px rgba(55, 127, 242, 0.4)"
-    >
-      <div class="lg:hidden md:hidden flex justify-center items-center">
-        <img :src="src" alt="steps" class="w-full" />
       </div>
     </div>
   </section>

@@ -1,5 +1,10 @@
 <template>
   <div class="w-full lg:w-10/12 mx-auto mb-8">
+    <div class="mb-6 lg:hidden block">
+      <div class="flex justify-center items-center">
+        <img :src="src" alt="steps" class="w-full" />
+      </div>
+    </div>
     <div class="lg:mt-8 w-full">
       <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Segments</h1>
       <div class="mt-6">
@@ -79,10 +84,11 @@
             <li
               v-for="(item, idx) in riskDisclosure"
               :key="idx"
-              class="flex items-center text-xs"
+              class="flex items-center gap-2 text-xs"
             >
+            <div class="w-4">
               <svg
-                class="mr-2 w-5 h-5 text-green-500"
+                class="mr-2 w-4 h-4 text-green-500"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,6 +102,7 @@
                   d="M12.6875 7.09375L8.96875 10.7188L7.28125 9.0625C7 8.78125 6.5625 8.8125 6.28125 9.0625C6 9.34375 6.03125 9.78125 6.28125 10.0625L8.28125 12C8.46875 12.1875 8.71875 12.2813 8.96875 12.2813C9.21875 12.2813 9.46875 12.1875 9.65625 12L13.6875 8.125C13.9688 7.84375 13.9688 7.40625 13.6875 7.125C13.4063 6.84375 12.9688 6.84375 12.6875 7.09375Z"
                 />
               </svg>
+            </div>
               {{ item }}
             </li>
           </ul>
@@ -112,6 +119,10 @@ export default defineComponent({
   props: {
     submit: {
       type: Function,
+      required: true,
+    },
+    src: {
+      type: String,
       required: true,
     },
   },

@@ -7,7 +7,7 @@
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
           <CommonLeftSection
-            :src="imageSrc"
+            :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
           />
@@ -62,7 +62,11 @@
                     edge!
                   </div>
                 </div>
-
+                <div class="mb-6 lg:hidden block">
+                  <div class="flex justify-center items-center">
+                    <img :src="mobileImage" alt="steps" class="w-full" />
+                  </div>
+                </div>
                 <div class="lg:mt-8 w-full">
                   <div>
                     <h1
@@ -89,7 +93,7 @@
                       <div class="flex items-top gap-3 mb-4">
                         <div class="checkbox-container mt-0.5">
                           <input
-                            id="default-checkbox"
+                            id="verify-aadhar"
                             type="checkbox"
                             class="w-4 h-4 cursor-pointer"
                             v-model="consentGiven"
@@ -97,6 +101,7 @@
                           <div class="checkbox-overlay"></div>
                         </div>
                         <label
+                          for="verify-aadhar"
                           class="text-sm font-normal text-slate-700 text-justify"
                         >
                           I hereby consent to use my Aadhaar (UID) for
@@ -190,7 +195,6 @@ export default {
     const state = reactive({
       consentGiven: false,
       isModalVisible: false,
-      imageSrc: "",
     });
 
     const connectToDigiLocker = () => {
@@ -207,28 +211,12 @@ export default {
       state.isModalVisible = !state.isModalVisible;
     };
 
-    const updateImageSrc = () => {
-      if (window.innerWidth < 768) {
-        // Mobile devices (screen width less than 768px)
-        state.imageSrc = mobileImage; // Mobile image
-      } else {
-        // Medium and large devices (screen width 768px and greater)
-        state.imageSrc = desktopImage; // Desktop image
-      }
-    };
-
-    onMounted(() => {
-      // Set image when component is mounted
-      updateImageSrc();
-
-      // Listen for window resize to update image
-      window.addEventListener("resize", updateImageSrc);
-    });
-
     return {
       ...toRefs(state),
       connectToDigiLocker,
       toggleModal,
+      desktopImage,
+      mobileImage,
     };
   },
 };

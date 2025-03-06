@@ -1,5 +1,10 @@
 <template>
   <div class="w-full lg:w-10/12 mx-auto mb-8">
+    <div class="mb-6 lg:hidden block">
+      <div class="flex justify-center items-center">
+        <img :src="src" alt="steps" class="w-full" />
+      </div>
+    </div>
     <div class="lg:mt-8 w-full">
       <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">
         Signature
@@ -124,6 +129,10 @@ export default defineComponent({
   props: {
     submit: {
       type: Function,
+      required: true,
+    },
+    src: {
+      type: String,
       required: true,
     },
   },

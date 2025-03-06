@@ -7,7 +7,7 @@
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
           <CommonLeftSection
-            :src="imageSrc"
+            :src="desktopImage"
             :steps="[1, 2]"
             :toggleModal="toggleModal"
           />
@@ -18,7 +18,7 @@
           >
             <!-- Doc Guidelines Button (Desktop) -->
             <div
-               @click="toggleModal"
+              @click="toggleModal"
               class="m-1 flex justify-end items-center absolute right-1 z-50"
             >
               <div class="hidden lg:block">
@@ -43,7 +43,7 @@
             </div>
 
             <div class="stepOne">
-              <Segement :submit="submit" />
+              <Segement :submit="submit" :src="mobileImage" />
             </div>
           </section>
         </div>
@@ -74,9 +74,7 @@ export default {
   },
   setup() {
     const state = reactive({
-      imageSrc: "",
       isModalVisible: false,
-
     });
     const router = useRouter();
 
@@ -88,23 +86,6 @@ export default {
       router.push("/capture-photo");
     };
 
-    const updateImageSrc = () => {
-      if (window.innerWidth < 768) {
-        // Mobile devices (screen width less than 768px)
-        state.imageSrc = mobileImage; // Mobile image
-      } else {
-        // Medium and large devices (screen width 768px and greater)
-        state.imageSrc = desktopImage; // Desktop image
-      }
-    };
-
-    onMounted(() => {
-      // Set image when component is mounted
-      updateImageSrc();
-
-      // Listen for window resize to update image
-      window.addEventListener("resize", updateImageSrc);
-    });
     const toggleModal = () => {
       state.isModalVisible = !state.isModalVisible;
     };
@@ -112,7 +93,9 @@ export default {
     return {
       ...toRefs(state),
       submit,
-      toggleModal
+      toggleModal,
+      desktopImage,
+      mobileImage,
     };
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col w-full md:w-9/12 lg:my-8 md:my-8 my-0">
+  <section class="flex flex-col w-full md:w-9/12 mx-auto lg:my-8 md:my-8 my-0">
     <div
       class="bg-white md:bg-slate-200 lg:bg-slate-200 bg-opacity-40 p-2.5 my-0 lg:my-8 rounded-2xl"
     >
@@ -7,8 +7,7 @@
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
           <CommonLeftSection
-            :isKeywordSectionOpen="isKeywordSectionOpen"
-            :src="imageSrc"
+            :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
           />
@@ -45,6 +44,7 @@
 
             <div class="stepOne">
               <PanVerification
+                :src="mobileImage"
                 :pan="pan"
                 :full-name="localFullName"
                 :dob="localDob"
@@ -53,7 +53,6 @@
                 @update:dob="localDob = $event"
                 :submit-pan="submitPan"
                 @reset-form="resetPanForm"
-                @toggle-keyword-section="handleToggleKeywordSection"
               />
             </div>
           </section>
@@ -88,9 +87,7 @@ export default {
       pan: "",
       localFullName: "",
       localDob: "",
-      imageSrc: "",
       isModalVisible: false,
-      isKeywordSectionOpen: false,
     });
     const router = useRouter();
 
@@ -108,37 +105,17 @@ export default {
       state.localDob = "";
     };
 
-    const updateImageSrc = () => {
-      if (window.innerWidth < 768) {
-        // Mobile devices (screen width less than 768px)
-        state.imageSrc = mobileImage; // Mobile image
-      } else {
-        // Medium and large devices (screen width 768px and greater)
-        state.imageSrc = desktopImage; // Desktop image
-      }
-    };
-
-    onMounted(() => {
-      // Set image when component is mounted
-      updateImageSrc();
-
-      // Listen for window resize to update image
-      window.addEventListener("resize", updateImageSrc);
-    });
-
     const toggleModal = () => {
       state.isModalVisible = !state.isModalVisible;
     };
 
-    const handleToggleKeywordSection = (isOpen) => {
-      state.isKeywordSectionOpen = isOpen;
-    };
     return {
       ...toRefs(state),
       submitPan,
       resetPanForm,
       toggleModal,
-      handleToggleKeywordSection,
+      desktopImage,
+      mobileImage,
     };
   },
 };

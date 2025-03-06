@@ -7,8 +7,7 @@
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
           <CommonLeftSection
-          :isKeywordSectionOpen="isKeywordSectionOpen"
-          :src="imageSrc"
+            :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
           />
@@ -45,11 +44,11 @@
 
             <div class="stepOne">
               <PanCapture
+                :src="mobileImage"
                 :pan="pan"
                 @update:pan="pan = $event"
                 @submit-pan="submitPan"
                 @reset-form="resetPanForm"
-                @toggle-keyword-section="handleToggleKeywordSection"
               />
             </div>
           </section>
@@ -83,9 +82,7 @@ export default {
   setup() {
     const state = reactive({
       pan: "",
-      imageSrc: "",
       isModalVisible: false,
-      isKeywordSectionOpen: false,
     });
     const router = useRouter();
 
@@ -106,30 +103,8 @@ export default {
       state.pan = "";
     };
 
-    const updateImageSrc = () => {
-      if (window.innerWidth < 768) {
-        // Mobile devices (screen width less than 768px)
-        state.imageSrc = mobileImage; // Mobile image
-      } else {
-        // Medium and large devices (screen width 768px and greater)
-        state.imageSrc = desktopImage; // Desktop image
-      }
-    };
-
-    onMounted(() => {
-      // Set image when component is mounted
-      updateImageSrc();
-
-      // Listen for window resize to update image
-      window.addEventListener("resize", updateImageSrc);
-    });
-
     const toggleModal = () => {
       state.isModalVisible = !state.isModalVisible;
-    };
-
-    const handleToggleKeywordSection = (isOpen) => {
-      state.isKeywordSectionOpen = isOpen;
     };
 
     return {
@@ -137,7 +112,8 @@ export default {
       submitPan,
       resetPanForm,
       toggleModal,
-      handleToggleKeywordSection,
+      desktopImage,
+      mobileImage,
     };
   },
 };

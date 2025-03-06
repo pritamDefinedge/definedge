@@ -17,6 +17,11 @@
         The only ecosystem worldwide—ready to empower you!
       </div>
     </div>
+    <div class="mb-6 lg:hidden block">
+      <div class="flex justify-center items-center">
+        <img :src="src" alt="steps" class="w-full" />
+      </div>
+    </div>
     <div class="lg:mt-8 w-full">
       <h1
         class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-slate-700 font-bold"
@@ -31,8 +36,7 @@
           <input
             v-model="localEmail"
             @input="updateEmail"
-            @focus="handleFocus"
-            @blur="handleBlur"
+           
             type="email"
             class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
             placeholder="Enter your email"
@@ -58,8 +62,6 @@
 
         <input
           v-model="localOtp"
-          @focus="handleFocus"
-          @blur="handleBlur"
           type="text"
           class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-4 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
           maxlength="6"
@@ -105,7 +107,7 @@
         </p>
       </div>
       <!-- Footer -->
-      <div class="lg:absolute md:relative relative lg:bottom-0 -bottom-10">
+      <div class="lg:absolute md:relative relative lg:bottom-0 -bottom-16">
         <h4 class="text-xs text-slate-500 font-bold">
           Definedge Securities Broking Private Limited
         </h4>
@@ -137,6 +139,10 @@ export default {
     email: String,
     otpSent: Boolean,
     otpVerified: Boolean,
+    src: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -158,12 +164,6 @@ export default {
       this.localEmail = "";
       this.localOtp = "";
       this.$emit("reset-form");
-    },
-    handleFocus() {
-      this.$emit("toggle-keyword-section", true);
-    },
-    handleBlur() {
-      this.$emit("toggle-keyword-section", false);
     },
   },
   watch: {

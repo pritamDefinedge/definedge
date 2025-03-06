@@ -7,8 +7,7 @@
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Common for both steps) -->
           <CommonLeftSection
-            :isKeywordSectionOpen="isKeywordSectionOpen"
-            :src="imageSrc"
+            :src="desktopImage"
             :steps="[1, 2, 3]"
             :toggleModal="toggleModal"
           />
@@ -44,10 +43,7 @@
             </div>
 
             <div class="stepOne">
-              <Bank
-                :submit="submit"
-                @toggle-keyword-section="handleToggleKeywordSection"
-              />
+              <Bank :submit="submit" :src="mobileImage" />
             </div>
           </section>
         </div>
@@ -81,7 +77,6 @@ export default {
     const state = reactive({
       imageSrc: "",
       isModalVisible: false,
-      isKeywordSectionOpen: false,
     });
 
     const router = useRouter();
@@ -94,37 +89,16 @@ export default {
       router.push("/doc-upload");
     };
 
-    const updateImageSrc = () => {
-      if (window.innerWidth < 768) {
-        // Mobile devices (screen width less than 768px)
-        state.imageSrc = mobileImage; // Mobile image
-      } else {
-        // Medium and large devices (screen width 768px and greater)
-        state.imageSrc = desktopImage; // Desktop image
-      }
-    };
-
-    onMounted(() => {
-      // Set image when component is mounted
-      updateImageSrc();
-
-      // Listen for window resize to update image
-      window.addEventListener("resize", updateImageSrc);
-    });
-
     const toggleModal = () => {
       state.isModalVisible = !state.isModalVisible;
-    };
-
-    const handleToggleKeywordSection = (isOpen) => {
-      state.isKeywordSectionOpen = isOpen;
     };
 
     return {
       ...toRefs(state),
       submit,
       toggleModal,
-      handleToggleKeywordSection,
+      desktopImage,
+      mobileImage,
     };
   },
 };

@@ -7,7 +7,7 @@
     <RouterView />
 
     <!-- Footer will only show when the current route is not 'login' or 'open_demat_account' -->
-    <!-- <Footer v-if="!isExcludedPage" /> -->
+    <Footer v-if="!isExcludedPage" />
   </div>
 </template>
 
@@ -25,7 +25,22 @@ export default {
 
     // Use computed property to check if the current route is 'login' or 'open_demat_account'
     const isExcludedPage = computed(
-      () => route.name === "login" || route.name === "open_demat_account"
+      () =>
+        route.name === "login" ||
+        route.name === "mobile-verification" ||
+        route.name === "email-verification" ||
+        route.name === "capture-pan" ||
+        route.name === "aadhar-verification" ||
+        route.name === "pan-verification" ||
+        route.name === "regulatorydetails" ||
+        route.name === "segement-details" ||
+        route.name === "capture-photo" ||
+        route.name === "capture-signature" ||
+        route.name === "nomiees-details" ||
+        route.name === "bank-details" ||
+        route.name === "doc-upload" ||
+        route.name === "previewpdf-esign" ||
+        route.name === "application-submitted"
     );
 
     return {

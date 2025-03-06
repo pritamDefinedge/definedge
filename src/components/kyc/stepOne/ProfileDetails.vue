@@ -51,16 +51,12 @@
           >
           <div class="flex flex-col lg:flex-row gap-4">
             <input
-              @focus="handleFocus"
-              @blur="handleBlur"
               type="text"
               class="w-full lg:w-5/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
               placeholder="Father / Husband Name"
               required
             />
             <input
-              @focus="handleFocus"
-              @blur="handleBlur"
               type="text"
               class="w-full lg:w-5/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
               placeholder="Father / Husband Name"
@@ -675,19 +671,9 @@ export default defineComponent({
       props.submit(formData.value);
     };
 
-    const handleFocus = () => {
-      emit("toggle-keyword-section", true);
-    };
-
-    const handleBlur = () => {
-      emit("toggle-keyword-section", false);
-    };
-
     return {
       handleSubmit,
       formData,
-      handleFocus,
-      handleBlur,
     };
   },
 });
