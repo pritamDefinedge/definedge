@@ -1,5 +1,10 @@
 <template>
   <div class="w-full lg:w-10/12 mx-auto mb-8">
+    <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
+      <div class="flex justify-center items-center p-4">
+        <img :src="src" alt="steps" class="w-full" />
+      </div>
+    </div>
     <div class="lg:mt-8 w-full">
       <h1 class="text-2xl font-bold">Your Profile</h1>
       <div class="mt-6">
@@ -659,6 +664,10 @@ export default defineComponent({
   props: {
     submit: {
       type: Function,
+      required: true,
+    },
+    src: {
+      type: String,
       required: true,
     },
   },

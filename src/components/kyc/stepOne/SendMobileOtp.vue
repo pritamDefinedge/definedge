@@ -1,5 +1,16 @@
 <template>
   <div class="w-full lg:w-10/12 mx-auto mb-8">
+    <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
+      <div class="flex justify-center items-center p-4">
+        <!-- <span class="absolute text-lg font-bold text-white">0 %</span> -->
+        <img :src="src" alt="steps" class="w-full" />
+      </div>
+    </div>
+    <!-- <div class="mb-6 lg:hidden block">
+        <div class="flex justify-center items-center">
+          <img :src="src" alt="steps" class="w-full" />
+        </div>
+      </div> -->
     <div class="w-full">
       <div
         class="text-sm text-black font-serif relative lg:flex items-center mb-6 lg:mb-0 mt-0 md:mt-6 lg:mt-6"
@@ -18,11 +29,7 @@
           Unlock Exclusive Education & Products—Free! 🎁
         </div>
       </div>
-      <div class="mb-6 lg:hidden block">
-        <div class="flex justify-center items-center">
-          <img :src="src" alt="steps" class="w-full" />
-        </div>
-      </div>
+
       <div class="lg:mt-8 w-full">
         <h1
           class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-slate-700 font-bold"

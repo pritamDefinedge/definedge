@@ -1,7 +1,7 @@
 <template>
   <div class="w-full lg:w-10/12 mx-auto mb-8">
-    <div class="mb-6 lg:hidden block">
-      <div class="flex justify-center items-center">
+    <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
+      <div class="flex justify-center items-center p-4">
         <img :src="src" alt="steps" class="w-full" />
       </div>
     </div>
@@ -63,7 +63,7 @@
     </div>
 
     <!-- Footer -->
-    <div class="absolute bottom-0">
+    <div class="lg:absolute md:relative relative lg:bottom-0 -bottom-10">
       <h4 class="text-xs text-slate-500 font-bold">
         Definedge Securities Broking Private Limited
       </h4>

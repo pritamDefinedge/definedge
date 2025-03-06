@@ -43,10 +43,7 @@
             </div>
 
             <div class="stepOne">
-              <ProfileDetails
-                :submit="submit"
-                @toggle-keyword-section="handleToggleKeywordSection"
-              />
+              <ProfileDetails :submit="submit" :src="mobileImage" />
             </div>
           </section>
         </div>
@@ -97,17 +94,12 @@ export default {
       state.isModalVisible = !state.isModalVisible;
     };
 
-    const handleToggleKeywordSection = (isOpen) => {
-      state.isKeywordSectionOpen = isOpen;
-    };
-
     return {
       ...toRefs(state),
       submit,
       toggleModal,
-      handleToggleKeywordSection,
       desktopImage,
-      mobileImage
+      mobileImage,
     };
   },
 };

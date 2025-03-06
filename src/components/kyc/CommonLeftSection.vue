@@ -22,7 +22,7 @@
     </div> -->
 
     <div
-      class="border-b bg-blue-600 block rounded-lg lg:hidden p-4 h-full xl:h-100 text-indigo-300 relative"
+      class="border-b bg-blue-600 block rounded-lg lg:hidden p-2 h-full xl:h-100 text-indigo-300 relative"
     >
       <div class="flex justify-between items-center">
         <img
@@ -31,9 +31,7 @@
           alt="definedge"
         />
         <div class="lg:hidden block">
-          <!-- class="w-full max-w-full justify-center rounded-md border-2 border-transparent overflow-hidden [background:linear-gradient(45deg,#0369e0,#0369e0_50%,#0369e0)_padding-box,conic-gradient(from_var(--border-angle),rgb(37_99_235_/_0.48)_80%,#6366f1_86%,#fff_90%,#fff_94%,rgb(30_58_138_/_0.48))_border-box] animate-border" -->
 
-          <!-- class="shine shine-anim flex items-center border border-slate-200 px-3 py-2 text-xs rounded-full cursor-pointer" -->
           <button
             @click="toggleModal"
             class="shine shine-anim flex items-center border border-slate-200 px-3 py-2 text-xs rounded-full cursor-pointer"

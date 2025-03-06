@@ -43,6 +43,16 @@
             </div>
 
             <div class="w-full lg:w-10/12 mx-auto mb-8">
+              <!-- <div class="mb-6 lg:hidden block">
+                  <div class="flex justify-center items-center">
+                    <img :src="mobileImage" alt="steps" class="w-full" />
+                  </div>
+                </div> -->
+              <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
+                <div class="flex justify-center items-center p-4">
+                  <img :src="mobileImage" alt="steps" class="w-full" />
+                </div>
+              </div>
               <div class="w-full">
                 <div
                   class="text-sm text-black font-serif relative lg:flex items-center mb-6 lg:mb-0 mt-6"
@@ -62,11 +72,7 @@
                     edge!
                   </div>
                 </div>
-                <div class="mb-6 lg:hidden block">
-                  <div class="flex justify-center items-center">
-                    <img :src="mobileImage" alt="steps" class="w-full" />
-                  </div>
-                </div>
+
                 <div class="lg:mt-8 w-full">
                   <div>
                     <h1

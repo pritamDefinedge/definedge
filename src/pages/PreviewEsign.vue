@@ -44,14 +44,18 @@
             </div>
 
             <div class="w-full lg:w-10/12 mx-auto mb-8">
-              <div class="w-full">
-                <div class="mb-6 lg:hidden block">
+              <!-- <div class="mb-6 lg:hidden block">
                   <div class="flex justify-center items-center">
                     <img :src="mobileImage" alt="steps" class="w-full" />
                   </div>
+                </div> -->
+              <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
+                <div class="flex justify-center items-center p-4">
+                  <img :src="mobileImage" alt="steps" class="w-full" />
                 </div>
-           
-                <h1 class="text-2xl font-bold"> Review & Sign</h1>
+              </div>
+              <div class="w-full">
+                <h1 class="text-2xl font-bold">Review & Sign</h1>
                 <!-- Profile Image and User Information Review -->
                 <div
                   class="mx-auto max-w-2xl mt-10 p-4 border border-slate-300 rounded-lg shadow-sm bg-white"

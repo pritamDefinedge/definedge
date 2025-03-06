@@ -1,11 +1,9 @@
 <template>
   <section class="flex flex-col w-full md:w-9/12 mx-auto lg:my-8 md:my-8 my-0">
     <div
-      class="bg-white md:bg-slate-200 lg:bg-slate-200 bg-opacity-40 p-2.5 pt-0 sm:pt-0 md:pt-2.5 lg:pt-2.5 my-0 lg:my-8 rounded-2xl"
+      class="bg-white md:bg-slate-200 lg:bg-slate-200 bg-opacity-40 p-2.5 my-0 lg:my-8 rounded-2xl"
     >
-      <div
-        class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5 pt-0 sm:pt-0 md:pt-2.5 lg:pt-2.5"
-      >
+      <div class="w-full bg-white mx-auto rounded-2xl overflow-hidden p-2.5">
         <div class="relative mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
           <!-- Left Section (Personal Information Step) -->
           <CommonLeftSection
@@ -134,7 +132,7 @@ export default {
       resetForm,
       toggleModal,
       desktopImage,
-      mobileImage
+      mobileImage,
     };
   },
 };
