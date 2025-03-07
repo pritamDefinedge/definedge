@@ -55,22 +55,20 @@
               </div>
               <div class="w-full">
                 <div class="lg:mt-8 w-full">
-                  <div>
-                    <h1
-                      id="contact-info-heading"
-                      class="text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl text-slate-700 font-bold"
-                    >
-                      Nominees
-                    </h1>
+                  <h1
+                    id="contact-info-heading"
+                    class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-slate-700 font-bold"
+                  >
+                    Nominees
+                  </h1>
 
-                    <p class="block text-sm mt-2 font-normal text-slate-700">
-                      You can add up to 3 nominee(s) to your account.
-                    </p>
-                    <p class="block text-sm font-normal text-slate-700">
-                      Adding nominees makes the claim process simple in case of
-                      unforeseen events.
-                    </p>
-                  </div>
+                  <p class="block text-sm mt-2 font-normal text-slate-700">
+                    You can add up to 3 nominee(s) to your account.
+                  </p>
+                  <p class="block text-sm font-normal text-slate-700">
+                    Adding nominees makes the claim process simple in case of
+                    unforeseen events.
+                  </p>
 
                   <div class="mx-auto max-w-2xl lg:max-w-none mt-10">
                     <div class="flex items-center space-x-6">
@@ -109,8 +107,8 @@
                     class="flex flex-wrap justify-start items-center gap-4 mt-12"
                   >
                     <button
-                      class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
-                      @click="handleSubmit"
+                    class="mt-3 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
+                    @click="handleSubmit"
                     >
                       Submit
                     </button>

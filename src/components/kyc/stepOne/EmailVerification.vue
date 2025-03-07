@@ -42,7 +42,6 @@
           <input
             v-model="localEmail"
             @input="updateEmail"
-           
             type="email"
             class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
             placeholder="Enter your email"
@@ -54,7 +53,7 @@
           <button
             @click="sendOtp"
             type="button"
-            class="mt-3 w-32 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
+            class="mt-3 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
           >
             Send OTP
           </button>
@@ -99,7 +98,7 @@
         <button
           @click="verifyOtp"
           type="button"
-          class="mt-3 w-32 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
+          class="mt-3 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
         >
           Verify OTP
         </button>

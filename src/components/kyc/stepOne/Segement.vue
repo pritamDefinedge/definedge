@@ -6,7 +6,11 @@
       </div>
     </div>
     <div class="lg:mt-8 w-full">
-      <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Segments</h1>
+      <h1
+        class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-slate-700 font-bold"
+      >
+        Segments
+      </h1>
       <div class="mt-6">
         <div class="items-center gap-4 mb-2 w-full relative">
           <div class="text-sm text-gray-700 dark:text-gray-300">
@@ -67,15 +71,13 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="mt-6">
-          <button
-            @click="handleSubmit"
-            type="button"
-            class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
-          >
-            Continue
-          </button>
-        </div>
+        <button
+          @click="handleSubmit"
+          type="button"
+          class="mt-3 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
+        >
+          Continue
+        </button>
 
         <!-- Risk Disclosure -->
         <div class="mt-6 mb-24 space-y-3 text-gray-700 dark:text-gray-300">
@@ -86,23 +88,23 @@
               :key="idx"
               class="flex items-center gap-2 text-xs"
             >
-            <div class="w-4">
-              <svg
-                class="mr-2 w-4 h-4 text-green-500"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 0.5625C4.78125 0.5625 0.5625 4.78125 0.5625 10C0.5625 15.2188 4.78125 19.4688 10 19.4688C15.2188 19.4688 19.4688 15.2188 19.4688 10C19.4688 4.78125 15.2188 0.5625 10 0.5625ZM10 18.0625C5.5625 18.0625 1.96875 14.4375 1.96875 10C1.96875 5.5625 5.5625 1.96875 10 1.96875C14.4375 1.96875 18.0625 5.59375 18.0625 10.0312C18.0625 14.4375 14.4375 18.0625 10 18.0625Z"
-                  clip-rule="evenodd"
-                />
-                <path
-                  d="M12.6875 7.09375L8.96875 10.7188L7.28125 9.0625C7 8.78125 6.5625 8.8125 6.28125 9.0625C6 9.34375 6.03125 9.78125 6.28125 10.0625L8.28125 12C8.46875 12.1875 8.71875 12.2813 8.96875 12.2813C9.21875 12.2813 9.46875 12.1875 9.65625 12L13.6875 8.125C13.9688 7.84375 13.9688 7.40625 13.6875 7.125C13.4063 6.84375 12.9688 6.84375 12.6875 7.09375Z"
-                />
-              </svg>
-            </div>
+              <div class="w-4">
+                <svg
+                  class="mr-2 w-4 h-4 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 0.5625C4.78125 0.5625 0.5625 4.78125 0.5625 10C0.5625 15.2188 4.78125 19.4688 10 19.4688C15.2188 19.4688 19.4688 15.2188 19.4688 10C19.4688 4.78125 15.2188 0.5625 10 0.5625ZM10 18.0625C5.5625 18.0625 1.96875 14.4375 1.96875 10C1.96875 5.5625 5.5625 1.96875 10 1.96875C14.4375 1.96875 18.0625 5.59375 18.0625 10.0312C18.0625 14.4375 14.4375 18.0625 10 18.0625Z"
+                    clip-rule="evenodd"
+                  />
+                  <path
+                    d="M12.6875 7.09375L8.96875 10.7188L7.28125 9.0625C7 8.78125 6.5625 8.8125 6.28125 9.0625C6 9.34375 6.03125 9.78125 6.28125 10.0625L8.28125 12C8.46875 12.1875 8.71875 12.2813 8.96875 12.2813C9.21875 12.2813 9.46875 12.1875 9.65625 12L13.6875 8.125C13.9688 7.84375 13.9688 7.40625 13.6875 7.125C13.4063 6.84375 12.9688 6.84375 12.6875 7.09375Z"
+                  />
+                </svg>
+              </div>
               {{ item }}
             </li>
           </ul>

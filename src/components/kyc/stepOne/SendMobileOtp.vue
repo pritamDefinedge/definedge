@@ -18,7 +18,7 @@
         <div
           class="text-blue-600 text-lg font-medium flex whitespace-nowrap"
         ></div>
-        <div class="lg:ml-2.5 text-am-400 flex">
+        <div class="text-am-400 flex">
           <span class="inline">
             <img
               class="w-4 h-4 mr-1.5 -mt-0.5"
@@ -55,7 +55,7 @@
               v-model="localMobileNumber"
               @input="updateMobileNumber"
               type="tel"
-              class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md pl-12 px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
+              class="w-full lg:w-9/12 text-slate-700 text-sm sm:text-base rounded-md pl-12 px-6 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
               placeholder="Your 10 digit Mobile Number"
               maxlength="10"
             />
@@ -66,7 +66,7 @@
             <button
               @click="sendOtp"
               type="button"
-              class="mt-3 w-32 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
+              class="mt-3 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
             >
               Send OTP
             </button>
@@ -85,7 +85,7 @@
           <input
             v-model="localOtp"
             type="tel"
-            class="w-full lg:w-7/12 text-slate-700 text-sm sm:text-base rounded-md px-4 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
+            class="w-full lg:w-9/12 text-slate-700 text-sm sm:text-base rounded-md px-4 py-2.5 border-slate-300 shadow-sm border focus:outline-none placeholder:text-sm placeholder:text-slate-300 focus:ring-1 focus:ring-blue-600"
             maxlength="6"
             placeholder="Enter OTP"
           />
@@ -114,7 +114,7 @@
           <button
             @click="verifyOtp"
             type="button"
-            class="mt-3 w-32 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
+            class="mt-3 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
           >
             Verify OTP
           </button>

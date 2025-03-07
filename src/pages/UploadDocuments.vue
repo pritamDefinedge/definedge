@@ -43,19 +43,17 @@
             </div>
 
             <div class="w-full lg:w-10/12 mx-auto mb-8">
-              <div class="w-full">
-                <!-- <div class="mb-6 lg:hidden block">
-                  <div class="flex justify-center items-center">
-                    <img :src="mobileImage" alt="steps" class="w-full" />
-                  </div>
-                </div> -->
-                <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
-                  <div class="flex justify-center items-center p-4">
-                    <img :src="mobileImage" alt="steps" class="w-full" />
-                  </div>
+              <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
+                <div class="flex justify-center items-center p-4">
+                  <img :src="mobileImage" alt="steps" class="w-full" />
                 </div>
-
-                <h1 class="text-2xl font-bold">Upload Documents</h1>
+              </div>
+              <div class="lg:mt-8 w-full">
+                <h1
+                  class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-3xl text-slate-700 font-bold"
+                >
+                  Upload Documents
+                </h1>
 
                 <div class="mx-auto max-w-2xl mt-10">
                   <div class="flex items-center w-full">
@@ -127,7 +125,7 @@
                   class="flex flex-wrap justify-start items-center gap-4 mt-12"
                 >
                   <button
-                    class="w-sm md:w-sm flex justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
+                    class="mt-3 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
                     @click="handleSubmit"
                   >
                     Submit

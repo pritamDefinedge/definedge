@@ -6,8 +6,12 @@
       </div>
     </div>
     <div class="lg:mt-8 w-full">
-      <h1 class="text-2xl font-bold">Your Profile</h1>
-      <div class="mt-6">
+      <h1
+        class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-slate-700 font-bold"
+      >
+        Your Profile
+      </h1>
+      <div class="mt-6 text-slate-700">
         <div class="items-center gap-4 mb-2 w-full relative">
           <div class="flex flex-wrap">
             <div class="flex items-center me-4">

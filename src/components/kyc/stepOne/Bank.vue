@@ -11,7 +11,7 @@
       <div
         class="text-blue-600 text-lg font-medium flex whitespace-nowrap"
       ></div>
-      <div class="lg:ml-2.5 text-am-400 flex">
+      <div class="text-am-400 flex">
         <span class="inline">
           <img
             class="w-4 h-4 mr-1.5 -mt-0.5"
@@ -24,9 +24,13 @@
     </div>
 
     <div class="lg:mt-8 w-full">
-      <h1 class="text-2xl font-bold">Link Bank</h1>
+      <h1
+        class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-slate-700 font-bold"
+      >
+        Link Bank
+      </h1>
 
-      <div class="items-center gap-4 mb-4 w-full relative">
+      <div class="items-center gap-4 mb-4 py-4 w-full relative">
         <p class="text-sm text-gray-700 dark:text-gray-300">
           Bank Account in your name from which you will transact funds for
           trading
@@ -127,7 +131,7 @@
         <button
           @click="handleSubmit"
           type="button"
-          class="mt-3 bg-blue-600 mb-20 text-white px-4 py-2 rounded"
+          class="mt-3 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
         >
           Continue
         </button>

@@ -54,8 +54,12 @@
                   <img :src="mobileImage" alt="steps" class="w-full" />
                 </div>
               </div>
-              <div class="w-full">
-                <h1 class="text-2xl font-bold">Review & Sign</h1>
+              <div class="lg:mt-8 w-full">
+                <h1
+                  class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-3xl text-slate-700 font-bold"
+                >
+                  Review & Sign
+                </h1>
                 <!-- Profile Image and User Information Review -->
                 <div
                   class="mx-auto max-w-2xl mt-10 p-4 border border-slate-300 rounded-lg shadow-sm bg-white"

@@ -5,8 +5,27 @@
         <img :src="src" alt="steps" class="w-full" />
       </div>
     </div>
+    <div
+      class="text-sm text-black font-serif relative lg:flex items-center mb-6 lg:mb-0 mt-6"
+    >
+      <div
+        class="text-blue-600 text-lg font-medium flex whitespace-nowrap"
+      ></div>
+      <div class="text-am-400 flex">
+        <span class="inline">
+          <img
+            class="w-4 h-4 mr-1.5 -mt-0.5"
+            src="https://signup.definedgesecurities.com/assets/offer-star-78603b57.svg"
+            alt="definedge"
+          />
+        </span>
+        Free tools, education & more-your journey to success starts here!
+      </div>
+    </div>
     <div class="lg:mt-8 w-full">
-      <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">
+      <h1
+        class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl text-slate-700 font-bold"
+      >
         Capture Photo
       </h1>
       <div class="mt-6">
@@ -66,11 +85,11 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="mt-6 flex ">
+        <div class="mt-6 flex">
           <button
             @click="handleSubmit"
             type="button"
-            class="bg-blue-600 mb-20 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition duration-300"
+            class="mt-3 flex justify-center bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
           >
             Continue
           </button>

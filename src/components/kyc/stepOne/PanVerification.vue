@@ -6,8 +6,12 @@
       </div>
     </div>
     <div class="lg:mt-8 w-full">
-      <h1 class="text-2xl font-bold">Verify PAN</h1>
-      <p>PAN Details will be verified with ITD (Income Tax Department)</p>
+      <h1
+        class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-3xl text-slate-700 font-bold"
+      >
+        Verify PAN
+      </h1>
+      <p class="text-sm text-slate-500">PAN Details will be verified with ITD (Income Tax Department)</p>
       <div class="mt-6">
         <div class="items-center gap-4 mb-2 w-full relative">
           <label
@@ -38,7 +42,7 @@
             maxlength="10"
             required
           />
-          <p class="text-xs">This PAN should belong to the applicant</p>
+          <p class="text-xs text-slate-500">This PAN should belong to the applicant</p>
         </div>
         <div class="items-center gap-4 mb-2 w-full relative">
           <label for="dob" class="block text-sm font-medium text-slate-500 mb-2"
@@ -62,18 +66,7 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <div class="lg:absolute md:relative relative lg:bottom-0 -bottom-10">
-      <h4 class="text-xs text-slate-500 font-bold">
-        Definedge Securities Broking Private Limited
-      </h4>
-      <p class="text-xs text-slate-500 font-normal leading-4 mt-1">
-        <span class="text-slate-500">
-          Member of the National Stock Exchange of India Ltd. (NSE) and Bombay
-          Stock Exchange Ltd. (BSE).
-        </span>
-      </p>
-    </div>
+ 
   </div>
 </template>
 

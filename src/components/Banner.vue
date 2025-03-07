@@ -181,7 +181,6 @@ export default {
   animation: slide-in-left-to-right 3s ease-in-out infinite;
 }
 
-
 /* Apply the gradient and animation to the text */
 
 .animated-gradient-text {

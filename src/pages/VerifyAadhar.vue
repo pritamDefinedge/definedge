@@ -53,6 +53,7 @@
                   <img :src="mobileImage" alt="steps" class="w-full" />
                 </div>
               </div>
+
               <div class="w-full">
                 <div
                   class="text-sm text-black font-serif relative lg:flex items-center mb-6 lg:mb-0 mt-6"
@@ -60,7 +61,7 @@
                   <div
                     class="text-blue-600 text-lg font-medium flex whitespace-nowrap"
                   ></div>
-                  <div class="lg:ml-2.5 text-am-400 flex">
+                  <div class="text-am-400 flex">
                     <span class="inline">
                       <img
                         class="w-4 h-4 mr-1.5 -mt-0.5"
@@ -128,7 +129,7 @@
                     class="flex flex-wrap justify-start items-center gap-4 mt-12"
                   >
                     <button
-                      class="w-full md:w-48 flex justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
+                      class="flex justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 focus:outline-none focus:shadow-outline text-sm lg:text-xs xl:text-sm font-medium rounded-md"
                       @click="connectToDigiLocker"
                     >
                       Connect to Digilocker

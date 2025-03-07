@@ -1,6 +1,5 @@
 <template>
   <div class="max-w-screen-xl mx-auto sm:px-4 lg:px-0 px-4">
-    <!-- Section Title -->
     <h4
       class="text-blue-700 text-center text-[25px] md:text-lg lg:text-xl xl:text-2xl font-semibold tracking-wide"
       :class="{
@@ -20,11 +19,9 @@
       Ecosystem That Brings Markets to Your Fingertips
     </h5>
 
-    <!-- Tabs Container -->
     <div
       class="flex justify-center mb-6 sm:gap-3 sm:my-12 my-12 gap-3 xs:gap-2 md:gap-4 lg:gap-x-6"
     >
-      <!-- Tab Buttons -->
       <button
         v-for="(tab, index) in tabs"
         :key="index"
@@ -33,7 +30,7 @@
           'border-b-2 border-blue-500 bg-white text-gray-800':
             activeTradeTab === tab.id,
           'bg-[#FFFFFF10] border-2 border-white hover:bg-[fcf7f7] hover:text-[#fff] text-gray-400':
-            activeTradeTab !== tab.id
+            activeTradeTab !== tab.id,
         }"
         class="group relative inline-block overflow-hidden border-double px-4 py-4 sm:px-4 md:px-8 lg:px-8 text-base lg:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
@@ -47,16 +44,13 @@
       </button>
     </div>
 
-    <!-- Tab Content -->
     <div class="flex items-center justify-center space-x-12 -mt-8">
-      <!-- Active Tab Content -->
       <div
         v-for="(content, index) in tabContent.filter(
           (item) => item.id === activeTradeTab
         )"
         :key="content.id"
         class="w-full md:w-full px-6"
-        ref="contentSection"
       >
         <div class="flex sm:flex-wrap lg:flex-nowrap flex-wrap justify-between">
           <ul
@@ -68,13 +62,15 @@
             <h6 class="text-xl font-semibold mb-4 text-left font-sans">
               {{ content.title }}
             </h6>
+
             <li
               v-for="(feature, featureIndex) in content.features"
               :key="featureIndex"
-              class="flex items-center text-base font-sans font-semibold"
+              class="flex items-center cursor-pointer relative p-6 bg-gray-800 shadow-md rounded-lg transition-all duration-300 hover:shadow-lg"
+              :class="{ active: activeFeatureIndex === featureIndex }"
             >
               <svg
-                class="w-6 h-6 text-white mr-3"
+                class="w-6 h-6 text-green-300 mr-3"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -87,8 +83,14 @@
                   d="M5 13l4 4L19 7"
                 ></path>
               </svg>
-              {{ feature.text }}
+              <div class="flex flex-col">
+                <span class="text-sm text-gray-200 mt-1">
+                  {{ feature.text }}
+                </span>
+              </div>
+              <div class="progress-bar"></div>
             </li>
+
             <li class="flex items-start">
               <h6 class="text-base font-semibold mb-4 text-start">
                 {{ content.downloadText }}
@@ -102,8 +104,11 @@
                   :href="store.link"
                   target="_blank"
                 >
-                  <img :src="store.imgSrc" :alt="store.altText" class="motion-preset-seesaw" />
-                  <!--  -->
+                  <img
+                    :src="store.imgSrc"
+                    :alt="store.altText"
+                    class="motion-preset-seesaw"
+                  />
                 </a>
               </div>
             </li>
@@ -136,26 +141,80 @@ export default {
     return {
       activeTradeTab: this.tabs[0].id,
       hasScrolled: false,
+      activeFeatureIndex: -1,
+      progressLoop: null,
     };
   },
   methods: {
     setActiveTab(tabId) {
       this.activeTradeTab = tabId;
+      this.resetProgressLoop();
+      this.startProgressSequence();
     },
     onScroll() {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 200) {
-        this.hasScrolled = true;
-      } else {
-        this.hasScrolled = false;
+      this.hasScrolled = window.scrollY > 200;
+    },
+    startProgressSequence() {
+      const features =
+        this.tabContent.find((tab) => tab.id === this.activeTradeTab)
+          ?.features || [];
+      if (features.length === 0) return;
+
+      this.activeFeatureIndex = -1;
+      this.loopProgress(0, features.length);
+    },
+    loopProgress(index, total) {
+      if (index >= total) {
+        setTimeout(() => this.loopProgress(0, total), 200); // Restart loop after last
+        return;
       }
+
+      this.activeFeatureIndex = index;
+      this.progressLoop = setTimeout(() => {
+        this.activeFeatureIndex = -1;
+        setTimeout(() => {
+          this.loopProgress(index + 1, total);
+        }, 200);
+      }, 5400); // Match animation duration
+    },
+    resetProgressLoop() {
+      clearTimeout(this.progressLoop);
+      this.activeFeatureIndex = -1;
     },
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
+    this.startProgressSequence();
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.onScroll);
+    this.resetProgressLoop();
   },
 };
 </script>
+
+<style scoped>
+@keyframes progressing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.progress-bar {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.active .progress-bar {
+  background-color: #1f7ae0;
+  animation: progressing 5.4s linear;
+  border-bottom-left-radius: 8px;
+}
+</style>
