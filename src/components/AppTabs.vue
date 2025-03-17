@@ -179,7 +179,7 @@ export default {
           ?.features || [];
       if (features.length === 0) return;
 
-      this.activeFeatureIndex = -1;
+      this.activeFeatureIndex = -1; 
       
       // Delay the start to ensure proper DOM update
       setTimeout(() => {
