@@ -11,7 +11,7 @@
     </h4>
 
     <h5
-      class="text-white text-center text-xl font-bold tracking-wider md:text-lg lg:text-2xl xl:text-3xl mt-4"
+      class="text-white text-center  font-bold tracking-wider text-base sm:text-base md:text-lg lg:text-2xl xl:text-3xl mt-4"
       :class="{
         'motion-preset-bounce motion-duration-1000': hasScrolled,
       }"
@@ -32,7 +32,7 @@
           'bg-[#FFFFFF10] border-2 border-white hover:bg-[fcf7f7] hover:text-[#fff] text-gray-400':
             activeTradeTab !== tab.id,
         }"
-        class="group relative inline-block overflow-hidden border-double px-4 py-4 sm:px-4 md:px-8 lg:px-8 text-base lg:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
+        class="group relative inline-block overflow-hidden border-double px-4 py-3 sm:py-4 md:py-4 lg:py-4 xl:py-4 sm:px-4 md:px-8 lg:px-8 xl:px-8 text-base sm:text-base md:text-base lg:text-lg xl:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
         <span
           class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#000] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
@@ -59,7 +59,7 @@
             }"
             class="space-y-4 pt-12 md:pt-24 p-4 lg:pt-24 text-lg w-full md:w-1/2"
           >
-            <h6 class="text-xl font-semibold mb-4 text-left font-sans">
+            <h6 class="text-base sm:text-base md:text-lg lg:text-xl xl:text-xl font-semibold mb-4 text-left font-sans">
               {{ content.title }}
             </h6>
 
@@ -68,6 +68,9 @@
               :key="featureIndex"
               class="flex items-center cursor-pointer relative p-6 bg-gray-800 shadow-md rounded-lg transition-all duration-300 hover:shadow-lg"
               :class="{ active: activeFeatureIndex === featureIndex }"
+              @click="startProgressFromFeature(featureIndex)"
+              @mouseenter="pauseProgress(featureIndex)"
+              @mouseleave="resumeProgress(featureIndex)"
             >
               <svg
                 class="w-6 h-6 text-green-300 mr-3"
@@ -84,11 +87,15 @@
                 ></path>
               </svg>
               <div class="flex flex-col">
-                <span class="text-sm text-gray-200 mt-1">
+                <span class="text-xs sm:text-sm md:text-base lg:text-base xl:text-sm text-gray-200 mt-1">
                   {{ feature.text }}
                 </span>
               </div>
-              <div class="progress-bar"></div>
+              <div
+                class="progress-bar"
+                :style="progressStyle(featureIndex)"
+                :data-index="featureIndex"
+              ></div>
             </li>
 
             <li class="flex items-start">
@@ -143,7 +150,19 @@ export default {
       hasScrolled: false,
       activeFeatureIndex: -1,
       progressLoop: null,
+      progressTimers: {},
+      remainingTimes: {},
+      isPaused: {},
+      pausedAt: {}, // Store the exact timestamp when paused
+      progressValues: {}, // Store the exact progress percentage when paused
+      progressDuration: 5400, // Default duration for progress animation
+      startTimes: {}, // Store when each progress started
     };
+  },
+  computed: {
+    filteredContent() {
+      return this.tabContent.filter((item) => item.id === this.activeTradeTab);
+    },
   },
   methods: {
     setActiveTab(tabId) {
@@ -154,32 +173,114 @@ export default {
     onScroll() {
       this.hasScrolled = window.scrollY > 200;
     },
-    startProgressSequence() {
+    startProgressSequence(startIndex = 0) {
       const features =
         this.tabContent.find((tab) => tab.id === this.activeTradeTab)
           ?.features || [];
       if (features.length === 0) return;
 
       this.activeFeatureIndex = -1;
-      this.loopProgress(0, features.length);
+      
+      // Delay the start to ensure proper DOM update
+      setTimeout(() => {
+        this.loopProgress(startIndex, features.length);
+      }, 50);
     },
     loopProgress(index, total) {
       if (index >= total) {
-        setTimeout(() => this.loopProgress(0, total), 200); // Restart loop after last
+        setTimeout(() => this.loopProgress(0, total), 200);
         return;
       }
 
+      // Set active index and reset state for this feature
       this.activeFeatureIndex = index;
-      this.progressLoop = setTimeout(() => {
+      this.remainingTimes[index] = this.progressDuration;
+      this.isPaused[index] = false;
+      this.progressValues[index] = 0;
+      this.startTimes[index] = performance.now();
+      
+      // Schedule the end of this progress
+      this.progressTimers[index] = setTimeout(() => {
+        // Move to next item after current progress completes
         this.activeFeatureIndex = -1;
         setTimeout(() => {
           this.loopProgress(index + 1, total);
         }, 200);
-      }, 5400); // Match animation duration
+      }, this.progressDuration);
     },
     resetProgressLoop() {
-      clearTimeout(this.progressLoop);
+      // Clear all timers
+      Object.values(this.progressTimers).forEach(timer => clearTimeout(timer));
+      this.progressTimers = {};
+      this.remainingTimes = {};
+      this.isPaused = {};
+      this.progressValues = {};
+      this.pausedAt = {};
+      this.startTimes = {};
       this.activeFeatureIndex = -1;
+    },
+    startProgressFromFeature(featureIndex) {
+      this.resetProgressLoop();
+      this.startProgressSequence(featureIndex);
+    },
+    pauseProgress(featureIndex) {
+      // Only pause active and non-paused items
+      if (this.activeFeatureIndex !== featureIndex || this.isPaused[featureIndex]) return;
+
+      // Clear the timer for this feature
+      clearTimeout(this.progressTimers[featureIndex]);
+      
+      // Calculate progress values
+      const elapsedTime = performance.now() - this.startTimes[featureIndex];
+      this.remainingTimes[featureIndex] = Math.max(0, this.progressDuration - elapsedTime);
+      
+      // Calculate and store progress percentage
+      this.progressValues[featureIndex] = Math.min(100, (elapsedTime / this.progressDuration) * 100);
+      
+      // Mark as paused and store pause time
+      this.isPaused[featureIndex] = true;
+      this.pausedAt[featureIndex] = performance.now();
+    },
+    resumeProgress(featureIndex) {
+      // Only resume active and paused items
+      if (this.activeFeatureIndex !== featureIndex || !this.isPaused[featureIndex]) return;
+      
+      // Update start time based on current progress
+      const adjustedStartTime = performance.now() - (this.progressDuration * (this.progressValues[featureIndex] / 100));
+      this.startTimes[featureIndex] = adjustedStartTime;
+      
+      // Mark as no longer paused
+      this.isPaused[featureIndex] = false;
+      
+      // Set timer for remaining time
+      this.progressTimers[featureIndex] = setTimeout(() => {
+        // Move to next item
+        this.activeFeatureIndex = -1;
+        setTimeout(() => {
+          this.loopProgress(
+            featureIndex + 1,
+            this.filteredContent[0]?.features.length || 0
+          );
+        }, 200);
+      }, this.remainingTimes[featureIndex]);
+    },
+    progressStyle(featureIndex) {
+      if (this.activeFeatureIndex === featureIndex) {
+        if (this.isPaused[featureIndex]) {
+          // When paused, show the exact progress percentage
+          return `width: ${this.progressValues[featureIndex]}%; transition: none;`;
+        } else {
+          // Calculate how much time has passed and adjust animation duration
+          const currentTimePosition = performance.now();
+          const elapsedSinceStart = currentTimePosition - this.startTimes[featureIndex];
+          const remainingPercentage = 100 - (elapsedSinceStart / this.progressDuration * 100);
+          
+          // Start from current width and animate to 100% in remaining time
+          return `width: ${100 - remainingPercentage}%; transition: width ${this.remainingTimes[featureIndex]}ms linear; width: 100%;`;
+        }
+      }
+      // Inactive items
+      return 'width: 0%; transition: none;';
     },
   },
   mounted() {
@@ -194,27 +295,17 @@ export default {
 </script>
 
 <style scoped>
-@keyframes progressing {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
 .progress-bar {
   content: "";
   display: block;
   height: 4px;
-  width: 100%;
-  background-color: transparent;
+  width: 0%;
+  background-color: #1f7ae0;
   position: absolute;
   left: 0;
   bottom: 0;
-}
-.active .progress-bar {
-  background-color: #1f7ae0;
-  animation: progressing 5.4s linear;
   border-bottom-left-radius: 8px;
+  will-change: width;
+  transform: translateZ(0);
 }
 </style>
