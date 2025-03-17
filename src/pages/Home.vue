@@ -34,7 +34,7 @@
             <span class="font-light text-sm font-sans text-gray-400">
               Coming Soon :
             </span>
-            <img src="../assets/svgviewer-output.svg" class="ml-2" width="20" />
+            <img src="../assets/svgviewer-output.svg" alt="super" class="ml-2" width="20" />
             <span
               class="text-primary-500 font-medium text-sm flex items-center ml-2 motion-preset-blink motion-duration-1500"
             >

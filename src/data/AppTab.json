@@ -18,19 +18,24 @@
       "title": "Learn, Analyze & Trade Effortlessly Anytime, Anywhere",
       "features": [
         {
-          "text": "Powerful Technical & Fundamental Scanners for smarter stock selection"
+          "text": "Powerful Technical & Fundamental Scanners for smarter stock selection",
+          "imageSrc": "../assets/img/Zone.webp"
         },
         {
-          "text": "Comprehensive Stock Reports with in-depth technical and fundamental insights"
+          "text": "Comprehensive Stock Reports with in-depth technical and fundamental insights",
+          "imageSrc": "../assets/img/Opstra.webp"
         },
         {
-          "text": "Instant Analysis & Lightning-Fast Order Execution across all order types"
+          "text": "Instant Analysis & Lightning-Fast Order Execution across all order types",
+          "imageSrc": "../assets/img/Zone.webp"
         },
         {
-          "text": "Education, Mutual Fund Analysis, IPO Insights, Smart Alerts & More"
+          "text": "Education, Mutual Fund Analysis, IPO Insights, Smart Alerts & More",
+          "imageSrc": "../assets/img/Opstra.webp"
         },
         {
-          "text": "Strategy-Based Orders, Holding Insights & Tools for Disciplined Investing"
+          "text": "Strategy-Based Orders, Holding Insights & Tools for Disciplined Investing",
+          "imageSrc": "../assets/img/Zone.webp"
         }
       ],
       "downloadText": "Download the App Now",
@@ -53,11 +58,26 @@
       "name": "OPSTRA App",
       "title": "India’s Most Loved Options Platform, Now in An App",
       "features": [
-        { "text": "Trade Directly from Strategy Builder" },
-        { "text": "Get PayOff Charts for all your Live positions" },
-        { "text": "Ease of adjustments directly from Positions" },
-        { "text": "Find more opportunities. Trade in MCX & BFO too" },
-        { "text": "Analyze unlimited Open positions" }
+        {
+          "text": "Trade Directly from Strategy Builder",
+          "imageSrc": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/Opstra-1024x1024.webp"
+        },
+        {
+          "text": "Get PayOff Charts for all your Live positions",
+          "imageSrc": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/Zone.webp"
+        },
+        {
+          "text": "Ease of adjustments directly from Positions",
+          "imageSrc": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/Opstra-1024x1024.webp"
+        },
+        {
+          "text": "Find more opportunities. Trade in MCX & BFO too",
+          "imageSrc": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/Zone.webp"
+        },
+        {
+          "text": "Analyze unlimited Open positions",
+          "imageSrc": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/Opstra-1024x1024.webp"
+        }
       ],
       "downloadText": "Download the App Now",
       "stores": [

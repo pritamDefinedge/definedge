@@ -7,20 +7,8 @@
     <div
       class="mr-auto place-self-center py-16 font-sans lg:col-span-7 text-white px-4 flex flex-col motion-preset-slide-right motion-duration-1500"
     >
-      <!-- Title with responsive text sizes -->
-      <!-- <h1
-        class="max-w-2xl text-3xl mb-8 leading-[45px] font-bold tracking-tight md:text-3xl lg:text-4xl xl:text-4xl rombo-dock-logo"
-      >
-        All-in-One
-        <span class="text-yellow-500"
-          >Investing & <br />
-          Trading
-        </span>
-        Ecosystem
-      </h1> -->
-
       <h1
-        class="max-w-2xl text-3xl mb-8 leading-[45px] font-bold tracking-tight md:text-3xl lg:text-4xl xl:text-4xl rombo-dock-logo"
+        class="max-w-2xl text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl mb-8 leading-[45px] font-bold tracking-tight  rombo-dock-logo"
       >
         All-in-One
         <span class="animated-gradient-text">
@@ -91,19 +79,6 @@
             </div>
             <!-- Submit Button -->
             <div>
-              <!-- <button
-                class="group relative p-3  cursor-pointer overflow-hidden rounded-md border-2 bg-[#0369e0] border-white focus:outline-none font-semibold transition-all ease-in-out duration-300 transform "
-              >
-                <span
-                  class="ease absolute top-1/2 h-0 w-60 origin-center -translate-x-20 rotate-45 bg-blue-900 transition-all duration-300 group-hover:h-48 group-hover:-translate-y-32"
-                ></span>
-                <span
-                  class="ease relative text-white transition duration-300 group-hover:text-white"
-                >
-                  Get Started</span
-                >
-              </button> -->
-
               <div
                 class="w-full max-w-full justify-center rounded-md border-2 border-transparent overflow-hidden [background:linear-gradient(45deg,#0369e0,#0369e0_50%,#0369e0)_padding-box,conic-gradient(from_var(--border-angle),rgb(37_99_235_/_0.48)_80%,#6366f1_86%,#fff_90%,#fff_94%,rgb(30_58_138_/_0.48))_border-box] animate-border"
               >
