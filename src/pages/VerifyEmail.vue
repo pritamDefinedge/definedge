@@ -10,6 +10,7 @@
             :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
+            :width="10"
           />
 
           <!-- Right Section (Email Verification Form) -->
@@ -44,6 +45,7 @@
             <div class="stepOne">
               <EmailVerification
                 :src="mobileImage"
+                :width="10"
                 :email="email"
                 :otp-sent="emailOtpSent"
                 :otp-verified="emailOtpVerified"

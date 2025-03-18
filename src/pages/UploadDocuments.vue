@@ -10,6 +10,7 @@
             :src="desktopImage"
             :steps="[1, 2, 3]"
             :toggleModal="toggleModal"
+            :width="60"
           />
 
           <!-- Right Section (Document Upload Form) -->

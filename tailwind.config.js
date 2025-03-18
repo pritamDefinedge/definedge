@@ -16,8 +16,15 @@ module.exports = {
       },
       animation: {
         border: "border 4s linear infinite",
-        "wave-move": "waveMove 3s linear infinite",
-        "move-on-wave": "moveOnWave 3s linear infinite",
+        "wave-move": "waveMove 0.5s linear infinite",
+        "move-on-wave-1": "moveOnWave 2s linear infinite",
+        "move-on-wave-2": "moveOnWave 2.5s linear infinite",
+        "move-on-wave-3": "moveOnWave 3s linear infinite",
+        "move-on-wave-4": "moveOnWave 3.5s linear infinite",
+        "move-on-wave-5": "moveOnWave 4s linear infinite",
+        "move-on-wave-6": "moveOnWave 4.5s linear infinite",
+        "move-on-wave-7": "moveOnWave 5s linear infinite",
+        "move-on-wave-8": "moveOnWave 5.5s linear infinite",
       },
       keyframes: {
         border: {

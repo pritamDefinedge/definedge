@@ -10,6 +10,7 @@
             :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
+            :width="0"
           />
 
           <!-- Right Section (Sign Up Form) -->

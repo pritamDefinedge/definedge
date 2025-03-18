@@ -10,6 +10,7 @@
             :src="desktopImage"
             :steps="[1, 2, 3, 4]"
             :toggleModal="toggleModal"
+            :width="65"
           />
 
           <!-- Right Section (Review & Sign Form) -->

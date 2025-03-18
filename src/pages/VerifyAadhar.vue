@@ -10,6 +10,8 @@
             :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
+            :width="20"
+
           />
 
           <!-- Right Section (Aadhaar Verification Form) -->

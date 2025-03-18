@@ -10,6 +10,8 @@
             :src="desktopImage"
             :steps="[1, 2]"
             :toggleModal="toggleModal"
+            :width="40"
+
           />
 
           <!-- Right Section (PAN Capture Form) -->
