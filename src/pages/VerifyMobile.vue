@@ -10,7 +10,7 @@
             :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
-            :width="0"
+            :width="8"
           />
 
           <!-- Right Section (Sign Up Form) -->
@@ -45,6 +45,7 @@
             <div class="stepOne">
               <SendMobileOtp
                 :src="mobileImage"
+                :width="0"
                 :mobileNumber="mobileNumber"
                 :otp-sent="otpSent"
                 :otp-verified="otpVerified"

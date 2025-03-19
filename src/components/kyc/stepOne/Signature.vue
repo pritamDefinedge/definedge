@@ -1,8 +1,13 @@
 <template>
   <div class="w-full lg:w-10/12 mx-auto mb-8">
     <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
-      <div class="flex justify-center items-center p-4">
+      <div class="flex relative justify-center items-center p-4">
         <img :src="src" alt="steps" class="w-full" />
+        <div
+          class="voltage-line absolute bottom-4 left-12 sm:left-24 ipad-mini:left-20 ipad-air:left-22 ipad-pro11:left-24 ipad-pro12:left-30 w-[45%] h-[10px] overflow-hidden justify-center items-center"
+        >
+          <SvgWaveMobile />
+        </div>
       </div>
     </div>
     <!-- Signature Pad section -->
@@ -149,8 +154,12 @@
 <script>
 import VueSignaturePad from "vue-signature-pad";
 import { defineComponent, ref, reactive } from "vue";
+import SvgWaveMobile from "../../SvgWaveMobile.vue";
 
 export default defineComponent({
+  components: {
+    SvgWaveMobile,
+  },
   props: {
     submit: {
       type: Function,

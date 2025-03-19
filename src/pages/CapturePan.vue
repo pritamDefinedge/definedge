@@ -10,7 +10,7 @@
             :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
-            :width="15"
+            :width="13"
 
           />
 

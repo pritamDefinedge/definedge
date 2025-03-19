@@ -1,16 +1,16 @@
 <template>
   <div class="w-full lg:w-10/12 mx-auto mb-8">
     <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
-      <div class="flex justify-center items-center p-4">
-        <!-- <span class="absolute text-lg font-bold text-white">0 %</span> -->
+      <div class="flex relative justify-center items-center p-4">
         <img :src="src" alt="steps" class="w-full" />
+        <div
+          class="voltage-line absolute bottom-4 left-12 sm:left-24 ipad-mini:left-20 ipad-air:left-22 ipad-pro11:left-24 ipad-pro12:left-30 w-[8%] h-[10px] overflow-hidden justify-center items-center"
+        >
+          <SvgWaveMobile />
+        </div>
       </div>
     </div>
-    <!-- <div class="mb-6 lg:hidden block">
-        <div class="flex justify-center items-center">
-          <img :src="src" alt="steps" class="w-full" />
-        </div>
-      </div> -->
+
     <div class="w-full">
       <div
         class="text-sm text-black font-serif relative lg:flex items-center mb-6 lg:mb-0 mt-0 md:mt-6 lg:mt-6"
@@ -158,7 +158,12 @@
 </template>
 
 <script>
+import SvgWaveMobile from "../../SvgWaveMobile.vue";
+
 export default {
+  components: {
+    SvgWaveMobile,
+  },
   props: {
     mobileNumber: String,
     otpSent: Boolean,

@@ -10,8 +10,7 @@
             :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
-            :width="20"
-
+            :width="18"
           />
 
           <!-- Right Section (Aadhaar Verification Form) -->
@@ -51,8 +50,13 @@
                   </div>
                 </div> -->
               <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
-                <div class="flex justify-center items-center p-4">
+                <div class="flex relative justify-center items-center p-4">
                   <img :src="mobileImage" alt="steps" class="w-full" />
+                  <div
+                    class="voltage-line absolute bottom-4 left-12 sm:left-24 ipad-mini:left-20 ipad-air:left-22 ipad-pro11:left-24 ipad-pro12:left-30 w-[18%] h-[10px] overflow-hidden justify-center items-center"
+                  >
+                    <SvgWaveMobile />
+                  </div>
                 </div>
               </div>
 
@@ -188,7 +192,7 @@ import { reactive, toRefs, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import DocGuideLince from "../components/DocGuideLince.vue";
-
+import SvgWaveMobile from "../components/SvgWaveMobile.vue";
 // import imageSrc from "../assets/steps/side4.svg";
 import desktopImage from "../assets/steps/side4.svg";
 import mobileImage from "../assets/steps/blue/4.svg";
@@ -197,6 +201,7 @@ export default {
   components: {
     CommonLeftSection,
     DocGuideLince,
+    SvgWaveMobile,
   },
   setup() {
     const router = useRouter();

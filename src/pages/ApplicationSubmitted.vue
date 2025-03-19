@@ -10,7 +10,7 @@
             :src="desktopImage"
             :steps="[1, 2, 3, 4, 5]"
             :toggleModal="toggleModal"
-            :width="70"
+            :width="72"
           />
 
           <!-- Right Section (Sign Up Form) -->
@@ -40,17 +40,14 @@
             </div>
             <div class="stepOne">
               <div class="w-full lg:w-10/12 mx-auto mb-8">
-                <!-- <div class="mb-6 lg:hidden block">
-                  <div class="flex justify-center items-center">
+                <div class="mb-6 lg:hidden block bg-blue-600 rounded-2xl">
+                  <div class="flex relative justify-center items-center p-4">
                     <img :src="mobileImage" alt="steps" class="w-full" />
-                  </div>
-                </div> -->
-                <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
-                  <div class="flex justify-center items-center p-4">
-                    <!-- <span class="absolute text-sm font-bold text-white"
-                      >100 %</span
-                    > -->
-                    <img :src="mobileImage" alt="steps" class="w-full" />
+                    <div
+                      class="voltage-line absolute bottom-4   w-[70%] h-[10px] overflow-hidden justify-center items-center"
+                    >
+                      <SvgWaveMobile />
+                    </div>
                   </div>
                 </div>
                 <div class="w-full">
@@ -213,7 +210,7 @@ import SendMobileOtp from "../components/kyc/stepOne/SendMobileOtp.vue";
 import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
 import DocGuideLince from "../components/DocGuideLince.vue";
-
+import SvgWaveMobile from "../components/SvgWaveMobile.vue";
 // import imageSrc from "../assets/steps/side14.svg";
 
 import desktopImage from "../assets/steps/side14.svg";
@@ -224,6 +221,7 @@ export default {
     SendMobileOtp,
     CommonLeftSection,
     DocGuideLince,
+    SvgWaveMobile,
   },
   setup() {
     const state = reactive({
