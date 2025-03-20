@@ -21,6 +21,7 @@ import BankDetails from "../pages/BankDetails.vue";
 import UploadDocuments from "../pages/UploadDocuments.vue";
 import PreviewEsign from "../pages/PreviewEsign.vue";
 import ApplicationSubmitted from "../pages/ApplicationSubmitted.vue";
+import Test from "../pages/Test.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,6 +55,11 @@ const router = createRouter({
       path: "/api",
       name: "api",
       component: Api,
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: Test,
     },
     {
       path: "/login",

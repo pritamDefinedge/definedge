@@ -47,12 +47,13 @@
   </section>
 
   <!-- Ecosystem That Brings Markets to Your Fingertips -->
-  <section
+  <!-- <section
     class="relative bg-gray-900 text-white flex justify-center items-center pt-12"
     style="background-image: linear-gradient(100deg, #26282c 0%, #131416 100%)"
-  >
-    <AppTabs :tabs="appTabs" :tabContent="appContent" />
-  </section>
+  > -->
+    <!-- <AppTabs :tabs="appTabs" :tabContent="appContent" /> -->
+     <Test :tabs="appTabs" :tabContent="appContent" />
+  <!-- </section> -->
 
   <!-- TRADE & INVEST -->
   <section
@@ -261,6 +262,7 @@ import Banner from "../components/Banner.vue";
 
 import AppTabs from "../components/AppTabs.vue";
 import AppTabData from "../data/AppTab.json";
+import Test from "./Test.vue";
 
 import TradeInvest from "../components/TradeInvest.vue";
 import TradeInvestData from "../data/TradeInvest.json";
@@ -284,6 +286,7 @@ export default {
     TreadingJourney,
     Banner,
     AppTabs,
+    Test,
     TradeInvest,
     Analysis,
     Education,

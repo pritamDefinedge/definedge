@@ -47,7 +47,7 @@
       class="glow [stroke-width:8px] origin-center animate-wave-move wave-3 opacity-50"
       d="M -200 40 L -100 160 L 0 40 L 100 160 L 200 40 L 300 160 L 400 40 L 500 160 L 600 40 L 700 160 L 800 40 L 900 160 L 1000 40"
       fill="none"
-      stroke="rgba(255,255,255,0.3)"
+      stroke="gray"
     />
   </svg>
   <div

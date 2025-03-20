@@ -44,7 +44,7 @@
             </div>
 
             <div class="w-full lg:w-10/12 mx-auto mb-8">
-              <div class="mb-6 lg:hidden block bg-[#2563EB] rounded-2xl">
+              <div class="mb-6 lg:hidden block rounded-2xl">
                 <div class="flex relative justify-center items-center p-4">
                   <img :src="mobileImage" alt="steps" class="w-full" />
                   <div
