@@ -159,9 +159,8 @@
 <script>
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin); // ✅ Register Plugins
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   props: {
@@ -204,7 +203,7 @@ export default {
   methods: {
     onScroll() {
       this.hasScrolled = window.scrollY > 200;
-      console.log("y", window.scrollY);
+
       const lastTab = document.getElementById(
         this.tabs[this.tabs.length - 1].id
       );
@@ -218,9 +217,11 @@ export default {
         this.isSticky = tradeInvestRect.top > 400;
       }
     },
+
     initializeGSAP() {
+     
       if (this.$refs.scrollContainer && this.$refs.scrollContent) {
-        const sections = Array.from(this.$refs.scrollContent.children);
+        const sections = this.$refs.scrollContent.children.length;
 
         this.gsapInstance = gsap.to(this.$refs.scrollContent, {
           x: () => -(this.$refs.scrollContent.scrollWidth - window.innerWidth),
@@ -229,20 +230,20 @@ export default {
             trigger: this.$refs.scrollContainer,
             pin: true,
             scrub: 1,
-            snap: sections.length > 1 ? 1 / (sections.length - 1) : 1,
+            snap: sections > 1 ? 1 / (sections - 1) : 1,
             start: "top top",
             end: () =>
               `+=${this.$refs.scrollContent.scrollWidth - window.innerWidth}`,
             onUpdate: (self) => {
               const index = Math.round(self.progress * (this.tabs.length - 1));
               const newTab = this.tabs[index]?.id || this.activeTradeTab;
-
               if (newTab !== this.activeTradeTab) {
+                this.activeTradeTab = newTab;
                 this.resetProgressLoop();
                 this.startProgressSequence();
-                this.activeTradeTab = newTab;
               }
             },
+         
             onLeaveBack: () => {
               this.isSticky = true;
             },
@@ -257,91 +258,25 @@ export default {
         this.gsapInstance = null;
       }
     },
-
+ 
     scrollToSection(targetId) {
-      this.updateVerticalScroll(targetId);
       const targetSection = document.getElementById(targetId);
-      const lastTabIndex = this.tabs.length - 1;
-      const isLastTab = this.tabs[lastTabIndex]?.id === targetId;
-
-      if (!targetSection) {
-        console.error(`Target section '${targetId}' not found.`);
-        return;
-      }
-
-      const scrollAmount = -targetSection.offsetLeft;
-
       this.resetProgressLoop();
       this.startProgressSequence();
-
-      gsap.to(this.$refs.scrollContent, {
-        x: scrollAmount,
-        duration: 1.2,
-        ease: "power2.inOut",
-        onComplete: () => {
-          this.resetProgressLoop();
-          this.startProgressSequence();
-          this.activeTradeTab = targetId;
-          console.log("Scrolled to:", targetId);
-          // ✅ Update vertical scroll dynamically based on tab position
-        },
-      });
-    },
-
-    updateVerticalScroll(targetId) {
-      const tabIndex = this.tabs.findIndex((tab) => tab.id === targetId);
-
-      if (tabIndex === -1) {
-        console.error(`Tab '${targetId}' not found in tab list.`);
-        return;
-      }
-
-      // ✅ Dynamically calculate vertical scroll position per tab
-      const verticalScrollPositions = [950, 2500]; // Adjust these values as needed
-
-      const targetPosition = verticalScrollPositions[tabIndex] || 0;
-
-      console.log("Scrolling window to:", targetPosition);
-
-      gsap.to(window, {
-        scrollTo: { y: targetPosition, autoKill: false },
-        duration: 0,
-        ease: "power2.inOut",
-        onComplete: () => {
-          ScrollTrigger.refresh(); // 🔄 Ensure ScrollTrigger updates
-          console.log("Vertical scroll updated:", targetPosition);
-        },
-      });
-    },
-
-    forceUpdateScrollTrigger() {
-      if (this.gsapInstance && ScrollTrigger) {
-        ScrollTrigger.refresh();
-        ScrollTrigger.update();
-
-        console.log("ScrollTrigger updated on tab click");
+      if (targetSection && this.$refs.scrollContainer) {
+        gsap.to(this.$refs.scrollContainer, {
+          scrollLeft: targetSection.offsetLeft,
+          duration: 1.2,
+          ease: "power2.inOut",
+        });
+        this.activeTradeTab = targetId;
       }
     },
-
-    // scrollToSection(targetId) {
-    //   const targetSection = document.getElementById(targetId);
-    //   this.resetProgressLoop();
-    //   this.startProgressSequence();
-    //   if (targetSection && this.$refs.scrollContainer) {
-    //     gsap.to(this.$refs.scrollContainer, {
-    //       scrollLeft: targetSection.offsetLeft,
-    //       duration: 1.2,
-    //       ease: "power2.inOut",
-    //     });
-    //     this.activeTradeTab = targetId;
-    //   }
-    // },
 
     startProgressSequence(startIndex = 0) {
       const features =
         this.tabContent.find((tab) => tab.id === this.activeTradeTab)
           ?.features || [];
-     
       if (features.length === 0) return;
 
       this.activeFeatureIndex = -1;
@@ -351,7 +286,6 @@ export default {
         this.loopProgress(startIndex, features.length);
       }, 50);
     },
-
     loopProgress(index, total) {
       if (index >= total) {
         setTimeout(() => this.loopProgress(0, total), 200);
@@ -374,7 +308,6 @@ export default {
         }, 200);
       }, this.progressDuration);
     },
-
     resetProgressLoop() {
       // Clear all timers
       Object.values(this.progressTimers).forEach((timer) =>

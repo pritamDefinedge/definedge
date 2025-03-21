@@ -34,7 +34,12 @@
             <span class="font-light text-sm font-sans text-gray-400">
               Coming Soon :
             </span>
-            <img src="../assets/svgviewer-output.svg" alt="super" class="ml-2" width="20" />
+            <img
+              src="../assets/svgviewer-output.svg"
+              alt="super"
+              class="ml-2"
+              width="20"
+            />
             <span
               class="text-primary-500 font-medium text-sm flex items-center ml-2 motion-preset-blink motion-duration-1500"
             >
@@ -47,17 +52,27 @@
   </section>
 
   <!-- Ecosystem That Brings Markets to Your Fingertips -->
+  <Test v-if="!isMobile" :tabs="appTabs" :tabContent="appContent" />
+  <section
+    v-if="isMobile"
+    class="relative bg-gray-900 text-white flex justify-center items-center pt-12"
+    style="background-image: linear-gradient(100deg, #26282c 0%, #131416 100%)"
+  >
+    <AppTabs :tabs="appTabs" :tabContent="appContent" />
+  </section>
+
   <!-- <section
     class="relative bg-gray-900 text-white flex justify-center items-center pt-12"
     style="background-image: linear-gradient(100deg, #26282c 0%, #131416 100%)"
   > -->
-    <!-- <AppTabs :tabs="appTabs" :tabContent="appContent" /> -->
+  <!-- <AppTabs :tabs="appTabs" :tabContent="appContent" />
      <Test :tabs="appTabs" :tabContent="appContent" />
-  <!-- </section> -->
+  </section> -->
 
   <!-- TRADE & INVEST -->
+   
   <section
-    class="relative text-blace flex justify-center items-center pt-12"
+    class="trade-invest relative text-blace flex justify-center items-center pt-12"
     style="
       background-image: linear-gradient(312deg, #1e50d14d 0%, #31c19d4d 100%);
       background-color: transparent;
@@ -323,12 +338,18 @@ export default {
       activeAnalysisTab: "technicalAnalysisTab",
       activeEducationTab: "currentBooksTab",
       activeIndex: 0,
+      isMobile: window.innerWidth < 768,
     };
   },
   mounted() {
     // Automatically change images every 3 seconds
     // setInterval(this.changeImage, 3000);
+    window.addEventListener("resize", this.updateScreenSize);
   },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.updateScreenSize);
+  },
+
   setup() {
     const state = reactive({
       activeAppTab: "ZoneApp",
@@ -342,6 +363,10 @@ export default {
     };
   },
   methods: {
+    updateScreenSize() {
+      this.isMobile = window.innerWidth < 768;
+    },
+
     handleSubmit() {
       this.submitted = true; // Mark the form as submitted
       if (this.validateForm()) {
