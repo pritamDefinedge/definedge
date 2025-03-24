@@ -31,9 +31,9 @@
           'border-b-2 border-blue-500 bg-white text-gray-800':
             activeTradeTab === tab.id,
           'bg-[#FFFFFF47] border-2 border-white text-gray-700':
-            activeTradeTab !== tab.id
+            activeTradeTab !== tab.id,
         }"
-        class="group relative inline-block overflow-hidden border-double px-2 sm:px-2 md:px-4 lg:px-8 py-4 text-sm md:text-base  lg:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
+        class="group relative inline-block overflow-hidden border-double px-2 sm:px-2 md:px-4 lg:px-8 py-3 text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
         <span
           class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#fcf7f7] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
@@ -75,10 +75,14 @@
             <li
               v-for="(feature, featureIndex) in content.features"
               :key="featureIndex"
-              class="flex items-center text-[#111111] text-sm font-semibold"
+              class="flex items-center cursor-pointer relative p-6 bg-[#b2e5e5] text-black shadow-md rounded-lg transition-all duration-300 hover:shadow-lg"
+              :class="{ active: activeFeatureIndex === featureIndex }"
+              @click="startProgressFromFeature(featureIndex)"
+              @mouseenter="pauseProgress(featureIndex)"
+              @mouseleave="resumeProgress(featureIndex)"
             >
               <svg
-                class="w-6 h-6 text-[#111111] mr-3"
+                class="w-6 h-6 text-black mr-3"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -91,7 +95,18 @@
                   d="M5 13l4 4L19 7"
                 ></path>
               </svg>
-              {{ feature.text }}
+              <div class="flex flex-col">
+                <span
+                  class="text-xs sm:text-sm md:text-base lg:text-base xl:text-sm text-black mt-1"
+                >
+                  {{ feature.text }}
+                </span>
+              </div>
+              <div
+                class="progress-bar"
+                :style="progressStyle(featureIndex)"
+                :data-index="featureIndex"
+              ></div>
             </li>
             <!-- Explore More Link -->
             <li class="flex items-center text-sm">
@@ -124,12 +139,22 @@
             :class="{
               'motion-preset-slide-left motion-duration-1500': hasScrolled,
             }"
-            class="w-full md:w-1/2"
+            class="w-full md:w-1/2 flex items-center justify-center"
           >
             <img
+              v-if="
+                activeFeatureIndex >= 0 && content.features[activeFeatureIndex]
+              "
+              :key="activeFeatureIndex"
+              :src="content.features[activeFeatureIndex].image"
+              :alt="`Feature ${activeFeatureIndex + 1} Image`"
+              class="rounded-lg w-full object-cover transition-all duration-300"
+            />
+            <img
+              v-else
               :src="content.image"
-              :alt="content.title"
-              class="w-full rounded-lg mb-6 object-cover object-top"
+              alt="App Image"
+              class="rounded-lg w-full object-cover"
             />
           </div>
         </div>
@@ -138,43 +163,199 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    tabs: Array,
-    tabContent: Array,
-  },
-  data() {
-    return {
-      activeTradeTab: this.tabs[0].id,
-      hasScrolled: false,
-      scrollThreshold: 1200,
-    };
-  },
-  methods: {
-    setActiveTab(tabId) {
-      this.activeTradeTab = tabId;
-    },
-    onScroll() {
-      // Update scroll threshold based on window width
-      const windowWidth = window.innerWidth;
-      if (windowWidth <= 768) {
-        this.scrollThreshold = 1400; // Small devices (scroll position for small screens)
-      } else {
-        this.scrollThreshold = 1200; // Medium and large devices (scroll position for these screens)
-      }
+<script setup>
+import { ref, computed, onMounted, onBeforeUnmount, watchEffect } from "vue";
 
-      const scrollPosition = window.scrollY;
-      this.hasScrolled = scrollPosition > this.scrollThreshold;
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
+const props = defineProps({
+  tabs: Array,
+  tabContent: Array,
+});
+
+const activeTradeTab = ref(props.tabs[0]?.id || "");
+const hasScrolled = ref(false);
+const scrollThreshold = ref(1400); // Default threshold
+
+
+const activeFeatureIndex = ref(-1);
+const progressTimers = ref({});
+const remainingTimes = ref({});
+const isPaused = ref({});
+const pausedAt = ref({});
+const progressValues = ref({});
+const startTimes = ref({});
+const progressDuration = 5400; // Default progress duration
+
+// Compute filtered content based on active tab
+const filteredContent = computed(() =>
+  props.tabContent.filter((item) => item.id === activeTradeTab.value)
+);
+
+// Handle tab changes
+const setActiveTab = (tabId) => {
+  activeTradeTab.value = tabId;
+  resetProgressLoop();
+  startProgressSequence();
 };
+
+// Handle scrolling
+const onScroll = () => {
+  const windowWidth = window.innerWidth;
+
+  // Adjust scroll threshold based on screen size
+  if (windowWidth <= 768) {
+    scrollThreshold.value = 1400; // Small devices
+  } else {
+    scrollThreshold.value = 1200; // Medium and large devices
+  }
+
+  const scrollPosition = window.scrollY;
+  hasScrolled.value = scrollPosition > scrollThreshold.value;
+};
+
+// Start feature progress loop
+const startProgressSequence = (startIndex = 0) => {
+  const features =
+    props.tabContent.find((tab) => tab.id === activeTradeTab.value)?.features ||
+    [];
+
+  if (features.length === 0) return;
+
+  activeFeatureIndex.value = -1;
+
+  setTimeout(() => {
+    loopProgress(startIndex, features.length);
+  }, 50);
+};
+
+const loopProgress = (index, total) => {
+  if (index >= total) {
+    setTimeout(() => loopProgress(0, total), 200);
+    return;
+  }
+
+  activeFeatureIndex.value = index;
+  remainingTimes.value[index] = progressDuration;
+  isPaused.value[index] = false;
+  progressValues.value[index] = 0;
+  startTimes.value[index] = performance.now();
+
+  progressTimers.value[index] = setTimeout(() => {
+    activeFeatureIndex.value = -1;
+    setTimeout(() => {
+      loopProgress(index + 1, total);
+    }, 200);
+  }, progressDuration);
+};
+
+const resetProgressLoop = () => {
+  Object.values(progressTimers.value).forEach((timer) => clearTimeout(timer));
+  progressTimers.value = {};
+  remainingTimes.value = {};
+  isPaused.value = {};
+  progressValues.value = {};
+  pausedAt.value = {};
+  startTimes.value = {};
+  activeFeatureIndex.value = -1;
+};
+
+// Start progress from a specific feature
+
+const startProgressFromFeature = (featureIndex) => {
+  resetProgressLoop();
+  startProgressSequence(featureIndex);
+};
+
+// Pause progress for a feature
+const pauseProgress = (featureIndex) => {
+  if (activeFeatureIndex.value !== featureIndex || isPaused.value[featureIndex])
+    return;
+
+  clearTimeout(progressTimers.value[featureIndex]);
+
+  const elapsedTime = performance.now() - startTimes.value[featureIndex];
+  remainingTimes.value[featureIndex] = Math.max(
+    0,
+    progressDuration - elapsedTime
+  );
+
+  progressValues.value[featureIndex] = Math.min(
+    100,
+    (elapsedTime / progressDuration) * 100
+  );
+
+  isPaused.value[featureIndex] = true;
+  pausedAt.value[featureIndex] = performance.now();
+};
+
+// Resume progress after pausing
+const resumeProgress = (featureIndex) => {
+  if (
+    activeFeatureIndex.value !== featureIndex ||
+    !isPaused.value[featureIndex]
+  )
+    return;
+
+  const adjustedStartTime =
+    performance.now() -
+    progressDuration * (progressValues.value[featureIndex] / 100);
+  startTimes.value[featureIndex] = adjustedStartTime;
+
+  isPaused.value[featureIndex] = false;
+
+  progressTimers.value[featureIndex] = setTimeout(() => {
+    activeFeatureIndex.value = -1;
+    setTimeout(() => {
+      loopProgress(
+        featureIndex + 1,
+        filteredContent.value[0]?.features.length || 0
+      );
+    }, 200);
+  }, remainingTimes.value[featureIndex]);
+};
+
+// Compute progress bar styles dynamically
+const progressStyle = (featureIndex) => {
+  if (activeFeatureIndex.value === featureIndex) {
+    if (isPaused.value[featureIndex]) {
+      return `width: ${progressValues.value[featureIndex]}%; transition: none;`;
+    } else {
+      const elapsedSinceStart =
+        performance.now() - startTimes.value[featureIndex];
+      const remainingPercentage =
+        100 - (elapsedSinceStart / progressDuration) * 100;
+
+      return `width: ${100 - remainingPercentage}%; transition: width ${
+        remainingTimes.value[featureIndex]
+      }ms linear; width: 100%;`;
+    }
+  }
+  return "width: 0%; transition: none;";
+};
+
+// Lifecycle hooks
+onMounted(() => {
+  window.addEventListener("scroll", onScroll);
+  startProgressSequence();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", onScroll);
+  resetProgressLoop();
+});
 </script>
 
-<style scoped></style>
+<style scoped>
+.progress-bar {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0%;
+  background-color: #1f7ae0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom-left-radius: 8px;
+  will-change: width;
+  transform: translateZ(0);
+}
+</style>

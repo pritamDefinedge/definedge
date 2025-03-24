@@ -1,9 +1,21 @@
 {
   "tabs": [
-    { "id": "curatedBooksTab", "label": "Curated Books" },
-    { "id": "educationalVideosTab", "label": "Educational Videos" },
-    { "id": "libraryTab", "label": "Library" },
-    { "id": "onlineCoursesTab", "label": "Online Courses" }
+    {
+      "id": "curatedBooksTab",
+      "label": "Curated Books"
+    },
+    {
+      "id": "educationalVideosTab",
+      "label": "Educational Videos"
+    },
+    {
+      "id": "libraryTab",
+      "label": "Library"
+    },
+    {
+      "id": "onlineCoursesTab",
+      "label": "Online Courses"
+    }
   ],
   "tabContent": [
     {
@@ -12,20 +24,26 @@
       "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='45' height='45' class='mr-4' viewBox='0 0 19 15' fill='none' ><path d='M13.0678 6.86837L0.1875 5.03443L5.92893 0L18.8092 1.83394L13.0678 6.86837Z' fill='#00D9A4' ></path><path d='M13.0718 9.13942C13.0623 9.13942 13.0528 9.13942 13.0457 9.13705L0.165465 7.30311C0.0610752 7.28888 -0.0124721 7.1916 0.00176289 7.08484C0.0159979 6.98045 0.11327 6.9069 0.220032 6.92114L13.0125 8.74321L18.6875 3.76572C18.7682 3.69455 18.8892 3.70404 18.958 3.7847C19.0292 3.86537 19.0197 3.98636 18.939 4.05517L13.1976 9.0896C13.1644 9.12281 13.1193 9.13942 13.0718 9.13942Z' fill='#00D9A4' ></path><path d='M13.0718 11.6873C13.0623 11.6873 13.0528 11.6873 13.0457 11.6849L0.165465 9.85096C0.0610752 9.83673 -0.0124721 9.73945 0.00176289 9.63269C0.0159979 9.5283 0.11327 9.45476 0.220032 9.46899L13.0125 11.2911L18.6875 6.31357C18.7682 6.2424 18.8892 6.25189 18.958 6.33255C19.0292 6.41322 19.0197 6.53422 18.939 6.60302L13.1976 11.6374C13.1644 11.6707 13.1193 11.6873 13.0718 11.6873Z' fill='#00D9A4' ></path> <path d='M13.0718 14.2361C13.0623 14.2361 13.0528 14.2361 13.0457 14.2337L0.165465 12.3998C0.0610752 12.3856 -0.0124721 12.2883 0.00176289 12.1815C0.0159979 12.0771 0.11327 12.0012 0.220032 12.0178L13.0125 13.8399L18.6875 8.8624C18.7682 8.79123 18.8892 8.80072 18.958 8.88138C19.0292 8.96205 19.0197 9.08304 18.939 9.15185L13.1999 14.1886C13.1644 14.2195 13.1193 14.2361 13.0718 14.2361Z' fill='#00D9A4' ></path> </svg>",
       "description": "Explore our treasure trove of free eBooks covering a wide range of trading and investing concepts—basics to advanced strategies.",
       "features": [
-        { "text": "Master Investing & Trading from the ground up" },
         {
-          "text": "Gain Practical Insights to sharpen your skills"
+          "text": "Master Investing & Trading from the ground up",
+          "image": "../assets/img/SHELF.webp"
         },
         {
-          "text": "Discover Proven Technical Strategies"
+          "text": "Gain Practical Insights to sharpen your skills",
+          "image": "../assets/img/INSIGHT.webp"
         },
         {
-          "text": "Explore Unique & Innovative Concepts"
+          "text": "Discover Proven Technical Strategies",
+          "image": "../assets/img/LIBRARY.webp"
+        },
+        {
+          "text": "Explore Unique & Innovative Concepts",
+          "image": "../assets/img/GURUKUL.webp"
         }
       ],
       "notes": "Start your learning journey today—absolutely free! 🚀",
       "exploreLink": "https://www.definedgesecurities.com/products/shelf/",
-      "image": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/LIBRARY-1024x1024.webp"
+      "image": "../assets/img/SHELF.webp"
     },
     {
       "id": "educationalVideosTab",
@@ -33,16 +51,26 @@
       "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='45' height='45' class='mr-4' viewBox='0 0 19 21' fill='none' ><path d='M5.62529 20.8483C5.36672 20.8483 5.1582 20.6398 5.1582 20.3812V4.8423C5.1582 4.67131 5.24995 4.51701 5.39592 4.4336C5.54188 4.35019 5.72538 4.35436 5.86717 4.44611L18.3784 12.2156C18.516 12.299 18.5994 12.4491 18.5994 12.6118C18.5994 12.7744 18.516 12.9204 18.3825 13.0079L8.86986 19.005C8.72806 19.0967 8.54457 19.1009 8.39443 19.0175C8.2443 18.9341 8.15255 18.7798 8.15255 18.6088V10.5808C8.15255 10.3222 8.36107 10.1137 8.61963 10.1137C8.8782 10.1137 9.08672 10.3222 9.08672 10.5808V17.7664L17.2565 12.6159L6.0882 5.68055V20.3812C6.0882 20.6398 5.87968 20.8483 5.62529 20.8483Z' fill='#0547DB' ></path><path d='M3.01937 5.20825C3.29044 5.19991 3.51148 5.4126 3.52399 5.6795C3.51565 5.95058 3.29044 6.1591 3.01937 6.15493H0.504618C0.233542 6.1591 0.0083408 5.95058 0 5.6795C0.0083408 5.40843 0.233542 5.19991 0.504618 5.20825H3.01937Z' fill='#0547DB' ></path> <path d='M5.53906 0.471497C5.5474 0.200421 5.7726 -0.00809909 6.04368 0.000241709C6.31476 -0.00809909 6.53579 0.204591 6.5483 0.471497V2.84028C6.53996 3.11136 6.31476 3.31988 6.04368 3.31154C5.7726 3.31988 5.55157 3.10719 5.53906 2.84028V0.471497Z' fill='#0547DB' ></path><path d='M1.76938 2.33145C1.58588 2.1563 1.57754 1.8602 1.75687 1.6767C1.76104 1.67253 1.76521 1.66836 1.76938 1.66419C1.96956 1.47652 2.28234 1.47652 2.48252 1.66419L4.26328 3.33652C4.44678 3.51585 4.45512 3.80777 4.27579 3.99127C4.27162 3.99544 4.26745 3.99961 4.26328 4.00378C4.0631 4.18728 3.75032 4.18728 3.55014 4.00378L1.76938 2.33145Z' fill='#0547DB' ></path><path d='M8.5373 4.00802C8.33712 4.19152 8.02851 4.19152 7.82416 4.00802C7.64067 3.83703 7.62815 3.54927 7.79497 3.36578C7.80331 3.35744 7.81165 3.3491 7.82416 3.33658L9.60492 1.66008C9.8051 1.47659 10.1137 1.47659 10.3181 1.66008C10.5016 1.83107 10.5141 2.11883 10.3473 2.30233C10.3389 2.31067 10.3306 2.31901 10.3181 2.33152L8.5373 4.00802Z' fill='#0547DB' ></path><path d='M2.48252 9.70111C2.28234 9.88461 1.96956 9.88461 1.76938 9.70111C1.58588 9.52179 1.57754 9.22986 1.75687 9.04636C1.76104 9.04219 1.76521 9.03802 1.76938 9.03385L3.55848 7.35735C3.75866 7.17385 4.06727 7.17385 4.27162 7.35735C4.45512 7.52834 4.46763 7.81609 4.30081 7.99959C4.29247 8.00793 4.28413 8.01627 4.27162 8.02878L2.48252 9.70111Z' fill='#0547DB' ></path> </svg>",
       "description": "If you learn best through videos, our free video library is perfect for you! Gain access to expert-led sessions covering various trading styles, effective strategies, market insights, and trading psychology.",
       "features": [
-        { "text": "Comprehensive Video Library – Absolutely free" },
         {
-          "text": "20+ Categories covering all aspects of trading & investing"
+          "text": "Comprehensive Video Library – Absolutely free",
+          "image": "../assets/img/INSIGHT.webp"
         },
-        { "text": "Innovative Concepts Explained Simply" },
-        { "text": "Exclusive Research-Backed Weekly Newsletters" }
+        {
+          "text": "20+ Categories covering all aspects of trading & investing",
+          "image": "../assets/img/LIBRARY.webp"
+        },
+        {
+          "text": "Innovative Concepts Explained Simply",
+          "image": "../assets/img/SHELF.webp"
+        },
+        {
+          "text": "Exclusive Research-Backed Weekly Newsletters",
+          "image": "../assets/img/GURUKUL.webp"
+        }
       ],
       "notes": "Start watching and enhance your investing and trading today! 🚀",
       "exploreLink": "https://www.definedgesecurities.com/products/insight/",
-      "image": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/INSIGHT-1024x1024.webp"
+      "image": "../assets/img/INSIGHT.webp"
     },
     {
       "id": "libraryTab",
@@ -50,16 +78,26 @@
       "icon": "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 50 50' width='45' height='45' class='mr-4' ><path  fill='#0369e0' class='st0' d='M7.28,43.63v-3.23h2.51v-18.22h-2.51v-7.74h-1.85v7.74h-2.51v18.22h2.51v3.23h1.85ZM4.79,38.54v-14.49h3.14v14.48h-3.14Z' ></path><path  fill='#0369e0' class='st0' d='M25.79,20.48v-2.33h2.51V5.03h-2.51v-1.38h-1.85v1.39h-2.51v13.11h2.51v2.34h1.85ZM23.3,16.27V6.91h3.14v9.37h-3.14Z' ></path> <polygon  fill='#0369e0' class='st0' points='35.05 33.63 35.05 28.99 37.56 28.99 37.56 10.55 35.05 10.55 35.05 6.73 33.2 6.73 33.2 10.55 30.69 10.55 30.69 28.99 33.2 28.99 33.2 33.63 35.05 33.63' ></polygon> <polygon  fill='#0369e0' class='st0' points='14.69 8.26 14.69 15.25 12.18 15.25 12.18 33.47 19.06 33.47 19.06 15.25 16.55 15.25 16.55 8.26 14.69 8.26' ></polygon> <path  fill='#0369e0' class='st0' d='M6.66,11.29c3.01,0,5.57-1.86,8.28-3.82,3.05-2.2,6.2-4.48,10.31-4.48,6.32,0,9.57,3.11,12.71,6.13,2.77,2.65,5.39,5.16,9.69,5.16h.35v-1.87h-.35c-3.55,0-5.79-2.15-8.39-4.63-3.26-3.12-6.95-6.65-14.01-6.65-4.7,0-8.26,2.57-11.41,4.84-2.47,1.78-4.8,3.46-7.19,3.46-1.19,0-2.9-1.69-3.69-2.76l-.2-.3-1.51,1.12.22.29c.63.82,2.86,3.51,5.19,3.51Z' ></path> <path  fill='#0369e0' class='st0' d='M48.24,32.12l-.19-.29-.31.17c-.08.04-.4.22-.91.47v-7.27h-6.88v9.77c-.56.12-1.11.21-1.64.27-1.22.14-2.31-.15-3.72-.53-1.76-.48-3.94-1.07-7.26-.98-5.18.16-9.05,4.52-12.47,8.37-2.15,2.42-4.37,4.93-6.02,4.93-3.13,0-6.11-3-6.24-3.12l-.25-.25-1.35,1.28.24.25s3.54,3.69,7.59,3.69c2.49,0,4.77-2.57,7.43-5.56,3.16-3.56,6.75-7.6,11.12-7.73,3.02-.1,4.97.44,6.74.92,1.51.41,2.82.76,4.4.58.44-.05.9-.12,1.44-.22v2.96h6.88v-5.28c.9-.42,1.54-.77,1.83-.92l.33-.17-.76-1.34ZM44.96,35.36v2.6h-3.14v-1.53c1.01-.28,2.06-.64,3.14-1.07ZM41.83,34.48v-7.4h3.14v6.26c-1.09.46-2.15.84-3.14,1.14Z' ></path></svg>",
       "description": "Dive into a comprehensive collection of technical and fundamental concepts. The Definedge Library is your go-to resource for mastering technical patterns, indicators, and fundamental analysis.",
       "features": [
-        { "text": "Discover Rare & Hidden Patterns explained in detail" },
-        { "text": "Quick Reference Guide for instant insights" },
         {
-          "text": "Concise, Actionable Write-ups with real-world applications"
+          "text": "Discover Rare & Hidden Patterns explained in detail",
+          "image": "../assets/img/LIBRARY.webp"
         },
-        { "text": "Innovative Research & Cutting-Edge Concepts" }
+        {
+          "text": "Quick Reference Guide for instant insights",
+          "image": "../assets/img/SHELF.webp"
+        },
+        {
+          "text": "Concise, Actionable Write-ups with real-world applications",
+          "image": "../assets/img/GURUKUL.webp"
+        },
+        {
+          "text": "Innovative Research & Cutting-Edge Concepts",
+          "image": "../assets/img/INSIGHT.webp"
+        }
       ],
       "notes": "Elevate your investing and trading knowledge today!",
       "exploreLink": "https://www.definedgesecurities.com/patterns-indicators/",
-      "image": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/LIBRARY-1024x1024.webp"
+      "image": "../assets/img/LIBRARY.webp"
     },
     {
       "id": "onlineCoursesTab",
@@ -68,15 +106,25 @@
       "description": "Step into the world of expert-led, self-paced courses designed to elevate your trading and investing skills. Got questions? Our experts are here to guide you in live Q&A sessions.",
       "features": [
         {
-          "text": "Exclusive, Well-Researched Strategies to refine your approach"
+          "text": "Exclusive, Well-Researched Strategies to refine your approach",
+          "image": "../assets/img/GURUKUL.webp"
         },
-        { "text": "Learn at Your Own Pace with structured courses" },
-        { "text": "Gain Practical Insights for real-world application" },
-        { "text": "Live Q&A Sessions to get expert guidance" }
+        {
+          "text": "Learn at Your Own Pace with structured courses",
+          "image": "../assets/img/LIBRARY.webp"
+        },
+        {
+          "text": "Gain Practical Insights for real-world application",
+          "image": "../assets/img/SHELF.webp"
+        },
+        {
+          "text": "Live Q&A Sessions to get expert guidance",
+          "image": "../assets/img/INSIGHT.webp"
+        }
       ],
       "notes": "Start your journey to smarter trading!",
       "exploreLink": "https://gurukul.definedgesecurities.com/",
-      "image": "https://www.definedgesecurities.com/wp-content/uploads/2025/02/GURUKUL-3-1024x1024.webp"
+      "image": "../assets/img/GURUKUL.webp"
     }
   ]
 }

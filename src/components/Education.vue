@@ -30,11 +30,11 @@
           'border-2 border-[#0E9CE5] bg-[#FFFFFF] text-black ':
             activeEducationTab === tab.id,
           'bg-[#FFFFFF47] border-2 border-[#EBEBEB] text-[#817E7E] hover:text-black':
-            activeEducationTab !== tab.id
+            activeEducationTab !== tab.id,
         }"
         class="group relative overflow-hidden flex min-w-[150px] text-center rounded-[10px] justify-center px-6 py-3 text-base sm:text-sm md:text-sm lg:text-lg tab-btn text-md cursor-pointer focus:outline-none transition duration-300 motion-scale-in-[0.5] ease-in-out"
       >
-      <span
+        <span
           class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#fcf7f7] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
         ></span>
         {{ tab.label }}
@@ -76,10 +76,14 @@
             <li
               v-for="(feature, featureIndex) in content.features"
               :key="featureIndex"
-              class="flex items-center text-[#111111] text-base font-semibold"
+              class="flex items-center cursor-pointer relative p-6 bg-[#b2e5e5] text-black  shadow-md rounded-lg transition-all duration-300 hover:shadow-lg"
+              :class="{ active: activeEducationIndex === featureIndex }"
+              @click="startProgressFromFeature(featureIndex)"
+              @mouseenter="pauseProgress(featureIndex)"
+              @mouseleave="resumeProgress(featureIndex)"
             >
               <svg
-                class="w-6 h-6 text-[#111111] mr-3"
+                class="w-6 h-6 text-black mr-3"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -92,7 +96,18 @@
                   d="M5 13l4 4L19 7"
                 ></path>
               </svg>
-              {{ feature.text }}
+              <div class="flex flex-col">
+                <span
+                  class="text-xs sm:text-sm md:text-base lg:text-base xl:text-sm text-black mt-1"
+                >
+                  {{ feature.text }}
+                </span>
+              </div>
+              <div
+                class="progress-bar"
+                :style="progressStyle(featureIndex)"
+                :data-index="featureIndex"
+              ></div>
             </li>
 
             <li class="flex items-center font-bold text-black text-sm">
@@ -131,9 +146,20 @@
             }"
           >
             <img
+              v-if="
+                activeEducationIndex >= 0 &&
+                content.features[activeEducationIndex]
+              "
+              :key="activeEducationIndex"
+              :src="content.features[activeEducationIndex].image"
+              :alt="`Feature ${activeEducationIndex + 1} Image`"
+              class="rounded-lg w-full object-cover transition-all duration-300"
+            />
+            <img
+              v-else
               :src="content.image"
-              :alt="content.title"
-              class="w-full rounded-lg mb-6 object-cover object-top"
+              alt="App Image"
+              class="rounded-lg w-full object-cover"
             />
           </div>
         </div>
@@ -142,47 +168,195 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    tabs: Array,
-    tabContent: Array,
-  },
-  data() {
-    return {
-      activeEducationTab: this.tabs[0].id,
-      hasScrolled: false,
-      scrollThreshold: 3000,
-    };
-  },
-  methods: {
-    setActiveTab(tabId) {
-      this.activeEducationTab = tabId;
-    },
-    onScroll() {
-      const scrollPosition = window.scrollY;
-      this.hasScrolled = scrollPosition > 3000;
-    },
-    onScroll() {
-      const windowWidth = window.innerWidth;
-      if (windowWidth <= 768) {
-        this.scrollThreshold = 4500;
-      } else {
-        this.scrollThreshold = 3000;
-      }
+<script setup>
+import { ref, computed, onMounted, onBeforeUnmount, watchEffect } from "vue";
 
-      const scrollPosition = window.scrollY;
-      this.hasScrolled = scrollPosition > this.scrollThreshold;
-    },
-    
-  },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
+const props = defineProps({
+  tabs: Array,
+  tabContent: Array,
+});
+
+const activeEducationTab = ref(props.tabs[0]?.id || "");
+const scrollThreshold = ref(3000); // Default threshold
+const hasScrolled = ref(false);
+
+const activeEducationIndex = ref(-1);
+const progressTimers = ref({});
+const remainingTimes = ref({});
+const isPaused = ref({});
+const pausedAt = ref({});
+const progressValues = ref({});
+const startTimes = ref({});
+const progressDuration = 5400; // Default progress duration
+
+// Compute filtered content based on active tab
+const filteredContent = computed(() =>
+  props.tabContent.filter((item) => item.id === activeEducationTab.value)
+);
+
+// Handle tab changes
+const setActiveTab = (tabId) => {
+  activeEducationTab.value = tabId;
+  resetProgressLoop();
+  startProgressSequence();
 };
+
+// Handle scrolling
+const onScroll = () => {
+  const windowWidth = window.innerWidth;
+  scrollThreshold.value = windowWidth <= 768 ? 4500 : 3000;
+
+  const scrollPosition = window.scrollY;
+  hasScrolled.value = scrollPosition > scrollThreshold.value;
+};
+
+// Start feature progress loop
+const startProgressSequence = (startIndex = 0) => {
+  const features =
+    props.tabContent.find((tab) => tab.id === activeEducationTab.value)
+      ?.features || [];
+
+  if (features.length === 0) return;
+
+  activeEducationIndex.value = -1;
+
+  setTimeout(() => {
+    loopProgress(startIndex, features.length);
+  }, 50);
+};
+
+const loopProgress = (index, total) => {
+  if (index >= total) {
+    setTimeout(() => loopProgress(0, total), 200);
+    return;
+  }
+
+  activeEducationIndex.value = index;
+  remainingTimes.value[index] = progressDuration;
+  isPaused.value[index] = false;
+  progressValues.value[index] = 0;
+  startTimes.value[index] = performance.now();
+
+  progressTimers.value[index] = setTimeout(() => {
+    activeEducationIndex.value = -1;
+    setTimeout(() => {
+      loopProgress(index + 1, total);
+    }, 200);
+  }, progressDuration);
+};
+
+const resetProgressLoop = () => {
+  Object.values(progressTimers.value).forEach((timer) => clearTimeout(timer));
+  progressTimers.value = {};
+  remainingTimes.value = {};
+  isPaused.value = {};
+  progressValues.value = {};
+  pausedAt.value = {};
+  startTimes.value = {};
+  activeEducationIndex.value = -1;
+};
+
+// Start progress from a specific feature
+
+const startProgressFromFeature = (featureIndex) => {
+  resetProgressLoop();
+  startProgressSequence(featureIndex);
+};
+
+// Pause progress for a feature
+const pauseProgress = (featureIndex) => {
+  if (
+    activeEducationIndex.value !== featureIndex ||
+    isPaused.value[featureIndex]
+  )
+    return;
+
+  clearTimeout(progressTimers.value[featureIndex]);
+
+  const elapsedTime = performance.now() - startTimes.value[featureIndex];
+  remainingTimes.value[featureIndex] = Math.max(
+    0,
+    progressDuration - elapsedTime
+  );
+
+  progressValues.value[featureIndex] = Math.min(
+    100,
+    (elapsedTime / progressDuration) * 100
+  );
+
+  isPaused.value[featureIndex] = true;
+  pausedAt.value[featureIndex] = performance.now();
+};
+
+// Resume progress after pausing
+const resumeProgress = (featureIndex) => {
+  if (
+    activeEducationIndex.value !== featureIndex ||
+    !isPaused.value[featureIndex]
+  )
+    return;
+
+  const adjustedStartTime =
+    performance.now() -
+    progressDuration * (progressValues.value[featureIndex] / 100);
+  startTimes.value[featureIndex] = adjustedStartTime;
+
+  isPaused.value[featureIndex] = false;
+
+  progressTimers.value[featureIndex] = setTimeout(() => {
+    activeEducationIndex.value = -1;
+    setTimeout(() => {
+      loopProgress(
+        featureIndex + 1,
+        filteredContent.value[0]?.features.length || 0
+      );
+    }, 200);
+  }, remainingTimes.value[featureIndex]);
+};
+
+// Compute progress bar styles dynamically
+const progressStyle = (featureIndex) => {
+  if (activeEducationIndex.value === featureIndex) {
+    if (isPaused.value[featureIndex]) {
+      return `width: ${progressValues.value[featureIndex]}%; transition: none;`;
+    } else {
+      const elapsedSinceStart =
+        performance.now() - startTimes.value[featureIndex];
+      const remainingPercentage =
+        100 - (elapsedSinceStart / progressDuration) * 100;
+
+      return `width: ${100 - remainingPercentage}%; transition: width ${
+        remainingTimes.value[featureIndex]
+      }ms linear; width: 100%;`;
+    }
+  }
+  return "width: 0%; transition: none;";
+};
+
+// Lifecycle hooks for Education
+onMounted(() => {
+  window.addEventListener("scroll", onScroll);
+  startProgressSequence();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", onScroll);
+  resetProgressLoop();
+});
 </script>
 
-<style scoped></style>
+<style scoped>
+.progress-bar {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0%;
+  background-color: #00000047;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom-left-radius: 8px;
+  will-change: width;
+  transform: translateZ(0);
+}
+</style>

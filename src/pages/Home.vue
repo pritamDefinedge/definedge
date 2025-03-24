@@ -52,25 +52,24 @@
   </section>
 
   <!-- Ecosystem That Brings Markets to Your Fingertips -->
-  <Test v-if="!isMobile" :tabs="appTabs" :tabContent="appContent" />
+  <!-- <Test v-if="!isMobile" :tabs="appTabs" :tabContent="appContent" />
   <section
     v-if="isMobile"
     class="relative bg-gray-900 text-white flex justify-center items-center pt-12"
     style="background-image: linear-gradient(100deg, #26282c 0%, #131416 100%)"
   >
     <AppTabs :tabs="appTabs" :tabContent="appContent" />
-  </section>
-
-  <!-- <section
-    class="relative bg-gray-900 text-white flex justify-center items-center pt-12"
-    style="background-image: linear-gradient(100deg, #26282c 0%, #131416 100%)"
-  > -->
-  <!-- <AppTabs :tabs="appTabs" :tabContent="appContent" />
-     <Test :tabs="appTabs" :tabContent="appContent" />
   </section> -->
 
+  <section
+    class="relative bg-gray-900 text-white flex justify-center items-center pt-12"
+    style="background-image: linear-gradient(100deg, #26282c 0%, #131416 100%)"
+  >
+    <AppTabs :tabs="appTabs" :tabContent="appContent" />
+  </section>
+
   <!-- TRADE & INVEST -->
-   
+
   <section
     class="trade-invest relative text-blace flex justify-center items-center pt-12"
     style="
@@ -143,7 +142,7 @@
         </p>
 
         <button
-          class="group relative m-1 cursor-pointer overflow-hidden rounded-md bg-[#0268DF] border-2 border-white px-5 py-3 font-mono font-semibold"
+          class="group relative m-1 cursor-pointer overflow-hidden rounded-md bg-[#0268DF] border-2 border-white px-5 py-3 font-mono font-light"
         >
           <a href="https://forum.definedgesecurities.com/">
             <span
@@ -151,7 +150,7 @@
             ></span>
             <span
               class="ease relative text-white transition duration-300 group-hover:text-white"
-              >Join Now</span
+              >join Now</span
             >
           </a>
         </button>
@@ -277,7 +276,7 @@ import Banner from "../components/Banner.vue";
 
 import AppTabs from "../components/AppTabs.vue";
 import AppTabData from "../data/AppTab.json";
-import Test from "./Test.vue";
+//import Test from "./Test.vue";
 
 import TradeInvest from "../components/TradeInvest.vue";
 import TradeInvestData from "../data/TradeInvest.json";
@@ -301,7 +300,7 @@ export default {
     TreadingJourney,
     Banner,
     AppTabs,
-    Test,
+    // Test,
     TradeInvest,
     Analysis,
     Education,

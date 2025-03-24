@@ -31,7 +31,7 @@
           'border-2 active-shadow border-[#0E9CE5] bg-[#FFFFFF] text-[#000000]':
             activeAnalysisTab === tab.id,
           'bg-[#FFFFFF6E] border-2 custom-shadow border-[#EBEBEB] text-[#817E7E]':
-            activeAnalysisTab !== tab.id
+            activeAnalysisTab !== tab.id,
         }"
         class="group relative overflow-hidden flex min-w-[150px] px-2 md:px-4 lg:px-8 py-3 text-[13px] sm:text-sm md:text-base text-base font-medium lg:text-base tab-btn text-md rounded-lg cursor-pointer focus:outline-none transition duration-300 ease-in-out"
       >
@@ -55,17 +55,29 @@
       >
         <div class="flex flex-wrap justify-between">
           <div
-            class="w-full md:w-1/2"
+            class="w-full md:w-1/2 flex items-center justify-center relative overflow-hidden"
             :class="{
               'motion-preset-slide-right motion-duration-2000': hasScrolled,
             }"
           >
             <img
+              v-if="
+                activeAnalysisIndex >= 0 &&
+                content.features[activeAnalysisIndex]
+              "
+              :key="activeAnalysisIndex"
+              :src="content.features[activeAnalysisIndex].image"
+              :alt="`Feature ${activeAnalysisIndex + 1} Image`"
+              class="absolute inset-0 m-auto h-full w-auto max-w-full max-h-full rounded-lg object-contain transition-all duration-300"
+            />
+            <img
+              v-else
               :src="content.image"
-              :alt="content.title"
-              class="w-full rounded-lg mb-6 object-cover object-top"
+              alt="App Image"
+              class="h-full w-auto max-w-full max-h-full rounded-lg object-contain"
             />
           </div>
+
           <ul
             class="space-y-4 text-lg w-full md:w-1/2 py-16 my-4 lg:pl-5"
             :class="{
@@ -90,10 +102,14 @@
             <li
               v-for="(feature, featureIndex) in content.features"
               :key="featureIndex"
-              class="flex items-center text-[#111111] text-sm  font-semibold"
+              class="flex items-center cursor-pointer relative p-6 bg-[#eee] text-black shadow-md rounded-lg transition-all duration-300 hover:shadow-lg"
+              :class="{ active: activeAnalysisIndex === featureIndex }"
+              @click="startProgressFromFeature(featureIndex)"
+              @mouseenter="pauseProgress(featureIndex)"
+              @mouseleave="resumeProgress(featureIndex)"
             >
               <svg
-                class="w-6 h-6 text-[#111111] mr-3"
+                class="w-6 h-6 text-black mr-3"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -106,7 +122,18 @@
                   d="M5 13l4 4L19 7"
                 ></path>
               </svg>
-              {{ feature.text }}
+              <div class="flex flex-col">
+                <span
+                  class="text-xs sm:text-sm md:text-base lg:text-base xl:text-sm text-black mt-1"
+                >
+                  {{ feature.text }}
+                </span>
+              </div>
+              <div
+                class="progress-bar"
+                :style="progressStyle(featureIndex)"
+                :data-index="featureIndex"
+              ></div>
             </li>
 
             <!-- Explore More Link -->
@@ -140,47 +167,197 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    tabs: Array,
-    tabContent: Array,
-  },
-  data() {
-    return {
-      activeAnalysisTab: this.tabs[0].id,
-      hasScrolled: false,
-      scrollThreshold: 2000,
-    };
-  },
-  methods: {
-    setActiveTab(tabId) {
-      this.activeAnalysisTab = tabId;
-    },
+<script setup>
+import { ref, computed, onMounted, onBeforeUnmount, watchEffect } from "vue";
 
-    onScroll() {
-      // Update scroll threshold based on window width
-      const windowWidth = window.innerWidth;
-      if (windowWidth <= 768) {
-        this.scrollThreshold = 3000;
-      } else {
-        this.scrollThreshold = 2000;
-      }
+const props = defineProps({
+  tabs: Array,
+  tabContent: Array,
+});
 
-      const scrollPosition = window.scrollY;
-      this.hasScrolled = scrollPosition > this.scrollThreshold;
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
+const activeAnalysisTab = ref(props.tabs[0]?.id || "");
+const scrollThreshold = ref(3000); // Default threshold
+const hasScrolled = ref(false);
+
+const activeAnalysisIndex = ref(-1);
+const progressTimers = ref({});
+const remainingTimes = ref({});
+const isPaused = ref({});
+const pausedAt = ref({});
+const progressValues = ref({});
+const startTimes = ref({});
+const progressDuration = 5400; // Default progress duration
+
+// Compute filtered content based on active tab
+const filteredContent = computed(() =>
+  props.tabContent.filter((item) => item.id === activeAnalysisTab.value)
+);
+
+// Handle tab changes
+const setActiveTab = (tabId) => {
+  activeAnalysisTab.value = tabId;
+  resetProgressLoop();
+  startProgressSequence();
 };
+
+// **Fixed Scroll Function**
+const onScroll = () => {
+  const windowWidth = window.innerWidth;
+  scrollThreshold.value = windowWidth <= 768 ? 3000 : 2000;
+
+  const scrollPosition = window.scrollY;
+  hasScrolled.value = scrollPosition > scrollThreshold.value;
+};
+
+// Start feature progress loop
+const startProgressSequence = (startIndex = 0) => {
+  const features =
+    props.tabContent.find((tab) => tab.id === activeAnalysisTab.value)
+      ?.features || [];
+
+  if (features.length === 0) return;
+
+  activeAnalysisIndex.value = -1;
+
+  setTimeout(() => {
+    loopProgress(startIndex, features.length);
+  }, 50);
+};
+
+const loopProgress = (index, total) => {
+  if (index >= total) {
+    setTimeout(() => loopProgress(0, total), 200);
+    return;
+  }
+
+  activeAnalysisIndex.value = index;
+  remainingTimes.value[index] = progressDuration;
+  isPaused.value[index] = false;
+  progressValues.value[index] = 0;
+  startTimes.value[index] = performance.now();
+
+  progressTimers.value[index] = setTimeout(() => {
+    activeAnalysisIndex.value = -1;
+    setTimeout(() => {
+      loopProgress(index + 1, total);
+    }, 200);
+  }, progressDuration);
+};
+
+const resetProgressLoop = () => {
+  Object.values(progressTimers.value).forEach((timer) => clearTimeout(timer));
+  progressTimers.value = {};
+  remainingTimes.value = {};
+  isPaused.value = {};
+  progressValues.value = {};
+  pausedAt.value = {};
+  startTimes.value = {};
+  activeAnalysisIndex.value = -1;
+};
+
+// Start progress from a specific feature
+
+const startProgressFromFeature = (featureIndex) => {
+  resetProgressLoop();
+  startProgressSequence(featureIndex);
+};
+
+// Pause progress for a feature
+const pauseProgress = (featureIndex) => {
+  if (
+    activeAnalysisIndex.value !== featureIndex ||
+    isPaused.value[featureIndex]
+  )
+    return;
+
+  clearTimeout(progressTimers.value[featureIndex]);
+
+  const elapsedTime = performance.now() - startTimes.value[featureIndex];
+  remainingTimes.value[featureIndex] = Math.max(
+    0,
+    progressDuration - elapsedTime
+  );
+
+  progressValues.value[featureIndex] = Math.min(
+    100,
+    (elapsedTime / progressDuration) * 100
+  );
+
+  isPaused.value[featureIndex] = true;
+  pausedAt.value[featureIndex] = performance.now();
+};
+
+// Resume progress after pausing
+const resumeProgress = (featureIndex) => {
+  if (
+    activeAnalysisIndex.value !== featureIndex ||
+    !isPaused.value[featureIndex]
+  )
+    return;
+
+  const adjustedStartTime =
+    performance.now() -
+    progressDuration * (progressValues.value[featureIndex] / 100);
+  startTimes.value[featureIndex] = adjustedStartTime;
+
+  isPaused.value[featureIndex] = false;
+
+  progressTimers.value[featureIndex] = setTimeout(() => {
+    activeAnalysisIndex.value = -1;
+    setTimeout(() => {
+      loopProgress(
+        featureIndex + 1,
+        filteredContent.value[0]?.features.length || 0
+      );
+    }, 200);
+  }, remainingTimes.value[featureIndex]);
+};
+
+// Compute progress bar styles dynamically
+const progressStyle = (featureIndex) => {
+  if (activeAnalysisIndex.value === featureIndex) {
+    if (isPaused.value[featureIndex]) {
+      return `width: ${progressValues.value[featureIndex]}%; transition: none;`;
+    } else {
+      const elapsedSinceStart =
+        performance.now() - startTimes.value[featureIndex];
+      const remainingPercentage =
+        100 - (elapsedSinceStart / progressDuration) * 100;
+
+      return `width: ${100 - remainingPercentage}%; transition: width ${
+        remainingTimes.value[featureIndex]
+      }ms linear; width: 100%;`;
+    }
+  }
+  return "width: 0%; transition: none;";
+};
+
+// Lifecycle hooks
+onMounted(() => {
+  window.addEventListener("scroll", onScroll);
+  startProgressSequence();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", onScroll);
+  resetProgressLoop();
+});
 </script>
 
 <style scoped>
+.progress-bar {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0%;
+  background-color: #00000047;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom-left-radius: 8px;
+  will-change: width;
+  transform: translateZ(0);
+}
 .custom-shadow {
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03),
     inset 0 4px 3px -2px rgba(0, 0, 0, 0.07);

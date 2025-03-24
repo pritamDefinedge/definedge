@@ -30,8 +30,7 @@
           '-motion-translate-y-in-50 motion-ease-bounce': hasScrolled,
         }"
       >
-      
-      <!-- <div
+        <!-- <div
         v-for="(feature, index) in features"
         :key="feature.id"
         class="group relative overflow-hidden font-medium flex items-center bg-white border rounded-lg shadow-md hover:bg-gray-100 transition-all duration-500 ease-in-out w-full sm:w-full md:w-[45%] lg:w-[30%]"
@@ -71,39 +70,37 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    features: Array,
-  },
-  data() {
-    return {
-      hasScrolled: false,
-      scrollThreshold: 4500,
-    };
-  },
-  methods: {
-    setActiveTab(tabId) {
-      this.activeEducationTab = tabId;
-    },
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
-    onScroll() {
-      const windowWidth = window.innerWidth;
-      if (windowWidth <= 768) {
-        this.scrollThreshold = 7500;
-      } else {
-        this.scrollThreshold = 4500;
-      }
+// Props
+defineProps({
+  features: Array,
+});
 
-      const scrollPosition = window.scrollY;
-      this.hasScrolled = scrollPosition > this.scrollThreshold;
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
+// Reactive state
+const hasScrolled = ref(false);
+const scrollThreshold = ref(4500);
+
+// Methods
+const setActiveTab = (tabId) => {
+  activeEducationTab.value = tabId;
 };
+
+const onScroll = () => {
+  const windowWidth = window.innerWidth;
+  scrollThreshold.value = windowWidth <= 768 ? 7500 : 4500;
+
+  const scrollPosition = window.scrollY;
+  hasScrolled.value = scrollPosition > scrollThreshold.value;
+};
+
+// Lifecycle hooks
+onMounted(() => {
+  window.addEventListener("scroll", onScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", onScroll);
+});
 </script>

@@ -33,8 +33,7 @@
             activeTradeTab !== tab.id,
         }"
         class="group relative inline-block overflow-hidden border-double px-4 py-3 sm:py-4 md:py-4 lg:py-4 xl:py-4 sm:px-4 md:px-8 lg:px-8 xl:px-8 text-base sm:text-base md:text-base lg:text-lg xl:text-lg tab-btn text-md rounded-lg font-semibold cursor-pointer focus:outline-none transition duration-300 ease-in-out"
-      
-        >
+      >
         <span
           class="absolute left-0 top-0 mb-0 flex h-full w-0 translate-x-0 transform bg-[#000] opacity-25 transition-all duration-300 ease-out group-hover:w-full"
         ></span>
@@ -153,182 +152,172 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    tabs: Array,
-    tabContent: Array,
-  },
-  data() {
-    return {
-      activeTradeTab: this.tabs[0].id,
-      hasScrolled: false,
-      activeFeatureIndex: -1,
-      progressLoop: null,
-      progressTimers: {},
-      remainingTimes: {},
-      isPaused: {},
-      pausedAt: {}, // Store the exact timestamp when paused
-      progressValues: {}, // Store the exact progress percentage when paused
-      progressDuration: 5400, // Default duration for progress animation
-      startTimes: {}, // Store when each progress started
-    };
-  },
-  computed: {
-    filteredContent() {
-      return this.tabContent.filter((item) => item.id === this.activeTradeTab);
-    },
-  },
-  methods: {
-    setActiveTab(tabId) {
-      this.activeTradeTab = tabId;
-      this.resetProgressLoop();
-      this.startProgressSequence();
-    },
-    onScroll() {
-      this.hasScrolled = window.scrollY > 200;
-    },
-    startProgressSequence(startIndex = 0) {
-      const features =
-        this.tabContent.find((tab) => tab.id === this.activeTradeTab)
-          ?.features || [];
-      if (features.length === 0) return;
+<script setup>
+import { ref, computed, onMounted, onBeforeUnmount, watchEffect } from "vue";
 
-      this.activeFeatureIndex = -1;
+const props = defineProps({
+  tabs: Array,
+  tabContent: Array,
+});
 
-      // Delay the start to ensure proper DOM update
-      setTimeout(() => {
-        this.loopProgress(startIndex, features.length);
-      }, 50);
-    },
-    loopProgress(index, total) {
-      if (index >= total) {
-        setTimeout(() => this.loopProgress(0, total), 200);
-        return;
-      }
+const activeTradeTab = ref(props.tabs[0]?.id || "");
+const hasScrolled = ref(false);
+const activeFeatureIndex = ref(-1);
+const progressTimers = ref({});
+const remainingTimes = ref({});
+const isPaused = ref({});
+const pausedAt = ref({});
+const progressValues = ref({});
+const startTimes = ref({});
+const progressDuration = 5400; // Default progress duration
 
-      // Set active index and reset state for this feature
-      this.activeFeatureIndex = index;
-      this.remainingTimes[index] = this.progressDuration;
-      this.isPaused[index] = false;
-      this.progressValues[index] = 0;
-      this.startTimes[index] = performance.now();
+// Compute filtered content based on active tab
+const filteredContent = computed(() =>
+  props.tabContent.filter((item) => item.id === activeTradeTab.value)
+);
 
-      // Schedule the end of this progress
-      this.progressTimers[index] = setTimeout(() => {
-        // Move to next item after current progress completes
-        this.activeFeatureIndex = -1;
-        setTimeout(() => {
-          this.loopProgress(index + 1, total);
-        }, 200);
-      }, this.progressDuration);
-    },
-    resetProgressLoop() {
-      // Clear all timers
-      Object.values(this.progressTimers).forEach((timer) =>
-        clearTimeout(timer)
-      );
-      this.progressTimers = {};
-      this.remainingTimes = {};
-      this.isPaused = {};
-      this.progressValues = {};
-      this.pausedAt = {};
-      this.startTimes = {};
-      this.activeFeatureIndex = -1;
-    },
-    startProgressFromFeature(featureIndex) {
-      this.resetProgressLoop();
-      this.startProgressSequence(featureIndex);
-    },
-    pauseProgress(featureIndex) {
-      // Only pause active and non-paused items
-      if (
-        this.activeFeatureIndex !== featureIndex ||
-        this.isPaused[featureIndex]
-      )
-        return;
-
-      // Clear the timer for this feature
-      clearTimeout(this.progressTimers[featureIndex]);
-
-      // Calculate progress values
-      const elapsedTime = performance.now() - this.startTimes[featureIndex];
-      this.remainingTimes[featureIndex] = Math.max(
-        0,
-        this.progressDuration - elapsedTime
-      );
-
-      // Calculate and store progress percentage
-      this.progressValues[featureIndex] = Math.min(
-        100,
-        (elapsedTime / this.progressDuration) * 100
-      );
-
-      // Mark as paused and store pause time
-      this.isPaused[featureIndex] = true;
-      this.pausedAt[featureIndex] = performance.now();
-    },
-    resumeProgress(featureIndex) {
-      // Only resume active and paused items
-      if (
-        this.activeFeatureIndex !== featureIndex ||
-        !this.isPaused[featureIndex]
-      )
-        return;
-
-      // Update start time based on current progress
-      const adjustedStartTime =
-        performance.now() -
-        this.progressDuration * (this.progressValues[featureIndex] / 100);
-      this.startTimes[featureIndex] = adjustedStartTime;
-
-      // Mark as no longer paused
-      this.isPaused[featureIndex] = false;
-
-      // Set timer for remaining time
-      this.progressTimers[featureIndex] = setTimeout(() => {
-        // Move to next item
-        this.activeFeatureIndex = -1;
-        setTimeout(() => {
-          this.loopProgress(
-            featureIndex + 1,
-            this.filteredContent[0]?.features.length || 0
-          );
-        }, 200);
-      }, this.remainingTimes[featureIndex]);
-    },
-    progressStyle(featureIndex) {
-      if (this.activeFeatureIndex === featureIndex) {
-        if (this.isPaused[featureIndex]) {
-          // When paused, show the exact progress percentage
-          return `width: ${this.progressValues[featureIndex]}%; transition: none;`;
-        } else {
-          // Calculate how much time has passed and adjust animation duration
-          const currentTimePosition = performance.now();
-          const elapsedSinceStart =
-            currentTimePosition - this.startTimes[featureIndex];
-          const remainingPercentage =
-            100 - (elapsedSinceStart / this.progressDuration) * 100;
-
-          // Start from current width and animate to 100% in remaining time
-          return `width: ${100 - remainingPercentage}%; transition: width ${
-            this.remainingTimes[featureIndex]
-          }ms linear; width: 100%;`;
-        }
-      }
-      // Inactive items
-      return "width: 0%; transition: none;";
-    },
-  },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-    this.startProgressSequence();
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-    this.resetProgressLoop();
-  },
+// Handle tab changes
+const setActiveTab = (tabId) => {
+  activeTradeTab.value = tabId;
+  resetProgressLoop();
+  startProgressSequence();
 };
+
+// Handle scrolling
+const onScroll = () => {
+  hasScrolled.value = window.scrollY > 200;
+};
+
+// Start feature progress loop
+const startProgressSequence = (startIndex = 0) => {
+  const features =
+    props.tabContent.find((tab) => tab.id === activeTradeTab.value)?.features ||
+    [];
+
+  if (features.length === 0) return;
+
+  activeFeatureIndex.value = -1;
+
+  setTimeout(() => {
+    loopProgress(startIndex, features.length);
+  }, 50);
+};
+
+const loopProgress = (index, total) => {
+  if (index >= total) {
+    setTimeout(() => loopProgress(0, total), 200);
+    return;
+  }
+
+  activeFeatureIndex.value = index;
+  remainingTimes.value[index] = progressDuration;
+  isPaused.value[index] = false;
+  progressValues.value[index] = 0;
+  startTimes.value[index] = performance.now();
+
+  progressTimers.value[index] = setTimeout(() => {
+    activeFeatureIndex.value = -1;
+    setTimeout(() => {
+      loopProgress(index + 1, total);
+    }, 200);
+  }, progressDuration);
+};
+
+const resetProgressLoop = () => {
+  Object.values(progressTimers.value).forEach((timer) => clearTimeout(timer));
+  progressTimers.value = {};
+  remainingTimes.value = {};
+  isPaused.value = {};
+  progressValues.value = {};
+  pausedAt.value = {};
+  startTimes.value = {};
+  activeFeatureIndex.value = -1;
+};
+
+// Start progress from a specific feature
+
+const startProgressFromFeature = (featureIndex) => {
+  resetProgressLoop();
+  startProgressSequence(featureIndex);
+};
+
+// Pause progress for a feature
+const pauseProgress = (featureIndex) => {
+  if (activeFeatureIndex.value !== featureIndex || isPaused.value[featureIndex])
+    return;
+
+  clearTimeout(progressTimers.value[featureIndex]);
+
+  const elapsedTime = performance.now() - startTimes.value[featureIndex];
+  remainingTimes.value[featureIndex] = Math.max(
+    0,
+    progressDuration - elapsedTime
+  );
+
+  progressValues.value[featureIndex] = Math.min(
+    100,
+    (elapsedTime / progressDuration) * 100
+  );
+
+  isPaused.value[featureIndex] = true;
+  pausedAt.value[featureIndex] = performance.now();
+};
+
+// Resume progress after pausing
+const resumeProgress = (featureIndex) => {
+  if (
+    activeFeatureIndex.value !== featureIndex ||
+    !isPaused.value[featureIndex]
+  )
+    return;
+
+  const adjustedStartTime =
+    performance.now() -
+    progressDuration * (progressValues.value[featureIndex] / 100);
+  startTimes.value[featureIndex] = adjustedStartTime;
+
+  isPaused.value[featureIndex] = false;
+
+  progressTimers.value[featureIndex] = setTimeout(() => {
+    activeFeatureIndex.value = -1;
+    setTimeout(() => {
+      loopProgress(
+        featureIndex + 1,
+        filteredContent.value[0]?.features.length || 0
+      );
+    }, 200);
+  }, remainingTimes.value[featureIndex]);
+};
+
+// Compute progress bar styles dynamically
+const progressStyle = (featureIndex) => {
+  if (activeFeatureIndex.value === featureIndex) {
+    if (isPaused.value[featureIndex]) {
+      return `width: ${progressValues.value[featureIndex]}%; transition: none;`;
+    } else {
+      const elapsedSinceStart =
+        performance.now() - startTimes.value[featureIndex];
+      const remainingPercentage =
+        100 - (elapsedSinceStart / progressDuration) * 100;
+
+      return `width: ${100 - remainingPercentage}%; transition: width ${
+        remainingTimes.value[featureIndex]
+      }ms linear; width: 100%;`;
+    }
+  }
+  return "width: 0%; transition: none;";
+};
+
+// Lifecycle hooks
+onMounted(() => {
+  window.addEventListener("scroll", onScroll);
+  startProgressSequence();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", onScroll);
+  resetProgressLoop();
+});
 </script>
 
 <style scoped>

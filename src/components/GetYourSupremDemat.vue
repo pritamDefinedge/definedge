@@ -70,7 +70,7 @@
         <span class="flex w-full sm:w-full lg:w-1/2 md:w-full">
           <input
             maxlength="400"
-            class="w-16 py-3 px-3 border border-[#b7afaf85] rounded-l-md text-gray-700"
+            class="w-16 py-3 px-3 border border-[#b7afaf85] rounded-l-md text-gray-700 focus:ring-0 outline-none"
             readonly
             value="+91"
             type="text"
