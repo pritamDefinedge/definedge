@@ -150,7 +150,7 @@
             ></span>
             <span
               class="ease relative text-white transition duration-300 group-hover:text-white"
-              >join Now</span
+              >Join Now</span
             >
           </a>
         </button>

@@ -50,7 +50,7 @@
           (item) => item.id === activeTradeTab
         )"
         :key="content.id"
-        class="w-full md:w-full px-6"
+        class="w-full md:w-full px-0 sm:px-2 md:px-6 lg:px-6 xl:px-6"
       >
         <div class="flex sm:flex-wrap lg:flex-nowrap flex-wrap justify-between">
           <ul
