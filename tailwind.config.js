@@ -9,6 +9,7 @@ module.exports = {
   ],
   // content: ['./index.html', './public/**/*.html', './src/*/*.{vue,js,ts,jsx,tsx}'],
   media: false, // or 'media' or 'class'
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
