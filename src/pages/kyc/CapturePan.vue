@@ -8,15 +8,15 @@
           <!-- Left Section (Common for both steps) -->
           <CommonLeftSection
             :src="desktopImage"
-            :steps="[1, 2]"
+            :steps="[1]"
             :toggleModal="toggleModal"
-            :width="45"
+            :width="13"
 
           />
 
           <!-- Right Section (PAN Capture Form) -->
           <section
-            class="lg:col-span-8 max-h-lvh h-lvh sm:h-screen overflow-auto relative"
+            class="lg:col-span-8 h-screen md:h-full lg:h-full sm:h-screen overflow-auto relative"
           >
             <!-- Doc Guidelines Button (Desktop) -->
             <div
@@ -30,7 +30,7 @@
                   <div class="w-4 h-4 flex-none">
                     <img
                       class="w-4 h-4"
-                      src="@/assets/file-text-icon.svg"
+                      src="../assets/file-text-icon.svg"
                       alt="definedge"
                     />
                   </div>
@@ -44,9 +44,14 @@
               </div>
             </div>
 
-            <!-- Capture Photos Form -->
             <div class="stepOne">
-              <Signature :submit="submit" :src="mobileImage" />
+              <PanCapture
+                :src="mobileImage"
+                :pan="pan"
+                @update:pan="pan = $event"
+                @submit-pan="submitPan"
+                @reset-form="resetPanForm"
+              />
             </div>
           </section>
         </div>
@@ -61,38 +66,43 @@
 
 <script>
 import { reactive, toRefs, onMounted } from "vue";
-import Signature from "../components/kyc/stepOne/Signature.vue";
-import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
+import PanCapture from "../../components/kyc/stepOne/PanCapture.vue"; // Ensure this component is correctly imported
+import CommonLeftSection from "../../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import DocGuideLince from "../components/DocGuideLince.vue";
+import DocGuideLince from "../../components/DocGuideLince.vue";
 
-// import imageSrc from "@/assets/steps/side9.svg"; // Corrected image import
-import desktopImage from "../assets/steps/side9.svg";
-import mobileImage from "../assets/steps/blue/9.svg";
+// import imageSrc from "../assets/steps/side3.svg";
+import desktopImage from "../../assets/steps/side3.svg";
+import mobileImage from "../../assets/steps/blue/3.svg";
 
 export default {
   components: {
-    Signature,
+    PanCapture,
     CommonLeftSection,
     DocGuideLince,
   },
   setup() {
     const state = reactive({
-      imageSrc: "",
+      pan: "",
       isModalVisible: false,
     });
     const router = useRouter();
 
-    // Submit function to handle captured data
-    const submit = (data) => {
-      //   if (data && data.photo) {
-      //     // Handle the captured photo data here
-      console.log("Captured Photo Data:");
-      // Proceed to the next page if data is valid
-      router.push("/nomiees-details");
-      //   } else {
-      //     alert("Please ensure you captured the necessary photo.");
-      //   }
+    const submitPan = () => {
+      // Handle the submission of the PAN number
+      console.log(state);
+      if (state.pan.length === 10) {
+        alert(`PAN submitted successfully: ${state.pan}`);
+        router.push("/aadhar-verification");
+
+        // You can add further logic here, such as sending the PAN to an API
+      } else {
+        alert("Please enter a valid PAN number.");
+      }
+    };
+
+    const resetPanForm = () => {
+      state.pan = "";
     };
 
     const toggleModal = () => {
@@ -101,7 +111,8 @@ export default {
 
     return {
       ...toRefs(state),
-      submit,
+      submitPan,
+      resetPanForm,
       toggleModal,
       desktopImage,
       mobileImage,
@@ -109,3 +120,5 @@ export default {
   },
 };
 </script>
+
+<style scoped></style>

@@ -10,7 +10,7 @@
             :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
-            :width="13"
+            :width="25"
 
           />
 
@@ -45,11 +45,15 @@
             </div>
 
             <div class="stepOne">
-              <PanCapture
+              <PanVerification
                 :src="mobileImage"
                 :pan="pan"
+                :full-name="localFullName"
+                :dob="localDob"
                 @update:pan="pan = $event"
-                @submit-pan="submitPan"
+                @update:full-name="localFullName = $event"
+                @update:dob="localDob = $event"
+                :submit-pan="submitPan"
                 @reset-form="resetPanForm"
               />
             </div>
@@ -66,43 +70,41 @@
 
 <script>
 import { reactive, toRefs, onMounted } from "vue";
-import PanCapture from "../components/kyc/stepOne/PanCapture.vue"; // Ensure this component is correctly imported
-import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
+import PanVerification from "../../components/kyc/stepOne/PanVerification.vue";
+import CommonLeftSection from "../../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import DocGuideLince from "../components/DocGuideLince.vue";
+import DocGuideLince from "../../components/DocGuideLince.vue";
 
-// import imageSrc from "../assets/steps/side3.svg";
-import desktopImage from "../assets/steps/side3.svg";
-import mobileImage from "../assets/steps/blue/3.svg";
+import desktopImage from "../../assets/steps/side5.svg";
+import mobileImage from "../../assets/steps/blue/5.svg";
 
 export default {
   components: {
-    PanCapture,
+    PanVerification,
     CommonLeftSection,
     DocGuideLince,
   },
   setup() {
     const state = reactive({
       pan: "",
+      localFullName: "",
+      localDob: "",
       isModalVisible: false,
     });
     const router = useRouter();
 
-    const submitPan = () => {
-      // Handle the submission of the PAN number
-      console.log(state);
-      if (state.pan.length === 10) {
-        alert(`PAN submitted successfully: ${state.pan}`);
-        router.push("/aadhar-verification");
-
-        // You can add further logic here, such as sending the PAN to an API
-      } else {
-        alert("Please enter a valid PAN number.");
-      }
+    const submitPan = (data) => {
+      // Implement the logic to submit PAN details
+      alert("PAN submitted successfully!");
+      console.log(data); // Log the data for debugging
+      // You can navigate to another route if needed
+      router.push("/regulatorydetails");
     };
 
     const resetPanForm = () => {
       state.pan = "";
+      state.localFullName = "";
+      state.localDob = "";
     };
 
     const toggleModal = () => {
@@ -120,5 +122,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>

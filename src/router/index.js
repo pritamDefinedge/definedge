@@ -7,20 +7,21 @@ import Login from "../pages/Login.vue";
 import Pricing from "../pages/Pricing.vue";
 import Product from "../pages/Product.vue";
 import Api from "../pages/Api.vue";
-import VerifyMobile from "../pages/VerifyMobile.vue";
-import VerifyEmail from "../pages/VerifyEmail.vue";
-import CapturePan from "../pages/CapturePan.vue";
-import VerifyAadhar from "../pages/VerifyAadhar.vue";
-import VerifyPan from "../pages/VerifyPan.vue";
-import RegulatoryDetails from "../pages/RegulatoryDetails.vue";
-import SegementDetails from "../pages/SegementDetails.vue";
-import CapturePhoto from "../pages/CapturePhoto.vue";
-import CaptureSignature from "../pages/CaptureSignature.vue";
-import Nomiees from "../pages/Nomiees.vue";
-import BankDetails from "../pages/BankDetails.vue";
-import UploadDocuments from "../pages/UploadDocuments.vue";
-import PreviewEsign from "../pages/PreviewEsign.vue";
-import ApplicationSubmitted from "../pages/ApplicationSubmitted.vue";
+
+import VerifyMobile from "../pages/kyc/VerifyMobile.vue";
+import VerifyEmail from "../pages/kyc/VerifyEmail.vue";
+import CapturePan from "../pages/kyc/CapturePan.vue";
+import VerifyAadhar from "../pages/kyc/VerifyAadhar.vue";
+import VerifyPan from "../pages/kyc/VerifyPan.vue";
+import RegulatoryDetails from "../pages/kyc/RegulatoryDetails.vue";
+import SegementDetails from "../pages/kyc/SegementDetails.vue";
+import CapturePhoto from "../pages/kyc/CapturePhoto.vue";
+import CaptureSignature from "../pages/kyc/CaptureSignature.vue";
+import Nomiees from "../pages/kyc/Nomiees.vue";
+import BankDetails from "../pages/kyc/BankDetails.vue";
+import UploadDocuments from "../pages/kyc/UploadDocuments.vue";
+import PreviewEsign from "../pages/kyc/PreviewEsign.vue";
+import ApplicationSubmitted from "../pages/kyc/ApplicationSubmitted.vue";
 import Test from "../pages/Test.vue";
 
 const router = createRouter({

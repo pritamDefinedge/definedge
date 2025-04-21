@@ -10,7 +10,7 @@
             :src="desktopImage"
             :steps="[1, 2]"
             :toggleModal="toggleModal"
-            :width="33"
+            :width="45"
 
           />
 
@@ -30,7 +30,7 @@
                   <div class="w-4 h-4 flex-none">
                     <img
                       class="w-4 h-4"
-                      src="../assets/file-text-icon.svg"
+                      src="@/assets/file-text-icon.svg"
                       alt="definedge"
                     />
                   </div>
@@ -44,8 +44,9 @@
               </div>
             </div>
 
+            <!-- Capture Photos Form -->
             <div class="stepOne">
-              <Segement :submit="submit" :src="mobileImage" />
+              <Signature :submit="submit" :src="mobileImage" />
             </div>
           </section>
         </div>
@@ -57,35 +58,41 @@
     @update:isVisible="isModalVisible = $event"
   />
 </template>
+
 <script>
 import { reactive, toRefs, onMounted } from "vue";
-import Segement from "../components/kyc/stepOne/Segement.vue";
-import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
+import Signature from "../../components/kyc/stepOne/Signature.vue";
+import CommonLeftSection from "../../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import DocGuideLince from "../components/DocGuideLince.vue";
+import DocGuideLince from "../../components/DocGuideLince.vue";
 
-// import imageSrc from "../assets/steps/side7.svg";
-import desktopImage from "../assets/steps/side7.svg";
-import mobileImage from "../assets/steps/blue/7.svg";
+// import imageSrc from "@/assets/steps/side9.svg"; // Corrected image import
+import desktopImage from "../../assets/steps/side9.svg";
+import mobileImage from "../../assets/steps/blue/9.svg";
 
 export default {
   components: {
-    Segement,
+    Signature,
     CommonLeftSection,
     DocGuideLince,
   },
   setup() {
     const state = reactive({
+      imageSrc: "",
       isModalVisible: false,
     });
     const router = useRouter();
 
+    // Submit function to handle captured data
     const submit = (data) => {
-      // Implement the logic to submit PAN details
-      alert("Data submitted successfully!");
-      console.log(data, "------------data"); // Log the data for debugging
-      // You can navigate to another route if needed
-      router.push("/capture-photo");
+      //   if (data && data.photo) {
+      //     // Handle the captured photo data here
+      console.log("Captured Photo Data:");
+      // Proceed to the next page if data is valid
+      router.push("/nomiees-details");
+      //   } else {
+      //     alert("Please ensure you captured the necessary photo.");
+      //   }
     };
 
     const toggleModal = () => {

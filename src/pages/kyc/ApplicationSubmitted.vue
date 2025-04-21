@@ -28,7 +28,7 @@
                   <div class="w-4 h-4 flex-none">
                     <img
                       class="w-4 h-4"
-                      src="../assets/file-text-icon.svg"
+                      src="../../assets/file-text-icon.svg"
                       alt="definedge"
                     />
                   </div>
@@ -63,7 +63,7 @@
                       <span class="inline"
                         ><img
                           class="w-4 h-4 mr-1.5 -mt-0.5"
-                          src="../assets/offer-star.svg"
+                          src="../../assets/offer-star.svg"
                           alt="definedge" /></span
                       >Welcome to the world of innovative tools, education and
                       resources!
@@ -74,7 +74,7 @@
                       <div>
                         <img
                           class="w-14 h-14 mb-3"
-                          src="../assets/checked.svg"
+                          src="../../assets/checked.svg"
                           alt="definedge"
                         />
                       </div>
@@ -124,7 +124,7 @@
                           target="_blank"
                           ><img
                             class=""
-                            src="../assets/definedge_universe.png"
+                            src="../../assets/definedge_universe.png"
                             alt="definedge"
                         /></a>
                       </div>
@@ -147,14 +147,14 @@
                             target="_blank"
                             ><img
                               class="w-24"
-                              src="../assets/Google-Play-Store.png"
+                              src="../../assets/Google-Play-Store.png"
                               alt="definedge" /></a
                           ><a
                             href="https://apps.apple.com/in/app/zone-definedge-trading-app/id1659365110"
                             target="_blank"
                             ><img
                               class="w-24"
-                              src="../assets/App-Store-Apple.png"
+                              src="../../assets/App-Store-Apple.png"
                               alt="definedge"
                           /></a>
                         </div>
@@ -176,14 +176,14 @@
                             target="_blank"
                             ><img
                               class="w-24"
-                              src="../assets/Google-Play-Store.png"
+                              src="../../assets/Google-Play-Store.png"
                               alt="definedge" /></a
                           ><a
                             href="https://apps.apple.com/in/app/opstra-definedge-analysis/id6502280354"
                             target="_blank"
                             ><img
                               class="w-24"
-                              src="../assets/App-Store-Apple.png"
+                              src="../../assets/App-Store-Apple.png"
                               alt="definedge"
                           /></a>
                         </div>
@@ -206,15 +206,15 @@
 
 <script>
 import { reactive, toRefs, onMounted } from "vue";
-import SendMobileOtp from "../components/kyc/stepOne/SendMobileOtp.vue";
-import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
+import SendMobileOtp from "../../components/kyc/stepOne/SendMobileOtp.vue";
+import CommonLeftSection from "../../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import DocGuideLince from "../components/DocGuideLince.vue";
-import SvgWaveMobile from "../components/SvgWaveMobile.vue";
+import DocGuideLince from "../../components/DocGuideLince.vue";
+import SvgWaveMobile from "../../components/SvgWaveMobile.vue";
 // import imageSrc from "../assets/steps/side14.svg";
 
-import desktopImage from "../assets/steps/side14.svg";
-import mobileImage from "../assets/steps/blue/14.svg";
+import desktopImage from "../../assets/steps/side14.svg";
+import mobileImage from "../../assets/steps/blue/14.svg";
 
 export default {
   components: {

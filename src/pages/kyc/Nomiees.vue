@@ -131,13 +131,13 @@
 <script>
 import { reactive, toRefs, onMounted } from "vue";
 import { useRouter } from "vue-router";
-import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
-import DocGuideLince from "../components/DocGuideLince.vue";
-import SvgWaveMobile from "../components/SvgWaveMobile.vue";
+import CommonLeftSection from "../../components/kyc/CommonLeftSection.vue";
+import DocGuideLince from "../../components/DocGuideLince.vue";
+import SvgWaveMobile from "../../components/SvgWaveMobile.vue";
 // import imageSrc from "../assets/steps/side10.svg";
 
-import desktopImage from "../assets/steps/side10.svg";
-import mobileImage from "../assets/steps/blue/10.svg";
+import desktopImage from "../../assets/steps/side10.svg";
+import mobileImage from "../../assets/steps/blue/10.svg";
 
 export default {
   components: {

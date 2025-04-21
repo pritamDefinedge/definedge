@@ -10,11 +10,10 @@
             :src="desktopImage"
             :steps="[1]"
             :toggleModal="toggleModal"
-            :width="25"
-
+            :width="10"
           />
 
-          <!-- Right Section (PAN Capture Form) -->
+          <!-- Right Section (Email Verification Form) -->
           <section
             class="lg:col-span-8 h-screen md:h-full lg:h-full sm:h-screen overflow-auto relative"
           >
@@ -35,7 +34,6 @@
                     />
                   </div>
                   <button
-                    @click="toggleModal"
                     class="ml-1 pt-0.5 whitespace-nowrap text-xs rounded-md transition-all ease-in-out duration-200"
                   >
                     Doc Guidelines
@@ -45,16 +43,16 @@
             </div>
 
             <div class="stepOne">
-              <PanVerification
+              <EmailVerification
                 :src="mobileImage"
-                :pan="pan"
-                :full-name="localFullName"
-                :dob="localDob"
-                @update:pan="pan = $event"
-                @update:full-name="localFullName = $event"
-                @update:dob="localDob = $event"
-                :submit-pan="submitPan"
-                @reset-form="resetPanForm"
+                :width="10"
+                :email="email"
+                :otp-sent="emailOtpSent"
+                :otp-verified="emailOtpVerified"
+                @update:email="email = $event"
+                @send-otp="sendEmailOtp"
+                @verify-otp="verifyEmailOtp"
+                @reset-form="resetEmailForm"
               />
             </div>
           </section>
@@ -70,41 +68,59 @@
 
 <script>
 import { reactive, toRefs, onMounted } from "vue";
-import PanVerification from "../components/kyc/stepOne/PanVerification.vue";
-import CommonLeftSection from "../components/kyc/CommonLeftSection.vue";
+import EmailVerification from "../../components/kyc/stepOne/EmailVerification.vue";
+import CommonLeftSection from "../../components/kyc/CommonLeftSection.vue";
 import { useRouter } from "vue-router";
-import DocGuideLince from "../components/DocGuideLince.vue";
+import DocGuideLince from "../../components/DocGuideLince.vue";
 
-import desktopImage from "../assets/steps/side5.svg";
-import mobileImage from "../assets/steps/blue/5.svg";
+// import imageSrc from "../assets/steps/side2.svg";
+
+import desktopImage from "../../assets/steps/side2.svg";
+import mobileImage from "../../assets/steps/blue/2.svg";
 
 export default {
   components: {
-    PanVerification,
+    EmailVerification,
     CommonLeftSection,
     DocGuideLince,
   },
   setup() {
     const state = reactive({
-      pan: "",
-      localFullName: "",
-      localDob: "",
+      email: "",
+      emailOtpSent: false,
+      emailOtpVerified: false,
+      emailOtp: "",
       isModalVisible: false,
     });
     const router = useRouter();
 
-    const submitPan = (data) => {
-      // Implement the logic to submit PAN details
-      alert("PAN submitted successfully!");
-      console.log(data); // Log the data for debugging
-      // You can navigate to another route if needed
-      router.push("/regulatorydetails");
+    const sendEmailOtp = () => {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailPattern.test(state.email)) {
+        state.emailOtpSent = true;
+        state.emailOtpVerified = false;
+        state.emailOtp = "123456";
+        alert("OTP sent successfully to your email!");
+      } else {
+        alert("Please enter a valid email.");
+      }
     };
 
-    const resetPanForm = () => {
-      state.pan = "";
-      state.localFullName = "";
-      state.localDob = "";
+    const verifyEmailOtp = (enteredOtp) => {
+      if (enteredOtp === state.emailOtp) {
+        state.emailOtpVerified = true;
+        alert("Email OTP verified successfully!");
+        router.push("/capture-pan");
+      } else {
+        alert("Invalid OTP, please try again.");
+      }
+    };
+
+    const resetEmailForm = () => {
+      state.email = "";
+      state.emailOtpSent = false;
+      state.emailOtpVerified = false;
+      state.emailOtp = "";
     };
 
     const toggleModal = () => {
@@ -113,8 +129,9 @@ export default {
 
     return {
       ...toRefs(state),
-      submitPan,
-      resetPanForm,
+      sendEmailOtp,
+      verifyEmailOtp,
+      resetEmailForm,
       toggleModal,
       desktopImage,
       mobileImage,
@@ -122,3 +139,5 @@ export default {
   },
 };
 </script>
+
+<style scoped></style>
