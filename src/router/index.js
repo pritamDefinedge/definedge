@@ -24,6 +24,8 @@ import PreviewEsign from "../pages/kyc/PreviewEsign.vue";
 import ApplicationSubmitted from "../pages/kyc/ApplicationSubmitted.vue";
 import Test from "../pages/Test.vue";
 
+import ZoneWeb from "../pages/ZoneWeb.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -136,6 +138,11 @@ const router = createRouter({
       path: "/application-submitted",
       name: "application-submitted",
       component: ApplicationSubmitted,
+    },
+    {
+      path: "/products/zone-web-trading-terminal/",
+      name: "zone-web",
+      component: ZoneWeb,
     },
   ],
 });

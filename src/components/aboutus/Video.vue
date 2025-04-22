@@ -1,5 +1,8 @@
 <template>
-    <div id="player" class="player pb-12 relative bg-transparent">
+    <div id="player" 
+    class="player px-4 py-12 sm:py-16 lg:py-24 transition-colors duration-500"
+
+    >
       <!-- Controls Section -->
       <div class="vp-player-ui-container">
         <div class="vp-player-ui-overlays">
